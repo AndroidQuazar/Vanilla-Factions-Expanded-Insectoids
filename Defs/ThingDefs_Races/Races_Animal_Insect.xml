@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Insectoid Empress -->
+  <ThingDef ParentName="BaseInsect">
+    <defName>VFEI_Insectoid_Empress</defName>
+    <label>insectoid empress</label>
+    <description>A giant insectoid empress with the size of an elephant.</description> <!-- More Lore -->
+    <statBases>
+      <MoveSpeed>2.80</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>2500</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+      </li>
+      <li> <!-- should be active when dropped lower than half hp -->
+        <label>echoing voice</label>
+        <capacities>
+          <li>VFEI_EchoingVoice</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>5.2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAntenna</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>BeetleLikeWithClaw</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>3.6</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <meatLabel>insect meat</meatLabel>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>6</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EusocialInsectLarva</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectJuvenile</def>
+          <minAge>0.03</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectAdult</def>
+          <minAge>0.2</minAge>
+          <soundWounded>Pawn_BigInsect_Pain</soundWounded>
+          <soundDeath>Pawn_BigInsect_Death</soundDeath>
+          <soundCall>Pawn_BigInsect_Call</soundCall>
+          <soundAngry>Pawn_BigInsect_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalInsect</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>VFEI_Insectoid_Empress</defName>
+    <label>insectoid empress</label>
+    <race>VFEI_Insectoid_Empress</race>
+    <combatPower>250</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>3.6</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>3.6</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>4.8</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>7.5</drawSize>  <!-- Huge -->
+          <color>(154,125,94)</color>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>7.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- Insectoid Queen -->
+  <ThingDef ParentName="BaseInsect">
+    <defName>VFEI_Insectoid_Queen</defName>
+    <label>insectoid queen</label>
+    <description>A giant insectoid swarm queen with the size of a building. Capable of producing and endless stream of descendants. Will shrill for help, when attacked, which leads to hearing loss and confusion.</description> <!-- More Lore -->
+    <statBases>
+      <MoveSpeed>3.20</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>2000</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+      </li>
+      <li> <!-- should be active when dropped lower than half hp -->
+        <label>shrill</label>
+        <capacities>
+          <li>VFEI_Shrill</li>
+        </capacities>
+        <power>19</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAntenna</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>BeetleLikeWithClaw</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>2.4</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <meatLabel>insect meat</meatLabel>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>6</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EusocialInsectLarva</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectJuvenile</def>
+          <minAge>0.03</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectAdult</def>
+          <minAge>0.2</minAge>
+          <soundWounded>Pawn_BigInsect_Pain</soundWounded>
+          <soundDeath>Pawn_BigInsect_Death</soundDeath>
+          <soundCall>Pawn_BigInsect_Call</soundCall>
+          <soundAngry>Pawn_BigInsect_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalInsect</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>VFEI_Insectoid_Queen</defName>
+    <label>insectoid queen</label>
+    <race>VFEI_Insectoid_Queen</race>
+    <combatPower>200</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>2.4</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>2.4</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>3.2</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>3.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>5.0</drawSize>
+          <color>(154,125,94)</color>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>5.0</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- Insectoid Beetle -->
+  <ThingDef ParentName="BaseInsect">
+    <defName>VFEI_Insectoid_Beetle</defName>
+    <label>insectoid beetle</label>
+    <description>A giant insectoid with functional elytra for leaping at targets. Does more damage to isolated targets.</description> <!-- More Lore -->
+    <statBases>
+      <MoveSpeed>4.00</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>1000</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+      </li>
+      <li> <!-- needs c magic -->
+        <label>leap</label>
+        <capacities>
+          <li>VFEI_Leap</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>ShellElytra</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>BeetleLikeWithClaw</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <meatLabel>insect meat</meatLabel>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>6</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EusocialInsectLarva</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectJuvenile</def>
+          <minAge>0.03</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectAdult</def>
+          <minAge>0.2</minAge>
+          <soundWounded>Pawn_BigInsect_Pain</soundWounded>
+          <soundDeath>Pawn_BigInsect_Death</soundDeath>
+          <soundCall>Pawn_BigInsect_Call</soundCall>
+          <soundAngry>Pawn_BigInsect_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalInsect</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>VFEI_Insectoid_Beetle</defName>
+    <label>insectoid beetle</label>
+    <race>VFEI_Insectoid_Beetle</race>
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.2</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>1.6</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Megaspider</texPath>
+          <drawSize>2.5</drawSize>
+          <color>(154,125,94)</color>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Megaspider/Dessicated_Megaspider</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- Insectoid Royal Megaspider -->
+  <ThingDef ParentName="BaseInsect">
+    <defName>VFEI_Insectoid_RoyalMegaspider</defName>
+    <label>royal megaspider</label>
+    <description>Not actually a spider, the royal megaspider is a genetically-engineered giant insectoid the size of a bear. Designed for one use, the protection of their queen, its thick chitinous armor makes it hard to kill, while its long ripper-blades make it deadly at close range. Bites from this species are highly venemous. Victims of this poison experience excruciating pain. It is, however, quite slow in open terrain.</description>
+    <statBases>
+      <MoveSpeed>3.20</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>1000</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>mandibles</label>
+        <capacities>
+          <li>ToxicBite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>BeetleLikeWithClaw</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>2.4</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <meatLabel>insect meat</meatLabel>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>6</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EusocialInsectLarva</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectJuvenile</def>
+          <minAge>0.03</minAge>
+        </li>
+        <li>
+          <def>EusocialInsectAdult</def>
+          <minAge>0.2</minAge>
+          <soundWounded>Pawn_BigInsect_Pain</soundWounded>
+          <soundDeath>Pawn_BigInsect_Death</soundDeath>
+          <soundCall>Pawn_BigInsect_Call</soundCall>
+          <soundAngry>Pawn_BigInsect_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalInsect</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>VFEI_Insectoid_RoyalMegaspider</defName>
+    <label>royal megaspider</label>
+    <race>VFEI_Insectoid_RoyalMegaspider</race>
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/RoyalMegaspider</texPath>
+          <drawSize>1.2</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/Dessicated_RoyalMegaspider_east</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/RoyalMegaspider</texPath>
+          <drawSize>2.0</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/Dessicated_RoyalMegaspider_east</texPath>
+          <drawSize>2.0</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/RoyalMegaspider</texPath>
+          <drawSize>3.5</drawSize>
+          <color>(154,125,94)</color>
+          <shadowData>
+            <volume>(0.5, 0.7, 0.43)</volume>
+            <offset>(0,0,-0.1)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/RoyalMegaspider/Dessicated_RoyalMegaspider_east</texPath>
+          <drawSize>3.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+  <!-- Insectoid Larvae -->
+  <ThingDef ParentName="BaseInsect">
+    <defName>VFEI_Insectoid_Larvae</defName>
+    <label>insectoid larvae</label>
+    <description>An insectoid larvae. Harmless due it missing teeth and unevolved proportions.</description> <!-- Needs Lore -->
+    <statBases>
+      <MoveSpeed>3.20</MoveSpeed>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <MarketValue>1000</MarketValue>
+      <LeatherAmount>0</LeatherAmount>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.27</ArmorRating_Sharp>
+    </statBases>
+    <tools>
+      <li>
+        <label>head claw</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <race>
+      <body>BeetleLikeWithClaw</body>
+      <baseHungerRate>0.35</baseHungerRate>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHealthScale>2.5</baseHealthScale>
+      <gestationPeriodDays>12</gestationPeriodDays>
+      <meatLabel>insect meat</meatLabel>
+      <wildness>0.95</wildness>
+      <lifeExpectancy>6</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>EusocialInsectLarva</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalInsect</li>
+    </tradeTags>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>VFEI_Insectoid_Larvae</defName>
+    <label>insectoid larvae</label>
+    <race>VFEI_Insectoid_Larvae</race>
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>0.50</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Larvae/Larva</texPath>
+          <drawSize>1.2</drawSize>
+          <color>(154,125,94)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Larvae/Dessicated_Larva</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

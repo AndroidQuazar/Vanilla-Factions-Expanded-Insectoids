@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Queen Echoing Voice -->
+  <HediffDef>
+    <defName>VFEI_EchoingVoice</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.06, 0.50, 0.44)</defaultLabelColor>
+    <label>echoing voice</label>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>false</makesSickThought>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>-0.08</severityPerDayNotImmune>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1000</min>
+          <max>10000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+        <becomeVisible>true</becomeVisible>
+      </li>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <label>minor</label>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.2</minSeverity>
+        <label>moderate</label>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <label>severe</label>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>extreme</label>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.4</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>assimilation</label>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.5</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>0.05</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <painOffset>0.1</painOffset>
+        <minSeverity>0.6</minSeverity>
+        <label>mind control</label> <!-- mind control -->
+        <lifeThreatening>false</lifeThreatening>
+        <socialFightChanceFactor></socialFightChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.5</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>0.4</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+   </stages>
+  </HediffDef>
+
+  <!-- Confusion -->
+  <HediffDef>
+    <defName>VFEI_ConfusionVibe</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.06, 0.50, 0.44)</defaultLabelColor>
+    <label>confusion</label>
+    <lethalSeverity>1</lethalSeverity>
+    <makesSickThought>false</makesSickThought>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>-0.08</severityPerDayNotImmune>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2.0</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1000</min>
+          <max>10000</max>
+        </disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+        <becomeVisible>true</becomeVisible>
+      </li>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <label>moderate</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <label>severe</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>assimilation</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <painOffset>0.1</painOffset>
+        <minSeverity>0.6</minSeverity>
+        <label>mind control</label> <!-- mind control -->
+        <lifeThreatening>false</lifeThreatening>
+        <socialFightChanceFactor></socialFightChanceFactor>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>0.02</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+   </stages>
+  </HediffDef>
+
+</Defs>

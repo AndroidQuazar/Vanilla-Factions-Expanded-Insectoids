@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ToolCapacityDef>
+        <defName>VFEI_EchoingVoice</defName>
+    </ToolCapacityDef>
+
+    <ToolCapacityDef>
+        <defName>VFEI_Shrill</defName>
+    </ToolCapacityDef>
+
+    <ToolCapacityDef>
+        <defName>VFEI_Leap</defName>
+    </ToolCapacityDef>
+
+</Defs>

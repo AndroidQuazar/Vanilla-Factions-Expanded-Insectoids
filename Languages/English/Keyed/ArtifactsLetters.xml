@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LetterLabelForcedRecruit>
+    <LetterLabelForcedTame>{1_kind} has been force-tamed</LetterLabelForcedTame>
+    <LetterArtifactTame>{0} has become tame.</LetterArtifactTame>
+
+    <LetterLabelForcedTameFail>{1_kind} force-taming has failed</LetterLabelForcedTameFail>
+    <LetterArtifactTameFail>{0} taming has failed, driving the animal insane.</LetterArtifactTameFail>
+
+    <LetterLabelForcedRecruit>{0} is joining your faction.</LetterLabelForcedRecruit>
+    <LetterArtifactRecruit>{0} has been pacified and is joining your faction!</LetterArtifactRecruit>
+    <GoodWillAffectedByArtifact>Good will with the faction target dropped by 50 due to the use of artifact on one of their member.</GoodWillAffectedByArtifact>
+</LetterLabelForcedRecruit>

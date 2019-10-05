@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VFEI_LargeHive</defName>
+    <label>large hive</label>
+    <description>An enourmous hive of insectoid creatures. If activated, it will spawn additional insect types and hives over time, as well as delicious and valuable insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/HiveLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.4</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>210</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <VFEI_RoyalInsectJelly>30</VFEI_RoyalInsectJelly>
+      <InsectJelly>15</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>VFEI_RoyalInsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>
+          <min>26000</min>
+          <max>30000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>40</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>royaljelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>
+          <min>26000</min>
+          <max>30000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>20</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>20000</min>
+          <max>60000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Insectoid Larvae Cocoon -->
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VFEI_InsectoidLarvaeCocoon</defName>
+    <label>insectoid larvae cocoon</label>
+    <description>A larve cocoon of giant insects. If activated, it will spawn additional insects and hives over time, as well as delicious and valuable insect jelly.</description>
+    <thingClass>Hive</thingClass>
+    <graphicData>
+      <texPath>Things/Building/LarvaCocoon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>130</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <killedLeavings>
+      <InsectJelly>30</InsectJelly>
+    </killedLeavings>
+    <comps>
+      <li Class="CompProperties_SpawnerHives" />
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>InsectJelly</thingToSpawn>
+        <spawnCount>20</spawnCount>
+        <spawnIntervalRange>
+          <min>26000</min>
+          <max>30000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>20</spawnMaxAdjacent>
+        <spawnForbidden>true</spawnForbidden>
+        <saveKeysPrefix>jelly</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_Spawner">
+        <thingToSpawn>GlowPod</thingToSpawn>
+        <spawnCount>1</spawnCount>
+        <spawnIntervalRange>
+          <min>30000</min>
+          <max>60000</max>
+        </spawnIntervalRange>
+        <spawnMaxAdjacent>1</spawnMaxAdjacent>
+        <saveKeysPrefix>pod</saveKeysPrefix>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <heatPerSecond>6</heatPerSecond>
+        <heatPushMaxTemperature>38</heatPushMaxTemperature>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>Filth_Slime</filthDef>
+        <spawnCountOnSpawn>10</spawnCountOnSpawn>
+        <spawnMtbHours>4</spawnMtbHours>
+        <spawnRadius>5</spawnRadius>
+      </li>
+      <li Class="CompProperties_Maintainable">
+        <ticksHealthy>60000</ticksHealthy>
+        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <damagePerTickRare>10</damagePerTickRare>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>
