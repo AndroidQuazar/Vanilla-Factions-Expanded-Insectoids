@@ -57,6 +57,8 @@
     <Compile Include="Events\IncidentWorker_InfestedCrashedShipModule.cs" />
     <Compile Include="Events\IncidentWorker_InfestedCrashedShipPart.cs" />
     <Compile Include="Events\IncidentWorker_InfestedPartDropSmall.cs" />
+    <Compile Include="Hediff_JellyWithdraw.cs" />
+    <Compile Include="IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="LordJob_InsectAttack.cs" />
     <Compile Include="ThingDefsVFEI.cs" />
     <Compile Include="LordJob_InsectDefendChunk.cs" />

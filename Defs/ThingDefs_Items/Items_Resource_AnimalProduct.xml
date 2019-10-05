@@ -39,6 +39,9 @@
           <severity>0.032</severity>
           <divideByBodySize>true</divideByBodySize>
         </li>
+        <li Class="VFEI.IngestionOutcomeDoer_Immunity">
+          <percent>5</percent>
+        </li>
       </outcomeDoers>
     </ingestible>
 		<comps>
@@ -48,7 +51,7 @@
 			</li>
 			<li Class="CompProperties_Drug">
 				<chemical>VFEI_RoyalJelly</chemical>
-				<addictiveness>0.010</addictiveness>
+				<addictiveness>0.040</addictiveness>
 				<minToleranceToAddict>0.15</minToleranceToAddict>
 				<existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
 				<needLevelOffset>1</needLevelOffset>
