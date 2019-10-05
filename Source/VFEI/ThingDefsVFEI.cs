@@ -17,6 +17,9 @@ namespace VFEI
         public static ThingDef VFEI_InfestedCrashedShipModule;
         public static ThingDef VFEI_InfestedShipModuleIncoming;
 
+        // Filth
+        public static ThingDef Filth_BloodInsect;
+
         // Other
         public static FactionDef VFEI_Insect;
         public static ThingDef InsectJelly;

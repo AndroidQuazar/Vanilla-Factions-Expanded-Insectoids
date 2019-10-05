@@ -38,6 +38,23 @@ namespace VFEI
                     Pawn megaspider = PawnGenerator.GeneratePawn(pawnKindDef, colonistFac);
                     megaspider.Name = colonistName;
                     GenSpawn.Spawn(megaspider, colonistLoc, map, WipeMode.Vanish);
+                    for(int i = 0; i < 20; i++)
+                    {
+                        IntVec3 c;
+                        CellFinder.TryFindRandomReachableCellNear(colonistLoc, map, 4, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                        int flag2 = random.Next(0, 2);
+                        if(flag2 == 1)
+                        {
+                            FilthMaker.MakeFilth(c, map, ThingDefsVFEI.Filth_BloodInsect);
+                        }
+                        else
+                        {
+                            FilthMaker.MakeFilth(c, map, ThingDefOf.Filth_Blood);
+                        }                        
+                    }
+                    #pragma warning disable 0618
+                    string text = "LetterTransformed".Translate(colonistName).CapitalizeFirst();
+                    Find.LetterStack.ReceiveLetter("LetterLabelTransormed".Translate(colonistName).CapitalizeFirst(), text, LetterDefOf.NegativeEvent, megaspider, null, null);
                 }
                 this.firstTime = false;
             }
