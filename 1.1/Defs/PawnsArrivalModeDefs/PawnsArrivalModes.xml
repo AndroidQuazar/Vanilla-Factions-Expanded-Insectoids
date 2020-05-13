@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnsArrivalModeDef>
+    <defName>VFEI_Tunneling</defName>
+    <workerClass>VFEI.RaidArrivalModes.PawnsArrivalModeWorker_Tunneling</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(0, 0.10)</li>
+        <li>(300, 0.15)</li>
+        <li>(700, 0.30)</li>
+      </points>
+    </selectionWeightCurve>
+    <minTechLevel>Animal</minTechLevel>
+    <textEnemy>Insects of the {1} are tunneling towards you! They will break through in a few seconds and attack!</textEnemy>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>VFEI_Burrow</defName>
+    <workerClass>VFEI.RaidArrivalModes.PawnsArrivalModeWorker_Burrow</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(0, 0.10)</li>
+        <li>(300, 0.15)</li>
+        <li>(700, 0.30)</li>
+      </points>
+    </selectionWeightCurve>
+    <minTechLevel>Animal</minTechLevel>
+    <textEnemy>Insects of the {1} are tunneling towards you! They will break through in a few seconds and attack!
+
+It seems their plan is to open up tunnels, allowing larger swarms to crawl through. Destroy their burrows as soon as possible, as they will never stop sending waves of insects.</textEnemy>
+  </PawnsArrivalModeDef>
+
+</Defs>

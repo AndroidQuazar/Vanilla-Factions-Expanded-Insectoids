@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>VFEI_PsychicNoDamage</defName>
+    <label>psychic</label>
+    <canInterruptJobs>false</canInterruptJobs>
+    <makesBlood>false</makesBlood>
+    <defaultDamage>0</defaultDamage>
+    <explosionCellMote>Mote_BlastExtinguisher</explosionCellMote>
+    <explosionColorEdge>(1, 1, 1, 0.05)</explosionColorEdge>
+    <harmsHealth>false</harmsHealth>
+    <soundExplosion>Explosion_Smoke</soundExplosion>
+    <combatLogRules>Damage_Smoke</combatLogRules>
+  </DamageDef>
+
+</Defs>

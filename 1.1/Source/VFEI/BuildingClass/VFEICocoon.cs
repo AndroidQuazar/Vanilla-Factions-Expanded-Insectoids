@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using RimWorld;
+using Verse;
+using Verse.Sound;
+using UnityEngine;
+
+namespace VFEI
+{
+    class VFEICocoon : ThingWithComps
+    {
+		int timeBeforeInsect;
+		bool once = true;
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look<int>(ref this.timeBeforeInsect, "timeBeforeInsect");
+			Scribe_Values.Look<bool>(ref this.once, "onceCocoonDev");
+		}
+
+		public override void PostMapInit()
+		{
+			base.PostMapInit();
+			if (once) { this.timeBeforeInsect = Find.TickManager.TicksGame + 15000; once = false; }
+		}
+
+		public override void Tick()
+		{
+			base.Tick();
+			if (Find.TickManager.TicksGame == this.timeBeforeInsect)
+			{
+				IntVec3 pos = this.Position;
+				Map map = this.Map;
+
+				IntVec3 c;
+				CellFinder.TryFindRandomReachableCellNear(pos, map, 4, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+				FilthMaker.TryMakeFilth(c, map, ThingDefOf.Filth_Slime);
+				SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(pos, map));
+
+				List<PawnKindDef> pawnKindDefs = new List<PawnKindDef>();
+				pawnKindDefs.Add(PawnKindDefOf.Megascarab);
+				pawnKindDefs.Add(PawnKindDefOf.Spelopede);
+				pawnKindDefs.Add(PawnKindDefOf.Megaspider);
+				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Megapede);
+				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Gigalocust);
+				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
+				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Queen);
+
+				PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower);
+				List<Faction> factions = new List<Faction>();
+				FactionManager.GetInViewOrder(factions);
+				Pawn p = PawnGenerator.GeneratePawn(pawnKind, factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement());
+				GenSpawn.Spawn(p, pos, map);
+
+				this.Destroy();
+			}
+		}
+	}
+}

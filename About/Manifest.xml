@@ -3,17 +3,11 @@
   <version>1.0.0.0</version>
   <identifier>VanillaFactionsExpandedInsectoids</identifier>
   <dependencies>
-	<li>VanillaFactionsExpandedCore</li>
+    <li>VanillaFactionsExpandedCore</li>
   </dependencies>
-  <loadBefore>
-	<li>VanillaWeaponsExapnded</li>
-	<li>VanillaApparelExpnded</li>
-	<li>VanillaArmourExpanded</li>
-  </loadBefore>
+  <loadBefore></loadBefore>
   <loadAfter>
-	<li>JecsTools</li>
-	<li>VanillaFactionsExpandedCore</li>
-	<li>VanillaFactionsExpandedMedieval</li>
+    <li>VanillaFactionsExpandedCore</li>
   </loadAfter>
   <showCrossPromotions>true</showCrossPromotions>
   <manifestUri></manifestUri>

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Vanilla Factions Expanded: Insectoids</name>
-	<author>Oskar Potocki, Trunken, Kikohi, XeoNovaDan, Luizi</author>
-	<supportedVersions><li>1.0</li></supportedVersions>
+	<name>Vanilla Factions Expanded - Insectoids</name>
+	<author>Oskar Potocki</author>
+	<supportedVersions><li>1.1</li></supportedVersions>
+	<packageId>OskarPotocki.VFEInsectoids</packageId>
 	<description>
-5 brains, 1 mind. Enter the swarmthinking.
+		Vanilla Factions Expanded - Insectoids
 	</description>
+	<modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
 </ModMetaData>

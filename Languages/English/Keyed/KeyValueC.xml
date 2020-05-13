@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <LarvaeTimeSpawn>{0} before next larvae spawn.</LarvaeTimeSpawn>
+    <InsectSpawned>Insects arrived and are attacking.</InsectSpawned>
+    <InsectsArriveIn>{0} arrive in {1}</InsectsArriveIn>
+</LanguageData>

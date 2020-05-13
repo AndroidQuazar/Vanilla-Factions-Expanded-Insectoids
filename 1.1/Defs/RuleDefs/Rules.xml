@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RuleDef>
+    <defName>InsectoidBase</defName>
+    <symbol>insectoidBase</symbol>
+    <resolvers>
+      <li Class="VFEI.GenStuff.SymbolResolver_Ibase" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>InsectoidBaseLightning</defName>
+    <symbol>insectoidBaseLightning</symbol>
+    <resolvers>
+      <li Class="VFEI.GenStuff.SymbolResolver_OutdoorLightingIbase" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>InsectoidBaseEdgeDefense</defName>
+    <symbol>insectoidBaseEdgeDefense</symbol>
+    <resolvers>
+      <li Class="VFEI.GenStuff.SymbolResolver_EdgeDefenseIbase" />
+    </resolvers>
+  </RuleDef>
+
+  <RuleDef>
+    <defName>InsectoidBaseEdgeRocks</defName>
+    <symbol>insectoidBaseEdgeRocks</symbol>
+    <resolvers>
+      <li Class="VFEI.GenStuff.SymbolResolver_EdgeRocksIbase" />
+    </resolvers>
+  </RuleDef>
+
+</Defs>
