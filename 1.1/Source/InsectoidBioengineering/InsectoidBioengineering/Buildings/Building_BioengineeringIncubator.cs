@@ -295,16 +295,22 @@ namespace InsectoidBioengineering
                         }
                         else
                         {
-                            this.BeginIncubation(theFirstGenomeIAmGoingToInsert, theSecondGenomeIAmGoingToInsert, theThirdGenomeIAmGoingToInsert);
-                            this.innerContainerFirstGenome.ClearAndDestroyContents();
-                            this.innerContainerSecondGenome.ClearAndDestroyContents();
-                            this.innerContainerThirdGenome.ClearAndDestroyContents();
-                            theFirstGenomeIAmGoingToInsert = "None";
-                            theSecondGenomeIAmGoingToInsert = "None";
-                            theThirdGenomeIAmGoingToInsert = "None";
-                            StartInsertionJobs = false;
+                            string IncubationResult = this.BeginIncubation(theFirstGenomeIAmGoingToInsert, theSecondGenomeIAmGoingToInsert, theThirdGenomeIAmGoingToInsert);
+                            if (IncubationResult != "") {
+                                this.innerContainerFirstGenome.ClearAndDestroyContents();
+                                this.innerContainerSecondGenome.ClearAndDestroyContents();
+                                this.innerContainerThirdGenome.ClearAndDestroyContents();
+                                theFirstGenomeIAmGoingToInsert = "None";
+                                theSecondGenomeIAmGoingToInsert = "None";
+                                theThirdGenomeIAmGoingToInsert = "None";
+                                StartInsertionJobs = false;
+                            }
+                            else {
+                                Messages.Message("VFEI_CombinationNoResults".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
 
+                            }
 
+                            
                         }
 
                     };
@@ -319,8 +325,9 @@ namespace InsectoidBioengineering
 
         }
 
-        public void BeginIncubation(string genome1, string genome2, string genome3) {
+        public string BeginIncubation(string genome1, string genome2, string genome3) {
 
+            IncubatingInsectoid = "";
             foreach (InsectoidCombinationDef element in DefDatabase<InsectoidCombinationDef>.AllDefs)
             {
                 if ((genome1 == element.genomes[0] && genome2 == element.genomes[1] && genome3 == element.genomes[2]) ||
@@ -334,10 +341,18 @@ namespace InsectoidBioengineering
                 {
                     
                     IncubatingInsectoid = element.result.RandomElement();
-                    IncubationStarted = true;
+                    if (IncubatingInsectoid != "")
+                    {
+                        IncubationStarted = true;
+                        return IncubatingInsectoid;
+                    }
+                    
+                    
                 }
+               
 
             }
+            return "";
 
         }
 
@@ -378,7 +393,7 @@ namespace InsectoidBioengineering
 
             if (IncubationStarted)
             {
-                incubationTxt = "VFEI_IncubationInProgress".Translate(this.IncubatingInsectoid) + (ticksPerDay-(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
+                incubationTxt = "VFEI_IncubationInProgress".Translate(ThingDef.Named(this.IncubatingInsectoid).LabelCap) + (ticksPerDay-(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
             }
 
 

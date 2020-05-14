@@ -39,7 +39,7 @@
     <label>drone genetic material</label>
     <description>A vial of genetic material extracted from an insectoid.</description>   
     <graphicData>
-      <texPath>Things/Item/VFEI_DroneGenome</texPath>
+      <texPath>Things/Item/GenomeIcons/VFEI_DroneGenome</texPath>
     </graphicData>    
   </ThingDef>
   
@@ -48,7 +48,7 @@
     <label>warrior genetic material</label>
     <description>A vial of genetic material extracted from an insectoid.</description>   
     <graphicData>
-      <texPath>Things/Item/VFEI_WarriorGenome</texPath>
+      <texPath>Things/Item/GenomeIcons/VFEI_WarriorGenome</texPath>
     </graphicData>    
   </ThingDef>
  
@@ -57,7 +57,7 @@
     <label>royal genetic material</label>
     <description>A vial of genetic material extracted from an insectoid.</description>   
     <graphicData>
-      <texPath>Things/Item/VFEI_RoyalGenome</texPath>
+      <texPath>Things/Item/GenomeIcons/VFEI_RoyalGenome</texPath>
     </graphicData>    
   </ThingDef>
  

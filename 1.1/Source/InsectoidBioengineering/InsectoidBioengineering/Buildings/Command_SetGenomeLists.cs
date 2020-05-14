@@ -25,36 +25,19 @@ namespace InsectoidBioengineering
                 building = obj as Building_BioengineeringIncubator;
                 if (building != null)
                 {
-                    
-
-                    if (building.theFirstGenomeIAmGoingToInsert == "None")
+                    foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
                     {
-                       
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_NoGenome", true);
-                        defaultLabel = "VFEI_InsertFirstGenomeNone".Translate();
-                    }
-                    else
-                    if (building.theFirstGenomeIAmGoingToInsert == "VFEI_RoyalGenome")
-                    {
-                      
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_RoyalGenome", true);
-                        defaultLabel = "VFEI_InsertFirstGenomeRoyal".Translate();
-                    }
-                    else if (building.theFirstGenomeIAmGoingToInsert == "VFEI_WarriorGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_WarriorGenome", true);
-                        defaultLabel = "VFEI_InsertFirstGenomeWarrior".Translate();
-                    }
-                    else if (building.theFirstGenomeIAmGoingToInsert == "VFEI_DroneGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_DroneGenome", true);
-                        defaultLabel = "VFEI_InsertFirstGenomeDrone".Translate();
-                    }
+                        foreach (string genome in element.genomes)
+                        {
+                            if (building.theFirstGenomeIAmGoingToInsert == genome)
+                            {
+                                icon = ContentFinder<Texture2D>.Get("Things/Item/GenomeIcons/" + genome, true);
+                                defaultLabel = (genome + "_InsertFirstGenome").Translate();
+                            }
+                        }
+                    }                   
                 }
             }
-            
-
-
         }
 
         public override void ProcessInput(Event ev)
@@ -66,51 +49,31 @@ namespace InsectoidBioengineering
             {
                 Building_BioengineeringIncubator building = (Building_BioengineeringIncubator)this.building;
                 building.theFirstGenomeIAmGoingToInsert = "None";
-                
+
             }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_RoyalGenome".Translate(), delegate
+
+            foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
             {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_RoyalGenome", true));
-                if (genome.Count >0)
+                foreach (string thisGenome in element.genomes.Where(thisGenome => thisGenome != "None"))
                 {
-                   
-                    this.TryInsertFirstGenome();
-                } else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
 
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_WarriorGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_WarriorGenome", true));
-                if (genome.Count > 0)
-                {
-                   
-                    this.TryInsertFirstGenome();
-                }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
+                    list.Add(new FloatMenuOption(thisGenome.Translate(), delegate
+                    {
+                        genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed(thisGenome, true));
+                        if (genome.Count > 0)
+                        {
 
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_DroneGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_DroneGenome", true));
-                if (genome.Count > 0)
-                {
-                    
-                    this.TryInsertFirstGenome();
+                            this.TryInsertFirstGenome();
+                        }
+                        else
+                        {
+                            Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
+                        }
+
+                    }, MenuOptionPriority.Default, null, null, 29f, null, null));
+
                 }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-
-
+            }         
             Find.WindowStack.Add(new FloatMenu(list));
         }
 
@@ -145,36 +108,19 @@ namespace InsectoidBioengineering
                 building = obj as Building_BioengineeringIncubator;
                 if (building != null)
                 {
-
-
-                    if (building.theSecondGenomeIAmGoingToInsert == "None")
+                    foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
                     {
-
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_NoGenome", true);
-                        defaultLabel = "VFEI_InsertSecondGenomeNone".Translate();
-                    }
-                    else
-                    if (building.theSecondGenomeIAmGoingToInsert == "VFEI_RoyalGenome")
-                    {
-
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_RoyalGenome", true);
-                        defaultLabel = "VFEI_InsertSecondGenomeRoyal".Translate();
-                    }
-                    else if (building.theSecondGenomeIAmGoingToInsert == "VFEI_WarriorGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_WarriorGenome", true);
-                        defaultLabel = "VFEI_InsertSecondGenomeWarrior".Translate();
-                    }
-                    else if (building.theSecondGenomeIAmGoingToInsert == "VFEI_DroneGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_DroneGenome", true);
-                        defaultLabel = "VFEI_InsertSecondGenomeDrone".Translate();
+                        foreach (string genome in element.genomes)
+                        {
+                            if (building.theSecondGenomeIAmGoingToInsert == genome)
+                            {
+                                icon = ContentFinder<Texture2D>.Get("Things/Item/GenomeIcons/" + genome, true);
+                                defaultLabel = (genome + "_InsertSecondGenome").Translate();
+                            }
+                        }
                     }
                 }
             }
-
-
-
         }
 
         public override void ProcessInput(Event ev)
@@ -188,50 +134,28 @@ namespace InsectoidBioengineering
                 building.theSecondGenomeIAmGoingToInsert = "None";
 
             }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_RoyalGenome".Translate(), delegate
+            foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
             {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_RoyalGenome", true));
-                if (genome.Count > 0)
+                foreach (string thisGenome in element.genomes.Where(thisGenome => thisGenome != "None"))
                 {
 
-                    this.TryInsertSecondGenome();
+                    list.Add(new FloatMenuOption(thisGenome.Translate(), delegate
+                    {
+                        genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed(thisGenome, true));
+                        if (genome.Count > 0)
+                        {
+
+                            this.TryInsertSecondGenome();
+                        }
+                        else
+                        {
+                            Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
+                        }
+
+                    }, MenuOptionPriority.Default, null, null, 29f, null, null));
+
                 }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_WarriorGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_WarriorGenome", true));
-                if (genome.Count > 0)
-                {
-
-                    this.TryInsertSecondGenome();
-                }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_DroneGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_DroneGenome", true));
-                if (genome.Count > 0)
-                {
-
-                    this.TryInsertSecondGenome();
-                }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-
-
+            }
             Find.WindowStack.Add(new FloatMenu(list));
         }
 
@@ -265,36 +189,19 @@ namespace InsectoidBioengineering
                 building = obj as Building_BioengineeringIncubator;
                 if (building != null)
                 {
-
-
-                    if (building.theThirdGenomeIAmGoingToInsert == "None")
+                    foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
                     {
-
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_NoGenome", true);
-                        defaultLabel = "VFEI_InsertThirdGenomeNone".Translate();
-                    }
-                    else
-                    if (building.theThirdGenomeIAmGoingToInsert == "VFEI_RoyalGenome")
-                    {
-
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_RoyalGenome", true);
-                        defaultLabel = "VFEI_InsertThirdGenomeRoyal".Translate();
-                    }
-                    else if (building.theThirdGenomeIAmGoingToInsert == "VFEI_WarriorGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_WarriorGenome", true);
-                        defaultLabel = "VFEI_InsertThirdGenomeWarrior".Translate();
-                    }
-                    else if (building.theThirdGenomeIAmGoingToInsert == "VFEI_DroneGenome")
-                    {
-                        icon = ContentFinder<Texture2D>.Get("Things/Item/VFEI_DroneGenome", true);
-                        defaultLabel = "VFEI_InsertThirdGenomeDrone".Translate();
+                        foreach (string genome in element.genomes)
+                        {
+                            if (building.theThirdGenomeIAmGoingToInsert == genome)
+                            {
+                                icon = ContentFinder<Texture2D>.Get("Things/Item/GenomeIcons/" + genome, true);
+                                defaultLabel = (genome + "_InsertThirdGenome").Translate();
+                            }
+                        }
                     }
                 }
             }
-
-
-
         }
 
         public override void ProcessInput(Event ev)
@@ -308,50 +215,28 @@ namespace InsectoidBioengineering
                 building.theThirdGenomeIAmGoingToInsert = "None";
 
             }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_RoyalGenome".Translate(), delegate
+            foreach (AcceptedGenomesDef element in DefDatabase<AcceptedGenomesDef>.AllDefs)
             {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_RoyalGenome", true));
-                if (genome.Count > 0)
+                foreach (string thisGenome in element.genomes.Where(thisGenome => thisGenome != "None"))
                 {
 
-                    this.TryInsertThirdGenome();
+                    list.Add(new FloatMenuOption(thisGenome.Translate(), delegate
+                    {
+                        genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed(thisGenome, true));
+                        if (genome.Count > 0)
+                        {
+
+                            this.TryInsertThirdGenome();
+                        }
+                        else
+                        {
+                            Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
+                        }
+
+                    }, MenuOptionPriority.Default, null, null, 29f, null, null));
+
                 }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_WarriorGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_WarriorGenome", true));
-                if (genome.Count > 0)
-                {
-
-                    this.TryInsertThirdGenome();
-                }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-            list.Add(new FloatMenuOption("VFEI_DroneGenome".Translate(), delegate
-            {
-                genome = map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_DroneGenome", true));
-                if (genome.Count > 0)
-                {
-
-                    this.TryInsertThirdGenome();
-                }
-                else
-                {
-                    Messages.Message("VFEI_NoGeneticMaterial".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
-                }
-
-            }, MenuOptionPriority.Default, null, null, 29f, null, null));
-
-
+            }
             Find.WindowStack.Add(new FloatMenu(list));
         }
 

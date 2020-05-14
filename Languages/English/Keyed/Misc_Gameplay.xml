@@ -6,22 +6,22 @@
 	<!-- Genome Lists -->
 	
 	<VFEI_InsertFirstGenomeDesc>Select first genome for the bio-engineering incubator</VFEI_InsertFirstGenomeDesc>
-	<VFEI_InsertFirstGenomeNone>First genome: None</VFEI_InsertFirstGenomeNone>
-	<VFEI_InsertFirstGenomeRoyal>First genome: Royal</VFEI_InsertFirstGenomeRoyal>
-	<VFEI_InsertFirstGenomeWarrior>First genome: Warrior</VFEI_InsertFirstGenomeWarrior>
-	<VFEI_InsertFirstGenomeDrone>First genome: Drone</VFEI_InsertFirstGenomeDrone>
+	<None_InsertFirstGenome>First genome: None</None_InsertFirstGenome>
+	<VFEI_RoyalGenome_InsertFirstGenome>First genome: Royal</VFEI_RoyalGenome_InsertFirstGenome>
+	<VFEI_WarriorGenome_InsertFirstGenome>First genome: Warrior</VFEI_WarriorGenome_InsertFirstGenome>
+	<VFEI_DroneGenome_InsertFirstGenome>First genome: Drone</VFEI_DroneGenome_InsertFirstGenome>
 	
 	<VFEI_InsertSecondGenomeDesc>Select second genome for the bio-engineering incubator</VFEI_InsertSecondGenomeDesc>
-	<VFEI_InsertSecondGenomeNone>Second genome: None</VFEI_InsertSecondGenomeNone>
-	<VFEI_InsertSecondGenomeRoyal>Second genome: Royal</VFEI_InsertSecondGenomeRoyal>
-	<VFEI_InsertSecondGenomeWarrior>Second genome: Warrior</VFEI_InsertSecondGenomeWarrior>
-	<VFEI_InsertSecondGenomeDrone>Second genome: Drone</VFEI_InsertSecondGenomeDrone>
+	<None_InsertSecondGenome>Second genome: None</None_InsertSecondGenome>
+	<VFEI_RoyalGenome_InsertSecondGenome>Second genome: Royal</VFEI_RoyalGenome_InsertSecondGenome>
+	<VFEI_WarriorGenome_InsertSecondGenome>Second genome: Warrior</VFEI_WarriorGenome_InsertSecondGenome>
+	<VFEI_DroneGenome_InsertSecondGenome>Second genome: Drone</VFEI_DroneGenome_InsertSecondGenome>
 	
 	<VFEI_InsertThirdGenomeDesc>Select third genome for the bio-engineering incubator</VFEI_InsertThirdGenomeDesc>
-	<VFEI_InsertThirdGenomeNone>Third genome: None</VFEI_InsertThirdGenomeNone>
-	<VFEI_InsertThirdGenomeRoyal>Third genome: Royal</VFEI_InsertThirdGenomeRoyal>
-	<VFEI_InsertThirdGenomeWarrior>Third genome: Warrior</VFEI_InsertThirdGenomeWarrior>
-	<VFEI_InsertThirdGenomeDrone>Third genome: Drone</VFEI_InsertThirdGenomeDrone>
+	<None_InsertThirdGenome>Third genome: None</None_InsertThirdGenome>
+	<VFEI_RoyalGenome_InsertThirdGenome>Third genome: Royal</VFEI_RoyalGenome_InsertThirdGenome>
+	<VFEI_WarriorGenome_InsertThirdGenome>Third genome: Warrior</VFEI_WarriorGenome_InsertThirdGenome>
+	<VFEI_DroneGenome_InsertThirdGenome>Third genome: Drone</VFEI_DroneGenome_InsertThirdGenome>
 	
 	<VFEI_RoyalGenome>Royal Genome</VFEI_RoyalGenome>
 	<VFEI_WarriorGenome>Warrior Genome</VFEI_WarriorGenome>
@@ -49,10 +49,17 @@
 	
 	<VFEI_IncubationInProgress>Incubation in Progress. A {0} will be produced in: </VFEI_IncubationInProgress>
 	
+	<VFEI_CombinationNoResults>This combination produces no results</VFEI_CombinationNoResults>
+
+	
 	
 
+	<!-- For patches -->
 
-
+	<VFEI_BlackHiveGenome_InsertFirstGenome>First genome: Black Hive</VFEI_BlackHiveGenome_InsertFirstGenome>
+	<VFEI_BlackHiveGenome_InsertSecondGenome>Second genome: Black Hive</VFEI_BlackHiveGenome_InsertSecondGenome>
+	<VFEI_BlackHiveGenome_InsertThirdGenome>Third genome: Black Hive</VFEI_BlackHiveGenome_InsertThirdGenome>
+	<VFEI_BlackHiveGenome>Black Hive Genome</VFEI_BlackHiveGenome>
 
 
 
