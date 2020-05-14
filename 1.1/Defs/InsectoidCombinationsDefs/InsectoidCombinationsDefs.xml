@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination0</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>None</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>Megaspider</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination1</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>Megalopede</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination2</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_RoyalGenome</li>
+		</genomes>	
+		<result>
+			<li>Megascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	
+	
+</Defs>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+		<defName>VFEI_BioengineeringIncubator</defName>
+		<label>bio-engineering incubator</label>
+		<description>Description goes here.</description>
+		<thingClass>InsectoidBioengineering.Building_BioengineeringIncubator</thingClass>
+
+		<graphicData>
+			<texPath>Things/Building/VFEI_BioengineeringIncubator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<shaderType>CutoutComplex</shaderType>
+
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<costList>
+
+			<Steel>250</Steel>
+			<ComponentIndustrial>5</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<uiIconScale>0.5</uiIconScale>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>800</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+
+		
+		<tickerType>Rare</tickerType>
+
+		<size>(3,3)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		
+		<surfaceType>Item</surfaceType>
+		
+		<!--<comps>
+			<li Class="RimBees.CompProperties_BeeHouse">
+				<isBeehouse>true</isBeehouse>
+				<electricBeehouse>false</electricBeehouse>
+				<climatizedBeehouse>false</climatizedBeehouse>
+				<beehouseRate>1</beehouseRate>
+			</li>
+			
+		</comps>-->
+	</ThingDef>
+</Defs>

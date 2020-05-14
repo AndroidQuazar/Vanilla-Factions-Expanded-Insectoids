@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+
+
+	<!-- Genome Lists -->
+	
+	<VFEI_InsertFirstGenomeDesc>Select first genome for the bio-engineering incubator</VFEI_InsertFirstGenomeDesc>
+	<VFEI_InsertFirstGenomeNone>First genome: None</VFEI_InsertFirstGenomeNone>
+	<VFEI_InsertFirstGenomeRoyal>First genome: Royal</VFEI_InsertFirstGenomeRoyal>
+	<VFEI_InsertFirstGenomeWarrior>First genome: Warrior</VFEI_InsertFirstGenomeWarrior>
+	<VFEI_InsertFirstGenomeDrone>First genome: Drone</VFEI_InsertFirstGenomeDrone>
+	
+	<VFEI_InsertSecondGenomeDesc>Select second genome for the bio-engineering incubator</VFEI_InsertSecondGenomeDesc>
+	<VFEI_InsertSecondGenomeNone>Second genome: None</VFEI_InsertSecondGenomeNone>
+	<VFEI_InsertSecondGenomeRoyal>Second genome: Royal</VFEI_InsertSecondGenomeRoyal>
+	<VFEI_InsertSecondGenomeWarrior>Second genome: Warrior</VFEI_InsertSecondGenomeWarrior>
+	<VFEI_InsertSecondGenomeDrone>Second genome: Drone</VFEI_InsertSecondGenomeDrone>
+	
+	<VFEI_InsertThirdGenomeDesc>Select third genome for the bio-engineering incubator</VFEI_InsertThirdGenomeDesc>
+	<VFEI_InsertThirdGenomeNone>Third genome: None</VFEI_InsertThirdGenomeNone>
+	<VFEI_InsertThirdGenomeRoyal>Third genome: Royal</VFEI_InsertThirdGenomeRoyal>
+	<VFEI_InsertThirdGenomeWarrior>Third genome: Warrior</VFEI_InsertThirdGenomeWarrior>
+	<VFEI_InsertThirdGenomeDrone>Third genome: Drone</VFEI_InsertThirdGenomeDrone>
+	
+	<VFEI_RoyalGenome>Royal Genome</VFEI_RoyalGenome>
+	<VFEI_WarriorGenome>Warrior Genome</VFEI_WarriorGenome>
+	<VFEI_DroneGenome>Drone Genome</VFEI_DroneGenome>
+	<VFEI_None>Leave empty</VFEI_None>
+	
+	<VFEI_NoGeneticMaterial>There is no genetic material of this type present on the map</VFEI_NoGeneticMaterial>
+	<VFEI_SelectAtLeastOne>At least one of the three slots in the incubator must be filled with genetic material</VFEI_SelectAtLeastOne>
+	
+	<VFEI_StartInsertion>Begin inserting genes</VFEI_StartInsertion>
+	<VFEI_StartInsertionDesc>Order your colonists to begin inserting genetic material in the incubator. This is a hauling job.</VFEI_StartInsertionDesc>
+	
+	<VFEI_RemoveAllGenes>Remove genes</VFEI_RemoveAllGenes>
+	<VFEI_RemoveAllGenesDesc>Empty the incubator, removing all genes that might be still stored inside.</VFEI_RemoveAllGenesDesc>
+	
+	<VFEI_CancelJobs>Cancel insertion</VFEI_CancelJobs>
+	<VFEI_CancelJobsDesc>Cancels gene insertion. All gene hauling jobs will be cancelled.</VFEI_CancelJobsDesc>
+	
+	<VFEI_Engage>Activate Incubator</VFEI_Engage>
+	<VFEI_EngageDesc>Activate Incubator to create a new insectoid from the inserted genetic materials</VFEI_EngageDesc>
+	
+	<VFEI_NoGenesFound>Your colonists were unable to retrive the genetic material</VFEI_NoGenesFound>
+	
+	<VFEI_WaitTillJobsEnd>Genetic material is still being carried to the incubator</VFEI_WaitTillJobsEnd>
+	
+	<VFEI_IncubationInProgress>Incubation in Progress. A {0} will be produced in: </VFEI_IncubationInProgress>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LanguageData>

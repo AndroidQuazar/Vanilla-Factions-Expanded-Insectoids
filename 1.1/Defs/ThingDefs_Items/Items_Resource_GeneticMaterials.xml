@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Genetic Material ====================-->
+
+  <ThingDef Name="VFEI_GeneticsBase" ParentName="ResourceBase" Abstract="True">
+    
+    
+    <graphicData>
+      
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+	
+    <statBases>
+      <MaxHitPoints>15</MaxHitPoints>
+      <MarketValue>500</MarketValue>
+      <Mass>0.10</Mass>
+      <Flammability>1.0</Flammability>     
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+	
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>2</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+
+ 
+  <ThingDef ParentName="VFEI_GeneticsBase">
+    <defName>VFEI_DroneGenome</defName>
+    <label>drone genetic material</label>
+    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <graphicData>
+      <texPath>Things/Item/VFEI_DroneGenome</texPath>
+    </graphicData>    
+  </ThingDef>
+  
+    <ThingDef ParentName="VFEI_GeneticsBase">
+    <defName>VFEI_WarriorGenome</defName>
+    <label>warrior genetic material</label>
+    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <graphicData>
+      <texPath>Things/Item/VFEI_WarriorGenome</texPath>
+    </graphicData>    
+  </ThingDef>
+ 
+     <ThingDef ParentName="VFEI_GeneticsBase">
+    <defName>VFEI_RoyalGenome</defName>
+    <label>royal genetic material</label>
+    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <graphicData>
+      <texPath>Things/Item/VFEI_RoyalGenome</texPath>
+    </graphicData>    
+  </ThingDef>
+ 
+  
+    
+  
+</Defs>
