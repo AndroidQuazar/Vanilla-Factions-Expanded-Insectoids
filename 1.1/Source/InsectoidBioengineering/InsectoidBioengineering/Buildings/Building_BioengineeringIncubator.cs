@@ -247,7 +247,7 @@ namespace InsectoidBioengineering
                     };
                     RB_Gizmo_StartInsertion.defaultLabel = "VFEI_StartInsertion".Translate();
                     RB_Gizmo_StartInsertion.defaultDesc = "VFEI_StartInsertionDesc".Translate();
-                    RB_Gizmo_StartInsertion.icon = ContentFinder<Texture2D>.Get("UI/Commands/LoadTransporter", true);
+                    RB_Gizmo_StartInsertion.icon = ContentFinder<Texture2D>.Get("UI/VFEI_InsertGenomes", true);
                     yield return RB_Gizmo_StartInsertion;
 
 
@@ -269,7 +269,7 @@ namespace InsectoidBioengineering
                     };
                     RB_Gizmo_RemoveAllGenes.defaultLabel = "VFEI_RemoveAllGenes".Translate();
                     RB_Gizmo_RemoveAllGenes.defaultDesc = "VFEI_RemoveAllGenesDesc".Translate();
-                    RB_Gizmo_RemoveAllGenes.icon = ContentFinder<Texture2D>.Get("UI/Commands/PodEject", true);
+                    RB_Gizmo_RemoveAllGenes.icon = ContentFinder<Texture2D>.Get("UI/VFEI_RemoveGenomes", true);
                     yield return RB_Gizmo_RemoveAllGenes;
 
                 }
@@ -283,7 +283,7 @@ namespace InsectoidBioengineering
                     };
                     RB_Gizmo_CancelJobs.defaultLabel = "VFEI_CancelJobs".Translate();
                     RB_Gizmo_CancelJobs.defaultDesc = "VFEI_CancelJobsDesc".Translate();
-                    RB_Gizmo_CancelJobs.icon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel", true);
+                    RB_Gizmo_CancelJobs.icon = ContentFinder<Texture2D>.Get("UI/VFEI_CancelJobs", true);
                     yield return RB_Gizmo_CancelJobs;
 
                     Command_Action RB_Gizmo_Engage = new Command_Action();
