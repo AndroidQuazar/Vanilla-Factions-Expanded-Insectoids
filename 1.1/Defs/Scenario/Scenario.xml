@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ScenarioDef>
-    <defName>LostTribe</defName>
-    <label>Lost Tribe</label>
+    <defName>VFEI_ImperialJanissariesSquad</defName>
+    <label>Imperial Janissaries Squad</label>
     <description>The five of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
     <scenario>
       <summary>A squad of imperial janissaries, overrun by the wrath of the hive.</summary>

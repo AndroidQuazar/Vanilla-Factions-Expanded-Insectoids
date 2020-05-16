@@ -14,15 +14,16 @@
     <factionIconPath>World/InsectoidFaction/Nest</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
-    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
-    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <factionNameMaker>VFEI_NamerFactionInsect</factionNameMaker>
+    <settlementNameMaker>VFEI_NamerSettlementInsectoid</settlementNameMaker>
     <techLevel>Animal</techLevel>
     <raidCommonalityFromPointsCurve>
       <points>
-        <li>(700, 0.1)</li>
-        <li>(900, 0.2)</li>
-        <li>(1200, 1)</li>
-        <li>(4000, 1.5)</li>
+        <li>(300,  0.5)</li>
+        <li>(700,  0.8)</li>
+        <li>(1400, 1.2)</li>
+        <li>(2800, 1.5)</li>
+        <li>(4000, 1.8)</li>
       </points>
     </raidCommonalityFromPointsCurve>
     <humanlikeFaction>false</humanlikeFaction>
@@ -31,6 +32,7 @@
     <canUseAvoidGrid>true</canUseAvoidGrid>
     <earliestRaidDays>20</earliestRaidDays>
     <permanentEnemy>true</permanentEnemy>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
