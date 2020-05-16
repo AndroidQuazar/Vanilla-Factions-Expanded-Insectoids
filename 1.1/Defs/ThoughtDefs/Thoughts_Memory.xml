@@ -29,6 +29,18 @@
       </li>
     </stages>
   </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>VFEI_SeenCuterpillar</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>seen a cuterpillar</label>
+        <description>That small insectoid always brings a smile to my face.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 
   <ThoughtDef>
     <defName>VFEI_AteRoyalJelly</defName>

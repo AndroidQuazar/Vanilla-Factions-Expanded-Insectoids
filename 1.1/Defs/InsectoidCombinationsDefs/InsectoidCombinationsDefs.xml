@@ -23,7 +23,7 @@
 			<li>None</li>
 		</genomes>	
 		<result>
-			<li>Spelopede</li>
+			<li>VFEI_VatGrownCuterpillar</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
@@ -69,7 +69,7 @@
 			<li>VFEI_WarriorGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegaspider</li>
+			<li>VFEI_VatGrownGigascorpion</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>	
 	<InsectoidBioengineering.InsectoidCombinationDef>
@@ -128,7 +128,7 @@
 			<li>None</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownWargling</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 	
@@ -191,7 +191,7 @@
 			<li>VFEI_DroneGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownMegapede</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
