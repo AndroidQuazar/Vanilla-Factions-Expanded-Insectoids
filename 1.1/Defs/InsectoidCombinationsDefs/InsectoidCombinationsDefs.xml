@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+	<!-- Combinations with 1 genome, simple or duplicated -->
 
 	<InsectoidBioengineering.InsectoidCombinationDef>
 		<defName>VFEI_Combination0</defName>
@@ -10,10 +11,10 @@
 			<li>None</li>
 		</genomes>	
 		<result>
-			<li>Megaspider</li>
+			<li>VFEI_VatgrownRoyalLarva</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
-	
+
 	<InsectoidBioengineering.InsectoidCombinationDef>
 		<defName>VFEI_Combination1</defName>
 		<genomes>
@@ -25,7 +26,7 @@
 			<li>Spelopede</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
-	
+
 	<InsectoidBioengineering.InsectoidCombinationDef>
 		<defName>VFEI_Combination2</defName>
 		<genomes>
@@ -38,6 +39,184 @@
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination3</defName>
+		<genomes>
+			<li>VFEI_WarriorGenome</li>
+			<li>None</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownBoomtick</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination4</defName>
+		<genomes>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegaspider</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>	
+		<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination5</defName>
+		<genomes>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_WarriorGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegaspider</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination6</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>None</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination7</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_DroneGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatGrownWorkerAnt</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination8</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_DroneGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	<!-- Combinations with only 2 genomes, not duplicated -->
+	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination9</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination10</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination11</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>None</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatGrownMegacricket</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
 	
 	
+	<!-- Combinations with 2 genomes, 1 of them duplicated -->
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination12</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_WarriorGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination13</defName>
+		<genomes>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_DroneGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+		<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination14</defName>
+		<genomes>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_RoyalGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination15</defName>
+		<genomes>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_WarriorGenome</li>
+			<li>VFEI_DroneGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination16</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_RoyalGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination17</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_WarriorGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatgrownMegascarab</li>
+		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+
 </Defs>

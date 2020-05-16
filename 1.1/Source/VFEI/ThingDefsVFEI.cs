@@ -34,5 +34,7 @@ namespace VFEI
         public static ThingDef VFEI_InsectoidLarvaeCocoon;
         public static JobDef InsectFlee;
         public static TerrainDef Soil;
+        // Animal Body Parts
+        public static BodyPartDef VFEI_ExplosiveSac;
     }
 }

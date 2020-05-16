@@ -7,7 +7,7 @@
     <label>psychic warhead</label>
     <description>An archotech warhead from a long forgotten era. Upon detonation, it releases a strong psychic drone, sending all animals and humanoids in its reach into a berserk rage. Can be fired from mortars. Explodes when damaged.</description>
     <graphicData>
-      <texPath>Things/Resource/PsychicWarhead</texPath>
+      <texPath>Things/Item/VFEI_PsychicWarhead</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>

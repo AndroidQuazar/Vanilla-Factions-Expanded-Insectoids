@@ -51,6 +51,9 @@
 	
 	<VFEI_CombinationNoResults>This combination produces no results</VFEI_CombinationNoResults>
 
+	<VFEI_NotPowered>The bio-engineering incubator is not powered right now</VFEI_NotPowered>
+	<VFEI_IncubationFailure>An incubation progress has failed due to lack of power</VFEI_IncubationFailure>
+
 	
 	
 

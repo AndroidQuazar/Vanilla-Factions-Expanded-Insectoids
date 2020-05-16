@@ -41,12 +41,20 @@ namespace InsectoidBioengineering
         public const int rareTicksPerDay = 240;
         public const int ticksPerDay = 60000;
 
+        public CompPowerTrader compPowerTrader;
+
         public Building_BioengineeringIncubator()
         {
             this.innerContainerFirstGenome = new ThingOwner<Thing>(this, false, LookMode.Deep);
             this.innerContainerSecondGenome = new ThingOwner<Thing>(this, false, LookMode.Deep);
             this.innerContainerThirdGenome = new ThingOwner<Thing>(this, false, LookMode.Deep);
 
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            this.compPowerTrader = base.GetComp<CompPowerTrader>();
         }
 
         public override void ExposeData()
@@ -293,7 +301,11 @@ namespace InsectoidBioengineering
                         {
                             Messages.Message("VFEI_WaitTillJobsEnd".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
                         }
-                        else
+                        else if (!compPowerTrader.PowerOn) {
+                            Messages.Message("VFEI_NotPowered".Translate(), null, MessageTypeDefOf.NegativeEvent, true);
+
+                        }
+                        else 
                         {
                             string IncubationResult = this.BeginIncubation(theFirstGenomeIAmGoingToInsert, theSecondGenomeIAmGoingToInsert, theThirdGenomeIAmGoingToInsert);
                             if (IncubationResult != "") {
@@ -361,6 +373,12 @@ namespace InsectoidBioengineering
             base.TickRare();
             if (IncubationStarted) {
                 IncubationCounter++;
+                if (!compPowerTrader.PowerOn)
+                {
+                    Messages.Message("VFEI_IncubationFailure".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
+                    IncubationCounter = 0;
+                    IncubationStarted = false;
+                }
                 if (IncubationCounter > rareTicksPerDay)
                 {
 
@@ -393,7 +411,7 @@ namespace InsectoidBioengineering
 
             if (IncubationStarted)
             {
-                incubationTxt = "VFEI_IncubationInProgress".Translate(ThingDef.Named(this.IncubatingInsectoid).LabelCap) + (ticksPerDay-(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
+                incubationTxt = "\n"+"VFEI_IncubationInProgress".Translate(ThingDef.Named(this.IncubatingInsectoid).LabelCap) + (ticksPerDay-(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
             }
 
 
