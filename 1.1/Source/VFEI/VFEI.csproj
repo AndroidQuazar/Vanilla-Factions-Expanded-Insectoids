@@ -75,8 +75,9 @@
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="Heddifs\Hediff_JellyWithdraw.cs" />
     <Compile Include="IngestionOutcomeDoer_Immunity.cs" />
-    <Compile Include="JobStuff\JobDriver_Harvest.cs" />
+    <Compile Include="JobStuff\JobGiver_Harvest.cs" />
     <Compile Include="JobStuff\JobDriver_InsectFlee.cs" />
+    <Compile Include="JobStuff\JobGiver_Mine.cs" />
     <Compile Include="JobStuff\LordJob_InsectAttack.cs" />
     <Compile Include="PawnComps\CompFeminism.cs" />
     <Compile Include="PawnComps\CompLarvaeToCocoon.cs" />

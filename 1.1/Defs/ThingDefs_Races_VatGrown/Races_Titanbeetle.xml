@@ -3,51 +3,37 @@
 
 
 <ThingDef ParentName="BaseInsect">
-		<defName>VFEI_VatGrownMegapede</defName>
-		<label>Vat-grown megapede</label>
-		<description>A giant, heavy insectoid that glides on dozens of tiny legs. Its thick chitin armor and sharp mandibles the size of an elephant’s tusk make it an excellent siege machine. Due to being extremely slow, they are somewhat vulnerable to hit-and-run tactics. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
+		<defName>VFEI_VatGrownTitanbeetle</defName>
+		<label>Vat-grown titanbeetle</label>
+		<description>A giant, beetle-like insectoid recognized for its ability to break down solid rocks into smaller, easier to carry, chunks. It’s heavily armoured to save it from eventual avalanches, whilst it’s deadly horn allows it to quickly eliminate potential predators with a single blow. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.\n\nNOTE: The Titanbeetle needs to be trained in "Guard" to be able to help with mining. Things mined by the beetle will always appear forbidden due to game constraints.</description>
 		<statBases>
-			<MoveSpeed>2.1</MoveSpeed>
-			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-			<MarketValue>750</MarketValue>
-			<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+			<MoveSpeed>2.5</MoveSpeed>
+			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+			<MarketValue>550</MarketValue>
+			<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
 			<MiningSpeed>4</MiningSpeed>
 		</statBases>
 		<tools>
 			<li>
 				<label>head claw</label>
 				<capacities>
-					<li>Cut</li>
+					<li>Blunt</li>
 				</capacities>
-				<power>15</power>
+				<power>25</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
+				
 			</li>
 			<li>
 				<label>mandibles</label>
 				<capacities>
-					<li>ToxicBite</li>
+					<li>Cut</li>
 				</capacities>
 				<power>12</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>14</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
+				
 			</li>
 			<li>
 				<label>head</label>
@@ -62,16 +48,18 @@
 			</li>
 		</tools>
 		<race>
-			
+			<thinkTreeMain>VFEI_AnimalMiner</thinkTreeMain>
+			<thinkTreeConstant>VFEI_AnimalMinerConstant</thinkTreeConstant>
+
 			<body>BeetleLikeWithClaw</body>
-			<baseHungerRate>0.30</baseHungerRate>
-			<baseBodySize>1.8</baseBodySize>
-			<baseHealthScale>4.1</baseHealthScale>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>2.5</baseBodySize>
+			<baseHealthScale>3.5</baseHealthScale>
+			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
 			<leatherDef>VFEI_Chitin</leatherDef>
-			<wildness>0.75</wildness>
+			<wildness>0.7</wildness>
 			<lifeExpectancy>2</lifeExpectancy>
 			<lifeStageAges>
 				<li>
@@ -102,36 +90,36 @@
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI_VatGrownMegapede</defName>
-		<label>Vat-grown megapede</label>
-		<race>VFEI_VatGrownMegapede</race>
-		<combatPower>150</combatPower>
+		<defName>VFEI_VatGrownTitanbeetle</defName>
+		<label>Vat-grown titanbeetle</label>
+		<race>VFEI_VatGrownTitanbeetle</race>
+		<combatPower>175</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_VatGrownTitanbeetle</texPath>
 					<drawSize>1.2</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_Dessicated_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_Dessicated_VatGrownTitanbeetle</texPath>
 					<drawSize>1.2</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_VatGrownTitanbeetle</texPath>
 					<drawSize>2.0</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_Dessicated_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_Dessicated_VatGrownTitanbeetle</texPath>
 					<drawSize>2.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_VatGrownTitanbeetle</texPath>
 					<drawSize>3</drawSize>
 					<shadowData>
 						<volume>(0.5, 0.7, 0.43)</volume>
@@ -139,7 +127,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegapede/VFEI_Dessicated_VatGrownMegapede</texPath>
+					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownTitanbeetle/VFEI_Dessicated_VatGrownTitanbeetle</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
