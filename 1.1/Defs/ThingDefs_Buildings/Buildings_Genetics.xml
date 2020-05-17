@@ -52,6 +52,14 @@
 				<shortCircuitInRain>true</shortCircuitInRain>
 				<basePowerConsumption>1200</basePowerConsumption>
 			</li>
+			<li Class="InsectoidBioengineering.CompProperties_FailureRate">
+				<failureRatePercent>5</failureRatePercent>
+				
+			</li>
+			<li Class="InsectoidBioengineering.CompProperties_IncubationTime">
+				<timeInDays>1</timeInDays>
+				
+			</li>
 			<li Class="CompProperties_Flickable"/>
 			
 			<li Class="CompProperties_Breakdownable"/>

@@ -35,7 +35,7 @@
 			<li>VFEI_RoyalGenome</li>
 		</genomes>	
 		<result>
-			<li>Megascarab</li>
+			<li>VFEI_VatGrownPrincess</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
@@ -80,7 +80,7 @@
 			<li>None</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownMegascarab</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 	<InsectoidBioengineering.InsectoidCombinationDef>
@@ -116,7 +116,7 @@
 			<li>None</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownSpelopede</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 	
@@ -155,7 +155,7 @@
 			<li>VFEI_WarriorGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownSpiderweaver</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
@@ -167,7 +167,7 @@
 			<li>VFEI_DroneGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownRoyalMaggot</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 	
@@ -179,7 +179,7 @@
 			<li>VFEI_RoyalGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownTitanlocust</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
@@ -203,7 +203,7 @@
 			<li>VFEI_RoyalGenome</li>
 		</genomes>	
 		<result>
-			<li>VFEI_VatgrownMegascarab</li>
+			<li>VFEI_VatGrownGigawig</li>
 		</result>				
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
@@ -217,6 +217,21 @@
 		<result>
 			<li>VFEI_VatGrownTitanbeetle</li>
 		</result>				
+	</InsectoidBioengineering.InsectoidCombinationDef>
+	
+	<!-- Mixing the three different genomes -->
+
+	<InsectoidBioengineering.InsectoidCombinationDef>
+		<defName>VFEI_Combination18</defName>
+		<genomes>
+			<li>VFEI_DroneGenome</li>
+			<li>VFEI_RoyalGenome</li>
+			<li>VFEI_WarriorGenome</li>
+		</genomes>	
+		<result>
+			<li>VFEI_VatGrownMonstrosity</li>
+		</result>	
+		<isHostile>true</isHostile>
 	</InsectoidBioengineering.InsectoidCombinationDef>
 
 </Defs>

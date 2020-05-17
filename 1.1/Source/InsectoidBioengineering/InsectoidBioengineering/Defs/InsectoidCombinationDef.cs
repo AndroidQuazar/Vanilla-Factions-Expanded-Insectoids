@@ -11,6 +11,7 @@ namespace InsectoidBioengineering
 
         public List<string> genomes;
         public List<string> result;
+        public bool isHostile = false;
 
     }
 }

@@ -3,8 +3,7 @@
 
 
 
-	<!-- Genome Lists -->
-	
+	<!-- Incubator: Genome Lists -->	
 	<VFEI_InsertFirstGenomeDesc>Select first genome for the bio-engineering incubator</VFEI_InsertFirstGenomeDesc>
 	<None_InsertFirstGenome>First genome: None</None_InsertFirstGenome>
 	<VFEI_RoyalGenome_InsertFirstGenome>First genome: Royal</VFEI_RoyalGenome_InsertFirstGenome>
@@ -28,6 +27,7 @@
 	<VFEI_DroneGenome>Drone Genome</VFEI_DroneGenome>
 	<VFEI_None>Leave empty</VFEI_None>
 	
+	<!-- Incubator: General -->	
 	<VFEI_NoGeneticMaterial>There is no genetic material of this type present on the map</VFEI_NoGeneticMaterial>
 	<VFEI_SelectAtLeastOne>At least one of the three slots in the incubator must be filled with genetic material</VFEI_SelectAtLeastOne>
 	
@@ -51,18 +51,23 @@
 	
 	<VFEI_CombinationNoResults>This combination produces no results</VFEI_CombinationNoResults>
 
+	<!-- Incubator: Power related -->
 	<VFEI_NotPowered>The bio-engineering incubator is not powered right now</VFEI_NotPowered>
-	<VFEI_IncubationFailure>An incubation progress has failed due to lack of power</VFEI_IncubationFailure>
+	<VFEI_IncubationFailurePower>An incubation progress has failed due to lack of power</VFEI_IncubationFailurePower>
 
+	<!-- Incubator: Failure -->
+	<VFEI_FailureMonstrosity>Something has gone catastrophically wrong with the incubation progress!</VFEI_FailureMonstrosity>
+	<VFEI_FailureDeath>Something has gone wrong with the incubation progress. The insectoid emerges dead</VFEI_FailureDeath>
+	<VFEI_FailureDisease>Something has gone wrong with the incubation progress. The insectoid emerges sick</VFEI_FailureDisease>
 	
-	
-
 	<!-- For patches -->
-
 	<VFEI_BlackHiveGenome_InsertFirstGenome>First genome: Black Hive</VFEI_BlackHiveGenome_InsertFirstGenome>
 	<VFEI_BlackHiveGenome_InsertSecondGenome>Second genome: Black Hive</VFEI_BlackHiveGenome_InsertSecondGenome>
 	<VFEI_BlackHiveGenome_InsertThirdGenome>Third genome: Black Hive</VFEI_BlackHiveGenome_InsertThirdGenome>
 	<VFEI_BlackHiveGenome>Black Hive Genome</VFEI_BlackHiveGenome>
+	
+	<!-- Comp Strings -->	
+	<VFEI_MonstrosityTimeToLive>Cell degeneration in: {0}</VFEI_MonstrosityTimeToLive>
 
 
 

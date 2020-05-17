@@ -105,7 +105,8 @@
      
     </graphicData>
     <statBases>
-      <MarketValue>7.0</MarketValue>
+      <MarketValue>3.0</MarketValue>
+	  <Nutrition>0.05</Nutrition>
     </statBases>
   </ThingDef>
 

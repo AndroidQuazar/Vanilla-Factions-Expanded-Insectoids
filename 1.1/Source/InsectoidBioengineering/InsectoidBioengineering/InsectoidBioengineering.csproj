@@ -300,8 +300,13 @@
   <ItemGroup>
     <Compile Include="Buildings\Building_BioengineeringIncubator.cs" />
     <Compile Include="Buildings\Command_SetGenomeLists.cs" />
+    <Compile Include="Buildings\CompIncubationTime.cs" />
+    <Compile Include="Buildings\CompFailureRate.cs" />
+    <Compile Include="Buildings\CompProperties_IncubationTime.cs" />
+    <Compile Include="Buildings\CompProperties_FailureRate.cs" />
     <Compile Include="Buildings\GenomeListSetupUtility.cs" />
     <Compile Include="Defs\AcceptedGenomesDef.cs" />
+    <Compile Include="Defs\IncubationFailureDef.cs" />
     <Compile Include="Defs\InsectoidCombinationDef.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Works and Jobs\JobDriver_InsertThirdGenome.cs" />

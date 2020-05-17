@@ -4,7 +4,7 @@
 	<!-- ============================================================ -->
 
 	<ThingDef ParentName="BaseInsect">
-		<defName>VFEI_VatgrownMegascarab</defName>
+		<defName>VFEI_VatGrownMegascarab</defName>
 		<label>Vat-grown megascarab</label>
 		<description>A large genetically-engineered beetle. Once the worker caste of an artificial ecosystem of insectoids designed to fight mechanoid invasions, it is now usually seen without its deadlier insectoid cousins. Still, its size and hard shell make it dangerous when it attacks. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
 		<statBases>
@@ -84,9 +84,9 @@
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI_VatgrownMegascarab</defName>
+		<defName>VFEI_VatGrownMegascarab</defName>
 		<label>Vat-grown megascarab</label>		
-		<race>VFEI_VatgrownMegascarab</race>
+		<race>VFEI_VatGrownMegascarab</race>
 		<combatPower>35</combatPower>
 		<ecoSystemWeight>0.2</ecoSystemWeight>
 		<canArriveManhunter>false</canArriveManhunter>

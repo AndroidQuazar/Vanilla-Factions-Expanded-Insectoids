@@ -13,7 +13,7 @@ namespace InsectoidBioengineering
 {
     public class Building_BioengineeringIncubator : Building, IThingHolder
     {
-
+        private System.Random rand = new System.Random();
         public ThingOwner innerContainerFirstGenome = null;
         public ThingOwner innerContainerSecondGenome = null;
         public ThingOwner innerContainerThirdGenome = null;
@@ -37,6 +37,7 @@ namespace InsectoidBioengineering
         public bool IncubationStarted = false;
         public int IncubationCounter = 0;
         public string IncubatingInsectoid = "";
+        public bool IsHostile = false;
 
         public const int rareTicksPerDay = 240;
         public const int ticksPerDay = 60000;
@@ -86,6 +87,7 @@ namespace InsectoidBioengineering
             Scribe_Values.Look<bool>(ref this.IncubationStarted, "IncubationStarted", false, false);
             Scribe_Values.Look<int>(ref this.IncubationCounter, "IncubationCounter", 0, false);
             Scribe_Values.Look<string>(ref this.IncubatingInsectoid, "IncubatingInsectoid", "", false);
+            Scribe_Values.Look<bool>(ref this.IsHostile, "IsHostile", false, false);
 
 
 
@@ -353,6 +355,7 @@ namespace InsectoidBioengineering
                 {
                     
                     IncubatingInsectoid = element.result.RandomElement();
+                    IsHostile = element.isHostile;
                     if (IncubatingInsectoid != "")
                     {
                         IncubationStarted = true;
@@ -375,24 +378,97 @@ namespace InsectoidBioengineering
                 IncubationCounter++;
                 if (!compPowerTrader.PowerOn)
                 {
-                    Messages.Message("VFEI_IncubationFailure".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
+                    Messages.Message("VFEI_IncubationFailurePower".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
                     IncubationCounter = 0;
                     IncubationStarted = false;
                 }
-                if (IncubationCounter > rareTicksPerDay)
-                {
 
-                    PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(IncubatingInsectoid), Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, true, true, false, false);
-                    Pawn pawn = PawnGenerator.GeneratePawn(request);
-                    GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3, null), this.Map, WipeMode.Vanish);
-                    SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map, false));
-                    for (int i = 0; i < 20; i++)
-                    {
-                        IntVec3 c;
-                        CellFinder.TryFindRandomReachableCellNear(this.Position, this.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
-                        FilthMaker.TryMakeFilth(c, this.Map, ThingDefOf.Filth_AmnioticFluid);
+                if (IncubationCounter > rareTicksPerDay*this.TryGetComp<CompIncubationTime>().Props.timeInDays)
+                {
+                    if (rand.NextDouble() < (this.TryGetComp<CompFailureRate>().Props.failureRatePercent / 100)){
+
+                        List<IncubationFailureDef> tempFailureList = DefDatabase<IncubationFailureDef>.AllDefs.ToList();
+                        IncubationFailureDef incubationFailure = tempFailureList.RandomElementByWeight(((IncubationFailureDef s) => s.commonality));
+                        if (incubationFailure.justKill)
+                        {
+                            Messages.Message("VFEI_FailureDeath".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
+                            for (int i = 0; i < 20; i++)
+                            {
+                                IntVec3 c;
+                                CellFinder.TryFindRandomReachableCellNear(this.Position, this.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                                FilthMaker.TryMakeFilth(c, this.Map, ThingDef.Named("Filth_BloodInsect"));
+                            }
+                            SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map, false));
+                            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(IncubatingInsectoid), Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, true, true, false, false);
+                            Pawn pawn = PawnGenerator.GeneratePawn(request);
+                            GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3, null), this.Map, WipeMode.Vanish);
+                            pawn.Kill(null);
 
                     }
+                        else if (incubationFailure.creatureDef!=null)
+                        {
+                            Messages.Message("VFEI_FailureMonstrosity".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
+                            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(incubationFailure.creatureDef), Faction.OfInsects, PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, true, true, false, false);
+                            Pawn pawn = PawnGenerator.GeneratePawn(request);
+                            GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3, null), this.Map, WipeMode.Vanish);
+                            SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map, false));
+                            for (int i = 0; i < 20; i++)
+                            {
+                                IntVec3 c;
+                                CellFinder.TryFindRandomReachableCellNear(this.Position, this.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                                FilthMaker.TryMakeFilth(c, this.Map, ThingDefOf.Filth_AmnioticFluid);
+
+                            }
+                            pawn.mindState.mentalStateHandler.TryStartMentalState(DefDatabase<MentalStateDef>.GetNamed("ManhunterPermanent", true), null, true, false, null, false);
+                        }
+                        else if (incubationFailure.hediffDef!= null)
+                        {
+                            Messages.Message("VFEI_FailureDisease".Translate(), this, MessageTypeDefOf.NegativeEvent, true);
+                            PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(IncubatingInsectoid), Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, true, true, false, false);
+                            Pawn pawn = PawnGenerator.GeneratePawn(request);
+                            GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3, null), this.Map, WipeMode.Vanish);
+                            SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map, false));
+                            for (int i = 0; i < 20; i++)
+                            {
+                                IntVec3 c;
+                                CellFinder.TryFindRandomReachableCellNear(this.Position, this.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                                FilthMaker.TryMakeFilth(c, this.Map, ThingDefOf.Filth_AmnioticFluid);
+
+                            }
+                            pawn.health.AddHediff(incubationFailure.hediffDef);
+                        }
+
+
+
+                    }
+                    else {
+                        Faction faction;
+                        if (IsHostile)
+                        {
+                            faction = Faction.OfInsects;
+                        }
+                        else
+                        {
+                            faction = Faction.OfPlayer;
+                        }
+                        PawnGenerationRequest request = new PawnGenerationRequest(PawnKindDef.Named(IncubatingInsectoid), faction, PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, true, true, false, false);
+                        Pawn pawn = PawnGenerator.GeneratePawn(request);
+                        GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3, null), this.Map, WipeMode.Vanish);
+                        SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.Position, this.Map, false));
+                        for (int i = 0; i < 20; i++)
+                        {
+                            IntVec3 c;
+                            CellFinder.TryFindRandomReachableCellNear(this.Position, this.Map, 2, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                            FilthMaker.TryMakeFilth(c, this.Map, ThingDefOf.Filth_AmnioticFluid);
+
+                        }
+                        if (IsHostile)
+                        {
+                            pawn.mindState.mentalStateHandler.TryStartMentalState(DefDatabase<MentalStateDef>.GetNamed("ManhunterPermanent", true), null, true, false, null, false);
+                        }
+
+                    }
+                    
                     IncubationCounter = 0;
                     IncubationStarted = false;
 
@@ -411,7 +487,7 @@ namespace InsectoidBioengineering
 
             if (IncubationStarted)
             {
-                incubationTxt = "\n"+"VFEI_IncubationInProgress".Translate(ThingDef.Named(this.IncubatingInsectoid).LabelCap) + (ticksPerDay-(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
+                incubationTxt = "\n"+"VFEI_IncubationInProgress".Translate(ThingDef.Named(this.IncubatingInsectoid).LabelCap) + ((int)(ticksPerDay*this.TryGetComp<CompIncubationTime>().Props.timeInDays) -(IncubationCounter*250)).ToStringTicksToPeriod(true, false, true, true);
             }
 
 
