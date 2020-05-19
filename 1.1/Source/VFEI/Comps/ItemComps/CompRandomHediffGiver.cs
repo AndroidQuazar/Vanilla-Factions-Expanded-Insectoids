@@ -42,7 +42,7 @@ namespace VFEI.Comps.ItemComps
             string text = "MutationOutcomeLetter".Translate(randRecipe.label.Substring(8));
             Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NeutralEvent, new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), null, null);
 
-            this.parent.PostRemoved();
+            this.Pawn.health.RemoveHediff(this.parent);
         }
     }
 }
