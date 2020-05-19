@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-    <!--<Operation Class="PatchOperationAdd">
-        <xpath>Defs/BodyDef[defName="BeetleLikeWithClaw"]/corePart</xpath>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Human"]/recipes</xpath>
         <value>
-            <groups>
-                <li>InsectShell</li>
-            </groups>
+            <li>VFEI_InstallDroneGenome</li>
         </value>
-    </Operation>-->
+    </Operation>
 
 </Patch>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>VFEI_BodyPartsInsect</defName>
+    <label>insect</label>
+    <parent>BodyParts</parent>
+  </ThingCategoryDef>
+
+  <ThingDef Name="BodyPartInsectBase" ParentName="BodyPartBase" Abstract="True">
+    <techLevel>Animal</techLevel>
+    <thingCategories>
+      <li>VFEI_BodyPartsInsect</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Item/HealthItemInsectoid</texPath>
+      <color>(155,165,148)</color>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <statBases>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+  </ThingDef>
+
+  <!-- Drone genome recipe -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>VFEI_InstallDroneGenome</defName>
+    <label>install drone genome</label>
+    <description>Install a drone genome.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_DroneGenome</ThingDef></descriptionHyperlinks>
+    <workerClass>VFEI.Other.Recipe_AddMutationHediff</workerClass>
+    <jobString>Installing drone genome.</jobString>
+    <workAmount>2000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_DroneGenome</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_DroneGenome</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <addsHediff>VFEI_DroneGenome</addsHediff>
+  </RecipeDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_DroneGenome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>drone genome</label>
+    <labelNoun>a drone genome</labelNoun>
+    <description>An installed drone genome.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_DroneGenome</spawnThingOnRemoved>
+    <comps>
+      <li Class="VFEI.Comps.ItemComps.Properties.CompProperties_RandomHediffGiver">
+        <allowedRecipeDefs>
+          <li>VFEI_InstallInsectoidLeg</li>
+        </allowedRecipeDefs>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Insectoid leg -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_InsectoidLeg</defName>
+    <label>insectoid leg</label>
+    <labelNoun>an insectoid leg</labelNoun>
+    <description>A jointed appendage of an insectoid, consisting of several chitin covered segments. Whilst it’s an extremely painful mutation, this leg has much higher resistance to damage.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_InsectoidLeg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_InsectoidLeg</defName>
+    <label>insectoid leg</label>
+    <description>A jointed appendage of an insectoid, consisting of several chitin covered segments. Whilst it’s an extremely painful mutation, this leg has much higher resistance to damage.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallInsectoidLeg</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallInsectoidLeg</defName>
+    <label>install insectoid leg</label>
+    <description>Install an insectoid leg.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_InsectoidLeg</ThingDef></descriptionHyperlinks>
+    <jobString>Installing insectoid leg.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_InsectoidLeg</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_InsectoidLeg</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Leg</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_InsectoidLeg</addsHediff>
+  </RecipeDef>
+
+</Defs>
