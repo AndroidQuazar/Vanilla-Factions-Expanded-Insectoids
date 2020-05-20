@@ -6,7 +6,7 @@
 		<defName>VFEI_VatGrownGigascorpion</defName>
 		<label>Vat-grown gigascorpion</label>
 
-		<description>A car-sized creature consisting almost entirely of muscle, thick chitin plating, claws and a venomous stinger. This insectoid is fast, agile, and capable of inflicting venomous stings to its foes. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
+		<description>A car-sized creature consisting almost entirely of muscle, thick chitin plating, claws and a stinger. This insectoid is fast, agile, and capable of inflicting venomous stings to its foes. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
 		<statBases>
 			<MoveSpeed>4.00</MoveSpeed>
 			<ComfyTemperatureMin>-10</ComfyTemperatureMin>

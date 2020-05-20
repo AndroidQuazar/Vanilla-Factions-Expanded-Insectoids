@@ -6,7 +6,7 @@
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_VatGrownMegacricket</defName>
 		<label>Vat-grown megacricket</label>
-		<description>A medium-sized bioengineered combination of a cricket and a woodworm, megacrickets provide sustenance to the hive through devouring trees and vegetation. They are also capable of supporting the hive by digging out crops for easier harvest. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.\n\nNOTE: The Megacricket needs to be trained in "Guard" to be able to help with harvests.</description>
+		<description>A medium-sized bioengineered combination of a cricket and a woodworm, megacrickets  nourish themselves on trees and vegetation. They are also capable of supporting the hive by digging out crops for easier harvest. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.\n\nNOTE: The Megacricket needs to be trained in "Guard" to be able to help with harvests.</description>
 		<statBases>
 			<MoveSpeed>5</MoveSpeed>
 			<ComfyTemperatureMin>-25</ComfyTemperatureMin>

@@ -154,7 +154,7 @@
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_Insectoid_RoyalMegaspider</defName>
 		<label>insectoid royal megaspider</label>
-		<description>A rhino-sized natural spawn of the insectoid queen herself, serving not only as her bodyguard but also as a primary mate. Designed not for work, but for combat only, its thick chitinous armor makes it hard to kill, while its long deadly ripper-blades allow it to slay intruders in the name of his queen.</description>
+		<description>Not actually a spider, the royal megaspider is a rhino-sized natural spawn of the insectoid queen herself, serving not only as her bodyguard but also as a primary mate. Designed not for work, but for combat only, its thick chitinous armor makes it hard to kill, while its long deadly ripper-blades allow it to slay intruders in the name of his queen.</description>
 		<statBases>
 			<MoveSpeed>3.20</MoveSpeed>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
@@ -538,7 +538,7 @@
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_Insectoid_Larvae</defName>
 		<label>insectoid larvae</label>
-		<description>The juvenile form of an insectoid, larvae are harmless, slow and easy to kill. After some time has passed, it metamorphoses into an adult insectoid. There is no way to tell what kind of insect will crawl out of its cocoon.</description>
+		<description>The juvenile form of an insectoid, larvae are harmless, slow and easy to kill. After some time has passed, it undergoes a metamorphosis, turning into an adult insectoid. There is no way to tell what kind of insect will crawl out of its cocoon.</description>
 		<statBases>
 			<MoveSpeed>1.50</MoveSpeed>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>

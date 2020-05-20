@@ -5,7 +5,7 @@
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_VatGrownGigawig</defName>
 		<label>Vat-grown gigawig</label>
-		<description>A huge insectoid consisting of several segments of hard chitin plates, with large claws that allow it to dig through the rock to unearth minerals and ore. Often used across the urbworld to work in quarries and mines, the gigawig regularly digs through the ground consuming rocks and leaving valuable metals ready for picking. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
+		<description>A huge insectoid consisting of several segments of hard chitin plates, with large claws that allow it to dig through the rock to unearth minerals and ore. Often used across the urbworld to work in quarries and mines, the gigawig regularly digs through the ground, consuming rocks and leaving valuable metals ready for picking. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
 		<statBases>
 			<MoveSpeed>2</MoveSpeed>
 			<ComfyTemperatureMin>-10</ComfyTemperatureMin>

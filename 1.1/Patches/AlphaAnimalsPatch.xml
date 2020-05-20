@@ -122,6 +122,16 @@
 
 					</value>
 				</li>
+				
+				<li Class="PatchOperationAdd"> 
+					<xpath>/Defs/TraderKindDef[defName="VFEI_Orbital_BioEngineeringSupplier"]/stockGenerators/</xpath>
+					<value>
+						<li Class="StockGenerator_SingleDef">
+							<thingDef>VFEI_BlackHiveGenome</thingDef>
+							<countRange>1~8</countRange>
+						  </li>
+					</value>
+				</li>
 
 
 
