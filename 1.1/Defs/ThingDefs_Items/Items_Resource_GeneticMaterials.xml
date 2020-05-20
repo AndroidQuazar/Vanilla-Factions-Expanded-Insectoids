@@ -15,7 +15,7 @@
 	
     <statBases>
       <MaxHitPoints>15</MaxHitPoints>
-      <MarketValue>500</MarketValue>
+      <MarketValue>100</MarketValue>
       <Mass>0.10</Mass>
       <Flammability>1.0</Flammability>     
       <DeteriorationRate>6</DeteriorationRate>
@@ -55,6 +55,9 @@
      <ThingDef ParentName="VFEI_GeneticsBase">
     <defName>VFEI_RoyalGenome</defName>
     <label>royal genetic material</label>
+	<statBases>    
+      <MarketValue>300</MarketValue>     
+    </statBases>
     <description>A vial of genetic material extracted from an insectoid.</description>   
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_RoyalGenome</texPath>
