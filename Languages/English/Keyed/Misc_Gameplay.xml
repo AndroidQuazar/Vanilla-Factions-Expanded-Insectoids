@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-
-
 	<!-- Incubator: Genome Lists -->	
 	<VFEI_InsertFirstGenomeDesc>Select first genome for the bio-engineering incubator</VFEI_InsertFirstGenomeDesc>
 	<None_InsertFirstGenome>First genome: None</None_InsertFirstGenome>
@@ -68,25 +66,23 @@
 	
 	<!-- Comp Strings -->	
 	<VFEI_MonstrosityTimeToLive>Cell degeneration in: {0}</VFEI_MonstrosityTimeToLive>
+	<LarvaeTimeSpawn>{0} before next larvae spawn.</LarvaeTimeSpawn>
+    <InsectSpawned>Insects arrived and are attacking.</InsectSpawned>
+    <InsectsArriveIn>{0} arrive in {1}</InsectsArriveIn>
 
+	<!-- Artifact letter -->
+	<LetterLabelForcedTame>{1_kind} has been force-tamed</LetterLabelForcedTame>
+    <LetterArtifactTame>{0} has become tame.</LetterArtifactTame>
 
+    <LetterLabelForcedTameFail>{1_kind} force-taming has failed</LetterLabelForcedTameFail>
+    <LetterArtifactTameFail>{0} taming has failed, driving the animal insane.</LetterArtifactTameFail>
 
+    <LetterLabelForcedRecruit>{0} is joining your faction.</LetterLabelForcedRecruit>
+    <LetterArtifactRecruit>{0} has been pacified and is joining your faction!</LetterArtifactRecruit>
+    <GoodWillAffectedByArtifact>Good will with the faction target dropped by 50 due to the use of artifact on one of their member.</GoodWillAffectedByArtifact>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<!-- Random mutation letter -->
+	<MutationOutcome>Mutation Outcome</MutationOutcome>
+    <MutationOutcomeLetter>Mutation developed: {0}</MutationOutcomeLetter>
 
 </LanguageData>
