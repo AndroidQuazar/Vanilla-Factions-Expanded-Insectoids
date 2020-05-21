@@ -20,29 +20,50 @@ namespace VFEI.Comps.ItemComps
             }
         }
 
-        private int ticksToMutate;
-
-        public override void CompExposeData()
+        bool ApplyMutation(RecipeDef recipeDef, out BodyPartRecord bodyPartRecord)
         {
-            Scribe_Values.Look<int>(ref this.ticksToMutate, "ticksToMutate");
-        }
-
-        public override void CompPostMake()
-        {
-            base.CompPostMake();
-            this.ticksToMutate = Rand.RangeInclusive(100, 600);
+            bodyPartRecord = MedicalRecipesUtility.GetFixedPartsToApplyOn(recipeDef, this.Pawn).RandomElement();
+            List<Hediff> hediffs = this.Pawn.health.hediffSet.hediffs;
+            for (int i = hediffs.Count - 1; i >= 0; i--)
+            {
+                if (hediffs[i].Part == bodyPartRecord && hediffs[i].def.defName != "MissingBodyPart")
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            RecipeDef randRecipe = this.Props.allowedRecipeDefs.RandomElement();
-            this.Pawn.health.AddHediff(randRecipe.addsHediff, MedicalRecipesUtility.GetFixedPartsToApplyOn(randRecipe, this.Pawn).RandomElement());
+            int MaxTryNumb = 10;
+            bool mutate = false;
+            for (int i = 0; i < MaxTryNumb; i++)
+            {
+                RecipeDef randRecipe = this.Props.allowedRecipeDefs.RandomElement();
+                BodyPartRecord bodyPartRecord = new BodyPartRecord();
+                mutate = ApplyMutation(randRecipe, out bodyPartRecord);
+                if (mutate)
+                {
+                    MaxTryNumb = i;
+                    this.Pawn.health.RestorePart(bodyPartRecord);
+                    this.Pawn.health.AddHediff(randRecipe.addsHediff, bodyPartRecord);
 
-            string label = "MutationOutcome".Translate();
-            string text = "MutationOutcomeLetter".Translate(randRecipe.label.Substring(8));
-            Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NeutralEvent, new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), null, null);
+                    string label1 = "MutationOutcome".Translate();
+                    string text1 = "MutationOutcomeLetter".Translate(randRecipe.label.Substring(8));
+                    Find.LetterStack.ReceiveLetter(label1, text1, LetterDefOf.NeutralEvent, new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), null, null);
 
-            this.Pawn.health.RemoveHediff(this.parent);
+                    this.Pawn.health.RemoveHediff(this.parent);
+                }
+            }
+            if (!mutate)
+            {
+                string label = "FailedMutation".Translate();
+                string text = "FailedMutationLetter".Translate();
+                Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NeutralEvent, new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), null, null);
+
+                this.Pawn.health.RemoveHediff(this.parent);
+            }
         }
     }
 }

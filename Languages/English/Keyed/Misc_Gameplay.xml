@@ -81,8 +81,11 @@
     <LetterArtifactRecruit>{0} has been pacified and is joining your faction!</LetterArtifactRecruit>
     <GoodWillAffectedByArtifact>Good will with the faction target dropped by 50 due to the use of artifact on one of their member.</GoodWillAffectedByArtifact>
 
-	<!-- Random mutation letter -->
+	<!-- Random mutation letters -->
 	<MutationOutcome>Mutation Outcome</MutationOutcome>
-    <MutationOutcomeLetter>Mutation developed: {0}</MutationOutcomeLetter>
+    <MutationOutcomeLetter>Mutation developed: {0}.</MutationOutcomeLetter>
+	<FailedMutation>Mutation failed!</FailedMutation>
+	<FailedMutationLetter>Mutation failed, no body part could grow.</FailedMutationLetter>
+
 
 </LanguageData>
