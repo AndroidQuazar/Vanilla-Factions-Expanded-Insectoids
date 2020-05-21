@@ -8,7 +8,6 @@
   </ThingCategoryDef>
 
   <ThingDef Name="BodyPartInsectBase" ParentName="BodyPartBase" Abstract="True">
-    <techLevel>Animal</techLevel>
     <thingCategories>
       <li>VFEI_BodyPartsInsect</li>
     </thingCategories>
@@ -37,18 +36,21 @@
     <surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
     <ingredients>
       <li>
-        <filter>
-          <thingDefs>
-            <li>VFEI_DroneGenome</li>
-          </thingDefs>
-        </filter>
+        <filter><thingDefs><li>VFEI_DroneGenome</li></thingDefs></filter>
         <count>1</count>
+      </li>
+      <li>
+        <filter><categories><li>Medicine</li></categories></filter>
+        <count>2</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
         <li>VFEI_DroneGenome</li>
       </thingDefs>
+      <categories>
+        <li>Medicine</li>
+      </categories>
     </fixedIngredientFilter>
     <addsHediff>VFEI_DroneGenome</addsHediff>
   </RecipeDef>
@@ -67,6 +69,10 @@
       <li Class="VFEI.Comps.ItemComps.Properties.CompProperties_RandomHediffGiver">
         <allowedRecipeDefs>
           <li>VFEI_InstallInsectoidLeg</li>
+          <li>VFEI_InstallInsectoidArm</li>
+          <li>VFEI_InstallCompoundEye</li>
+          <li>VFEI_InstallMandibles</li>
+          <li>VFEI_InstallJellySac</li>
         </allowedRecipeDefs>
       </li>
     </comps>
@@ -86,6 +92,14 @@
       <solid>true</solid>
       <partEfficiency>1</partEfficiency>
     </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>60</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -129,4 +143,261 @@
     <addsHediff>VFEI_InsectoidLeg</addsHediff>
   </RecipeDef>
 
+  <!-- Insectoid arm -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_InsectoidArm</defName>
+    <label>insectoid arm</label>
+    <labelNoun>an insectoid arm</labelNoun>
+    <description>A jointed appendage of an insectoid, consisting of several chitin covered segments. Whilst it’s an extremely painful mutation, this arm has much higher resistance to damage.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_InsectoidArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>60</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_InsectoidArm</defName>
+    <label>insectoid arm</label>
+    <description>A jointed appendage of an insectoid, consisting of several chitin covered segments. Whilst it’s an extremely painful mutation, this arm has much higher resistance to damage.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallInsectoidArm</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallInsectoidArm</defName>
+    <label>install insectoid arm</label>
+    <description>Install an insectoid arm.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_InsectoidArm</ThingDef></descriptionHyperlinks>
+    <jobString>Installing insectoid arm.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_InsectoidArm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_InsectoidArm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Arm</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_InsectoidArm</addsHediff>
+  </RecipeDef>
+
+  <!-- Compound eye -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_CompoundEye</defName>
+    <label>compound eye</label>
+    <labelNoun>a compound eye</labelNoun>
+    <description>An eye consisting of thousands of individual photoreceptor units, compound eyes have a large field of view and help with detecting fast movement, however its visibility range is significantly reduced. Whilst it’s an extremely painful mutation, this eye has a higher resistance to damage.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_CompoundEye</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.5</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.00625</painOffset>
+        <statOffsets>
+          <MaxHitPoints>16</MaxHitPoints>
+          <MeleeDodgeChance>0.2</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_CompoundEye</defName>
+    <label>compound eye</label>
+    <description>An eye consisting of thousands of individual photoreceptor units, compound eyes have a large field of view and help with detecting fast movement, however its visibility range is significantly reduced. Whilst it’s an extremely painful mutation, this eye has a higher resistance to damage.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallCompoundEye</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallCompoundEye</defName>
+    <label>install compound eye</label>
+    <description>Install a compound eye.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_CompoundEye</ThingDef></descriptionHyperlinks>
+    <jobString>Installing compound eye.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_CompoundEye</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_CompoundEye</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Eye</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_CompoundEye</addsHediff>
+  </RecipeDef>
+
+    <!-- Mandibles -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_Mandibles</defName>
+    <label>mandibles</label>
+    <labelNoun>mandible</labelNoun>
+    <description>A pair of appendages situated on the sides of the mouth, Helping to crush and cut the food. Whilst it’s significantly less comfortable than normal jaw, insectoid mandibles significantly increase eating speed.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_Mandibles</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>24</MaxHitPoints>
+          <EatingSpeed>1.5</EatingSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_Mandibles</defName>
+    <label>mandibles</label>
+    <description>A pair of appendages situated on the sides of the mouth, Helping to crush and cut the food. Whilst it’s significantly less comfortable than normal jaw, insectoid mandibles significantly increase eating speed.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallMandibles</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallMandibles</defName>
+    <label>install mandibles</label>
+    <description>Install mandibles.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_Mandibles</ThingDef></descriptionHyperlinks>
+    <jobString>Installing mandibles.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_Mandibles</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_Mandibles</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Jaw</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_Mandibles</addsHediff>
+  </RecipeDef>
+
+  <!-- Jelly Sac -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VFEI_JellySac</defName>
+    <label>jelly sac</label>
+    <labelNoun>a jelly sac</labelNoun>
+    <description>A tube-like organ grown within the body. It allows humans to produce low quantities of insect jelly over time. It’s an extremely painful mutation, in some cases requiring medical enhancement for the person to actually live with it.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_DroneGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_JellySac</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <painOffset>0.0375</painOffset>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VFEI.Comps.HediffComps.CompProperties.CompProperties_SpawnJelly" />
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_JellySac</defName>
+    <label>jelly sac</label>
+    <description>A tube-like organ grown within the body. It allows humans to produce low quantities of insect jelly over time. It’s an extremely painful mutation, in some cases requiring medical enhancement for the person to actually live with it.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallJellySac</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>VFEI_InstallJellySac</defName>
+    <label>install jelly sac</label>
+    <description>Install jelly sac.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_JellySac</ThingDef></descriptionHyperlinks>
+    <jobString>Installing jelly sac.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_JellySac</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_JellySac</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_JellySac</addsHediff>
+  </RecipeDef>
 </Defs>

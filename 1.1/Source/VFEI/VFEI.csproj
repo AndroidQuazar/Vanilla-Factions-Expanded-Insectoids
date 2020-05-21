@@ -55,8 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Comps\ItemComps\Properties\CompProperties_RandomHediffGiver.cs" />
-    <Compile Include="Comps\ItemComps\CompRandomHediffGiver.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
+    <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
+    <Compile Include="Comps\HediffComps\CompRandomHediffGiver.cs" />
+    <Compile Include="Comps\HediffComps\CompSpawnJelly.cs" />
     <Compile Include="Comps\ItemComps\Properties\CompProperties_TargetableHumanOnly.cs" />
     <Compile Include="Comps\ItemComps\CompTargetable_ThingInRadius.cs" />
     <Compile Include="Comps\ItemComps\CompTargetEffect_Recruit.cs" />
@@ -115,5 +117,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

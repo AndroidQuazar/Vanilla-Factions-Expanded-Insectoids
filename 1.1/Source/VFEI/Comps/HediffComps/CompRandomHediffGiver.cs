@@ -26,7 +26,7 @@ namespace VFEI.Comps.ItemComps
             List<Hediff> hediffs = this.Pawn.health.hediffSet.hediffs;
             for (int i = hediffs.Count - 1; i >= 0; i--)
             {
-                if (hediffs[i].Part == bodyPartRecord && hediffs[i].def.defName != "MissingBodyPart")
+                if (hediffs[i].Part == bodyPartRecord && hediffs[i].def.tendable != true)
                 {
                     return false;
                 }
@@ -36,7 +36,7 @@ namespace VFEI.Comps.ItemComps
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            int MaxTryNumb = 10;
+            int MaxTryNumb = 20;
             bool mutate = false;
             for (int i = 0; i < MaxTryNumb; i++)
             {
