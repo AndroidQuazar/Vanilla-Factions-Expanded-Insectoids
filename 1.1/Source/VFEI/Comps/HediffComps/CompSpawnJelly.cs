@@ -30,7 +30,7 @@ namespace VFEI.Comps.HediffComps
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            if (Find.TickManager.TicksGame == this.NextBeforeSpawn)
+            if (Find.TickManager.TicksGame >= this.NextBeforeSpawn)
             {
                 this.NextBeforeSpawn += 60000;
                 Thing thing = ThingMaker.MakeThing(ThingDefOf.InsectJelly);

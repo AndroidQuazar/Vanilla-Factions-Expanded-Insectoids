@@ -20,19 +20,10 @@ namespace VFEI
         {
             Harmony harmony = new Harmony("kikohi.vfe.insectoid");
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "DefeatedPostfix", null), null, null);
-            //harmony.Patch(AccessTools.Method(typeof(World), "HasCaves", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "WorldHasCavesPostfix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(FoodUtility), "ThoughtsFromIngesting", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtsFromIngestingPrefix", null), null, null);
             // ========== Prefix ========== 
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
-            //harmony.Patch(AccessTools.Method(typeof(GenStep_Caves), "Generate", null, null), new HarmonyMethod(typeof(HarmonyPatches), "GenStep_CavesGeneratePrefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
-        }
-
-        static void GenStep_CavesGeneratePrefix(Map map, GenStepParams parms)
-        {
-            if (map.ParentFaction != null && map.ParentFaction.def.defName == "VFEI_Insect")
-            {
-                return;
-            }
         }
 
         static bool InsectoidSettlementGen_Prefix(IntVec3 c, Map map, GenStepParams parms, int stackCount = 1)
@@ -81,12 +72,11 @@ namespace VFEI
             }
         }
 
-        static void WorldHasCavesPostfix(int tile, ref bool __result)
+        static void ThoughtsFromIngestingPrefix(Pawn ingester, Thing foodSource, ThingDef foodDef, ref List<ThoughtDef> __result)
         {
-            Tile tile2 = Find.WorldGrid[tile];
-            if (tile2.hilliness >= Hilliness.Mountainous && Find.World.worldObjects.AnySettlementAt(tile) && Find.World.worldObjects.SettlementAt(tile) is Settlement s && s.Faction.def.defName == "VFEI_Insect")
+            if (ingester.health.hediffSet.HasHediff(ThingDefsVFEI.VFEI_VenomGland))
             {
-                __result = Rand.ChanceSeeded(1f, Gen.HashCombineInt(Find.World.info.Seed, tile));
+                __result.Clear();
             }
         }
     }

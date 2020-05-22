@@ -400,4 +400,287 @@
     </appliedOnFixedBodyParts>
     <addsHediff>VFEI_JellySac</addsHediff>
   </RecipeDef>
+
+  <!-- Warrior genome recipe -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>VFEI_InstallWarriorGenome</defName>
+    <label>install warrior genome</label>
+    <description>Install a warrior genome.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_WarriorGenome</ThingDef></descriptionHyperlinks>
+    <workerClass>VFEI.Other.Recipe_AddMutationHediff</workerClass>
+    <jobString>Installing warrior genome.</jobString>
+    <workAmount>2500</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>VFEI_WarriorGenome</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><categories><li>Medicine</li></categories></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_WarriorGenome</li>
+      </thingDefs>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+    <addsHediff>VFEI_WarriorGenome</addsHediff>
+  </RecipeDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_WarriorGenome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>warrior genome</label>
+    <labelNoun>a warrior genome</labelNoun>
+    <description>An installed warrior genome.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_WarriorGenome</spawnThingOnRemoved>
+    <comps>
+      <li Class="VFEI.Comps.ItemComps.Properties.CompProperties_RandomHediffGiver">
+        <allowedRecipeDefs>
+          <li>VFEI_InstallVenomGland</li>
+          <li>VFEI_InstallPneumaticClaw</li>
+        </allowedRecipeDefs>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Venom gland -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_VenomGland</defName>
+    <label>venom gland</label>
+    <labelNoun>venom gland</labelNoun>
+    <description>A sack-like gland tucked under the tongue that secretes acid, liquifying and allowing to safely consume even the most dangerous foods. The overstimulation of this gland enables the user to throw a short range acid spitting attack, effective at going through armor.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_VenomGland</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>24</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>venom gland</label>
+            <capacities>
+              <li>SpittingOnPawn</li>
+            </capacities>
+            <power>2</power>
+            <cooldownTime>4</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_VenomGland</defName>
+    <label>venom gland</label>
+    <description>A sack-like gland tucked under the tongue that secretes acid, liquifying and allowing to safely consume even the most dangerous foods. The overstimulation of this gland enables the user to throw a short range acid spitting attack, effective at going through armor.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallVenomGland</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallVenomGland</defName>
+    <label>install venom gland</label>
+    <description>Install venom gland.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_VenomGland</ThingDef></descriptionHyperlinks>
+    <jobString>Installing venom gland.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_VenomGland</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_VenomGland</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Jaw</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_VenomGland</addsHediff>
+  </RecipeDef>
+
+    <!-- Pneumatic claw -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_PneumaticClaw</defName>
+    <label>pneumatic claw</label>
+    <labelNoun>pneumatic claw</labelNoun>
+    <description>A powerful pneumatic pincer arm, capable of repeatedly exerting great pressure on the target at the cost of refined motor skills.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_PneumaticClaw</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>70</MaxHitPoints>
+          <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>claw</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>15</power>
+            <cooldownTime>3</cooldownTime>
+            <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+          </li>
+        </tools>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_PneumaticClaw</defName>
+    <label>pneumatic claw</label>
+    <description>A powerful pneumatic pincer arm, capable of repeatedly exerting great pressure on the target at the cost of refined motor skills.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallPneumaticClaw</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallPneumaticClaw</defName>
+    <label>install pneumatic claw</label>
+    <description>Install pneumatic claw.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_PneumaticClaw</ThingDef></descriptionHyperlinks>
+    <jobString>Installing pneumatic claw.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_PneumaticClaw</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_PneumaticClaw</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Hand</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_PneumaticClaw</addsHediff>
+  </RecipeDef>
+
+  <!-- Adrenal secretor -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_AdrenalSecretor</defName>
+    <label>adrenal secretor</label>
+    <labelNoun>adrenal secretor</labelNoun>
+    <description>An insectoid kidney with a hyperactive adrenal gland. Subjects with this mutation may find newfound pleasure in inflicting pain. However, it does bring the side effect of unwarranted aggression.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_AdrenalSecretor</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.00675</painOffset>
+        <statOffsets>
+          <MaxHitPoints>20</MaxHitPoints>
+          <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver" />
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_AdrenalSecretor</defName>
+    <label>adrenal secretor</label>
+    <description>An insectoid kidney with a hyperactive adrenal gland. Subjects with this mutation may find newfound pleasure in inflicting pain. However, it does bring the side effect of unwarranted aggression.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallPneumaticClaw</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallPneumaticClaw</defName>
+    <label>install adrenal secretor</label>
+    <description>Install adrenal secretor.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_AdrenalSecretor</ThingDef></descriptionHyperlinks>
+    <jobString>Installing adrenal secretor.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_AdrenalSecretor</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_AdrenalSecretor</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Kidney</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_AdrenalSecretor</addsHediff>
+  </RecipeDef>
 </Defs>

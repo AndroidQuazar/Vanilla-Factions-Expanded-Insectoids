@@ -20,8 +20,10 @@ namespace VFEI.Comps.ItemComps
             }
         }
 
-        bool ApplyMutation(RecipeDef recipeDef, out BodyPartRecord bodyPartRecord)
+        bool ApplyMutation(RecipeDef recipeDef, out BodyPartRecord bodyPartRecord, out bool isImplant)
         {
+            isImplant = false;
+            if (recipeDef.addsHediff.addedPartProps == null) { isImplant = true; }
             bodyPartRecord = MedicalRecipesUtility.GetFixedPartsToApplyOn(recipeDef, this.Pawn).RandomElement();
             List<Hediff> hediffs = this.Pawn.health.hediffSet.hediffs;
             for (int i = hediffs.Count - 1; i >= 0; i--)
@@ -42,11 +44,23 @@ namespace VFEI.Comps.ItemComps
             {
                 RecipeDef randRecipe = this.Props.allowedRecipeDefs.RandomElement();
                 BodyPartRecord bodyPartRecord = new BodyPartRecord();
-                mutate = ApplyMutation(randRecipe, out bodyPartRecord);
-                if (mutate)
+                bool isImplant = false;
+                mutate = ApplyMutation(randRecipe, out bodyPartRecord, out isImplant);
+                if (mutate && !isImplant)
                 {
                     MaxTryNumb = i;
                     this.Pawn.health.RestorePart(bodyPartRecord);
+                    this.Pawn.health.AddHediff(randRecipe.addsHediff, bodyPartRecord);
+
+                    string label1 = "MutationOutcome".Translate();
+                    string text1 = "MutationOutcomeLetter".Translate(randRecipe.label.Substring(8));
+                    Find.LetterStack.ReceiveLetter(label1, text1, LetterDefOf.NeutralEvent, new TargetInfo(this.Pawn.Position, this.Pawn.Map, false), null, null);
+
+                    this.Pawn.health.RemoveHediff(this.parent);
+                }
+                else if (mutate && isImplant)
+                {
+                    MaxTryNumb = i;
                     this.Pawn.health.AddHediff(randRecipe.addsHediff, bodyPartRecord);
 
                     string label1 = "MutationOutcome".Translate();

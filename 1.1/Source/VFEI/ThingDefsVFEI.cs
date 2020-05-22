@@ -38,5 +38,7 @@ namespace VFEI
         // JobDefs
         public static JobDef InsectFlee;
         public static JobDef VFEI_IngestWeird;
+        // Hediff defs
+        public static HediffDef VFEI_VenomGland;
     }
 }
