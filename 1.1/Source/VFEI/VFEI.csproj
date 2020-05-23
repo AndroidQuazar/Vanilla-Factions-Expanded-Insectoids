@@ -66,6 +66,8 @@
     <Compile Include="Comps\ItemComps\CompTargetEffect_Tame.cs" />
     <Compile Include="Comps\BuildingComps\CompProperties_SpawnerInsectOnDamaged.cs" />
     <Compile Include="Comps\BuildingComps\CompSpawnerInsectOnDamaged.cs" />
+    <Compile Include="Comps\PawnComps\CompNoBleedHearthAttack.cs" />
+    <Compile Include="Comps\PawnComps\Properties\CompProperties_NoBleedHearthAttack.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_ExplodeIfIntactSac.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_InsectsFlee.cs" />
     <Compile Include="Events\IncidentWorker_InfestedCrashedShipModule.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BuildingClass\VFEICocoon.cs" />
     <Compile Include="GenStuff\WorldGenStep_ResetHillinessForISettlement.cs" />
+    <Compile Include="ThoughtWorkers\ThoughtWorker_Sticky.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

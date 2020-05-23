@@ -40,5 +40,8 @@ namespace VFEI
         public static JobDef VFEI_IngestWeird;
         // Hediff defs
         public static HediffDef VFEI_VenomGland;
+        public static HediffDef VFEI_Antenna;
+        public static HediffDef VFEI_PheromoneSecretor;
+        public static HediffDef HeartAttack;
     }
 }

@@ -449,6 +449,8 @@
         <allowedRecipeDefs>
           <li>VFEI_InstallVenomGland</li>
           <li>VFEI_InstallPneumaticClaw</li>
+          <li>VFEI_InstallAntenna</li>
+          <li>VFEI_InstallPredatorStomach</li>
         </allowedRecipeDefs>
       </li>
     </comps>
@@ -615,7 +617,7 @@
     <addsHediff>VFEI_PneumaticClaw</addsHediff>
   </RecipeDef>
 
-  <!-- Adrenal secretor -->
+  <!-- Adrenal secretor - TO FINISH -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>VFEI_AdrenalSecretor</defName>
     <label>adrenal secretor</label>
@@ -638,16 +640,13 @@
         </statOffsets>
       </li>
     </stages>
-    <comps>
-      <li Class="HediffCompProperties_VerbGiver" />
-    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
     <defName>VFEI_AdrenalSecretor</defName>
     <label>adrenal secretor</label>
     <description>An insectoid kidney with a hyperactive adrenal gland. Subjects with this mutation may find newfound pleasure in inflicting pain. However, it does bring the side effect of unwarranted aggression.</description>
-    <descriptionHyperlinks><RecipeDef>VFEI_InstallPneumaticClaw</RecipeDef></descriptionHyperlinks>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallAdrenalSecretor</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>1200</MarketValue>
       <Mass>0.3</Mass>
@@ -658,7 +657,7 @@
   </ThingDef>
 
   <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-    <defName>VFEI_InstallPneumaticClaw</defName>
+    <defName>VFEI_InstallAdrenalSecretor</defName>
     <label>install adrenal secretor</label>
     <description>Install adrenal secretor.</description>
     <descriptionHyperlinks><ThingDef>VFEI_AdrenalSecretor</ThingDef></descriptionHyperlinks>
@@ -682,5 +681,320 @@
       <li>Kidney</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VFEI_AdrenalSecretor</addsHediff>
+  </RecipeDef>
+
+  <!-- Antenna -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_Antenna</defName>
+    <label>adrenal secretor</label>
+    <labelNoun>adrenal secretor</labelNoun>
+    <description>A slender, mobile sensory organ that serves to compliment vision and locational awareness. A subject with this mutation will no longer suffer from darkness penalties, however sensory overload makes it very difficult to socialize.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_Antenna</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.00675</painOffset>
+        <statOffsets>
+          <MaxHitPoints>10</MaxHitPoints>
+          <Beauty>-1</Beauty>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_Antenna</defName>
+    <label>antenna</label>
+    <description>A slender, mobile sensory organ that serves to compliment vision and locational awareness. A subject with this mutation will no longer suffer from darkness penalties, however sensory overload makes it very difficult to socialize.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallAntenna</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallAntenna</defName>
+    <label>install antenna</label>
+    <description>Install antenna.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_Antenna</ThingDef></descriptionHyperlinks>
+    <jobString>Installing antenna.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_Antenna</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_Antenna</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Ear</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_Antenna</addsHediff>
+  </RecipeDef>
+
+  <!-- Predator stomach -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_PredatorStomach</defName>
+    <label>predator stomach</label>
+    <labelNoun>predator stomach</labelNoun>
+    <description>A highly efficient, although basic stomach alternative. Subjects with this mutation will be able to live longer with less food.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_WarriorGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_PredatorStomach</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>25</MaxHitPoints>
+          <HungerRateMultiplier>-0.25</HungerRateMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_PredatorStomach</defName>
+    <label>predator stomach</label>
+    <description>A highly efficient, although basic stomach alternative. Subjects with this mutation will be able to live longer with less food.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallPredatorStomach</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallPredatorStomach</defName>
+    <label>install predator stomach</label>
+    <description>Install predator stomach.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_PredatorStomach</ThingDef></descriptionHyperlinks>
+    <jobString>Installing predator stomach.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_PredatorStomach</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_PredatorStomach</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Stomach</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_PredatorStomach</addsHediff>
+  </RecipeDef>
+
+  <!-- Warrior genome recipe -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>VFEI_InstallRoyalGenome</defName>
+    <label>install royal genome</label>
+    <description>Install a royal genome.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_RoyalGenome</ThingDef></descriptionHyperlinks>
+    <workerClass>VFEI.Other.Recipe_AddMutationHediff</workerClass>
+    <jobString>Installing royal genome.</jobString>
+    <workAmount>2500</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgerySuccessChanceFactor>10</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>VFEI_RoyalGenome</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><categories><li>Medicine</li></categories></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_RoyalGenome</li>
+      </thingDefs>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+    <addsHediff>VFEI_RoyalGenome</addsHediff>
+  </RecipeDef>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_RoyalGenome</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>royal genome</label>
+    <labelNoun>a royal genome</labelNoun>
+    <description>An installed royal genome.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_RoyalGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_RoyalGenome</spawnThingOnRemoved>
+    <comps>
+      <li Class="VFEI.Comps.ItemComps.Properties.CompProperties_RandomHediffGiver">
+        <allowedRecipeDefs>
+          <li>VFEI_InstallPheromoneSecretor</li>
+          <li>VFEI_InstallVentricularSleeve</li>
+        </allowedRecipeDefs>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Pheronome secretor -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VFEI_PheromoneSecretor</defName>
+    <label>pheromone secretor</label>
+    <labelNoun>pheromone secretor</labelNoun>
+    <description>.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_RoyalGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_PheromoneSecretor</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>30</MaxHitPoints>
+          <SocialImpact>0.25</SocialImpact>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_PheromoneSecretor</defName>
+    <label>pheromone secretor</label>
+    <description>.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallPheromoneSecretor</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallPheromoneSecretor</defName>
+    <label>install pheromone secretor</label>
+    <description>Install pheromone secretor.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_PheromoneSecretor</ThingDef></descriptionHyperlinks>
+    <jobString>Installing pheromone secretor.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_PheromoneSecretor</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_PheromoneSecretor</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Neck</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_PheromoneSecretor</addsHediff>
+  </RecipeDef>
+  
+  <!-- Ventricular sleeve -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>VFEI_VentricularSleeve</defName>
+    <label>ventricular sleeve</label>
+    <labelNoun>ventricular sleeve</labelNoun>
+    <description>A barely understood heart and artery mutation, causes blood to coagulate into oxygen-rich gel-like material. Upon laceration or even loss of limbs, the gel will cauterize the wound immediately. Unfortunately puts heavy strain on human cardiovascular biology.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_RoyalGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_VentricularSleeve</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <painOffset>0.0675</painOffset>
+        <statOffsets>
+          <MaxHitPoints>20</MaxHitPoints>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="VFEI.Comps.PawnComps.Properties.CompProperties_NoBleedHearthAttack"/>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_VentricularSleeve</defName>
+    <label>ventricular sleeve</label>
+    <description>A barely understood heart and artery mutation, causes blood to coagulate into oxygen-rich gel-like material. Upon laceration or even loss of limbs, the gel will cauterize the wound immediately. Unfortunately puts heavy strain on human cardiovascular biology.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallVentricularSleeve</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallVentricularSleeve</defName>
+    <label>install ventricular sleeve</label>
+    <description>Install ventricular sleeve.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_VentricularSleeve</ThingDef></descriptionHyperlinks>
+    <jobString>Installing ventricular sleeve.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_VentricularSleeve</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_VentricularSleeve</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_VentricularSleeve</addsHediff>
   </RecipeDef>
 </Defs>

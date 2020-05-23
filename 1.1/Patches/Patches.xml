@@ -6,6 +6,7 @@
         <value>
             <li>VFEI_InstallDroneGenome</li>
             <li>VFEI_InstallWarriorGenome</li>
+            <li>VFEI_InstallRoyalGenome</li>
         </value>
     </Operation>
 

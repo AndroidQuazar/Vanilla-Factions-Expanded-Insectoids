@@ -19,11 +19,20 @@ namespace VFEI
         public HarmonyPatches(ModContentPack content) : base(content)
         {
             Harmony harmony = new Harmony("kikohi.vfe.insectoid");
-            harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "DefeatedPostfix", null), null, null);
-            harmony.Patch(AccessTools.Method(typeof(FoodUtility), "ThoughtsFromIngesting", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtsFromIngestingPrefix", null), null, null);
-            // ========== Prefix ========== 
+            /* ========== Postfix ========== */
+            harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
+            /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
+        }
+
+        static void ThoughtWorker_Dark_PostFix(Pawn p, ref ThoughtState __result)
+        {
+            if (p.Awake() && p.needs.mood.recentMemory.TicksSinceLastLight > 240 && p.health.hediffSet.HasHediff(ThingDefsVFEI.VFEI_Antenna))
+            {
+                __result = ThoughtState.Inactive;
+            }
         }
 
         static bool InsectoidSettlementGen_Prefix(IntVec3 c, Map map, GenStepParams parms, int stackCount = 1)
@@ -59,7 +68,7 @@ namespace VFEI
             }
         }
 
-        static void DefeatedPostfix(Map map, Faction faction, ref bool __result)
+        static void Defeated_Postfix(Map map, Faction faction, ref bool __result)
         {
             List<Pawn> list = map.mapPawns.SpawnedPawnsInFaction(faction);
             for (int i = 0; i < list.Count; i++)
@@ -72,7 +81,7 @@ namespace VFEI
             }
         }
 
-        static void ThoughtsFromIngestingPrefix(Pawn ingester, Thing foodSource, ThingDef foodDef, ref List<ThoughtDef> __result)
+        static void ThoughtsFromIngesting_PostFix(Pawn ingester, Thing foodSource, ThingDef foodDef, ref List<ThoughtDef> __result)
         {
             if (ingester.health.hediffSet.HasHediff(ThingDefsVFEI.VFEI_VenomGland))
             {

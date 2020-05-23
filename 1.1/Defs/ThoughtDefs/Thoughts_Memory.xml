@@ -29,8 +29,8 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-    <ThoughtDef>
+
+  <ThoughtDef>
     <defName>VFEI_SeenCuterpillar</defName>
     <durationDays>1</durationDays>
     <stages>
@@ -50,6 +50,19 @@
         <label>ate royal jelly</label>
         <description>I ate royal jelly, it's delicious!</description>
         <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VFEI_Sticky</defName>
+    <workerClass>VFEI.ThoughtWorkers.ThoughtWorker_Sticky</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>sticky</label>
+        <description>I'm sticky, and I dislike it.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
