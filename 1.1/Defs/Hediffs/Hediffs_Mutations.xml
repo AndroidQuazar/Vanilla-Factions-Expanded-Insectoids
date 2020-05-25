@@ -863,6 +863,7 @@
         <allowedRecipeDefs>
           <li>VFEI_InstallPheromoneSecretor</li>
           <li>VFEI_InstallVentricularSleeve</li>
+          <li>VFEI_InstallSynapticCerebellum</li>
         </allowedRecipeDefs>
       </li>
     </comps>
@@ -873,7 +874,7 @@
     <defName>VFEI_PheromoneSecretor</defName>
     <label>pheromone secretor</label>
     <labelNoun>pheromone secretor</labelNoun>
-    <description>.</description>
+    <description>Insectoid glands that slowly leak colorless, odorless, but sticky pheromone, notable for inducing a mild euphoria in those nearby.</description>
     <descriptionHyperlinks>
       <ThingDef>VFEI_RoyalGenome</ThingDef>
     </descriptionHyperlinks>
@@ -892,7 +893,7 @@
   <ThingDef ParentName="BodyPartInsectBase">
     <defName>VFEI_PheromoneSecretor</defName>
     <label>pheromone secretor</label>
-    <description>.</description>
+    <description>Insectoid glands that slowly leak colorless, odorless, but sticky pheromone, notable for inducing a mild euphoria in those nearby.</description>
     <descriptionHyperlinks><RecipeDef>VFEI_InstallPheromoneSecretor</RecipeDef></descriptionHyperlinks>
     <statBases>
       <MarketValue>1200</MarketValue>
@@ -996,5 +997,69 @@
       <li>Heart</li>
     </appliedOnFixedBodyParts>
     <addsHediff>VFEI_VentricularSleeve</addsHediff>
+  </RecipeDef>
+
+  <!-- Synaptic cerebellum -->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>VFEI_SynapticCerebellum</defName>
+    <label>synaptic cerebellum</label>
+    <labelNoun>synaptic cerebellum</labelNoun>
+    <description>An insectoid brain particularly sensitive to residual psychic synapse. A creature with this mutation possesses profound collective thought and psychic sensitivity, however is barely able to form cohesive sentences.</description>
+    <descriptionHyperlinks>
+      <ThingDef>VFEI_RoyalGenome</ThingDef>
+    </descriptionHyperlinks>
+    <spawnThingOnRemoved>VFEI_SynapticCerebellum</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <painOffset>0.0125</painOffset>
+        <statOffsets>
+          <MaxHitPoints>20</MaxHitPoints>
+          <PsychicSensitivity>0.5</PsychicSensitivity>
+          <TradePriceImprovement>-0.1</TradePriceImprovement>
+          <ResearchSpeed>0.33</ResearchSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartInsectBase">
+    <defName>VFEI_SynapticCerebellum</defName>
+    <label>synaptic cerebellum</label>
+    <description>An insectoid brain particularly sensitive to residual psychic synapse. A creature with this mutation possesses profound collective thought and psychic sensitivity, however is barely able to form cohesive sentences.</description>
+    <descriptionHyperlinks><RecipeDef>VFEI_InstallSynapticCerebellum</RecipeDef></descriptionHyperlinks>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.3</Mass>
+    </statBases>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+    <defName>VFEI_InstallSynapticCerebellum</defName>
+    <label>install synaptic cerebellum</label>
+    <description>Install synaptic cerebellum.</description>
+    <descriptionHyperlinks><ThingDef>VFEI_SynapticCerebellum</ThingDef></descriptionHyperlinks>
+    <jobString>Installing synaptic cerebellum.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VFEI_SynapticCerebellum</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>VFEI_SynapticCerebellum</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>VFEI_SynapticCerebellum</addsHediff>
   </RecipeDef>
 </Defs>

@@ -29,7 +29,7 @@ namespace VFEI.Comps.PawnComps
 					{
 						if (h.Bleeding)
 						{
-							h.Tended(0.5f);
+							h.Tended(0.3f);
 						}
 					}
 
@@ -37,7 +37,7 @@ namespace VFEI.Comps.PawnComps
 					{
 						List<BodyPartDef> bodyPartDefs = new List<BodyPartDef>();
 						bodyPartDefs.Add(BodyPartDefOf.Heart);
-						HediffGiverUtility.TryApply(this.Pawn, ThingDefsVFEI.HeartAttack, bodyPartDefs);
+						HediffGiverUtility.TryApply(this.Pawn, ThingDefsVFEI.HeartAttack, bodyPartDefs, true);
 					}
 				}
 			}
