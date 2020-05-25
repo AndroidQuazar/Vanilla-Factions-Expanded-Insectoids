@@ -18,6 +18,7 @@
     <arriveModes>
       <li>VFEI_Tunneling</li>
       <li>VFEI_Burrow</li>
+      <li>VFEI_Meteorite</li>
     </arriveModes>
     <letterLabelEnemy>Raid</letterLabelEnemy>
     <arrivalTextEnemy>They are tunneling towards you! They will break through in a few seconds and attack!</arrivalTextEnemy>

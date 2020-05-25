@@ -53,12 +53,23 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
     <Compile Include="Comps\HediffComps\CompRandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompSpawnJelly.cs" />
+    <Compile Include="Comps\ItemComps\CompArchotechTeleporter.cs" />
+    <Compile Include="Comps\ItemComps\Properties\CompProperties_ArchotechTeleporter.cs" />
     <Compile Include="Comps\ItemComps\Properties\CompProperties_TargetableHumanOnly.cs" />
     <Compile Include="Comps\ItemComps\CompTargetable_ThingInRadius.cs" />
     <Compile Include="Comps\ItemComps\CompTargetEffect_Recruit.cs" />
@@ -107,6 +118,7 @@
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Burrow.cs" />
+    <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Meteorite.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Tunneling.cs" />
     <Compile Include="RaidStrategyWorkers\RaidStrategyWorker_ImmediateAttackInsect.cs" />
     <Compile Include="ThingDefsVFEI.cs" />

@@ -10,7 +10,7 @@ namespace VFEI.RaidStrategyWorkers
 	{
 		protected override LordJob MakeLordJob(IncidentParms parms, Map map, List<Pawn> pawns, int raidSeed)
 		{
-			return new LordJob_AssaultColony(parms.faction, true, true, false, true, true);
+			return new LordJob_AssaultColony(parms.faction, false, false, false, false, false);
 		}
 
 		public override bool CanUseWith(IncidentParms parms, PawnGroupKindDef groupKind)

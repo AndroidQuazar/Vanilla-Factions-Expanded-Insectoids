@@ -163,7 +163,10 @@
       <li>SingleUseWeapon</li>
     </thingSetMakerTags>
     <comps>
-      
+      <li Class="CompProperties_Transporter">
+        <restEffectiveness>0.8</restEffectiveness>
+      </li>
+      <li Class="VFEI.CompProperties_ArchotechTeleporter" />
     </comps>
   </ThingDef>
 
