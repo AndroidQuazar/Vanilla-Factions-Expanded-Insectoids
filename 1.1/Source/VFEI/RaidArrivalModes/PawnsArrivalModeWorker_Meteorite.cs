@@ -29,7 +29,7 @@ namespace VFEI.RaidArrivalModes
 		public static void InsectTunnel(IncidentParms parms, List<Pawn> pawns)
 		{
 			Map map = (Map)parms.target;
-			int numberOfMeteor = Rand.RangeInclusive(1, (int) parms.points / 500);
+			int numberOfMeteor = Rand.RangeInclusive(2, (int) parms.points / 500);
 			int pawnsPerMeteor = (int)pawns.Count / numberOfMeteor;
 			foreach (Pawn item in pawns)
 			{
@@ -39,9 +39,10 @@ namespace VFEI.RaidArrivalModes
 				}
 			}
 			LordMaker.MakeNewLord(parms.faction, new LordJob_AssaultColony(parms.faction, false, false, false, false, false), map, pawns);
+			IntVec3 intVec3 = new IntVec3();
 			for (int n = 0; n < numberOfMeteor; n++)
 			{
-				IntVec3 intVec3 = CellFinderLoose.RandomCellWith((i) => i.Walkable(map), map);
+				intVec3 = CellFinderLoose.RandomCellWith((i) => i.Walkable(map), map);
 				List<Thing> pawnsM = ThingSetMakerDefOf.Meteorite.root.Generate();
 				for (int i = 0; i < pawnsPerMeteor; i++)
 				{
@@ -54,6 +55,7 @@ namespace VFEI.RaidArrivalModes
 				}
 				SkyfallerMaker.SpawnSkyfaller(ThingDefOf.MeteoriteIncoming, pawnsM, intVec3, map);
 			}
+			parms.spawnCenter = intVec3;
 		}
 	}
 }

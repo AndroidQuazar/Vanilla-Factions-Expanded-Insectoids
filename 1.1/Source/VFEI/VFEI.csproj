@@ -117,6 +117,7 @@
     <Compile Include="Comps\PawnComps\CompSpawnLarvae.cs" />
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
+    <Compile Include="RaidArrivalModes\PawnArrivalModeWorker_GigalocustSwarm.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Burrow.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Meteorite.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Tunneling.cs" />

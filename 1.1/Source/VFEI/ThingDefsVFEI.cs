@@ -43,5 +43,7 @@ namespace VFEI
         public static HediffDef VFEI_Antenna;
         public static HediffDef VFEI_PheromoneSecretor;
         public static HediffDef HeartAttack;
+        // Skyfaller
+        public static ThingDef VFEI_GigalocustIncoming;
     }
 }

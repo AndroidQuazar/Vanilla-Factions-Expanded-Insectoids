@@ -31,7 +31,7 @@
 It seems their plan is to open up tunnels, allowing larger swarms to crawl through. Destroy their burrows as soon as possible, as they will never stop sending waves of insects.</textEnemy>
   </PawnsArrivalModeDef>
 
-    <PawnsArrivalModeDef>
+  <PawnsArrivalModeDef>
     <defName>VFEI_Meteorite</defName>
     <workerClass>VFEI.RaidArrivalModes.PawnsArrivalModeWorker_Meteorite</workerClass>
     <selectionWeightCurve>
@@ -43,6 +43,20 @@ It seems their plan is to open up tunnels, allowing larger swarms to crawl throu
     </selectionWeightCurve>
     <minTechLevel>Animal</minTechLevel>
     <textEnemy>A shower of meteorites is striking the local area. It seems they are infested with hives belonging to {1}! They will attack immediately.</textEnemy>
+  </PawnsArrivalModeDef>
+
+  <PawnsArrivalModeDef>
+    <defName>VFEI_GigalocustSwarm</defName>
+    <workerClass>VFEI.RaidArrivalModes.PawnArrivalModeWorker_GigalocustSwarm</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(300, 0.15)</li>
+        <li>(700, 0.30)</li>
+        <li>(1200, 0.80)</li>
+      </points>
+    </selectionWeightCurve>
+    <minTechLevel>Animal</minTechLevel>
+    <textEnemy>A number of gigalocusts belonging to {1} are landing around your base. Their only intention is to kill and they plan to attack immediately.</textEnemy>
   </PawnsArrivalModeDef>
 
 </Defs>
