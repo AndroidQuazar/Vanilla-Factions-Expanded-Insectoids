@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchotechShieldBelt.cs" />
+    <Compile Include="Other\ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
     <Compile Include="Comps\HediffComps\CompRandomHediffGiver.cs" />
@@ -117,6 +117,7 @@
     <Compile Include="Comps\PawnComps\CompSpawnLarvae.cs" />
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
+    <Compile Include="Other\VFEI_TunnelingNoHive.cs" />
     <Compile Include="RaidArrivalModes\PawnArrivalModeWorker_GigalocustSwarm.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Burrow.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Meteorite.cs" />

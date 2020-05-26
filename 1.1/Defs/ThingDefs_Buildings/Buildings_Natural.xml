@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFEI_Mote</defName>
+    <label>mote</label>
+    <description>Don't mind me, i'm useless for you</description>
+    <thingClass>VFEI.VFEI_TunnelingNoHive</thingClass>
+    <graphicData>
+      <texPath>Things/Buildings_Dummy</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>false</selectable>
+    <building>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <deconstructible>false</deconstructible>
+    </building>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>VFEI_LargeHive</defName>
     <label>large hive</label>
@@ -23,7 +41,6 @@
     <tickerType>Normal</tickerType>
     <passability>PassThroughOnly</passability>
     <killedLeavings>
-      <VFEI_RoyalInsectJelly>30</VFEI_RoyalInsectJelly>
       <InsectJelly>15</InsectJelly>
     </killedLeavings>
     <comps>
