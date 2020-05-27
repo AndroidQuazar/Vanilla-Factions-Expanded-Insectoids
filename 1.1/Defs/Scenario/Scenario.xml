@@ -1,109 +1,80 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ScenarioDef>
-    <defName>VFEI_ImperialJanissariesSquad</defName>
-    <label>Imperial Janissaries Squad</label>
-    <description>The five of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
-    <scenario>
-      <summary>A squad of imperial janissaries, overrun by the wrath of the hive.</summary>
-      <playerFaction>
-        <def>PlayerFaction</def>
-        <factionDef>PlayerTribe</factionDef>
-      </playerFaction>
-      <parts>
+    <defName>VFEI_MercenarySquad</defName>
+    <label>Mercenary Squad</label>
+    <description>The four of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
+	<scenario>
+		<name>Mercenaries</name>
+		<summary>A group of mercenaries surrounded by swarms of insectoids. Very Difficult.</summary>
+		<description>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
 
-        <!-- Config pages -->
-        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-          <def>ConfigPage_ConfigureStartingPawns</def>
-          <pawnCount>5</pawnCount>
-          <pawnChoiceCount>8</pawnChoiceCount>
-        </li>
+Note: Since your starting characters are surrounded by insectoids, this is an especially difficult scenario in the early game.</description>
+		<playerFaction>
+			<def>PlayerFaction</def>
+			<factionDef>VFE_PlayerOutpost</factionDef>
+		</playerFaction>
+		<parts>
+			<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+				<def>ConfigPage_ConfigureStartingPawns</def>
+				<pawnCount>4</pawnCount>
+				<pawnChoiceCount>6</pawnChoiceCount>
+			</li>
+			<li Class="ScenPart_PlayerPawnsArriveMethod">
+				<def>PlayerPawnsArriveMethod</def>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>Silver</thingDef>
+				<count>260</count>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>MealSurvivalPack</thingDef>
+				<count>60</count>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>MedicineIndustrial</thingDef>
+				<count>30</count>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>ComponentIndustrial</thingDef>
+				<count>16</count>
+			</li>
+			<li Class="ScenPart_ScatterThingsNearPlayerStart">
+				<def>ScatterThingsNearPlayerStart</def>
+				<thingDef>Steel</thingDef>
+				<count>450</count>
+			</li>
+			<li Class="ScenPart_ScatterThingsNearPlayerStart">
+				<def>ScatterThingsNearPlayerStart</def>
+				<thingDef>WoodLog</thingDef>
+				<count>250</count>
+			</li>
+			<li Class="ScenPart_GameStartDialog">
+				<def>GameStartDialog</def>
+				<text>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
 
-        <!-- Player starting stuff spawn method-->
-        <li Class="ScenPart_PlayerPawnsArriveMethod">
-          <def>PlayerPawnsArriveMethod</def>
-          <method>Standing</method>
-        </li>
-
-        <!-- Player pawns modifiers -->
-        <li Class="ScenPart_ForcedHediff">
-          <def>ForcedHediff</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>0.5</chance>
-          <hediff>Malnutrition</hediff>
-          <severityRange>0.2~0.4</severityRange>
-        </li>
-        <li Class="ScenPart_SetNeedLevel">
-          <def>SetNeedLevel</def>
-          <visible>false</visible>
-          <context>PlayerStarter</context>
-          <chance>1.0</chance>
-          <need>Food</need>
-          <levelRange>0~0.1</levelRange>
-        </li>
-
-        <!-- Player starting things -->
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>Silver</thingDef>
-          <count>200</count>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>Pemmican</thingDef>
-          <count>400</count>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>MedicineHerbal</thingDef>
-          <count>20</count>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>MeleeWeapon_Club</thingDef>
-          <stuff>WoodLog</stuff>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>MeleeWeapon_Ikwa</thingDef>
-          <stuff>Steel</stuff>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>MeleeWeapon_Knife</thingDef>
-          <stuff>Jade</stuff>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>Bow_Short</thingDef>
-          <count>2</count>
-        </li>
-        <li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>Pila</thingDef>
-        </li>
-        <li Class="ScenPart_StartingAnimal">
-          <def>StartingAnimal</def>
-          <count>3</count>
-          <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
-        </li>
-
-        <!-- Scatter some things near player start -->
-        <li Class="ScenPart_ScatterThingsNearPlayerStart">
-          <def>ScatterThingsNearPlayerStart</def>
-          <thingDef>WoodLog</thingDef>
-          <count>500</count>
-        </li>
-
-        <!-- Game start dialog -->
-        <li Class="ScenPart_GameStartDialog">
-          <def>GameStartDialog</def>
-          <text>The gods were very angry. The blood machines came at night. They swept through your village, cutting and burning your people with their blades and devil-fire.\n\nOnly a few of you escaped.\n\nNow, after a harrowing journey, with no friends to turn to, you must build a new home in the wilderness - like your ancestors did.</text>
-          <closeSound>GameStartSting</closeSound>
-        </li>
-
-      </parts>
-    </scenario>
+You have until sunset to suit up and create defenses before insectoids arrive in numbers. Alternatively, you can pack what you can and escape this area, hoping to find a better location somewhere else.</text>
+				<closeSound>GameStartSting</closeSound>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>Gun_ChargeRifle</thingDef>
+				<count>2</count>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>Gun_ChargeLance</thingDef>
+			</li>
+			<li Class="ScenPart_StartingThing_Defined">
+				<def>StartingThing_Defined</def>
+				<thingDef>MeleeWeapon_LongSword</thingDef>
+				<stuff>Plasteel</stuff>
+			</li>
+		</parts>
+	</scenario>
   </ScenarioDef>
 </Defs>
