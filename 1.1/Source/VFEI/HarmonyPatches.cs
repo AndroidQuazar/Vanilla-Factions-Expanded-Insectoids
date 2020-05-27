@@ -22,9 +22,19 @@ namespace VFEI
             /* ========== Postfix ========== */
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(InfestationCellFinder), "GetScoreAt", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "GetScoreAt_Postfix", null), null, null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
+        }
+
+        static void GetScoreAt_Postfix(IntVec3 cell, Map map, ref float __result)
+        {
+            if (map.GetComponent<Other.InfestationUtils_MapComponent>().intVec3s != null && map.GetComponent<Other.InfestationUtils_MapComponent>().intVec3s.Contains(cell))
+            {
+                Log.Message("Inside radius");
+                __result = 0f;
+            }
         }
 
         static void ThoughtWorker_Dark_PostFix(Pawn p, ref ThoughtState __result)

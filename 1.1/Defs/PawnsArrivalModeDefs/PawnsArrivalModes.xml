@@ -36,9 +36,9 @@ It seems their plan is to open up tunnels, allowing larger swarms to crawl throu
     <workerClass>VFEI.RaidArrivalModes.PawnsArrivalModeWorker_Meteorite</workerClass>
     <selectionWeightCurve>
       <points>
-        <li>(0, 0.10)</li>
-        <li>(300, 0.15)</li>
-        <li>(700, 0.30)</li>
+        <li>(0, 0)</li>
+        <li>(400, 0.20)</li>
+        <li>(800, 0.45)</li>
       </points>
     </selectionWeightCurve>
     <minTechLevel>Animal</minTechLevel>
@@ -50,7 +50,7 @@ It seems their plan is to open up tunnels, allowing larger swarms to crawl throu
     <workerClass>VFEI.RaidArrivalModes.PawnArrivalModeWorker_GigalocustSwarm</workerClass>
     <selectionWeightCurve>
       <points>
-        <li>(300, 0.15)</li>
+        <li>(500, 0.15)</li>
         <li>(700, 0.30)</li>
         <li>(1200, 0.80)</li>
       </points>

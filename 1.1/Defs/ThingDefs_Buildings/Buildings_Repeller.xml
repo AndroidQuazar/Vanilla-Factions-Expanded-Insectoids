@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>VFEI_SonicInfestationRepeller</defName>
+        <label>sonic infestation repeller</label>
+        <description>A large ultratech device capable of emitting a sonic pulse every hour, repelling any insectoid movement underneath. Whilst it significantly removes the infestation risk, it enrages the insectoid empress and can lead to more powerful insectoid herds arriving at the colony.</description>
+        <graphicData>
+            <texPath>Things/Building/InfestationSonicRepeller</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(3.5,3.5)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <costList>
+            <Steel>250</Steel>
+            <Plasteel>50</Plasteel>
+            <ComponentSpacer>5</ComponentSpacer>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <neverMultiSelect>true</neverMultiSelect>
+        <uiIconScale>1</uiIconScale>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>950</WorkToBuild>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>0.8</Flammability>
+        </statBases>
+        <size>(3,3)</size>
+        <designationCategory>Misc</designationCategory>
+        <passability>Impassable</passability>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Rare</tickerType>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>1200</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="VFEI.Comps.BuildingComps.CompProperties_Repeller"/>
+        </comps>
+        <placeWorkers>
+            <li>VFEI.Other.RepellerPlaceWorker</li>
+        </placeWorkers>
+        <specialDisplayRadius>49.8</specialDisplayRadius>
+    </ThingDef>
+</Defs>

@@ -20,6 +20,11 @@ namespace VFEI.RaidStrategyWorkers
 
 		public override List<Pawn> SpawnThreats(IncidentParms parms)
 		{
+			Map map = (Map)parms.target;
+			List<Building> ts = map.listerBuildings.allBuildingsColonist;
+			ts.RemoveAll((b) => b.def.defName != "VFEI_SonicInfestationRepeller");
+			int toAdd = Rand.RangeInclusive(0, ts.Count) * 300;
+			parms.points += toAdd;
 			return base.SpawnThreats(parms);
 		}
 	}

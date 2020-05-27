@@ -153,7 +153,7 @@
 	<!-- Insectoid Royal Megaspider -->
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_Insectoid_RoyalMegaspider</defName>
-		<label>insectoid royal megaspider</label>
+		<label>royal megaspider</label>
 		<description>Not actually a spider, the royal megaspider is a rhino-sized natural spawn of the insectoid queen herself, serving not only as her bodyguard but also as a primary mate. Designed not for work, but for combat only, its thick chitinous armor makes it hard to kill, while its long deadly ripper-blades allow it to slay intruders in the name of his queen.</description>
 		<statBases>
 			<MoveSpeed>3.20</MoveSpeed>
@@ -231,7 +231,7 @@
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">
 		<defName>VFEI_Insectoid_RoyalMegaspider</defName>
-		<label>insectoid royal megaspider</label>
+		<label>royal megaspider</label>
 		<race>VFEI_Insectoid_RoyalMegaspider</race>
 		<combatPower>200</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
@@ -349,7 +349,7 @@
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">
 		<defName>VFEI_Insectoid_Gigalocust</defName>
-		<label>insectoid gigalocust</label>
+		<label>gigalocust</label>
 		<race>VFEI_Insectoid_Gigalocust</race>
 		<combatPower>240</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
@@ -489,7 +489,7 @@
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">
 		<defName>VFEI_Insectoid_Megapede</defName>
-		<label>royal megapede</label>
+		<label>megapede</label>
 		<race>VFEI_Insectoid_Megapede</race>
 		<canBeSapper>true</canBeSapper>
 		<combatPower>150</combatPower>
@@ -537,7 +537,7 @@
 	<!-- Insectoid Larvae -->
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_Insectoid_Larvae</defName>
-		<label>insectoid larvae</label>
+		<label>larvae</label>
 		<description>The juvenile form of an insectoid, larvae are harmless, slow and easy to kill. After some time has passed, it undergoes a metamorphosis, turning into an adult insectoid. There is no way to tell what kind of insect will crawl out of its cocoon.</description>
 		<statBases>
 			<MoveSpeed>1.50</MoveSpeed>
@@ -588,7 +588,7 @@
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">
 		<defName>VFEI_Insectoid_Larvae</defName>
-		<label>insectoid larvae</label>
+		<label>larvae</label>
 		<race>VFEI_Insectoid_Larvae</race>
 		<combatPower>10</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
