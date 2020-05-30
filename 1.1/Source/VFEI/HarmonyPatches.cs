@@ -30,10 +30,13 @@ namespace VFEI
 
         static void GetScoreAt_Postfix(IntVec3 cell, Map map, ref float __result)
         {
-            if (map.GetComponent<Other.InfestationUtils_MapComponent>().intVec3s != null && map.GetComponent<Other.InfestationUtils_MapComponent>().intVec3s.Contains(cell))
+            foreach (Building building in map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_SonicInfestationRepeller")).ToList())
             {
-                Log.Message("Inside radius");
-                __result = 0f;
+                if (cell.InHorDistOf(building.Position, 50))
+                {
+                    __result = 0f;
+                    return;
+                }
             }
         }
 

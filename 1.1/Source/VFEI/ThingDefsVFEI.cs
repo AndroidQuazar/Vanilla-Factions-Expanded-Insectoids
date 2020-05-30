@@ -45,6 +45,7 @@ namespace VFEI
         public static HediffDef HeartAttack;
         // Skyfaller
         public static ThingDef VFEI_GigalocustIncoming;
+        public static ThingDef VFEI_InsectMeteoriteIncoming;
         // EtherealThing
         public static ThingDef VFEI_Mote;
     }

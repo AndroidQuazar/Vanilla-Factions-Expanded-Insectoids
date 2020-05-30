@@ -24,18 +24,14 @@ namespace VFEI.Comps.BuildingComps
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Collections.Look<IntVec3>(ref this.affectedCells, "affectedCells", LookMode.Value);
             Scribe_Values.Look<int>(ref this.nextMote, "nextMote");
         }
 
-        public List<IntVec3> affectedCells;
         int nextMote = 0;
 
         public override void PostPostMake()
         {
-            this.affectedCells = GenRadial.RadialCellsAround(this.parent.TrueCenter().ToIntVec3(), 50, true).ToList();
             this.nextMote = Find.TickManager.TicksGame + 2500;
-            Log.Message("Post-Make-AddedRadialCellsAround");
         }
 
         public override void CompTickRare()
