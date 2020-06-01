@@ -32,6 +32,10 @@
     <canUseAvoidGrid>true</canUseAvoidGrid>
     <earliestRaidDays>20</earliestRaidDays>
     <permanentEnemy>true</permanentEnemy>
+    <colorSpectrum>
+      <li>(0.58, 0.47, 0.35)</li>
+      <li>(0.75, 0.40, 0.40)</li>
+    </colorSpectrum>
     <hostileToFactionlessHumanlikes>false</hostileToFactionlessHumanlikes>
     <maxPawnCostPerTotalPointsCurve>
       <points>

@@ -138,7 +138,8 @@
     <graphicData>
       <texPath>Things/Building/Burrows/BurrowSmall</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.2</drawSize>
+      <shaderType>Transparent</shaderType>
+      <drawSize>1.5</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
@@ -173,11 +174,12 @@
     <label>medium burrow</label>
     <description>A burrow leading to a web of insectoid tunnels. It will periodically spawn waves of higher castes of insects until destroyed.</description>
     <thingClass>ThingWithComps</thingClass>
-    <size>(1,1)</size>
+    <size>(2,2)</size>
     <graphicData>
       <texPath>Things/Building/Burrows/BurrowMedium</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.2</drawSize>
+      <shaderType>Transparent</shaderType>
+      <drawSize>2</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <rotatable>false</rotatable>
@@ -216,6 +218,7 @@
     <graphicData>
       <texPath>Things/Building/Burrows/BurrowRoyal</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
       <drawSize>2.4</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>

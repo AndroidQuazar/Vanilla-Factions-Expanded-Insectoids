@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Vanilla Factions Expanded - Insectoids</name>
-	<author>Oskar Potocki</author>
+	<author>Oskar Potocki, Kikohi, Sarg Bjornson</author>
 	<supportedVersions><li>1.1</li></supportedVersions>
 	<packageId>OskarPotocki.VFE.Insectoid</packageId>
 	<description>
 		Vanilla Factions Expanded - Insectoids
+		Beta 01/06/2020
+		
+		Redistributing and publishing this mod is a violation of intellectual property laws.
 	</description>
     <modDependencies>
 		<li>
