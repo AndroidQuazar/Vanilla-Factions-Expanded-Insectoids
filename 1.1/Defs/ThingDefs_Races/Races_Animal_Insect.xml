@@ -75,7 +75,6 @@
 			<baseHealthScale>4</baseHealthScale>
 			<gestationPeriodDays>12</gestationPeriodDays>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<leatherDef>VFEI_Chitin</leatherDef>
 			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<lifeStageAges>
@@ -102,6 +101,7 @@
 		</race>
 		<butcherProducts>
 			<VFEI_RoyalInsectJelly>20</VFEI_RoyalInsectJelly>
+			<VFEI_Chitin>45</VFEI_Chitin>
 		</butcherProducts>
 	</ThingDef>
 
@@ -199,7 +199,6 @@
 			<baseHealthScale>3</baseHealthScale>
 			<gestationPeriodDays>12</gestationPeriodDays>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<leatherDef>VFEI_Chitin</leatherDef>
 			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<lifeStageAges>
@@ -225,7 +224,8 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<butcherProducts>
-			<VFEI_RoyalInsectJelly>15</VFEI_RoyalInsectJelly>
+			<VFEI_RoyalInsectJelly>10</VFEI_RoyalInsectJelly>
+			<VFEI_Chitin>25</VFEI_Chitin>
 		</butcherProducts>
 	</ThingDef>
 
@@ -317,7 +317,6 @@
 			<baseHealthScale>2.6</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<leatherDef>VFEI_Chitin</leatherDef>
 			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<lifeStageAges>
@@ -344,6 +343,7 @@
 		</race>
 		<butcherProducts>
 			<VFEI_RoyalInsectJelly>10</VFEI_RoyalInsectJelly>
+			<VFEI_Chitin>25</VFEI_Chitin>
 		</butcherProducts>
 	</ThingDef>
 
@@ -460,7 +460,6 @@
 			<baseHealthScale>4.32</baseHealthScale>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<leatherDef>VFEI_Chitin</leatherDef>
 			<wildness>0.95</wildness>
 			<lifeExpectancy>6</lifeExpectancy>
 			<lifeStageAges>
@@ -485,6 +484,9 @@
 			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
+		<butcherProducts>
+			<VFEI_Chitin>15</VFEI_Chitin>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">

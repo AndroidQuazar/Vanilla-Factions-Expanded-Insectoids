@@ -62,7 +62,7 @@
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
-			<leatherDef>VFEI_Chitin</leatherDef>
+
 			<wildness>0.55</wildness>
 			<lifeExpectancy>3</lifeExpectancy>
 			<lifeStageAges>
@@ -91,6 +91,9 @@
 
 			<li>AnimalInsect</li>
 		</tradeTags>
+		<butcherProducts>
+			<VFEI_Chitin>5</VFEI_Chitin>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">

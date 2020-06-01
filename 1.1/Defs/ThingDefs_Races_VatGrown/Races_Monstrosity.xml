@@ -81,7 +81,7 @@
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-			<leatherDef>VFEI_Chitin</leatherDef>
+
 			<wildness>1</wildness>
 			<lifeExpectancy>0.1</lifeExpectancy>
 			<lifeStageAges>
@@ -103,6 +103,10 @@
 
 			<li>AnimalInsect</li>
 		</tradeTags>
+		<butcherProducts>
+			<VFEI_RoyalInsectJelly>5</VFEI_RoyalInsectJelly>
+			<VFEI_Chitin>15</VFEI_Chitin>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="VFEI_InsectKindBase">

@@ -63,7 +63,7 @@
 			<baseBodySize>2.50</baseBodySize>
 			<baseHungerRate>1.0</baseHungerRate>
 			<baseHealthScale>2.0</baseHealthScale>     
-			<leatherDef>VFEI_Chitin</leatherDef>    
+
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>CarnivoreAnimal, AnimalProduct</foodType>
 			<wildness>0.9</wildness>
@@ -105,6 +105,9 @@
 		<tradeTags>
 			<li>AnimalInsect</li>
 		</tradeTags>
+		<butcherProducts>
+			<VFEI_Chitin>10</VFEI_Chitin>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">

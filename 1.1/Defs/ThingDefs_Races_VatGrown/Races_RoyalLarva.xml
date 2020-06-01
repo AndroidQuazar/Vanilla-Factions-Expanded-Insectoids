@@ -47,7 +47,7 @@
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-			<leatherDef>VFEI_Chitin</leatherDef>
+
 			<wildness>0.65</wildness>
 			<manhunterOnDamageChance>1.0</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
@@ -69,7 +69,7 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<butcherProducts>
-			<VFEI_RoyalInsectJelly>25</VFEI_RoyalInsectJelly>
+			<VFEI_RoyalInsectJelly>20</VFEI_RoyalInsectJelly>
 		</butcherProducts>
 		<tradeTags>
 			

@@ -64,7 +64,7 @@
 			
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-			<leatherDef>VFEI_Chitin</leatherDef>
+
 			<wildness>0.85</wildness>
 			<lifeExpectancy>3</lifeExpectancy>
 			<lifeStageAges>
@@ -95,6 +95,7 @@
 		</tradeTags>
 		<butcherProducts>
 			<VFEI_RoyalInsectJelly>20</VFEI_RoyalInsectJelly>
+			<VFEI_Chitin>15</VFEI_Chitin>
 		</butcherProducts>
 	</ThingDef>
 

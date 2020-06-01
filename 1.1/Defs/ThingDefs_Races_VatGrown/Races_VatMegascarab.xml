@@ -49,7 +49,7 @@
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-			<leatherDef>VFEI_Chitin</leatherDef>
+
 			<wildness>0.65</wildness>
 			<manhunterOnDamageChance>1.0</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
@@ -81,6 +81,9 @@
 			
 			<li>AnimalInsect</li>
 		</tradeTags>
+		<butcherProducts>
+			<VFEI_Chitin>5</VFEI_Chitin>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">

@@ -13,7 +13,7 @@
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
     <statBases>
-      <MarketValue>2.1</MarketValue>
+      <MarketValue>6</MarketValue>
       <Mass>0.55</Mass>
       <StuffPower_Armor_Sharp>0.92</StuffPower_Armor_Sharp>
       <StuffPower_Armor_Blunt>0.18</StuffPower_Armor_Blunt>
