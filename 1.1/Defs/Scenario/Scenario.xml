@@ -1,80 +1,107 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <ScenarioDef>
-    <defName>VFEI_MercenarySquad</defName>
-    <label>Mercenary Squad</label>
-    <description>The four of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
-	<scenario>
-		<name>Mercenaries</name>
-		<summary>A group of mercenaries surrounded by swarms of insectoids. Very Difficult.</summary>
-		<description>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
+	<ScenPartDef>
+		<defName>ScenPart_Settlement</defName>
+		<label>generate settlement</label>
+		<category>Misc</category>
+		<scenPartClass>ScenPart_GameStartDialog</scenPartClass>
+		<maxUses>1</maxUses>
+	</ScenPartDef>
+
+	<RuleDef>
+		<defName>VFEI_SettlementNoPawns</defName>
+		<symbol>settlementNoPawns</symbol>
+		<resolvers>
+			<li Class="VFEI.GenStuff.SymbolResolver_SettlementNoPawns">
+				<minRectSize>(12, 12)</minRectSize>
+			</li>
+		</resolvers>
+	</RuleDef>
+
+	<ScenarioDef>
+		<defName>VFEI_MercenarySquad</defName>
+		<label>Mercenary Squad</label>
+		<description>The four of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
+		<scenario>
+			<name>Mercenaries</name>
+			<summary>A group of mercenaries surrounded by swarms of insectoids. Very Difficult.</summary>
+			<description>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
 
 Note: Since your starting characters are surrounded by insectoids, this is an especially difficult scenario in the early game.</description>
-		<playerFaction>
-			<def>PlayerFaction</def>
-			<factionDef>VFE_PlayerOutpost</factionDef>
-		</playerFaction>
-		<parts>
-			<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
-				<def>ConfigPage_ConfigureStartingPawns</def>
-				<pawnCount>4</pawnCount>
-				<pawnChoiceCount>6</pawnChoiceCount>
-			</li>
-			<li Class="ScenPart_PlayerPawnsArriveMethod">
-				<def>PlayerPawnsArriveMethod</def>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>Silver</thingDef>
-				<count>260</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MealSurvivalPack</thingDef>
-				<count>60</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MedicineIndustrial</thingDef>
-				<count>30</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>ComponentIndustrial</thingDef>
-				<count>16</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>Steel</thingDef>
-				<count>450</count>
-			</li>
-			<li Class="ScenPart_ScatterThingsNearPlayerStart">
-				<def>ScatterThingsNearPlayerStart</def>
-				<thingDef>WoodLog</thingDef>
-				<count>250</count>
-			</li>
-			<li Class="ScenPart_GameStartDialog">
-				<def>GameStartDialog</def>
-				<text>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>VFE_PlayerOutpost</factionDef>
+			</playerFaction>
+			<parts>
+				<li Class="VFEI.Other.ScenPart_Settlement">
+					<def>ScenPart_Settlement</def>
+				</li>
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>4</pawnCount>
+					<pawnChoiceCount>6</pawnChoiceCount>
+				</li>
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Silver</thingDef>
+					<count>260</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MealSurvivalPack</thingDef>
+					<count>60</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineIndustrial</thingDef>
+					<count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>ComponentIndustrial</thingDef>
+					<count>16</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>Steel</thingDef>
+					<count>450</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>WoodLog</thingDef>
+					<count>250</count>
+				</li>
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
 
 You have until sunset to suit up and create defenses before insectoids arrive in numbers. Alternatively, you can pack what you can and escape this area, hoping to find a better location somewhere else.</text>
-				<closeSound>GameStartSting</closeSound>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>Gun_ChargeRifle</thingDef>
-				<count>2</count>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>Gun_ChargeLance</thingDef>
-			</li>
-			<li Class="ScenPart_StartingThing_Defined">
-				<def>StartingThing_Defined</def>
-				<thingDef>MeleeWeapon_LongSword</thingDef>
-				<stuff>Plasteel</stuff>
-			</li>
-		</parts>
-	</scenario>
-  </ScenarioDef>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Gun_ChargeRifle</thingDef>
+					<count>2</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Gun_ChargeLance</thingDef>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MeleeWeapon_LongSword</thingDef>
+					<stuff>Plasteel</stuff>
+				</li>
+				<li Class="ScenPart_CreateIncident">
+					<def>CreateIncident</def>
+					<incident>VFEI_FirstInsectoidRaid</incident>
+					<intervalDays>0.5</intervalDays>
+					<visible>false</visible>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
 </Defs>

@@ -56,4 +56,35 @@
 		<minThreatPoints>1200</minThreatPoints>
 		<earliestDay>15</earliestDay>
 	</IncidentDef>
+
+	<IncidentDef>
+		<defName>VFEI_GiantInfestation</defName>
+		<label>large infestation</label>
+		<category>ThreatBig</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>VFEI.Events.IncidentWorker_GiantInfestation</workerClass>
+		<letterLabel>Large Infestation</letterLabel>
+		<letterText>Giant insects are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.\n\nThis infestation seem to be pretty large, and leaded by a queen!</letterText>
+		<letterDef>ThreatBig</letterDef>
+		<baseChance>2</baseChance>
+		<minRefireDays>30</minRefireDays>
+		<pointsScaleable>true</pointsScaleable>
+		<minThreatPoints>600</minThreatPoints>
+		<earliestDay>25</earliestDay>
+		<tale>Infestation</tale>
+	</IncidentDef>
+
+	<IncidentDef>
+		<defName>VFEI_FirstInsectoidRaid</defName>
+		<label>raid</label>
+		<category>ThreatBig</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>VFEI.Events.IncidentWorker_FirstRaid</workerClass>
+		<baseChance>0</baseChance>
+		<pointsScaleable>true</pointsScaleable>
+	</IncidentDef>
 </Defs>

@@ -19,6 +19,15 @@
     <tickerType>Normal</tickerType>
   </ThingDef>
 
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>VFEI_TunnelHiveSpawner</defName>
+    <label>tunnel</label>
+    <thingClass>VFEI.BuildingClass.VFEI_TunnelHiveSpawner</thingClass>
+    <tickerType>Normal</tickerType>
+    <drawerType>RealtimeOnly</drawerType>
+    <alwaysFlee>true</alwaysFlee>
+  </ThingDef>
+
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>VFEI_LargeHive</defName>
     <label>large hive</label>

@@ -22,21 +22,33 @@ namespace VFEI
             /* ========== Postfix ========== */
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
-            harmony.Patch(AccessTools.Method(typeof(InfestationCellFinder), "GetScoreAt", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "GetScoreAt_Postfix", null), null, null);
             /* ========== Prefix ========== */
+            harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
         }
 
-        static void GetScoreAt_Postfix(IntVec3 cell, Map map, ref float __result)
+        static bool IncidentWorker_Infestation_Prefix(IncidentParms parms, ref bool __result)
         {
-            foreach (Building building in map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_SonicInfestationRepeller")).ToList())
+            Map map1 = (Map)parms.target;
+            if (map1.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_SonicInfestationRepeller")).Count() > 0)
             {
-                if (cell.InHorDistOf(building.Position, 50))
+                if (Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").Count() > 0)
                 {
-                    __result = 0f;
-                    return;
+                    IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map1);
+                    incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
+                    incidentParms.raidStrategy = ThingDefsVFEI.VFEI_ImmediateAttackInsect;
+                    incidentParms.points = (float)1.5 * incidentParms.points;
+                    Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame, incidentParms);
                 }
+                Messages.Message("InfestationNegated".Translate(), MessageTypeDefOf.NeutralEvent);
+                __result = true;
+                return false;
+            }
+            else
+            {
+                __result = true;
+                return true;
             }
         }
 

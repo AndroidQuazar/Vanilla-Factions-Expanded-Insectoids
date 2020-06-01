@@ -33,10 +33,12 @@
             <Flammability>0.8</Flammability>
         </statBases>
         <size>(3,3)</size>
-        <designationCategory>Misc</designationCategory>
         <passability>Impassable</passability>
         <surfaceType>Item</surfaceType>
         <tickerType>Rare</tickerType>
+        <thingSetMakerTags Inherit="False">
+            <li>RewardSpecial</li>
+        </thingSetMakerTags>
         <comps>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
@@ -47,9 +49,5 @@
             <li Class="CompProperties_Breakdownable"/>
             <li Class="VFEI.Comps.BuildingComps.CompProperties_Repeller"/>
         </comps>
-        <placeWorkers>
-            <li>VFEI.Other.RepellerPlaceWorker</li>
-        </placeWorkers>
-        <specialDisplayRadius>49.8</specialDisplayRadius>
     </ThingDef>
 </Defs>

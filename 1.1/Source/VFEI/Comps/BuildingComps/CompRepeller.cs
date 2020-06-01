@@ -38,7 +38,7 @@ namespace VFEI.Comps.BuildingComps
         {
             if (Find.TickManager.TicksGame >= this.nextMote)
             {
-                MoteMaker.MakeStaticMote(this.parent.TrueCenter(), this.parent.Map, ThingDefOf.Mote_PsycastAreaEffect, 10);
+                MoteMaker.MakeStaticMote(this.parent.TrueCenter(), this.parent.Map, ThingDefOf.Mote_PsycastAreaEffect, 20);
                 this.nextMote += 2500;
             }
         }

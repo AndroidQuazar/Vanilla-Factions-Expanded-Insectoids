@@ -48,5 +48,7 @@ namespace VFEI
         public static ThingDef VFEI_InsectMeteoriteIncoming;
         // EtherealThing
         public static ThingDef VFEI_Mote;
+        // Raid strat
+        public static RaidStrategyDef VFEI_ImmediateAttackInsect;
     }
 }

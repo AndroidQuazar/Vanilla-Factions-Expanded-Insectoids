@@ -63,8 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildingClass\VFEI_TunnelHiveSpawner.cs" />
     <Compile Include="Comps\BuildingComps\CompProperties_Repeller.cs" />
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />
+    <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
+    <Compile Include="Events\IncidentWorker_GiantInfestation.cs" />
+    <Compile Include="GenStuff\SymbolResolver_SettlementNoPawns.cs" />
     <Compile Include="Other\ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
@@ -93,7 +97,6 @@
     <Compile Include="GenStuff\SymbolResolver_OutdoorLightingIbase.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="Heddifs\Hediff_JellyWithdraw.cs" />
-    <Compile Include="Other\InfestationUtils_MapComponent.cs" />
     <Compile Include="Other\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="JobStuff\JobDriver_IngestWeird.cs" />
     <Compile Include="JobStuff\JobGiver_GetWeirdFood.cs" />
@@ -121,6 +124,7 @@
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
     <Compile Include="Other\RepellerPlaceWorker.cs" />
+    <Compile Include="Other\ScenPart_Settlement.cs" />
     <Compile Include="Other\VFEI_TunnelingNoHive.cs" />
     <Compile Include="RaidArrivalModes\PawnArrivalModeWorker_GigalocustSwarm.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Burrow.cs" />

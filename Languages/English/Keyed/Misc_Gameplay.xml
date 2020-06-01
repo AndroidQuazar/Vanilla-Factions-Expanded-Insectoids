@@ -87,5 +87,6 @@
 	<FailedMutation>Mutation failed!</FailedMutation>
 	<FailedMutationLetter>Mutation failed, no body part could grow.</FailedMutationLetter>
 
-
+	<!-- Repeller utils -->
+	<InfestationNegated>An infestation have been prevented.</InfestationNegated>
 </LanguageData>
