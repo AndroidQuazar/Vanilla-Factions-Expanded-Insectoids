@@ -38,14 +38,16 @@ namespace VFEI.PawnComps
 		public override void CompTick()
 		{
 			base.CompTick();
-			if(this.parent is Pawn pa && (pa.GetPosture() != PawnPosture.LayingOnGroundNormal || pa.GetPosture() != PawnPosture.LayingOnGroundFaceUp) && !pa.health.Downed)
+			if(this.parent is Pawn pa && !pa.health.Downed && pa.Map.mapPawns.AllPawnsSpawned.Count < 100)
 			{
 				if (Find.TickManager.TicksGame == this.nextSpawn)
 				{
 					for (int i = 0; i < Props.numberToSpawn; i++)
 					{
+						IntVec3 vec3 = this.parent.Position.RandomAdjacentCell8Way();
+						if (!vec3.InBounds(this.parent.Map)) break;
 						Pawn p = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Larvae, this.parent.Faction);
-						GenSpawn.Spawn(p, this.parent.Position.RandomAdjacentCellCardinal(), this.parent.Map);
+						GenSpawn.Spawn(p, vec3, this.parent.Map);
 
 					}
 					FilthMaker.TryMakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.Filth_Slime, 4);

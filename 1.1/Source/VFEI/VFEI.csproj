@@ -68,7 +68,10 @@
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />
     <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
     <Compile Include="Events\IncidentWorker_GiantInfestation.cs" />
-    <Compile Include="GenStuff\SymbolResolver_SettlementNoPawns.cs" />
+    <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeDefenseNoPawn.cs" />
+    <Compile Include="GenStuff\NoPawns\SymbolResolver_SettlementNoPawns.cs" />
+    <Compile Include="GenStuff\NoPawns\SymbolResolver_MannedMortarNoPawns.cs" />
+    <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeMannedMortarNoPawns.cs" />
     <Compile Include="Other\ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />

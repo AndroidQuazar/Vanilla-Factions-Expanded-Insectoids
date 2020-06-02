@@ -10,7 +10,6 @@ namespace VFEI.GenStuff
     {
 		public override void Resolve(ResolveParams rp)
 		{
-			Map map = BaseGen.globalSettings.map;
 			Faction faction = Faction.OfPlayer;
 			int num = 0;
 			if (rp.edgeDefenseWidth != null)
@@ -23,7 +22,6 @@ namespace VFEI.GenStuff
 			}
 			float num2 = (float)rp.rect.Area / 144f * 0.17f;
 			BaseGen.globalSettings.minEmptyNodes = ((num2 < 1f) ? 0 : GenMath.RoundRandom(num2));
-			TraverseParms traverseParms = TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false);
 			BaseGen.symbolStack.Push("outdoorLighting", rp, null);
 			if (faction.def.techLevel >= TechLevel.Industrial)
 			{
@@ -41,7 +39,7 @@ namespace VFEI.GenStuff
 				resolveParams3.faction = faction;
 				resolveParams3.edgeDefenseWidth = new int?(num);
 				resolveParams3.edgeThingMustReachMapEdge = new bool?(rp.edgeThingMustReachMapEdge ?? true);
-				BaseGen.symbolStack.Push("edgeDefense", resolveParams3, null);
+				BaseGen.symbolStack.Push("edgeDefenseNoPawns", resolveParams3, null);
 			}
 			ResolveParams resolveParams4 = rp;
 			resolveParams4.rect = rp.rect.ContractedBy(num);

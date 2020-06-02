@@ -18,7 +18,7 @@
 							<label>black hive genetic material</label>
 							<description>A vial of genetic material extracted from an insectoid from the Black Hive.\n\nBlack hive genetic material is not viable in all combinations, and it won't combine with Royal Genome at all.</description>   
 							<statBases>    
-							  <MarketValue>300</MarketValue>     
+							  <MarketValue>500</MarketValue>     
 							</statBases>
 							<graphicData>
 								<texPath>Things/Item/GenomeIcons/VFEI_BlackHiveGenome</texPath>

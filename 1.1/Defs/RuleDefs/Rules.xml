@@ -33,4 +33,45 @@
     </resolvers>
   </RuleDef>
 
+  <!-- ============ No PAWNS ============ -->
+  <RuleDef>
+		<defName>VFEI_SettlementNoPawns</defName>
+		<symbol>settlementNoPawns</symbol>
+		<resolvers>
+			<li Class="VFEI.GenStuff.SymbolResolver_SettlementNoPawns">
+				<minRectSize>(12, 12)</minRectSize>
+			</li>
+		</resolvers>
+	</RuleDef>
+
+	<RuleDef>
+		<defName>VFEI_EdgeMannedMortarNoPawns</defName>
+		<symbol>edgeMannedMortarNoPawns</symbol>
+		<resolvers>
+			<li Class="VFEI.GenStuff.SymbolResolver_EdgeMannedMortarNoPawns">
+				<minRectSize>(3, 3)</minRectSize>
+			</li>
+		</resolvers>
+	</RuleDef>
+
+	<RuleDef>
+		<defName>VFEI_MannedMortarNoPawns</defName>
+		<symbol>mannedMortarNoPawns</symbol>
+		<resolvers>
+			<li Class="VFEI.GenStuff.SymbolResolver_MannedMortarNoPawns">
+				<minRectSize>(3, 3)</minRectSize>
+			</li>
+		</resolvers>
+	</RuleDef>
+
+	<RuleDef>
+		<defName>VFEI_EdgeDefenseNoPawns</defName>
+		<symbol>edgeDefenseNoPawns</symbol>
+		<resolvers>
+			<li Class="VFEI.GenStuff.SymbolResolver_EdgeDefenseNoPawn">
+				<minRectSize>(2, 2)</minRectSize>
+			</li>
+		</resolvers>
+	</RuleDef>
+
 </Defs>

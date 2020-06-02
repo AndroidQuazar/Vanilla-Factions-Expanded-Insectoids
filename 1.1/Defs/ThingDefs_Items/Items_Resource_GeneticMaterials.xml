@@ -4,23 +4,18 @@
   <!--=============== Genetic Material ====================-->
 
   <ThingDef Name="VFEI_GeneticsBase" ParentName="ResourceBase" Abstract="True">
-    
-    
     <graphicData>
-      
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Standard_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
-	
     <statBases>
       <MaxHitPoints>15</MaxHitPoints>
       <MarketValue>100</MarketValue>
       <Mass>0.10</Mass>
-      <Flammability>1.0</Flammability>     
+      <Flammability>1.0</Flammability>
       <DeteriorationRate>6</DeteriorationRate>
     </statBases>
-	
     <thingCategories>
       <li>Manufactured</li>
     </thingCategories>
@@ -28,43 +23,45 @@
     <comps>
       <li Class="CompProperties_Rottable">
         <daysToRotStart>2</daysToRotStart>
-				<rotDestroys>true</rotDestroys>
-			</li>
+        <rotDestroys>true</rotDestroys>
+      </li>
     </comps>
   </ThingDef>
 
- 
+
   <ThingDef ParentName="VFEI_GeneticsBase">
     <defName>VFEI_DroneGenome</defName>
     <label>drone genetic material</label>
-    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <statBases>
+      <MarketValue>300</MarketValue>
+    </statBases>
+    <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_DroneGenome</texPath>
-    </graphicData>    
+    </graphicData>
   </ThingDef>
-  
-    <ThingDef ParentName="VFEI_GeneticsBase">
+
+  <ThingDef ParentName="VFEI_GeneticsBase">
     <defName>VFEI_WarriorGenome</defName>
     <label>warrior genetic material</label>
-    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <statBases>
+      <MarketValue>400</MarketValue>
+    </statBases>
+    <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_WarriorGenome</texPath>
-    </graphicData>    
+    </graphicData>
   </ThingDef>
- 
-     <ThingDef ParentName="VFEI_GeneticsBase">
+
+  <ThingDef ParentName="VFEI_GeneticsBase">
     <defName>VFEI_RoyalGenome</defName>
     <label>royal genetic material</label>
-	<statBases>    
-      <MarketValue>300</MarketValue>     
+    <statBases>
+      <MarketValue>500</MarketValue>
     </statBases>
-    <description>A vial of genetic material extracted from an insectoid.</description>   
+    <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_RoyalGenome</texPath>
-    </graphicData>    
+    </graphicData>
   </ThingDef>
- 
-  
-    
-  
 </Defs>

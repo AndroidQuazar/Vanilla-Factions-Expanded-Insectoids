@@ -3,7 +3,7 @@
 
   <ThingDef ParentName="ArmorMachineableBase">
     <defName>VFE_Apparel_RiotArmor</defName>
-    <label>flak jacket</label>
+    <label>riot armor</label>
     <techLevel>Industrial</techLevel>
     <description>A thick jacket with armor plates inserted on chests, arms, legs and back. Very effective at protecting against blunt trauma, this kind of armor is often used by riot police and heavy infantry alike.</description>
     <recipeMaker>
@@ -59,6 +59,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
       <useDeflectMetalEffect>true</useDeflectMetalEffect>
+      <tags>
+        <li>IndustrialMilitaryAdvanced</li>
+      </tags>
     </apparel>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -82,7 +85,7 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  
+
   <ThingDef ParentName="ArmorHelmetMakeableBase">
     <defName>VFE_Apparel_RiotHelmet</defName>
     <label>riot helmet</label>
@@ -95,6 +98,9 @@
         <Crafting>6</Crafting>
       </skillRequirements>
     </recipeMaker>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/RiotHelmet/RiotHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -133,99 +139,99 @@
     </apparel>
   </ThingDef>
 
- 
-     <ThingDef Name="VFEI_BaseShield" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
-        <techLevel>Industrial</techLevel>
-        <thingCategories Inherit="False">
-            <li>VFEC_Shields</li>
-        </thingCategories>
-        <equippedStatOffsets>
-            <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
-            <MeleeHitChance>-2</MeleeHitChance>
-            <MeleeDodgeChance>-5</MeleeDodgeChance>
-        </equippedStatOffsets>
-        <equippedAngleOffset>0</equippedAngleOffset>
-        <tools>
-            <li>
-                <label>base</label>
-                <capacities>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>centre</label>
-                <labelUsedInLogging>false</labelUsedInLogging>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-    </ThingDef>
 
-    <ThingDef ParentName="VFEI_BaseShield">
-        <defName>VFEI_Shield_Riot</defName>
-        <label>riot shield</label>
-        <description>An industrial heavy shield made out of reinforced steel. Provides a lot of protection against blunt damage, which makes it ideal for urbworld riot police.</description>
-        <graphicData>
-            <texPath>Things/Pawn/Humanlike/RiotShield/RiotShield</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>1</drawSize>
-        </graphicData>
-        <costList>
-			<Steel>80</Steel>
-        </costList>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <Flammability>0.1</Flammability>
-            <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.9</ArmorRating_Heat>
-            <WorkToMake>3500</WorkToMake>
-            <Mass>2.2</Mass>
-        </statBases>
-        <comps>
-            <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
-            <li Class="VFECore.CompProperties_Shield">
-                <shieldTags>
-                    <li>IndustrialBasic</li>
-                </shieldTags>
-                <useDeflectMetalEffect>true</useDeflectMetalEffect>
-                <coveredBodyPartGroups>
-                    <li>Neck</li>
-                    <li>Torso</li>
-                    <li>Arms</li>
-                    <li>Hands</li>
-                    <li>Legs</li>
-                </coveredBodyPartGroups>
-                <offHandGraphicData>
-                    <texPath>Things/Pawn/Humanlike/RiotShield/RiotShield</texPath>
-                    <graphicClass>Graphic_Multi</graphicClass>
-                    <shaderType>CutoutComplex</shaderType>
-                    <drawSize>1.6</drawSize>
-                </offHandGraphicData>
-                <offHandHoldOffset>
-                    <northDefault>
-                        <offset>(0, 0, 0.2)</offset>
-                        <behind>true</behind>
-                    </northDefault>
-                    <east>
-                        <offset>(-0.1, 0, 0.2)</offset>
-                        <behind>true</behind>
-                    </east>
-                    <south>
-                        <offset>(-0.1, -0.04, 0.2)</offset>
-                    </south>
-                    <west>
-                        <offset>(0.1, 0, 0.2)</offset>
-                    </west>
-                </offHandHoldOffset>
-            </li>
-        </comps>
-    </ThingDef>
- 
- 
+  <ThingDef Name="VFEI_BaseShield" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <thingCategories Inherit="False">
+      <li>VFEC_Shields</li>
+    </thingCategories>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+      <MeleeHitChance>-2</MeleeHitChance>
+      <MeleeDodgeChance>-5</MeleeDodgeChance>
+    </equippedStatOffsets>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>base</label>
+        <capacities>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>centre</label>
+        <labelUsedInLogging>false</labelUsedInLogging>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="VFEI_BaseShield">
+    <defName>VFEI_Shield_Riot</defName>
+    <label>riot shield</label>
+    <description>An industrial heavy shield made out of reinforced steel. Provides a lot of protection against blunt damage, which makes it ideal for urbworld riot police.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/RiotShield/RiotShield</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <costList>
+      <Steel>80</Steel>
+    </costList>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.9</ArmorRating_Heat>
+      <WorkToMake>3500</WorkToMake>
+      <Mass>2.2</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompOversizedWeapon.CompProperties_OversizedWeapon"/>
+      <li Class="VFECore.CompProperties_Shield">
+        <shieldTags>
+          <li>IndustrialBasic</li>
+        </shieldTags>
+        <useDeflectMetalEffect>true</useDeflectMetalEffect>
+        <coveredBodyPartGroups>
+          <li>Neck</li>
+          <li>Torso</li>
+          <li>Arms</li>
+          <li>Hands</li>
+          <li>Legs</li>
+        </coveredBodyPartGroups>
+        <offHandGraphicData>
+          <texPath>Things/Pawn/Humanlike/RiotShield/RiotShield</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>1.6</drawSize>
+        </offHandGraphicData>
+        <offHandHoldOffset>
+          <northDefault>
+            <offset>(0, 0, 0.2)</offset>
+            <behind>true</behind>
+          </northDefault>
+          <east>
+            <offset>(-0.1, 0, 0.2)</offset>
+            <behind>true</behind>
+          </east>
+          <south>
+            <offset>(-0.1, -0.04, 0.2)</offset>
+          </south>
+          <west>
+            <offset>(0.1, 0, 0.2)</offset>
+          </west>
+        </offHandHoldOffset>
+      </li>
+    </comps>
+  </ThingDef>
+
+
 </Defs>

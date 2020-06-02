@@ -13,24 +13,26 @@ namespace VFEI
     class VFEICocoon : ThingWithComps
     {
 		int timeBeforeInsect;
+		int timeBeforeInsectString;
 		bool once = true;
 
 		public override void ExposeData()
 		{
 			base.ExposeData();
 			Scribe_Values.Look<int>(ref this.timeBeforeInsect, "timeBeforeInsect");
+			Scribe_Values.Look<int>(ref this.timeBeforeInsectString, "timeBeforeInsectString");
 			Scribe_Values.Look<bool>(ref this.once, "onceCocoonDev");
 		}
 
-		public override void PostMapInit()
+		public override string GetInspectString()
 		{
-			base.PostMapInit();
-			if (once) { this.timeBeforeInsect = Find.TickManager.TicksGame + 15000; once = false; }
+			return "CocoonInsectSpawnIn".Translate(timeBeforeInsectString.ToStringTicksToPeriod());
 		}
 
 		public override void Tick()
 		{
 			base.Tick();
+			if (once) { this.timeBeforeInsect = Find.TickManager.TicksGame + 15000; timeBeforeInsectString = 15000; once = false; }
 			if (Find.TickManager.TicksGame == this.timeBeforeInsect)
 			{
 				IntVec3 pos = this.Position;
@@ -50,7 +52,7 @@ namespace VFEI
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Queen);
 
-				PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower);
+				PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue);
 				List<Faction> factions = new List<Faction>();
 				FactionManager.GetInViewOrder(factions);
 				Pawn p = PawnGenerator.GeneratePawn(pawnKind, factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement());
@@ -58,6 +60,7 @@ namespace VFEI
 
 				this.Destroy();
 			}
+			timeBeforeInsectString--;
 		}
 	}
 }

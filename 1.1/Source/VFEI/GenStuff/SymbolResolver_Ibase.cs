@@ -43,28 +43,28 @@ namespace VFEI.GenStuff
 			}
 			BaseGen.symbolStack.Push("pawnGroup", resolveParams, null);
 			BaseGen.symbolStack.Push("insectoidBaseLightning", rp, null);
-			/*if (num > 0)
+			if (num > 0)
 			{
 				ResolveParams resolveParams3 = rp;
 				resolveParams3.faction = faction;
 				resolveParams3.edgeDefenseWidth = new int?(num);
 				resolveParams3.edgeThingMustReachMapEdge = new bool?(rp.edgeThingMustReachMapEdge ?? true);
 				BaseGen.symbolStack.Push("insectoidBaseEdgeDefense", resolveParams3, null);
-			}*/
+			}
 			ResolveParams resolveParams4 = rp;
 			resolveParams4.rect = rp.rect.ContractedBy(num);
 			resolveParams4.faction = faction;
 			BaseGen.symbolStack.Push("ensureCanReachMapEdge", resolveParams4, null);
-			/*ResolveParams resolveParams5 = rp;
+			ResolveParams resolveParams5 = rp;
 			resolveParams5.rect = rp.rect.ContractedBy(num);
 			resolveParams5.faction = faction;
 			resolveParams5.floorOnlyIfTerrainSupports = new bool?(rp.floorOnlyIfTerrainSupports ?? true);
-			BaseGen.symbolStack.Push("basePart_outdoors", resolveParams5, null);*/
-			/*ResolveParams resolveParams6 = rp;
+			BaseGen.symbolStack.Push("basePart_outdoors", resolveParams5, null);
+			ResolveParams resolveParams6 = rp;
 			resolveParams6.floorDef = TerrainDefOf.Bridge;
 			resolveParams6.floorOnlyIfTerrainSupports = new bool?(rp.floorOnlyIfTerrainSupports ?? true);
 			resolveParams6.allowBridgeOnAnyImpassableTerrain = new bool?(rp.allowBridgeOnAnyImpassableTerrain ?? true);
-			BaseGen.symbolStack.Push("floor", resolveParams6, null);*/
+			BaseGen.symbolStack.Push("floor", resolveParams6, null);
 		}
 
 		public static readonly FloatRange DefaultPawnsPoints = new FloatRange(1150f, 1600f);
