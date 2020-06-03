@@ -52,12 +52,14 @@ namespace VFEI
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Queen);
 
-				PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue);
-				List<Faction> factions = new List<Faction>();
-				FactionManager.GetInViewOrder(factions);
-				Pawn p = PawnGenerator.GeneratePawn(pawnKind, factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement());
-				GenSpawn.Spawn(p, pos, map);
-
+				if (pawnKindDefs.Count > 0)
+				{
+					PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue);
+					List<Faction> factions = new List<Faction>();
+					FactionManager.GetInViewOrder(factions);
+					Pawn p = PawnGenerator.GeneratePawn(pawnKind, factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement());
+					GenSpawn.Spawn(p, pos, map);
+				}
 				this.Destroy();
 			}
 			timeBeforeInsectString--;

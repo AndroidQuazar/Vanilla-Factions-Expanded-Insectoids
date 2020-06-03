@@ -22,7 +22,7 @@ namespace VFEI.Events
 		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			Map map = (Map)parms.target;
-			Thing t = SpawnTunnels(Mathf.Max(GenMath.RoundRandom(parms.points / 220f), 1), map, false, false, null);
+			Thing t = SpawnTunnels(Mathf.Max(GenMath.RoundRandom(parms.points / 120f), 1), map, false, false, null);
 			base.SendStandardLetter(parms, t, Array.Empty<NamedArgument>());
 			Find.TickManager.slower.SignalForceNormalSpeedShort();
 			return true;

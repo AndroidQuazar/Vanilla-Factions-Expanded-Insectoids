@@ -18,18 +18,18 @@
   </RuleDef>
 
   <RuleDef>
-    <defName>InsectoidBaseEdgeDefense</defName>
-    <symbol>insectoidBaseEdgeDefense</symbol>
+    <defName>InsectoidBaseRCorpse</defName>
+    <symbol>insectoidBaseRCorpse</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_EdgeDefenseIbase" />
+      <li Class="VFEI.GenStuff.SymbolResolver_RandomCorpse" />
     </resolvers>
   </RuleDef>
 
   <RuleDef>
-    <defName>InsectoidBaseEdgeRocks</defName>
-    <symbol>insectoidBaseEdgeRocks</symbol>
+    <defName>InsectoidBaseRDamage</defName>
+    <symbol>insectoidBaseRDamage</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_EdgeRocksIbase" />
+      <li Class="VFEI.GenStuff.SymbolResolver_RandomDamage" />
     </resolvers>
   </RuleDef>
 

@@ -11,8 +11,7 @@
 
 	<PawnKindDef Name="VFEI_InsectKindBase" Abstract="True">
 		<defaultFactionType>VFEI_Insect</defaultFactionType>
-		<aiAvoidCover>true</aiAvoidCover>
-		<weaponMoney>0~0</weaponMoney>
+		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
 		<weaponTags>
 		</weaponTags>
@@ -26,7 +25,7 @@
 		<statBases>
 			<MoveSpeed>1.50</MoveSpeed>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
-			<MarketValue>900</MarketValue>
+			<MarketValue>1500</MarketValue>
 			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
 		</statBases>
@@ -67,7 +66,6 @@
 			</li>
 		</comps>
 		<race>
-			<intelligence>ToolUser</intelligence>
 			<body>BeetleLikeWithClaw</body>
 			<deathActionWorkerClass>VFEI.DeathActionWorker_InsectsFlee</deathActionWorkerClass>
 			<baseHungerRate>0.70</baseHungerRate>
@@ -192,7 +190,6 @@
 			</li>
 		</comps>
 		<race>
-			<intelligence>ToolUser</intelligence>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.50</baseHungerRate>
 			<baseBodySize>1.8</baseBodySize>
@@ -310,7 +307,6 @@
 			</li>
 		</tools>
 		<race>
-			<intelligence>ToolUser</intelligence>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.35</baseHungerRate>
 			<baseBodySize>1.2</baseBodySize>
@@ -453,7 +449,6 @@
 			</li>
 		</tools>
 		<race>
-			<intelligence>ToolUser</intelligence>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.35</baseHungerRate>
 			<baseBodySize>1.8</baseBodySize>
@@ -566,7 +561,6 @@
 			</li>
 		</tools>
 		<race>
-			<intelligence>ToolUser</intelligence>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.35</baseHungerRate>
 			<baseBodySize>0.6</baseBodySize>

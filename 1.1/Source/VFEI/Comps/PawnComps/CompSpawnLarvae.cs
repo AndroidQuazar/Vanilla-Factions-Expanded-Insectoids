@@ -32,30 +32,37 @@ namespace VFEI.PawnComps
 
 		public override string CompInspectStringExtra()
 		{
-			return "LarvaeTimeSpawn".Translate(tickToSpawn.ToStringTicksToPeriod());
+			if(tickToSpawn > 0 && this.parent.Map.mapPawns.AllPawnsSpawnedCount < 100)
+			{
+				return "LarvaeTimeSpawn".Translate(tickToSpawn.ToStringTicksToPeriod());
+			}
+			return "NoMoreSpawningAllowed".Translate();
 		}
 
 		public override void CompTick()
 		{
 			base.CompTick();
-			if(this.parent is Pawn pa && !pa.health.Downed && pa.Map.mapPawns.AllPawnsSpawned.Count < 100)
+			if(this.parent is Pawn pa && pa.Map != null && pa.Spawned && !pa.health.Downed && pa.Map.mapPawns.AllPawnsSpawned.Count < 100)
 			{
 				if (Find.TickManager.TicksGame == this.nextSpawn)
 				{
 					for (int i = 0; i < Props.numberToSpawn; i++)
 					{
 						IntVec3 vec3 = this.parent.Position.RandomAdjacentCell8Way();
-						if (!vec3.InBounds(this.parent.Map)) break;
+						if (!vec3.InBounds(this.parent.Map) || !vec3.Walkable(this.parent.Map)) break;
 						Pawn p = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Larvae, this.parent.Faction);
 						GenSpawn.Spawn(p, vec3, this.parent.Map);
 
 					}
-					FilthMaker.TryMakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.Filth_Slime, 4);
+					FilthMaker.TryMakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.Filth_Slime, 1);
 					SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.parent));
 					this.nextSpawn = Find.TickManager.TicksGame + this.Props.ticksBetweenSpawn;
 					this.tickToSpawn = Props.ticksBetweenSpawn;
 				}
-				this.tickToSpawn--;
+				if (this.tickToSpawn > 0)
+				{
+					this.tickToSpawn--;
+				}
 			}
 		}
 

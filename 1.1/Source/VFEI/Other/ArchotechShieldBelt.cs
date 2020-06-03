@@ -76,14 +76,6 @@ namespace VFEI
 			}
 		}
 
-		private float EnergyGainPerTick
-		{
-			get
-			{
-				return this.GetStatValue(StatDefOf.EnergyShieldRechargeRate, true) / 60f;
-			}
-		}
-
 		public float Energy
 		{
 			get
@@ -143,12 +135,7 @@ namespace VFEI
 		public override void Tick()
 		{
 			base.Tick();
-			if (base.Wearer == null)
-			{
-				this.energy = 0f;
-				return;
-			}
-			else if (energy == 0 && !shouldRecharge)
+			if (energy == 0 && !shouldRecharge)
 			{
 				this.energy = this.TryGetComp<SaveBeltEnergy>().energy;
 			}
@@ -156,6 +143,7 @@ namespace VFEI
 			{
 				this.energy = this.EnergyMax;
 				this.shouldRecharge = false;
+				this.TryGetComp<SaveBeltEnergy>().energy = this.energy;
 			}
 		}
 

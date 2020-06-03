@@ -20,19 +20,19 @@
     <ingestible>
       <foodType>AnimalProduct</foodType>
       <preferability>MealFine</preferability>
-      <joy>0.15</joy> <!-- Vanilla Jelly 8 -->
+      <joy>0.16</joy>
       <nurseable>true</nurseable>
       <drugCategory>Social</drugCategory>
       <chairSearchRadius>12</chairSearchRadius>
       <tasteThought>VFEI_AteRoyalJelly</tasteThought>
-      <joyKind>Chemical</joyKind> <!-- Gluttonous -->
+      <joyKind>Gluttonous</joyKind>
       <ingestEffect>EatVegetarian</ingestEffect>
       <ingestSound>Meal_Eat</ingestSound>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>VFEI_RoyalJellyHigh</hediffDef>
           <severity>0.50</severity>
-          <toleranceChemical>Ambrosia</toleranceChemical>
+          <toleranceChemical>VFEI_RoyalJelly</toleranceChemical>
         </li>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>VFEI_RoyalJellyTolerance</hediffDef>

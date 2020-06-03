@@ -72,6 +72,8 @@
     <Compile Include="GenStuff\NoPawns\SymbolResolver_SettlementNoPawns.cs" />
     <Compile Include="GenStuff\NoPawns\SymbolResolver_MannedMortarNoPawns.cs" />
     <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeMannedMortarNoPawns.cs" />
+    <Compile Include="GenStuff\SymbolResolver_RandomCorpse.cs" />
+    <Compile Include="GenStuff\SymbolResolver_RandomDamage.cs" />
     <Compile Include="Other\ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
@@ -93,9 +95,6 @@
     <Compile Include="Events\IncidentWorker_InfestedCrashedShipModule.cs" />
     <Compile Include="Events\IncidentWorker_InfestedCrashedShipPart.cs" />
     <Compile Include="Events\IncidentWorker_InfestedPartDropSmall.cs" />
-    <Compile Include="GenStuff\GenStep_IbaseCaves.cs" />
-    <Compile Include="GenStuff\SymbolResolver_EdgeDefenseIbase.cs" />
-    <Compile Include="GenStuff\SymbolResolver_EdgeRocksIbase.cs" />
     <Compile Include="GenStuff\SymbolResolver_Ibase.cs" />
     <Compile Include="GenStuff\SymbolResolver_OutdoorLightingIbase.cs" />
     <Compile Include="HarmonyPatches.cs" />

@@ -66,7 +66,7 @@ namespace VFEI
             {
                 if (map.ParentFaction != null && map.ParentFaction.def.defName == "VFEI_Insect")
                 {
-                    IntRange SettlementSizeRange = new IntRange(34, 44);
+                    IntRange SettlementSizeRange = new IntRange(44, 60);
                     int randomInRange = SettlementSizeRange.RandomInRange;
                     int randomInRange2 = SettlementSizeRange.RandomInRange;
                     CellRect rect = new CellRect(c.x - randomInRange / 2, c.z - randomInRange2 / 2, randomInRange, randomInRange2);
@@ -75,9 +75,12 @@ namespace VFEI
                     resolveParams.rect = rect;
                     resolveParams.faction = map.ParentFaction;
                     BaseGen.globalSettings.map = map;
-                    BaseGen.globalSettings.minBuildings = 1;
-                    BaseGen.globalSettings.minBarracks = 1;
+                    BaseGen.globalSettings.minBuildings = 8;
+                    BaseGen.globalSettings.minBarracks = 2;
                     BaseGen.symbolStack.Push("insectoidBase", resolveParams, null);
+                    BaseGen.Generate();
+                    BaseGen.globalSettings.map = map;
+                    BaseGen.symbolStack.Push("insectoidBaseRDamage", resolveParams, null);
                     BaseGen.Generate();
                     return false;
                 }
