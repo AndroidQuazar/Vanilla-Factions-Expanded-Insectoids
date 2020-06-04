@@ -67,7 +67,7 @@
 					<minAge>0.05</minAge>
 				</li>
 				<li>
-					<def>EusocialInsectAdult</def>
+					<def>AnimalAdult</def>
 					<minAge>0.2</minAge>
 					<soundWounded>Pawn_Spelopede_Pain</soundWounded>
 					<soundDeath>Pawn_Spelopede_Death</soundDeath>
