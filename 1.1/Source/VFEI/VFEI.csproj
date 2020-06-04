@@ -75,6 +75,7 @@
     <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeMannedMortarNoPawns.cs" />
     <Compile Include="GenStuff\SymbolResolver_RandomCorpse.cs" />
     <Compile Include="GenStuff\SymbolResolver_RandomDamage.cs" />
+    <Compile Include="GenStuff\SymbolResolver_RandomHives.cs" />
     <Compile Include="Other\ArchotechShieldBelt.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_RandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />

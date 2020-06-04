@@ -85,7 +85,7 @@ namespace VFEI
                     resolveParams.faction = map.ParentFaction;
                     resolveParams.cultivatedPlantDef = ThingDefOf.Plant_Grass;
                     resolveParams.pathwayFloorDef = DefDatabase<TerrainDef>.AllDefsListForReading.FindAll(t => t.terrainAffordanceNeeded == TerrainAffordanceDefOf.Medium && t.costStuffCount < 6).RandomElement();
-                    resolveParams.wallStuff = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(t => t.stuffProps != null && t.BaseMarketValue < 6).RandomElement();
+                    resolveParams.wallStuff = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(t => t.stuffProps != null && (t.terrainAffordanceNeeded == TerrainAffordanceDefOf.Light || t.terrainAffordanceNeeded == TerrainAffordanceDefOf.Medium || t.terrainAffordanceNeeded == TerrainAffordanceDefOf.Heavy) && t.BaseMarketValue < 6).RandomElement();
                     BaseGen.globalSettings.map = map;
                     BaseGen.globalSettings.minBuildings = 8;
                     BaseGen.globalSettings.minBarracks = 2;
@@ -93,6 +93,9 @@ namespace VFEI
                     BaseGen.Generate();
                     BaseGen.globalSettings.map = map;
                     BaseGen.symbolStack.Push("insectoidBaseRDamage", resolveParams, null);
+                    BaseGen.Generate();
+                    BaseGen.globalSettings.map = map;
+                    BaseGen.symbolStack.Push("insectoidRandHives", resolveParams, null);
                     BaseGen.Generate();
                     return false;
                 }

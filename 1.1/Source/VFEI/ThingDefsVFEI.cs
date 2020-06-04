@@ -54,6 +54,5 @@ namespace VFEI
         public static RaidStrategyDef VFEI_ImmediateAttackInsect;
         // Hive
         public static ThingDef VFEI_LargeHive;
-        public static ThingDef VFEI_SmallHive;
     }
 }

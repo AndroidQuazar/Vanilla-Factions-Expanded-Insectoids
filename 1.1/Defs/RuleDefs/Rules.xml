@@ -33,6 +33,14 @@
     </resolvers>
   </RuleDef>
 
+  <RuleDef>
+    <defName>InsectoidRandHives</defName>
+    <symbol>insectoidRandHives</symbol>
+    <resolvers>
+      <li Class="VFEI.GenStuff.SymbolResolver_RandomHives" />
+    </resolvers>
+  </RuleDef>
+
   <!-- ============ No PAWNS ============ -->
   <RuleDef>
 		<defName>VFEI_SettlementNoPawns</defName>
