@@ -30,6 +30,15 @@ namespace VFEI.BuildingClass
 			Scribe_Values.Look<bool>(ref this.spawnedByInfestationThingComp, "spawnedByInfestationThingComp", false, false);
 		}
 
+		public override void PostMake()
+		{
+			filthTypes.Add(ThingDefOf.Filth_Dirt);
+			filthTypes.Add(ThingDefOf.Filth_Dirt);
+			filthTypes.Add(ThingDefOf.Filth_Dirt);
+			filthTypes.Add(ThingDefOf.Filth_RubbleRock);
+			base.PostMake();
+		}
+
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)
 		{
 			base.SpawnSetup(map, respawningAfterLoad);
@@ -44,6 +53,8 @@ namespace VFEI.BuildingClass
 		{
 			if (base.Spawned)
 			{
+				List<Pawn> list = new List<Pawn>();
+				Faction fac = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 				this.sustainer.Maintain();
 				Vector3 vector = base.Position.ToVector3Shifted();
 				IntVec3 c;
@@ -66,15 +77,39 @@ namespace VFEI.BuildingClass
 					this.Destroy(DestroyMode.Vanish);
 					if (this.spawnHive)
 					{
-						Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Hive, null), position, map, WipeMode.Vanish);
-						hive.SetFaction(Faction.OfInsects, null);
-						hive.questTags = this.questTags;
-						foreach (CompSpawner compSpawner in hive.GetComps<CompSpawner>())
+						if (Rand.RangeInclusive(1, 4) < 3)
 						{
-							if (compSpawner.PropsSpawner.thingToSpawn == ThingDefOf.InsectJelly)
+							Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Hive, null), position, map, WipeMode.Vanish);
+							hive.SetFaction(fac, null);
+							hive.questTags = this.questTags;
+							foreach (CompSpawner compSpawner in hive.GetComps<CompSpawner>())
 							{
-								compSpawner.TryDoSpawn();
-								break;
+								if (compSpawner.PropsSpawner.thingToSpawn == ThingDefOf.InsectJelly)
+								{
+									compSpawner.TryDoSpawn();
+									break;
+								}
+							}
+						}
+						else
+						{
+							Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefsVFEI.VFEI_LargeHive, null), position, map, WipeMode.Vanish);
+							hive.SetFaction(fac, null);
+							hive.questTags = this.questTags;
+							foreach (CompSpawner compSpawner in hive.GetComps<CompSpawner>())
+							{
+								if (compSpawner.PropsSpawner.thingToSpawn == ThingDefsVFEI.VFEI_RoyalInsectJelly)
+								{
+									compSpawner.TryDoSpawn();
+									break;
+								}
+							}
+							Pawn pawn = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Queen, fac);
+							if (map.mapPawns.AllPawnsSpawned.Where(p => p.def.defName == "VFEI_Insectoid_Queen").Count() == 0)
+							{
+								GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(position, map, 2, null), map, WipeMode.Vanish);
+								pawn.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
+								list.Add(pawn);
 							}
 						}
 					}
@@ -82,7 +117,6 @@ namespace VFEI.BuildingClass
 					{
 						this.insectsPoints = Mathf.Max(this.insectsPoints, Hive.spawnablePawnKinds.Min((PawnKindDef x) => x.combatPower));
 						float pointsLeft = this.insectsPoints;
-						List<Pawn> list = new List<Pawn>();
 						int num = 0;
 						while (pointsLeft > 0f)
 						{
@@ -98,7 +132,7 @@ namespace VFEI.BuildingClass
 							{
 								break;
 							}
-							Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDef, Faction.OfInsects);
+							Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDef, fac);
 							GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(position, map, 2, null), map, WipeMode.Vanish);
 							pawn.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
 							list.Add(pawn);
@@ -106,7 +140,7 @@ namespace VFEI.BuildingClass
 						}
 						if (list.Any<Pawn>())
 						{
-							LordMaker.MakeNewLord(Faction.OfInsects, new LordJob_AssaultColony(Faction.OfInsects, true, false, false, false, true), map, list);
+							LordMaker.MakeNewLord(fac, new LordJob_AssaultColony(fac, true, false, false, false, true), map, list);
 						}
 					}
 				}

@@ -33,6 +33,7 @@ namespace VFEI
         public static ThingDef InsectJelly;
         public static ThingDef VFEI_InsectoidLarvaeCocoon;
         public static TerrainDef Soil;
+        public static ThingDef VFEI_RoyalInsectJelly;
         // Animal Body Parts
         public static BodyPartDef VFEI_ExplosiveSac;
         // JobDefs
@@ -48,7 +49,11 @@ namespace VFEI
         public static ThingDef VFEI_InsectMeteoriteIncoming;
         // EtherealThing
         public static ThingDef VFEI_Mote;
+        public static ThingDef VFEI_TunnelHiveSpawner;
         // Raid strat
         public static RaidStrategyDef VFEI_ImmediateAttackInsect;
+        // Hive
+        public static ThingDef VFEI_LargeHive;
+        public static ThingDef VFEI_SmallHive;
     }
 }

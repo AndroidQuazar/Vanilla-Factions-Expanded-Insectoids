@@ -22,10 +22,19 @@ namespace VFEI
             /* ========== Postfix ========== */
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "LovePartnerRelationGenerationChance_Postfix", null), null, null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
+        }
+
+        static void LovePartnerRelationGenerationChance_Postfix(ref float __result)
+        {
+            if (Find.Storyteller.def.defName == "VFEI_Empress")
+            {
+                __result = 0f;
+            }
         }
 
         static bool IncidentWorker_Infestation_Prefix(IncidentParms parms, ref bool __result)
@@ -74,6 +83,9 @@ namespace VFEI
                     ResolveParams resolveParams = default(ResolveParams);
                     resolveParams.rect = rect;
                     resolveParams.faction = map.ParentFaction;
+                    resolveParams.cultivatedPlantDef = ThingDefOf.Plant_Grass;
+                    resolveParams.pathwayFloorDef = DefDatabase<TerrainDef>.AllDefsListForReading.FindAll(t => t.terrainAffordanceNeeded == TerrainAffordanceDefOf.Medium && t.costStuffCount < 6).RandomElement();
+                    resolveParams.wallStuff = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(t => t.stuffProps != null && t.BaseMarketValue < 6).RandomElement();
                     BaseGen.globalSettings.map = map;
                     BaseGen.globalSettings.minBuildings = 8;
                     BaseGen.globalSettings.minBarracks = 2;

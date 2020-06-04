@@ -22,7 +22,7 @@ namespace VFEI.Events
 			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map1);
 			incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
-			incidentParms.points = incidentParms.points * 4;
+			incidentParms.points = incidentParms.points * 2;
 			Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame, incidentParms);
 			return true;
 		}

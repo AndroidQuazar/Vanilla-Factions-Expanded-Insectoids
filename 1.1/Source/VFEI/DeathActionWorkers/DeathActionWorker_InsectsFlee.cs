@@ -22,7 +22,7 @@ namespace VFEI
 
 		public override void PawnDied(Corpse corpse)
 		{
-			IEnumerable<Thing> pawns = corpse.Map.listerThings.AllThings.Where((t) => t is Pawn && t.def.race.FleshType == FleshTypeDefOf.Insectoid);
+			IEnumerable<Thing> pawns = corpse.Map.listerThings.AllThings.Where((t) => t is Pawn && t.def.race.FleshType == FleshTypeDefOf.Insectoid && t.Faction == corpse.Faction);
 			foreach (Pawn pawn in pawns)
 			{
 				IntVec3 intVec3 = new IntVec3();

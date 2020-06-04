@@ -7,6 +7,8 @@ using RimWorld;
 using Verse;
 using Verse.Sound;
 using UnityEngine;
+using Verse.AI;
+using Verse.AI.Group;
 
 namespace VFEI
 {
@@ -57,8 +59,15 @@ namespace VFEI
 					PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue);
 					List<Faction> factions = new List<Faction>();
 					FactionManager.GetInViewOrder(factions);
-					Pawn p = PawnGenerator.GeneratePawn(pawnKind, factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement());
+					Faction fac = factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement();
+					Pawn p = PawnGenerator.GeneratePawn(pawnKind, fac);
 					GenSpawn.Spawn(p, pos, map);
+					List<Pawn> pawns = new List<Pawn>();
+					pawns.Add(p);
+					if (map.ParentFaction == fac)
+					{
+						LordMaker.MakeNewLord(fac, new LordJob_DefendBase(fac, map.Center), map, pawns);
+					}
 				}
 				this.Destroy();
 			}

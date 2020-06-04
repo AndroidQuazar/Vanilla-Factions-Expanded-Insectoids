@@ -43,7 +43,7 @@ namespace VFEI.Events
 		public static bool TryFindCell(out IntVec3 cell, Map map)
 		{
 			cell = CellFinderLoose.RandomCellWith(
-				(i) => !i.Fogged(map) && i.DistanceToEdge(map) < 25 && i.GetRoof(map) == RoofDefOf.RoofRockThick && i.Walkable(map) && i.GetTemperature(map) > -17f && CheckRepeller(map, i) && i.InBounds(map),
+				(i) => !i.Fogged(map) && i.DistanceToEdge(map) < 25 && i.GetRoof(map) == RoofDefOf.RoofRockThick && i.Walkable(map) && i.GetTemperature(map) > -17f && CheckRepeller(map, i),
 				map);
 			if (!cell.InBounds(map))
 			{
@@ -56,14 +56,14 @@ namespace VFEI.Events
 		{
 			IntVec3 loc;
 			TryFindCell(out loc, map);
-			Thing thing = GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
+			Thing thing = GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefsVFEI.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
 			QuestUtility.AddQuestTag(thing, questTag);
 			for (int i = 0; i < hiveCount - 1; i++)
 			{
-				loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, ThingDefOf.Hive, ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), ignoreRoofedRequirement, true);
+				loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, ThingDefsVFEI.VFEI_LargeHive, ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), ignoreRoofedRequirement, true);
 				if (loc.IsValid)
 				{
-					thing = GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
+					thing = GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefsVFEI.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
 					QuestUtility.AddQuestTag(thing, questTag);
 				}
 			}

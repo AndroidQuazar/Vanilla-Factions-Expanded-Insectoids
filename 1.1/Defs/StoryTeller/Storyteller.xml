@@ -51,15 +51,78 @@
         </acceptPercentFactorPerThreatPointsCurve>
       </li>
       <!-- Home misc incidents-->
-      <li Class="StorytellerCompProperties_CategoryMTB">
-        <category>Misc</category>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>PsychicDrone</incident>
         <allowedTargetTags>
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
         <mtbDays>4.8</mtbDays>
       </li>
-      <li Class="StorytellerCompProperties_ShipChunkDrop"/>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>ToxicFallout</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>VolcanicWinter</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>HeatWave</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>ColdSnap</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>Flashstorm</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>ShortCircuit</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>CropBlight</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>Alphabeavers</incident>
+        <allowedTargetTags>
+          <li>Map_PlayerHome</li>
+        </allowedTargetTags>
+        <minDaysPassed>5</minDaysPassed>
+        <mtbDays>4.8</mtbDays>
+      </li>
       <li Class="StorytellerCompProperties_Disease">
         <category>DiseaseHuman</category>
         <minDaysPassed>9</minDaysPassed>
@@ -68,30 +131,29 @@
         <category>DiseaseAnimal</category>
         <minDaysPassed>9</minDaysPassed>
       </li>
+      <!-- World event -->
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>Eclipse</incident>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <minDaysPassed>15</minDaysPassed>
+        <mtbDays>15</mtbDays>
+      </li>
+      <li Class="StorytellerCompProperties_SingleMTB">
+        <incident>SolarFlare</incident>
+        <allowedTargetTags>
+          <li>World</li>
+        </allowedTargetTags>
+        <minDaysPassed>15</minDaysPassed>
+        <mtbDays>15</mtbDays>
+      </li>
       <!-- Ally/neutral interaction -->
       <li Class="StorytellerCompProperties_FactionInteraction">
         <incident>TraderCaravanArrival</incident>
         <minDaysPassed>5</minDaysPassed>
         <baseIncidentsPerYear>5</baseIncidentsPerYear>
         <minSpacingDays>6</minSpacingDays>
-        <allowedTargetTags>
-          <li>Map_PlayerHome</li>
-        </allowedTargetTags>
-      </li>
-      <li Class="StorytellerCompProperties_FactionInteraction">
-        <incident>VisitorGroup</incident>
-        <minDaysPassed>3</minDaysPassed>
-        <baseIncidentsPerYear>4</baseIncidentsPerYear>
-        <minSpacingDays>5</minSpacingDays>
-        <allowedTargetTags>
-          <li>Map_PlayerHome</li>
-        </allowedTargetTags>
-      </li>
-      <li Class="StorytellerCompProperties_FactionInteraction">
-        <incident>TravelerGroup</incident>
-        <minDaysPassed>1</minDaysPassed>
-        <baseIncidentsPerYear>6</baseIncidentsPerYear>
-        <minSpacingDays>1</minSpacingDays>
         <allowedTargetTags>
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
@@ -151,26 +213,12 @@
           <li>Ludeon.RimWorld.Royalty</li>
         </enableIfAnyModActive>
       </li>
-      <!-- World misc incidents-->
-      <li Class="StorytellerCompProperties_CategoryMTB">
-        <category>Misc</category>
-        <allowedTargetTags>
-          <li>World</li>
-        </allowedTargetTags>
-        <minDaysPassed>15</minDaysPassed>
-        <mtbDays>15</mtbDays>
-      </li>
       <!-- Orbital trader -->
       <li Class="StorytellerCompProperties_OnOffCycle">
         <incident>OrbitalTraderArrival</incident>
         <onDays>7</onDays>
         <offDays>8</offDays>
         <numIncidentsRange>1</numIncidentsRange>
-      </li>
-      <!-- Triggered -->
-      <li Class="StorytellerCompProperties_Triggered">
-        <incident>StrangerInBlackJoin</incident>
-        <delayTicks>180</delayTicks>
       </li>
     </comps>
   </StorytellerDef>

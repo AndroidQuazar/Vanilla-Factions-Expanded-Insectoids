@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildingClass\VFEI_Hive.cs" />
     <Compile Include="BuildingClass\VFEI_TunnelHiveSpawner.cs" />
     <Compile Include="Comps\BuildingComps\CompProperties_Repeller.cs" />
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />

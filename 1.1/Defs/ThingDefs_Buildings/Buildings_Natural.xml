@@ -42,49 +42,54 @@
     <rotatable>false</rotatable>
     <fillPercent>0.5</fillPercent>
     <statBases>
-      <MaxHitPoints>210</MaxHitPoints>
+      <MaxHitPoints>400</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
+    <size>(2,2)</size>
     <pathCost>50</pathCost>
     <blockWind>true</blockWind>
     <tickerType>Normal</tickerType>
     <passability>PassThroughOnly</passability>
+    <receivesSignals>true</receivesSignals>
     <killedLeavings>
-      <InsectJelly>15</InsectJelly>
+      <VFEI_RoyalInsectJelly>15</VFEI_RoyalInsectJelly>
     </killedLeavings>
     <comps>
+      <li Class="CompProperties_CanBeDormant">
+        <startsDormant>true</startsDormant>
+        <canWakeUpFogged>false</canWakeUpFogged>
+      </li>
+      <li Class="CompProperties_WakeUpDormant" />
+      <li Class="CompProperties_SpawnerPawn">
+        <spawnablePawnKinds>
+          <li>Megaspider</li>
+          <li>VFEI_Insectoid_Megapede</li>
+          <li>VFEI_Insectoid_RoyalMegaspider</li>
+        </spawnablePawnKinds>
+        <lordJob>LordJob_DefendAndExpandHive</lordJob>
+        <spawnSound>Hive_Spawn</spawnSound>
+        <initialPawnsPoints>200</initialPawnsPoints>
+        <maxSpawnedPawnsPoints>500</maxSpawnedPawnsPoints>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>6000</ticksPerHeal>        <!-- 60k ticks = 1 day, 10 hp per day -->
+      </li>
       <li Class="CompProperties_SpawnerHives" />
       <li Class="CompProperties_Spawner">
         <thingToSpawn>VFEI_RoyalInsectJelly</thingToSpawn>
-        <spawnCount>20</spawnCount>
-        <spawnIntervalRange>
-          <min>26000</min>
-          <max>30000</max>
-        </spawnIntervalRange>
+        <spawnCount>10</spawnCount>
+        <spawnIntervalRange>26000~30000</spawnIntervalRange>
         <spawnMaxAdjacent>40</spawnMaxAdjacent>
         <spawnForbidden>true</spawnForbidden>
         <saveKeysPrefix>royaljelly</saveKeysPrefix>
       </li>
       <li Class="CompProperties_Spawner">
-        <thingToSpawn>InsectJelly</thingToSpawn>
-        <spawnCount>20</spawnCount>
-        <spawnIntervalRange>
-          <min>26000</min>
-          <max>30000</max>
-        </spawnIntervalRange>
-        <spawnMaxAdjacent>20</spawnMaxAdjacent>
-        <spawnForbidden>true</spawnForbidden>
-        <saveKeysPrefix>jelly</saveKeysPrefix>
-      </li>
-      <li Class="CompProperties_Spawner">
         <thingToSpawn>GlowPod</thingToSpawn>
         <spawnCount>1</spawnCount>
-        <spawnIntervalRange>
-          <min>20000</min>
-          <max>60000</max>
-        </spawnIntervalRange>
+        <spawnIntervalRange>30000~60000</spawnIntervalRange>
         <spawnMaxAdjacent>1</spawnMaxAdjacent>
         <saveKeysPrefix>pod</saveKeysPrefix>
+        <inheritFaction>true</inheritFaction>
       </li>
       <li Class="CompProperties_HeatPusher">
         <heatPerSecond>6</heatPerSecond>
@@ -98,7 +103,7 @@
       </li>
       <li Class="CompProperties_Maintainable">
         <ticksHealthy>60000</ticksHealthy>
-        <ticksNeedsMaintenance>40000</ticksNeedsMaintenance>
+        <ticksNeedsMaintenance>60000</ticksNeedsMaintenance>
         <damagePerTickRare>10</damagePerTickRare>
       </li>
     </comps>

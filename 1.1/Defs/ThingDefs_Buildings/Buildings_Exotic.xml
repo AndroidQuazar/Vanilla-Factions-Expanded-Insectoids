@@ -164,6 +164,7 @@
     </comps>
   </ThingDef>
 
+  <!-- Etheral -->
   <ThingDef ParentName="SkyfallerBase">
     <defName>VFEI_InsectMeteoriteIncoming</defName>
     <label>meteorite (incoming)</label>
