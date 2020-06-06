@@ -126,6 +126,7 @@
     <Compile Include="Comps\PawnComps\CompRegeneration.cs" />
     <Compile Include="Comps\PawnComps\CompSpawnLarvae.cs" />
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
+    <Compile Include="Other\MapComp_FacRelationUtils.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
     <Compile Include="Other\RepellerPlaceWorker.cs" />
     <Compile Include="Other\ScenPart_Settlement.cs" />

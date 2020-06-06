@@ -23,6 +23,15 @@ namespace VFEI.Events
 			incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
 			incidentParms.points = incidentParms.points * 2;
+			Log.Message("Faction: " + incidentParms.faction.ToString());
+			Log.Message("RaidArrivalMode: " + incidentParms.raidArrivalMode.ToString());
+			Log.Message("RaidStrategy: " + incidentParms.raidStrategy.ToString());
+			Log.Message("Points: " + incidentParms.points.ToString());
+			Log.Message("PawnCount: " + incidentParms.pawnCount.ToString());
+			Log.Message("SpawnCenter: " + incidentParms.spawnCenter.ToString());
+			Log.Message("Target: " + incidentParms.target.ToString());
+
+
 			Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame, incidentParms);
 			return true;
 		}
