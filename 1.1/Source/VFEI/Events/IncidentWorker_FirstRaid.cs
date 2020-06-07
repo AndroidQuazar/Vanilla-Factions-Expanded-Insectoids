@@ -22,10 +22,11 @@ namespace VFEI.Events
 			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map1);
 			incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+			incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
 			incidentParms.points = incidentParms.points * 2;
 			Log.Message("Faction: " + incidentParms.faction.ToString());
-			Log.Message("RaidArrivalMode: " + incidentParms.raidArrivalMode.ToString());
 			Log.Message("RaidStrategy: " + incidentParms.raidStrategy.ToString());
+			Log.Message("RaidArrivalMode: " + incidentParms.raidArrivalMode.ToString());
 			Log.Message("Points: " + incidentParms.points.ToString());
 			Log.Message("PawnCount: " + incidentParms.pawnCount.ToString());
 			Log.Message("SpawnCenter: " + incidentParms.spawnCenter.ToString());
