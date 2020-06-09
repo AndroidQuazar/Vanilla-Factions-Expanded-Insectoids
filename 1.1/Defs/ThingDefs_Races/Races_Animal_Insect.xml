@@ -13,8 +13,6 @@
 		<defaultFactionType>VFEI_Insect</defaultFactionType>
 		<aiAvoidCover>false</aiAvoidCover>
 		<defendPointRadius>0</defendPointRadius>
-		<weaponTags>
-		</weaponTags>
 	</PawnKindDef>
 
 	<!-- Insectoid Queen -->
