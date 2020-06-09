@@ -21,7 +21,7 @@
 		<label>insectoid queen</label>
 		<description>A giant, genetically-engineered insectoid responsible for creating new spawn. A mother to the insects in her hive, a queen doesn’t do heavy work, and tries to avoid combat if possible. As massive as an adult thrumbo, the queen instills fear in most opponents. Her thick chitinous armor makes her hard to kill, whilst long, deadly blades can tear through plasteel shielding in seconds. Despite being quite slow in open terrain, an insectoid queen is capable of creating new larvae at a rapid pace, and should never be allowed to settle down.</description>
 		<statBases>
-			<MoveSpeed>1.50</MoveSpeed>
+			<MoveSpeed>2.0</MoveSpeed>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<MarketValue>1500</MarketValue>
 			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
@@ -33,7 +33,7 @@
 				<capacities>
 					<li>Cut</li>
 				</capacities>
-				<power>20</power>
+				<power>28</power>
 				<cooldownTime>2.6</cooldownTime>
 				<linkedBodyPartsGroup>HeadClaw</linkedBodyPartsGroup>
 			</li>
@@ -42,7 +42,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>13</power>
+				<power>20</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -67,8 +67,8 @@
 			<body>BeetleLikeWithClaw</body>
 			<deathActionWorkerClass>VFEI.DeathActionWorker_InsectsFlee</deathActionWorkerClass>
 			<baseHungerRate>0.70</baseHungerRate>
-			<baseBodySize>3.6</baseBodySize>
-			<baseHealthScale>4</baseHealthScale>
+			<baseBodySize>4</baseBodySize>
+			<baseHealthScale>8</baseHealthScale>
 			<gestationPeriodDays>12</gestationPeriodDays>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<wildness>0.95</wildness>

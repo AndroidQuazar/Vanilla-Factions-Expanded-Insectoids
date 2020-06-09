@@ -26,7 +26,34 @@ namespace VFEI
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
+            harmony.Patch(AccessTools.Method(typeof(Faction), "TryMakeInitialRelationsWith", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Faction_TryMakeInitialRelationsWith_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
+        }
+
+        static bool Faction_TryMakeInitialRelationsWith_Prefix(Faction other, Faction __instance, ref List<FactionRelation> ___relations)
+        {
+            if (other.def.defName == "Insect" && __instance.def.defName == "VFEI_Insect")
+            {
+                Log.Message("other is Vanilla Insects");
+                FactionRelation factionRelation = new FactionRelation();
+                factionRelation.other = other;
+                factionRelation.goodwill = 100;
+                factionRelation.kind = FactionRelationKind.Ally;
+                ___relations.Add(factionRelation);
+                other.TryMakeInitialRelationsWith(__instance);
+                return false;
+            }
+            else if (other.def.defName == "VFEI_Insect" && __instance.def.defName == "Insect")
+            {
+                Log.Message("other is VFEI Insects");
+                FactionRelation factionRelation = new FactionRelation();
+                factionRelation.other = other;
+                factionRelation.goodwill = 100;
+                factionRelation.kind = FactionRelationKind.Ally;
+                ___relations.Add(factionRelation);
+                return false;
+            }
+            return true;
         }
 
         static void LovePartnerRelationGenerationChance_Postfix(ref float __result)

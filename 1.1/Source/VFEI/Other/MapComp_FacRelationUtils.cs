@@ -19,9 +19,8 @@ namespace VFEI.Other
         {
             Log.Message("VFEI - Relation fixer");
             Faction fac = Find.FactionManager.AllFactions.Where(f => f.def.defName == "VFEI_Insect").First();
-            Log.Message(fac.Name);
-            Faction.OfInsects.TrySetRelationKind(fac, FactionRelationKind.Ally, false);
             Log.Message(fac.RelationKindWith(Faction.OfInsects).ToString());
+            Log.Message(fac.GoodwillWith(Faction.OfInsects).ToString());
         }
     }
 }
