@@ -91,4 +91,8 @@
 
 	<!-- Repeller utils -->
 	<InfestationNegated>An infestation have been prevented.</InfestationNegated>
+
+	<!-- Royal jelly transormation letter -->
+	<TransformationLLabel>Transformation!</TransformationLLabel>
+	<TransformationLetter>Due to a royal jelly addiction withdrawal {0} has been transformed into a megaspider. He is still part of your faction and won't attack anyone.</TransformationLetter>
 </LanguageData>

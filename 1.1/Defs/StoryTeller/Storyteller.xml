@@ -57,7 +57,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>15</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>ToxicFallout</incident>
@@ -65,7 +65,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>90</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>VolcanicWinter</incident>
@@ -73,7 +73,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>140</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>HeatWave</incident>
@@ -81,7 +81,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>30</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>ColdSnap</incident>
@@ -89,7 +89,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>30</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>Flashstorm</incident>
@@ -97,7 +97,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>15</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>ShortCircuit</incident>
@@ -105,7 +105,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>8</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>CropBlight</incident>
@@ -113,7 +113,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>30</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_SingleMTB">
         <incident>Alphabeavers</incident>
@@ -121,7 +121,7 @@
           <li>Map_PlayerHome</li>
         </allowedTargetTags>
         <minDaysPassed>5</minDaysPassed>
-        <mtbDays>4.8</mtbDays>
+        <mtbDays>30</mtbDays>
       </li>
       <li Class="StorytellerCompProperties_Disease">
         <category>DiseaseHuman</category>

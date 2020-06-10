@@ -24,42 +24,37 @@ namespace VFEI
         {
             base.Tick();
             Need_Chemical need = this.Need;
-            if (this.firstTime && need.CurCategory == DrugDesireCategory.Withdrawal)
+            if (need != null && need.CurCategory == DrugDesireCategory.Withdrawal)
             {
-                Random random = new Random();
-                int flag = random.Next(0, 11);
-                if (flag == 5)
+                Faction colonistFac = this.pawn.Faction;
+                IntVec3 colonistLoc = this.pawn.Position;
+                Name colonistName = this.pawn.Name;
+                Map map = this.pawn.Map;
+                this.pawn.Destroy(DestroyMode.Vanish);
+                PawnKindDef pawnKindDef = PawnKindDefOf.Megaspider;
+                Pawn megaspider = PawnGenerator.GeneratePawn(pawnKindDef, colonistFac);
+                megaspider.Name = colonistName;
+                GenSpawn.Spawn(megaspider, colonistLoc, map, WipeMode.Vanish);
+                SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.pawn));
+                for (int i = 0; i < 20; i++)
                 {
-                    Faction colonistFac = this.pawn.Faction;
-                    IntVec3 colonistLoc = this.pawn.Position;
-                    Name colonistName = this.pawn.Name;
-                    Map map = this.pawn.Map;
-                    this.pawn.Destroy(DestroyMode.Vanish);
-                    PawnKindDef pawnKindDef = PawnKindDefOf.Megaspider;
-                    Pawn megaspider = PawnGenerator.GeneratePawn(pawnKindDef, colonistFac);
-                    megaspider.Name = colonistName;
-                    GenSpawn.Spawn(megaspider, colonistLoc, map, WipeMode.Vanish);
-                    SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.pawn));
-                    for (int i = 0; i < 20; i++)
+                    IntVec3 c;
+                    CellFinder.TryFindRandomReachableCellNear(colonistLoc, map, 4, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
+                    int flag2 = Rand.RangeInclusive(0, 2);
+                    if (flag2 == 1)
                     {
-                        IntVec3 c;
-                        CellFinder.TryFindRandomReachableCellNear(colonistLoc, map, 4, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), null, null, out c);
-                        int flag2 = random.Next(0, 2);
-                        if(flag2 == 1)
-                        {
-                            FilthMaker.TryMakeFilth(c, map, ThingDefsVFEI.Filth_BloodInsect);
-                        }
-                        else
-                        {
-                            FilthMaker.TryMakeFilth(c, map, ThingDefOf.Filth_Blood);
-                        }                        
+                        FilthMaker.TryMakeFilth(c, map, ThingDefsVFEI.Filth_BloodInsect);
                     }
-                    #pragma warning disable 0618
-                    string text = "LetterTransformed".Translate(colonistName).CapitalizeFirst();
-                    Find.LetterStack.ReceiveLetter("LetterLabelTransormed".Translate(colonistName).CapitalizeFirst(), text, LetterDefOf.NegativeEvent, megaspider, null, null);
+                    else
+                    {
+                        FilthMaker.TryMakeFilth(c, map, ThingDefOf.Filth_Blood);
+                    }
                 }
-                this.firstTime = false;
+                #pragma warning disable 0618
+                string text = "TransformationLetter".Translate(colonistName).CapitalizeFirst();
+                Find.LetterStack.ReceiveLetter("TransformationLLabel".Translate(colonistName).CapitalizeFirst(), text, LetterDefOf.NegativeEvent, megaspider, null, null);
             }
+            this.firstTime = false;
         }
     }
 }

@@ -3,10 +3,11 @@
 
   <!-- Royal Jelly addiction -->
   <HediffDef>
-    <defName>VFEI_RoyalJellyHigh</defName>
-    <hediffClass>HediffWithComps</hediffClass>
+    <defName>VFEI_RoyalJellyHigh</defName>    
     <label>high on royal jelly</label>
+    <labelNoun>a royal jelly high</labelNoun>
     <description>High on royal jelly</description>
+    <hediffClass>Hediff_High</hediffClass>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <scenarioCanAdd>true</scenarioCanAdd>
     <maxSeverity>1.0</maxSeverity>
@@ -14,19 +15,26 @@
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.75</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
       </li>
     </comps>
     <stages>
-      <li/>
+      <li>
+        <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.05</offset>
+            </li>
+          </capMods>
+      </li>
     </stages>
   </HediffDef>
   
   <ChemicalDef>
-    <defName>VFEI_RoyalJelly</defName>
+    <defName>VFEI_RoyalJellyChemical</defName>
     <label>royal jelly</label>
     <addictionHediff>VFEI_RoyalJellyAddiction</addictionHediff>
     <toleranceHediff>VFEI_RoyalJellyTolerance</toleranceHediff>
-    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
   </ChemicalDef>
   
   <NeedDef ParentName="DrugAddictionNeedBase">
@@ -34,7 +42,7 @@
     <needClass>Need_Chemical</needClass>
     <label>royal jelly</label>
     <description>Because of a royal jelly addiction, this person needs to regularly consume royal jelly to avoid withdrawal symptoms.</description>
-    <listPriority>20</listPriority>
+    <listPriority>50</listPriority>
   </NeedDef>
 
   <HediffDef ParentName="DrugToleranceBase">
@@ -46,7 +54,7 @@
         <severityPerDay>-0.020</severityPerDay>
       </li>
       <li Class="HediffCompProperties_DrugEffectFactor">
-        <chemical>VFEI_RoyalJelly</chemical>
+        <chemical>VFEI_RoyalJellyChemical</chemical>
       </li>
     </comps>
   </HediffDef>
@@ -59,17 +67,19 @@
     <causesNeed>VFEI_Chemical_RoyalJelly</causesNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.5</severityPerDay>
+        <severityPerDay>-0.08</severityPerDay>
       </li>
     </comps>
     <stages>
       <li>
-        <vomitMtbDays>0.05</vomitMtbDays>
-        <label>withdrawal</label>  
+      </li>
+      <li>
+        <label>withdrawal</label>
+        <lifeThreatening>true</lifeThreatening>
         <capMods>
           <li>
-            <capacity>Sight</capacity>
-            <postFactor>0.15</postFactor>
+            <capacity>Consciousness</capacity>
+            <offset>-0.50</offset>
           </li>
         </capMods>
       </li>

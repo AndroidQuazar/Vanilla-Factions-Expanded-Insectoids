@@ -22,7 +22,7 @@ namespace VFEI
             /* ========== Postfix ========== */
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
-            harmony.Patch(AccessTools.Method(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "LovePartnerRelationGenerationChance_Postfix", null), null, null);
+            // harmony.Patch(AccessTools.Method(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "LovePartnerRelationGenerationChance_Postfix", null), null, null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
@@ -34,7 +34,6 @@ namespace VFEI
         {
             if (other.def.defName == "Insect" && __instance.def.defName == "VFEI_Insect")
             {
-                Log.Message("other is Vanilla Insects");
                 FactionRelation factionRelation = new FactionRelation();
                 factionRelation.other = other;
                 factionRelation.goodwill = 100;
@@ -45,7 +44,6 @@ namespace VFEI
             }
             else if (other.def.defName == "VFEI_Insect" && __instance.def.defName == "Insect")
             {
-                Log.Message("other is VFEI Insects");
                 FactionRelation factionRelation = new FactionRelation();
                 factionRelation.other = other;
                 factionRelation.goodwill = 100;

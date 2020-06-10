@@ -14,16 +14,16 @@
               <allowedTargetTags>
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
-              <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <minDaysPassed>40</minDaysPassed>
+              <mtbDays>160</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_GlobalWarming</incident>
               <allowedTargetTags>
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
-              <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <minDaysPassed>40</minDaysPassed>
+              <mtbDays>160</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_PsychicRain</incident>
@@ -31,7 +31,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>20</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_LongNight</incident>
@@ -39,7 +39,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>160</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_HailStorm</incident>
@@ -47,7 +47,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>20</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_MeteoriteShower</incident>
@@ -55,7 +55,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>25</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_SpaceBattle</incident>
@@ -63,7 +63,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>25</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_Earthquake</incident>
@@ -71,7 +71,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>25</mtbDays>
             </li>
             <li Class="StorytellerCompProperties_SingleMTB">
               <incident>VEE_Drought</incident>
@@ -79,7 +79,7 @@
                 <li>Map_PlayerHome</li>
               </allowedTargetTags>
               <minDaysPassed>5</minDaysPassed>
-              <mtbDays>4.8</mtbDays>
+              <mtbDays>20</mtbDays>
             </li>
           </value>
         </li>
