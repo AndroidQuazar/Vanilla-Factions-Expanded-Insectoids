@@ -66,7 +66,7 @@
 		</targetTags>
 		<workerClass>VFEI.Events.IncidentWorker_GiantInfestation</workerClass>
 		<letterLabel>Large Infestation</letterLabel>
-		<letterText>Giant insects are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.\n\nThis infestation seem to be pretty large, and leaded by a queen!</letterText>
+		<letterText>Giant insects are tunneling towards you! They will break through in a few seconds and plant hives.\n\nThe hives will spawn more insects and more hives.\n\nIf you don't want the insects to infest the whole area, destroy the hives. But beware - the bugs will defend their home.\n\nThis infestation seem to be pretty large, and led by a queen!</letterText>
 		<letterDef>ThreatBig</letterDef>
 		<baseChance>2</baseChance>
 		<minRefireDays>30</minRefireDays>

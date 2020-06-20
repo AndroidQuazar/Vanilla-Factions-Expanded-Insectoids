@@ -44,12 +44,15 @@ namespace VFEI
         public static HediffDef VFEI_Antenna;
         public static HediffDef VFEI_PheromoneSecretor;
         public static HediffDef HeartAttack;
+        public static HediffDef VFEI_TempDown;
         // Skyfaller
         public static ThingDef VFEI_GigalocustIncoming;
         public static ThingDef VFEI_InsectMeteoriteIncoming;
         // EtherealThing
         public static ThingDef VFEI_Mote;
         public static ThingDef VFEI_TunnelHiveSpawner;
+        public static ThingDef VFEI_TeleporterTraveler;
+        public static WorldObjectDef VFEI_TTraveling;
         // Raid strat
         public static RaidStrategyDef VFEI_ImmediateAttackInsect;
         // Hive

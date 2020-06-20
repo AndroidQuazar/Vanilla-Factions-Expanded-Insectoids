@@ -67,6 +67,8 @@
     <Compile Include="BuildingClass\VFEI_TunnelHiveSpawner.cs" />
     <Compile Include="Comps\BuildingComps\CompProperties_Repeller.cs" />
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />
+    <Compile Include="Comps\CompProperties_Armillarix.cs" />
+    <Compile Include="Comps\ItemComps\CompProperties_CustomTransporter.cs" />
     <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
     <Compile Include="Events\IncidentWorker_GiantInfestation.cs" />
     <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeDefenseNoPawn.cs" />
@@ -101,6 +103,7 @@
     <Compile Include="GenStuff\SymbolResolver_OutdoorLightingIbase.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="Heddifs\Hediff_JellyWithdraw.cs" />
+    <Compile Include="Other\Dialog_LoadTeleporter.cs" />
     <Compile Include="Other\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="JobStuff\JobDriver_IngestWeird.cs" />
     <Compile Include="JobStuff\JobGiver_GetWeirdFood.cs" />
@@ -126,10 +129,14 @@
     <Compile Include="Comps\PawnComps\CompRegeneration.cs" />
     <Compile Include="Comps\PawnComps\CompSpawnLarvae.cs" />
     <Compile Include="Comps\PawnComps\CompThoughtEffecter.cs" />
+    <Compile Include="Other\MapComponent_VFEI_Utils.cs" />
+    <Compile Include="Other\CustomBullets.cs" />
     <Compile Include="Other\Recipe_AddMutationHediff.cs" />
     <Compile Include="Other\RepellerPlaceWorker.cs" />
+    <Compile Include="Other\ScenPart_ArriveAtEdge.cs" />
     <Compile Include="Other\ScenPart_Settlement.cs" />
     <Compile Include="Other\VFEI_TunnelingNoHive.cs" />
+    <Compile Include="Other\WorldTeleporter.cs" />
     <Compile Include="RaidArrivalModes\PawnArrivalModeWorker_GigalocustSwarm.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Burrow.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Meteorite.cs" />

@@ -33,14 +33,14 @@ namespace VFEI.GenStuff
 					BaseGen.symbolStack.Push("firefoamPopper", resolveParams2, null);
 				}
 			}
-			if (num > 0)
+			/*if (num > 0)
 			{
 				ResolveParams resolveParams3 = rp;
 				resolveParams3.faction = faction;
 				resolveParams3.edgeDefenseWidth = new int?(num);
 				resolveParams3.edgeThingMustReachMapEdge = new bool?(rp.edgeThingMustReachMapEdge ?? true);
 				BaseGen.symbolStack.Push("edgeDefenseNoPawns", resolveParams3, null);
-			}
+			}*/
 			ResolveParams resolveParams4 = rp;
 			resolveParams4.rect = rp.rect.ContractedBy(num);
 			resolveParams4.faction = faction;

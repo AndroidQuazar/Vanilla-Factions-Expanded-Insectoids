@@ -41,7 +41,7 @@
 	<VFEI_Engage>Activate Incubator</VFEI_Engage>
 	<VFEI_EngageDesc>Activate Incubator to create a new insectoid from the inserted genetic materials</VFEI_EngageDesc>
 	
-	<VFEI_NoGenesFound>Your colonists were unable to retrive the genetic material</VFEI_NoGenesFound>
+	<VFEI_NoGenesFound>Your colonists were unable to retrieve the genetic material</VFEI_NoGenesFound>
 	
 	<VFEI_WaitTillJobsEnd>Genetic material is still being carried to the incubator</VFEI_WaitTillJobsEnd>
 	
@@ -95,4 +95,16 @@
 	<!-- Royal jelly transormation letter -->
 	<TransformationLLabel>Transformation!</TransformationLLabel>
 	<TransformationLetter>Due to a royal jelly addiction withdrawal {0} has been transformed into a megaspider. He is still part of your faction and won't attack anyone.</TransformationLetter>
+
+	<!-- Teleporter -->
+	<TeleportButton>Teleport</TeleportButton>
+	<TeleportHere>Teleport here.</TeleportHere>
+	<TeleportDesc>Teleport all choosen items and pawns to destination.</TeleportDesc>
+	<TeleportDestInvalid>Teleport destination is invalid.</TeleportDestInvalid>
+	<TeleportDestTooFar>Teleport destination is too far!</TeleportDestTooFar>
+	<TeleportWillDestroy>Teleporting to this destination will result in the loss of contents.</TeleportWillDestroy>
+	<TeleportDestroyed>Since there were no colonists teleported, the teleportation has failed and contents is lost.</TeleportDestroyed>
+	<TeleportDone>Teleportation succeeded.</TeleportDone>
+	<TeleportDoneCAdded>Teleportation succeeded, contents was added to caravan.</TeleportDoneCAdded>
+
 </LanguageData>

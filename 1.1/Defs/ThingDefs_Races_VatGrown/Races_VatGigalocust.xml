@@ -3,8 +3,8 @@
 
 
 <ThingDef ParentName="BaseInsect">
-		<defName>VFEI_VatGrownTitanlocust</defName>
-		<label>Vat-grown titanlocust</label>
+		<defName>VFEI_VatGrownGigalocust</defName>
+		<label>Vat-grown gigalocust</label>
 		<description>A gigalocust is a genetically-engineered hunter drone the size of an elephant. It can quickly close distances to its enemies, ripping them to shreds with its several sets of ripper-blades and sharp mandibles. Serving as special servants of the insectoid queen, these monstrosities are deadly, fast and nigh indestructible. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
 		<statBases>
 			<MoveSpeed>4.00</MoveSpeed>
@@ -80,9 +80,9 @@
 	</ThingDef>
 
 	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>VFEI_VatGrownTitanlocust</defName>
-		<label>Vat-grown titanlocust</label>
-		<race>VFEI_VatGrownTitanlocust</race>
+		<defName>VFEI_VatGrownGigalocust</defName>
+		<label>Vat-grown gigalocust</label>
+		<race>VFEI_VatGrownGigalocust</race>
 		<combatPower>220</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.50</ecoSystemWeight>

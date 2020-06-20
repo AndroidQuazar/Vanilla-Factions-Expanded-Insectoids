@@ -91,6 +91,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_Plasmacutter</defName>
     <label>plasmacutter shot</label>
+    <thingClass>VFEI.Other.PlasmaCutterBullet</thingClass>
     <graphicData>
       <texPath>Things/Item/Weapons/Plasma_Cutter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -189,6 +190,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>Bullet_Plasmapiercer</defName>
     <label>plasmapiercer shot</label>
+    <thingClass>VFEI.Other.PlasmapiercerBullet</thingClass>
     <graphicData>
       <texPath>Things/Item/Weapons/Plasma_Nail</texPath>
       <graphicClass>Graphic_Single</graphicClass>

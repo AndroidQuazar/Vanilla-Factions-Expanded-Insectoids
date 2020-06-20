@@ -617,7 +617,7 @@
     <addsHediff>VFEI_PneumaticClaw</addsHediff>
   </RecipeDef>
 
-  <!-- Adrenal secretor - TO FINISH -->
+  <!-- Adrenal secretor - TO FINISH
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>VFEI_AdrenalSecretor</defName>
     <label>adrenal secretor</label>
@@ -682,12 +682,13 @@
     </appliedOnFixedBodyParts>
     <addsHediff>VFEI_AdrenalSecretor</addsHediff>
   </RecipeDef>
+  -->
 
   <!-- Antenna -->
   <HediffDef ParentName="AddedBodyPartBase">
     <defName>VFEI_Antenna</defName>
-    <label>adrenal secretor</label>
-    <labelNoun>adrenal secretor</labelNoun>
+    <label>antenna</label>
+    <labelNoun>antenna</labelNoun>
     <description>A slender, mobile sensory organ that serves to compliment vision and locational awareness. A subject with this mutation will no longer suffer from darkness penalties, however sensory overload makes it very difficult to socialize.</description>
     <descriptionHyperlinks>
       <ThingDef>VFEI_WarriorGenome</ThingDef>

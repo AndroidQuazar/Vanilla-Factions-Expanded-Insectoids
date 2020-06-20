@@ -10,6 +10,8 @@ using RimWorld.BaseGen;
 using RimWorld.Planet;
 using Verse;
 using UnityEngine;
+using Verse.AI;
+using Verse.Sound;
 
 namespace VFEI
 {
@@ -23,11 +25,100 @@ namespace VFEI
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
             // harmony.Patch(AccessTools.Method(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "LovePartnerRelationGenerationChance_Postfix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(CompGlower), "ReceiveCompSignal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ReceiveCompSignal_PostFix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(CompTransporter), "CompGetGizmosExtra", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "CompGetGizmosExtra_Fix", null), null, null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(Faction), "TryMakeInitialRelationsWith", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Faction_TryMakeInitialRelationsWith_Prefix", null), null, null, null);
+            harmony.Patch(AccessTools.Method(typeof(CompGlower), "PostSpawnSetup", null, null), new HarmonyMethod(typeof(HarmonyPatches), "PostSpawnSetup_PreFix", null), null, null, null);
+            harmony.Patch(AccessTools.Method(typeof(Command_LoadToTransporter), "ProcessInput", null, null), new HarmonyMethod(typeof(HarmonyPatches), "ProcessInput_PreFix", null), null, null, null);
+            // harmony.Patch(AccessTools.Method(typeof(TransportPodsArrivalAction_LandInSpecificCell), "Arrived", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Arrived_Fix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
+        }
+
+        static bool Arrived_Fix(List<ActiveDropPodInfo> pods, int tile, ref TransportPodsArrivalAction_LandInSpecificCell __instance, ref MapParent ___mapParent, ref IntVec3 ___cell)
+        {
+            /*if (___mapParent.def.defName == "VFEI_TTraveling")
+            {
+                Log.Message("lalao");
+                Thing lookTarget = TransportPodsArrivalActionUtility.GetLookTarget(pods);
+                foreach (ActiveDropPodInfo podInfo in pods)
+                {
+                    for (int i = podInfo.innerContainer.Count - 1; i >= 0; i--)
+                    {
+                        GenPlace.TryPlaceThing(podInfo.innerContainer[i], ___cell, ___mapParent.Map, ThingPlaceMode.Near, delegate (Thing thing, int count)
+                        {
+                            PawnUtility.RecoverFromUnwalkablePositionOrKill(thing.Position, thing.Map);
+                        }, null, podInfo.innerContainer[i].def.defaultPlacingRot);
+                    }
+                }
+                // TransportPodsArrivalActionUtility.DropTravelingTransportPods(pods, this.cell, this.mapParent.Map);
+                Messages.Message("TeleportDone".Translate(), lookTarget, MessageTypeDefOf.TaskCompletion, true);
+                return false;
+            }*/
+            return true;
+        }
+
+        static void CompGetGizmosExtra_Fix(ref CompTransporter __instance, ref IEnumerable<Gizmo> __result)
+        {
+            if (__instance.parent.def.defName == "VFEI_Artifacts_ArchotechTeleporter")
+            {
+                List<Gizmo> lr = __result.ToList();
+                lr.FindAll((g) => g.disabledReason == "CommandLoadTransporterFailNotConnectedToFuelingPort".Translate() || g.disabledReason == "CommandLoadTransporterFailNoFuel".Translate()).ForEach((g) => g.disabled = false);
+                __result = lr;
+            }
+        }
+
+        static bool ProcessInput_PreFix(Event ev, ref Command_LoadToTransporter __instance, ref List<CompTransporter> ___transporters)
+        {
+            if (___transporters == null)
+            {
+                ___transporters = new List<CompTransporter>();
+            }
+            if (!___transporters.Contains(__instance.transComp))
+            {
+                ___transporters.Add(__instance.transComp);
+            }
+            for (int j = 0; j < ___transporters.Count; j++)
+            {
+                if (___transporters[j] != __instance.transComp && !__instance.transComp.Map.reachability.CanReach(__instance.transComp.parent.Position, ___transporters[j].parent, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false)))
+                {
+                    Messages.Message("MessageTransporterUnreachable".Translate(), ___transporters[j].parent, MessageTypeDefOf.RejectInput, false);
+                    return false;
+                }
+            }
+            if (___transporters[0].parent.def.defName == "VFEI_Artifacts_ArchotechTeleporter")
+            {
+                Find.WindowStack.Add(new Other.Dialog_LoadTeleporter(__instance.transComp.Map, ___transporters));
+                return false;
+            }
+            ___transporters.Clear();
+            return true;
+        }
+
+        static bool PostSpawnSetup_PreFix(ref CompGlower __instance)
+        {
+            if (__instance.parent.def.defName == "VFEI_Plant_Armillarix")
+            {
+                return false;
+            }
+            return true;
+        }
+
+        static void ReceiveCompSignal_PostFix(string signal, ref CompGlower __instance)
+        {
+            Map map = __instance.parent.Map;
+            if (signal == "armillarixOn")
+            {
+                map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
+                map.glowGrid.RegisterGlower(__instance);
+            }
+            else if (signal == "armillarixOff")
+            {
+                map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
+                map.glowGrid.DeRegisterGlower(__instance);
+            }
         }
 
         static bool Faction_TryMakeInitialRelationsWith_Prefix(Faction other, Faction __instance, ref List<FactionRelation> ___relations)

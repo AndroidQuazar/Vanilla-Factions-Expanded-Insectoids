@@ -6,6 +6,7 @@ using RimWorld.BaseGen;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse.AI;
+using Verse.AI.Group;
 
 namespace VFEI.Other
 {
@@ -40,6 +41,20 @@ namespace VFEI.Other
 				this.EnsurePowerUsersConnected(map);
 				this.EnsureGeneratorsConnectedAndMakeSense(map);
 				this.tmpThings.Clear();
+
+				IncidentParms incidentParms = new IncidentParms();
+				incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
+				incidentParms.points = 3500;
+				incidentParms.target = map;
+
+				List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, incidentParms, false), true).ToList();
+				List<IntVec3> iv3 = rect.Cells.ToList().FindAll(x => x.Walkable(map) && !x.Roofed(map));
+				Log.Message(pawns.Count.ToString());
+				for (int i = 0; i < pawns.Count; i++)
+				{
+					GenSpawn.Spawn(pawns[i], iv3.RandomElement(), map);
+				}
+				LordMaker.MakeNewLord(incidentParms.faction, new LordJob_DefendBase(incidentParms.faction, rect.CenterCell), map, pawns);
 
 				foreach (IntVec3 i in rect.Cells)
 				{

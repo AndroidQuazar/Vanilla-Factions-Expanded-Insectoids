@@ -238,6 +238,6 @@ namespace VFEI
 		private float EnergyLossPerDamage = 0.033f;
 		private int KeepDisplayingTicks = 1000;
 		private float ApparelScorePerEnergyMax = 0.25f;
-		private static readonly Material BubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent);
+		private static readonly Material BubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, new Color(0.7f, 1f, 0.7f));
 	}
 }

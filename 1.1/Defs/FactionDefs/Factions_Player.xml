@@ -3,7 +3,7 @@
   
   <FactionDef ParentName="PlayerFactionBase">
     <defName>VFE_PlayerOutpost</defName>
-    <label>New squad</label>
+    <label>New Squad</label>
     <description>A small squad of mercenaries, ready for combat.</description>
     <isPlayer>true</isPlayer>
     <basicMemberKind>VFE_Mercenary</basicMemberKind>

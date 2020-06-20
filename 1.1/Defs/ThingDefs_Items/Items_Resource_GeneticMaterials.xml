@@ -33,7 +33,7 @@
     <defName>VFEI_DroneGenome</defName>
     <label>drone genetic material</label>
     <statBases>
-      <MarketValue>300</MarketValue>
+      <MarketValue>100</MarketValue>
     </statBases>
     <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>
@@ -45,7 +45,7 @@
     <defName>VFEI_WarriorGenome</defName>
     <label>warrior genetic material</label>
     <statBases>
-      <MarketValue>400</MarketValue>
+      <MarketValue>150</MarketValue>
     </statBases>
     <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>
@@ -57,7 +57,7 @@
     <defName>VFEI_RoyalGenome</defName>
     <label>royal genetic material</label>
     <statBases>
-      <MarketValue>500</MarketValue>
+      <MarketValue>200</MarketValue>
     </statBases>
     <description>A vial of genetic material extracted from an insectoid.</description>
     <graphicData>

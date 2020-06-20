@@ -8,6 +8,14 @@
 		<maxUses>1</maxUses>
 	</ScenPartDef>
 
+	<ScenPartDef>
+		<defName>ScenPart_PlayerPawnsArriveMethodEdge</defName>
+		<label>pawn arrive method</label>
+		<category>Fixed</category>
+		<scenPartClass>VFEI.Other.ScenPart_ArriveAtEdge</scenPartClass>
+		<maxUses>1</maxUses>
+	</ScenPartDef>
+
 	<ScenarioDef>
 		<defName>VFEI_MercenarySquad</defName>
 		<label>Mercenary Squad</label>
@@ -31,8 +39,8 @@ Note: Since your starting characters are surrounded by insectoids, this is an es
 					<pawnCount>4</pawnCount>
 					<pawnChoiceCount>6</pawnChoiceCount>
 				</li>
-				<li Class="ScenPart_PlayerPawnsArriveMethod">
-					<def>PlayerPawnsArriveMethod</def>
+				<li Class="VFEI.Other.ScenPart_ArriveAtEdge">
+					<def>ScenPart_PlayerPawnsArriveMethodEdge</def>
 				</li>
 				<li Class="ScenPart_StartingThing_Defined">
 					<def>StartingThing_Defined</def>
@@ -85,12 +93,12 @@ You have until sunset to suit up and create defenses before insectoids arrive in
 					<thingDef>MeleeWeapon_LongSword</thingDef>
 					<stuff>Plasteel</stuff>
 				</li>
-				<li Class="ScenPart_CreateIncident">
+				<!--<li Class="ScenPart_CreateIncident">
 					<def>CreateIncident</def>
 					<incident>VFEI_FirstInsectoidRaid</incident>
 					<intervalDays>0.5</intervalDays>
-					<visible>false</visible>
-				</li>
+					<visible>true</visible>
+				</li>-->
 			</parts>
 		</scenario>
 	</ScenarioDef>
