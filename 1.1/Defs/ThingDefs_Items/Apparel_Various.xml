@@ -153,14 +153,6 @@
     <equippedAngleOffset>0</equippedAngleOffset>
     <tools>
       <li>
-        <label>base</label>
-        <capacities>
-          <li>Poke</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
-      </li>
-      <li>
         <label>centre</label>
         <labelUsedInLogging>false</labelUsedInLogging>
         <capacities>
