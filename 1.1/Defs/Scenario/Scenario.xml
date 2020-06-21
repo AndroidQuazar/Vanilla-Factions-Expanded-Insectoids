@@ -19,13 +19,13 @@
 	<ScenarioDef>
 		<defName>VFEI_MercenarySquad</defName>
 		<label>Mercenary Squad</label>
-		<description>The four of you heard the motion sensors tripped all around your base perimeter. With only enough time to suit up, you await the inevitable - the hive knows about your location. You can try and hold off the incoming swarm, or escape to safety, abandoning your outpost.</description>
+		<description>The four of you approach an abandoned outpost, now crawling with all kinds of terrors. You can try and exterminate the hives and rebuild it, or leave and settle somewhere else.</description>
 		<scenario>
 			<name>Mercenaries</name>
 			<summary>A group of mercenaries surrounded by swarms of insectoids. Very Difficult.</summary>
-			<description>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
+			<description>A simple mission down to the surface of a long forgotten planet went south. Your base has been overrun by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. Forced to escape, you approach a small outpost crawling with the insectoids that sent you on the run in the first place. You can exterminate them and settle here, or leave and find a new place to start anew.
 
-Note: Since your starting characters are surrounded by insectoids, this is an especially difficult scenario in the early game.</description>
+Note: Since you start with no resources and the base overrun by insectoids, this is an especially difficult scenario in the early game.</description>
 			<playerFaction>
 				<def>PlayerFaction</def>
 				<factionDef>VFE_PlayerOutpost</factionDef>
@@ -74,9 +74,9 @@ Note: Since your starting characters are surrounded by insectoids, this is an es
 				</li>
 				<li Class="ScenPart_GameStartDialog">
 					<def>GameStartDialog</def>
-					<text>A simple mission down to the surface of a long forgotten planet went south. Your outpost is surrounded by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. You must quickly prepare to defend your outpost, or try to escape the menace lurking in the night.
-
-You have until sunset to suit up and create defenses before insectoids arrive in numbers. Alternatively, you can pack what you can and escape this area, hoping to find a better location somewhere else.</text>
+					<text>A simple mission down to the surface of a long forgotten planet went south. Your base has been overrun by creatures you have not seen before - giant insectoids, emerging in infinite numbers from their hives. Forced to escape, you approach a small outpost crawling with the insectoids that sent you on the run in the first place.
+					
+					You can exterminate them and settle here, or leave and find a new place to start anew.</text>
 					<closeSound>GameStartSting</closeSound>
 				</li>
 				<li Class="ScenPart_StartingThing_Defined">
