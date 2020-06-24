@@ -32,6 +32,8 @@
             <WorkToBuild>950</WorkToBuild>
             <MaxHitPoints>100</MaxHitPoints>
             <Flammability>0.8</Flammability>
+			<Mass>40</Mass>
+			<Beauty>-5</Beauty>
         </statBases>
         <size>(3,3)</size>
         <passability>Impassable</passability>
