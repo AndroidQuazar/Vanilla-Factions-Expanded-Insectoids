@@ -3,7 +3,7 @@
 
   <ThingDef ParentName="PlantBase">
     <defName>VFEI_Plant_Armillarix</defName>
-    <label>armillarix plant</label>
+    <label>armillarix</label>
     <description>A medium sized mushroom. When fully matured, its cap spreads open to release an inner bulb that emits very hard light, bright enough to grow other crops around it.</description>
     <statBases>
       <MaxHitPoints>90</MaxHitPoints>

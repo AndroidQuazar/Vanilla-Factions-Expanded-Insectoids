@@ -35,7 +35,7 @@
     <statBases>
       <MarketValue>100</MarketValue>
     </statBases>
-    <description>A vial of genetic material extracted from an insectoid.</description>
+    <description>Genetic material of several different species of working animals and drones, mixed into one payload of DNA.\n\nWhen administered to a human being, this genome can have a random effect.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_DroneGenome</texPath>
     </graphicData>
@@ -47,7 +47,7 @@
     <statBases>
       <MarketValue>150</MarketValue>
     </statBases>
-    <description>A vial of genetic material extracted from an insectoid.</description>
+    <description>Genetic material of several different species of warrior caste insects and predators, mixed into one payload of DNA.\n\nWhen administered to a human being, this genome can have a random effect.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_WarriorGenome</texPath>
     </graphicData>
@@ -59,7 +59,7 @@
     <statBases>
       <MarketValue>200</MarketValue>
     </statBases>
-    <description>A vial of genetic material extracted from an insectoid.</description>
+    <description>Genetic material of several different species of royal insectoids and queens, mixed into one payload of DNA.\n\nWhen administered to a human being, this genome can have a random effect.</description>
     <graphicData>
       <texPath>Things/Item/GenomeIcons/VFEI_RoyalGenome</texPath>
     </graphicData>

@@ -11,6 +11,7 @@
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>queen</leaderTitle>
+	<description>A result of a galaxy wide experiment gone wrong, this monstrous hive-mind has made this planet their home. Divided into castes, their society relies on the giant queen.\n\nThese insectoids are not interested in diplomacy. They will try to eliminate anything that they perceive to be a threat.</description>
     <factionIconPath>World/InsectoidFaction/Nest</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
@@ -36,7 +37,7 @@
       <li>(0.58, 0.47, 0.35)</li>
       <li>(0.75, 0.40, 0.40)</li>
     </colorSpectrum>
-    <hostileToFactionlessHumanlikes>false</hostileToFactionlessHumanlikes>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
