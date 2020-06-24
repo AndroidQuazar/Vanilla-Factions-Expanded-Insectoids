@@ -38,6 +38,9 @@
     </statBases>
     <minifiedDef>MinifiedThing</minifiedDef>
     <tickerType>Rare</tickerType>
+	    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
 
     <size>(3,3)</size>
     <passability>PassThroughOnly</passability>

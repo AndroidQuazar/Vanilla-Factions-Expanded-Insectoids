@@ -35,6 +35,9 @@
 			<Mass>40</Mass>
 			<Beauty>-5</Beauty>
         </statBases>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
         <size>(3,3)</size>
         <passability>Impassable</passability>
         <surfaceType>Item</surfaceType>

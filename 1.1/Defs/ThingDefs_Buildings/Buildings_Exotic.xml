@@ -9,7 +9,7 @@
     <graphicData>
       <texPath>Things/Building/CrashedInfestedShipPart_Large</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,4)</drawSize>
+      <drawSize>(8,8)</drawSize>
       <shadowData>
         <volume>(5.17, 1.0, 2.4)</volume>
         <offset>(-0.16, 0, -0.08)</offset>
