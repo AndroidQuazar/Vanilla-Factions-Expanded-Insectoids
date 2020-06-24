@@ -34,6 +34,11 @@ namespace VFEI
         public static ThingDef VFEI_InsectoidLarvaeCocoon;
         public static TerrainDef Soil;
         public static ThingDef VFEI_RoyalInsectJelly;
+        public static ThingDef VFEI_BioengineeringIncubator;
+        public static ThingDef VFEI_DroneGenome;
+        public static ThingDef VFEI_WarriorGenome;
+        public static ThingDef VFEI_RoyalGenome;
+
         // Animal Body Parts
         public static BodyPartDef VFEI_ExplosiveSac;
         // JobDefs

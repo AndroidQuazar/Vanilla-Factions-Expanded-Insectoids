@@ -10,11 +10,10 @@
     <graphicData>
       <texPath>Things/Item/Weapons/Plasmacutter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-		<shaderType>TransparentPostLight</shaderType>
+      <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
       <MarketValue>2000</MarketValue>
       <Mass>2</Mass>
       <AccuracyTouch>0.84</AccuracyTouch>
@@ -24,14 +23,8 @@
       <RangedWeapon_Cooldown>2.30</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-      <MiningSpeed>0.33</MiningSpeed> 
+      <MiningSpeed>0.33</MiningSpeed>
     </equippedStatOffsets>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>7</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False" />
-    </recipeMaker>
     <costList>
       <Plasteel>150</Plasteel>
       <ComponentSpacer>4</ComponentSpacer>
@@ -43,7 +36,7 @@
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
-	<tradeability>Sellable</tradeability>
+    <tradeability>Sellable</tradeability>
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -102,8 +95,8 @@
       <speed>90</speed>
     </projectile>
   </ThingDef>
-  
-  
+
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VFE_Gun_Plasmapiercer</defName>
     <label>plasmapiercer</label>
@@ -112,11 +105,10 @@
     <graphicData>
       <texPath>Things/Item/Weapons/Plasmapiercer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-		<shaderType>TransparentPostLight</shaderType>
+      <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
       <MarketValue>2300</MarketValue>
       <Mass>4</Mass>
       <AccuracyTouch>0.34</AccuracyTouch>
@@ -125,12 +117,6 @@
       <AccuracyLong>0.57</AccuracyLong>
       <RangedWeapon_Cooldown>2.45</RangedWeapon_Cooldown>
     </statBases>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>7</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False" />
-    </recipeMaker>
     <costList>
       <Plasteel>150</Plasteel>
       <ComponentSpacer>6</ComponentSpacer>
@@ -142,7 +128,7 @@
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
-	<tradeability>Sellable</tradeability>
+    <tradeability>Sellable</tradeability>
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -204,7 +190,7 @@
     </projectile>
   </ThingDef>
 
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VFE_Gun_PlasmabeamRifle</defName>
     <label>plasmabeam rifle</label>
@@ -213,11 +199,10 @@
     <graphicData>
       <texPath>Things/Item/Weapons/PlasmabeamRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-		<shaderType>TransparentPostLight</shaderType>
+      <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
       <MarketValue>2500</MarketValue>
       <Mass>6</Mass>
       <AccuracyTouch>0.44</AccuracyTouch>
@@ -226,13 +211,7 @@
       <AccuracyLong>0.57</AccuracyLong>
       <RangedWeapon_Cooldown>3.90</RangedWeapon_Cooldown>
     </statBases>
-	<equippedAngleOffset>50</equippedAngleOffset>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>9</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False" />
-    </recipeMaker>
+    <equippedAngleOffset>50</equippedAngleOffset>
     <costList>
       <Plasteel>150</Plasteel>
       <ComponentSpacer>8</ComponentSpacer>
@@ -241,7 +220,7 @@
       <li>RewardStandardLowFreq</li>
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
-	<tradeability>Sellable</tradeability>
+    <tradeability>Sellable</tradeability>
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
@@ -302,7 +281,7 @@
       <speed>75</speed>
     </projectile>
   </ThingDef>
-  
+
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VFE_Gun_PlasmaScattergun</defName>
     <label>plasma scattergun</label>
@@ -311,11 +290,10 @@
     <graphicData>
       <texPath>Things/Item/Weapons/PlasmaScattergun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-		<shaderType>TransparentPostLight</shaderType>
+      <shaderType>TransparentPostLight</shaderType>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
     <statBases>
-      <WorkToMake>45000</WorkToMake>
       <MarketValue>2300</MarketValue>
       <Mass>4</Mass>
       <AccuracyTouch>0.34</AccuracyTouch>
@@ -324,12 +302,6 @@
       <AccuracyLong>0.47</AccuracyLong>
       <RangedWeapon_Cooldown>1.80</RangedWeapon_Cooldown>
     </statBases>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>7</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False" />
-    </recipeMaker>
     <costList>
       <Plasteel>150</Plasteel>
       <ComponentSpacer>6</ComponentSpacer>
@@ -338,7 +310,7 @@
       <li>RewardStandardLowFreq</li>
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
-	<tradeability>Sellable</tradeability>
+    <tradeability>Sellable</tradeability>
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
@@ -399,41 +371,33 @@
       <speed>65</speed>
     </projectile>
   </ThingDef>
-  
-  
-	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>VFE_Plasmasaw</defName>
     <label>plasmasaw</label>
     <description>A neo-industrial metal-cored saw with a cutting edge made out of plasma, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by the plasma chain.</description>
     <graphicData>
-		<texPath>Things/Item/Weapons/Plasmasaw</texPath>
-		<shaderType>TransparentPostLight</shaderType>
-		<graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Weapons/Plasmasaw</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_PlasmaSword</soundInteract>
     <meleeHitSound>MeleeHit_PlasmaSword</meleeHitSound>
     <techLevel>Ultra</techLevel>
     <weaponTags Inherit="False">
-		<li>UltratechMelee</li>
+      <li>UltratechMelee</li>
     </weaponTags>
     <costList>
-		<Steel>30</Steel>
-		<Plasteel>100</Plasteel>
-		<ComponentSpacer>10</ComponentSpacer>
+      <Steel>30</Steel>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>10</ComponentSpacer>
     </costList>
-    <recipeMaker>
-      <skillRequirements>
-        <Crafting>10</Crafting>
-      </skillRequirements>
-      <recipeUsers Inherit="False" />
-      <researchPrerequisite Inherit="False" />
-    </recipeMaker>
     <statBases>
-      <WorkToMake>18000</WorkToMake>
-		<MarketValue>2000</MarketValue>
-		<Mass>1.4</Mass>
+      <MarketValue>2000</MarketValue>
+      <Mass>1.4</Mass>
     </statBases>
-	<equippedAngleOffset>50</equippedAngleOffset>
+    <equippedAngleOffset>50</equippedAngleOffset>
     <tools>
       <li>
         <label>plasma chain</label>
@@ -454,7 +418,7 @@
     <thingSetMakerTags>
       <li>RewardSpecial</li>
     </thingSetMakerTags>
-	<tradeability>Sellable</tradeability>
+    <tradeability>Sellable</tradeability>
   </ThingDef>
 
 </Defs>

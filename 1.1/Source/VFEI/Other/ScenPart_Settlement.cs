@@ -16,7 +16,7 @@ namespace VFEI.Other
         {
 			if (Find.TickManager.TicksGame < 1000f)
 			{
-				IntRange SettlementSizeRange = new IntRange(34, 38);
+				IntRange SettlementSizeRange = new IntRange(38, 16);
 				int randomInRange = SettlementSizeRange.RandomInRange;
 				int randomInRange2 = SettlementSizeRange.RandomInRange;
 				IntVec3 c = map.Center;
@@ -28,7 +28,7 @@ namespace VFEI.Other
 				resolveParams.rect = rect;
 				resolveParams.faction = Faction.OfPlayer;
 				BaseGen.globalSettings.map = map;
-				BaseGen.globalSettings.minBuildings = 1;
+				BaseGen.globalSettings.minBuildings = 5;
 				BaseGen.globalSettings.minBarracks = 1;
 				BaseGen.globalSettings.basePart_powerPlantsCoverage = 2;
 				BaseGen.symbolStack.Push("settlementNoPawns", resolveParams, null);
@@ -43,22 +43,47 @@ namespace VFEI.Other
 				this.tmpThings.Clear();
 
 				IncidentParms incidentParms = new IncidentParms();
-				incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
-				incidentParms.points = 3500;
+				incidentParms.faction = Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect);
+				incidentParms.points = 2500;
 				incidentParms.target = map;
 
 				List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, incidentParms, false), true).ToList();
 				List<IntVec3> iv3 = rect.Cells.ToList().FindAll(x => x.Walkable(map) && !x.Roofed(map));
-				Log.Message(pawns.Count.ToString());
 				for (int i = 0; i < pawns.Count; i++)
 				{
 					GenSpawn.Spawn(pawns[i], iv3.RandomElement(), map);
 				}
 				LordMaker.MakeNewLord(incidentParms.faction, new LordJob_DefendBase(incidentParms.faction, rect.CenterCell), map, pawns);
-
-				foreach (IntVec3 i in rect.Cells)
+				bool stop = false;
+				List<ThingDef> potentialGenome = new List<ThingDef>();
+				potentialGenome.Add(ThingDefsVFEI.VFEI_DroneGenome);
+				potentialGenome.Add(ThingDefsVFEI.VFEI_RoyalGenome);
+				potentialGenome.Add(ThingDefsVFEI.VFEI_WarriorGenome);
+				foreach (IntVec3 i in rect.ExpandedBy(5))
 				{
-					if (i.Fogged(map) && (i.GetThingList(map).Any((t) => t.Faction != null && t.Faction == Faction.OfPlayer) || i.Walkable(map))) map.fogGrid.Unfog(i);
+					foreach (var item in i.GetThingList(map))
+					{
+						if (item.Faction != null) item.SetFaction(Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect));
+					}
+					if (i.Fogged(map) && (i.GetThingList(map).Any((t) => t.Faction != null) || i.Walkable(map))) map.fogGrid.Unfog(i);
+					if (!stop && i.Roofed(map) && i.GetRoom(map) is Room room && room != null && room.CellCount > 20 && GenAdj.CellsAdjacent8Way(new TargetInfo(i, map)).ToList().FindAll(l => l.Walkable(map)).Count == 8)
+					{
+						foreach (var item in room.Cells)
+						{
+							List<Thing> items = item.GetThingList(map);
+							for (int u = 0; u < items.Count; u++)
+							{
+								if(items[u].def.defName != "PowerConduit" || items[u].def.defName != "StandingLamp") items[u].DeSpawn();
+							}
+						}
+						for (int b = 0; b <= 8; b++)
+						{
+							GenSpawn.Spawn(potentialGenome.RandomElement(), room.Cells.RandomElement(), map);
+						}
+						if(!room.ContainsThing(ThingDefOf.StandingLamp)) GenSpawn.Spawn(ThingDefOf.StandingLamp, room.Cells.RandomElement(), map);
+						GenSpawn.Spawn(ThingDefsVFEI.VFEI_BioengineeringIncubator, i, map);
+						stop = true;
+					}
 				}
 			}
 		}

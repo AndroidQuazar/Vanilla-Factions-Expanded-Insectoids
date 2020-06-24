@@ -166,7 +166,7 @@
     <inspectorTabs>
       <li>ITab_ContentsTransporter</li>
     </inspectorTabs>
-    <comps>
+    <comps Inherit="False">
       <li Class="CompProperties_Transporter">
         <massCapacity>500</massCapacity>
         <restEffectiveness>0.8</restEffectiveness>

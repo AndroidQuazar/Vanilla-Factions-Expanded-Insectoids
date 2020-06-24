@@ -14,6 +14,7 @@ namespace VFEI.Other
 		{
 			base.ExposeData();
 			Scribe_Values.Look<PlayerPawnsArriveMethod>(ref this.method, "method", PlayerPawnsArriveMethod.Standing, false);
+			Scribe_Values.Look<IntVec3>(ref this.location, "location");
 		}
 
 		public override void DoEditInterface(Listing_ScenEdit listing)
@@ -45,7 +46,7 @@ namespace VFEI.Other
 
 		public override void Randomize()
 		{
-			this.method = ((Rand.Value < 0.5f) ? PlayerPawnsArriveMethod.DropPods : PlayerPawnsArriveMethod.Standing);
+			this.method = PlayerPawnsArriveMethod.Standing;
 		}
 
 		public override void GenerateIntoMap(Map map)
@@ -54,6 +55,7 @@ namespace VFEI.Other
 			{
 				return;
 			}
+			this.location = CellFinder.RandomEdgeCell(map);
 			List<List<Thing>> list = new List<List<Thing>>();
 			foreach (Pawn item in Find.GameInitData.startingAndOptionalPawns)
 			{
@@ -81,7 +83,7 @@ namespace VFEI.Other
 					num = 0;
 				}
 			}
-			DropPodUtility.DropThingGroupsNear_NewTmp(CellFinder.RandomEdgeCell(map), map, list, 110, Find.GameInitData.QuickStarted || this.method != PlayerPawnsArriveMethod.DropPods, true, true, true, false);
+			DropPodUtility.DropThingGroupsNear_NewTmp(this.location, map, list, 110, Find.GameInitData.QuickStarted || this.method != PlayerPawnsArriveMethod.DropPods, true, true, true, false);
 		}
 
 		public override void PostMapGenerate(Map map)
@@ -90,12 +92,9 @@ namespace VFEI.Other
 			{
 				return;
 			}
-			if (this.method == PlayerPawnsArriveMethod.DropPods)
-			{
-				PawnUtility.GiveAllStartingPlayerPawnsThought(ThoughtDefOf.CrashedTogether);
-			}
 		}
 
 		private PlayerPawnsArriveMethod method;
+		private IntVec3 location;
 	}
 }

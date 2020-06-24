@@ -16,22 +16,19 @@ namespace VFEI.GenStuff
 			{
 				num = rp.edgeDefenseWidth.Value;
 			}
-			else if (rp.rect.Width >= 20 && rp.rect.Height >= 20 && (faction.def.techLevel >= TechLevel.Industrial || Rand.Bool))
+			else if (rp.rect.Width >= 20 && rp.rect.Height >= 20)
 			{
 				num = (Rand.Bool ? 2 : 4);
 			}
 			float num2 = (float)rp.rect.Area / 144f * 0.17f;
 			BaseGen.globalSettings.minEmptyNodes = ((num2 < 1f) ? 0 : GenMath.RoundRandom(num2));
 			BaseGen.symbolStack.Push("outdoorLighting", rp, null);
-			if (faction.def.techLevel >= TechLevel.Industrial)
+			int num3 = Rand.Chance(0.75f) ? GenMath.RoundRandom((float)rp.rect.Area / 400f) : 0;
+			for (int i = 0; i < num3; i++)
 			{
-				int num3 = Rand.Chance(0.75f) ? GenMath.RoundRandom((float)rp.rect.Area / 400f) : 0;
-				for (int i = 0; i < num3; i++)
-				{
-					ResolveParams resolveParams2 = rp;
-					resolveParams2.faction = faction;
-					BaseGen.symbolStack.Push("firefoamPopper", resolveParams2, null);
-				}
+				ResolveParams resolveParams2 = rp;
+				resolveParams2.faction = faction;
+				BaseGen.symbolStack.Push("firefoamPopper", resolveParams2, null);
 			}
 			/*if (num > 0)
 			{
