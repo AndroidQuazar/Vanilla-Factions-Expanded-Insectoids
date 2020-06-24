@@ -5,14 +5,14 @@
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>VFE_Gun_Plasmacutter</defName>
     <label>plasmacutter</label>
-    <description>A mining pistol with metal-cored projectiles wrapped in plasma, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by plasma coating. This pistol instantly cuts off limbs it hits.</description>
+    <description>A mining pistol with metal-cored projectiles wrapped in plasma, held in place by an energy field. Targets are both sliced by the metal core, as well as burned or ignited by plasma coating. This weapon has a chance to deal critical hits, with a chance to cut the limb straight off.</description>
     <techLevel>Ultra</techLevel>
     <graphicData>
       <texPath>Things/Item/Weapons/Plasmacutter</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <soundInteract>VFE_Interact_PlasmaWeapon</soundInteract>
     <statBases>
       <MarketValue>2000</MarketValue>
       <Mass>2</Mass>
@@ -36,6 +36,7 @@
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
+    <recipeMaker Inherit="False" />
     <tradeability>Sellable</tradeability>
     <comps>
       <li>
@@ -56,7 +57,7 @@
         <range>12.9</range>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <burstShotCount>1</burstShotCount>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>VFE_PlasmaShot_Cutter</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -107,7 +108,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <soundInteract>VFE_Interact_PlasmaWeapon</soundInteract>
     <statBases>
       <MarketValue>2300</MarketValue>
       <Mass>4</Mass>
@@ -129,6 +130,7 @@
       <li>UltratechGun</li>
     </weaponTags>
     <tradeability>Sellable</tradeability>
+    <recipeMaker Inherit="False" />
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -148,7 +150,7 @@
         <range>24.9</range>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <burstShotCount>1</burstShotCount>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>VFE_PlasmaShot_Piercer</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -201,7 +203,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <soundInteract>VFE_Interact_PlasmaWeapon</soundInteract>
     <statBases>
       <MarketValue>2500</MarketValue>
       <Mass>6</Mass>
@@ -224,6 +226,7 @@
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
+    <recipeMaker Inherit="False" />
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -243,7 +246,7 @@
         <range>35.9</range>
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
         <burstShotCount>16</burstShotCount>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>VFE_PlasmaShot_Beam</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -292,7 +295,7 @@
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
     </graphicData>
-    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <soundInteract>VFE_Interact_PlasmaWeapon</soundInteract>
     <statBases>
       <MarketValue>2300</MarketValue>
       <Mass>4</Mass>
@@ -314,6 +317,7 @@
     <weaponTags>
       <li>UltratechGun</li>
     </weaponTags>
+    <recipeMaker Inherit="False" />
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -333,7 +337,7 @@
         <range>15.9</range>
         <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
         <burstShotCount>5</burstShotCount>
-        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCast>VFE_PlasmaShot_Scattergun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
@@ -382,8 +386,8 @@
       <shaderType>TransparentPostLight</shaderType>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <soundInteract>Interact_PlasmaSword</soundInteract>
-    <meleeHitSound>MeleeHit_PlasmaSword</meleeHitSound>
+    <soundInteract>VFE_Interact_PlasmaWeapon</soundInteract>
+    <meleeHitSound>VFE_Chainsaw_Attack</meleeHitSound>
     <techLevel>Ultra</techLevel>
     <weaponTags Inherit="False">
       <li>UltratechMelee</li>
@@ -397,6 +401,7 @@
       <MarketValue>2000</MarketValue>
       <Mass>1.4</Mass>
     </statBases>
+    <recipeMaker Inherit="False" />
     <equippedAngleOffset>50</equippedAngleOffset>
     <tools>
       <li>
@@ -405,7 +410,7 @@
           <li>Cut</li>
         </capacities>
         <power>2</power>
-        <cooldownTime>0.05</cooldownTime>
+        <cooldownTime>0.1</cooldownTime>
         <extraMeleeDamages>
           <li>
             <def>Flame</def>

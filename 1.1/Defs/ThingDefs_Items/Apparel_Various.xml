@@ -145,6 +145,13 @@
     <thingCategories Inherit="False">
       <li>VFEC_Shields</li>
     </thingCategories>
+    <recipeMaker>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
     <equippedStatOffsets>
       <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
       <MeleeHitChance>-2</MeleeHitChance>

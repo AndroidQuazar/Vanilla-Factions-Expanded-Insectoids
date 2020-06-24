@@ -34,7 +34,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
     </statBases>
-
+    <minifiedDef>MinifiedThing</minifiedDef>
     <tickerType>Rare</tickerType>
 
     <size>(3,3)</size>

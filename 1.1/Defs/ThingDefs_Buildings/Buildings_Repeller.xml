@@ -25,6 +25,7 @@
         <altitudeLayer>Building</altitudeLayer>
         <neverMultiSelect>true</neverMultiSelect>
         <uiIconScale>1</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
         <fillPercent>0.5</fillPercent>
         <useHitPoints>True</useHitPoints>
         <statBases>
