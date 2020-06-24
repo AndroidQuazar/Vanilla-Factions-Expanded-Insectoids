@@ -44,7 +44,7 @@ namespace VFEI.Other
 
 				IncidentParms incidentParms = new IncidentParms();
 				incidentParms.faction = Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect);
-				incidentParms.points = 2500;
+				incidentParms.points = 1500;
 				incidentParms.target = map;
 
 				List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, incidentParms, false), true).ToList();

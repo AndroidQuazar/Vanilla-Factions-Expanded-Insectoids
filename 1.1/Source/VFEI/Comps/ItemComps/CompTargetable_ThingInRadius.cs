@@ -34,7 +34,7 @@ namespace VFEI
             }
             TargetingParameters tp = this.GetTargetingParameters();
 
-            IEnumerable<IntVec3> list = GenRadial.RadialCellsAround(base.parent.Position, 5, true);
+            IEnumerable<IntVec3> list = GenRadial.RadialCellsAround(base.parent.Position, 10, true);
             foreach (IntVec3 t in list)
             {
                 IEnumerable<Thing> things = t.GetThingList(this.parent.Map);
@@ -50,6 +50,7 @@ namespace VFEI
                     this.parent.Map.roofGrid.SetRoof(t, null);
                 }
             }
+            MoteMaker.MakeStaticMote(this.parent.TrueCenter(), this.parent.Map, ThingDefOf.Mote_PsycastAreaEffect, 10);
             yield break;
         }
     }

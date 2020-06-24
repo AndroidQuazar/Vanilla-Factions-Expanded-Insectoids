@@ -20,9 +20,11 @@ namespace VFEI.Other
 				DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, (float)base.DamageAmount, base.ArmorPenetration, this.ExactRotation.eulerAngles.y, this.launcher, null, this.equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, this.intendedTarget.Thing);
 				hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
 				Pawn pawn = hitThing as Pawn;
-				var hediffOnPawn = pawn.health?.hediffSet?.GetFirstHediffOfDef(ThingDefsVFEI.VFEI_TempDown);
-				if (hediffOnPawn == null && pawn.BodySize <= 1f) pawn.health.AddHediff(ThingDefsVFEI.VFEI_TempDown);
-
+				if (pawn != null && pawn.BodySize <= 1f)
+				{
+					var hediffOnPawn = pawn.health?.hediffSet?.GetFirstHediffOfDef(ThingDefsVFEI.VFEI_TempDown);
+					if (hediffOnPawn == null) pawn.health.AddHediff(ThingDefsVFEI.VFEI_TempDown);
+				}
 				if (pawn != null && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
 				{
 					pawn.stances.StaggerFor(95);
