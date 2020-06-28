@@ -27,6 +27,8 @@
         <li>Ground</li>
         <li>Hydroponic</li>
       </sowTags>
+	  <sowMinSkill>10</sowMinSkill>
+	  <sowWork>400</sowWork>
       <topWindExposure>0.05</topWindExposure>
       <growDays>10</growDays>
       <visualSizeRange>0.4~0.85</visualSizeRange>
