@@ -8,7 +8,7 @@
         <graphicData>
             <texPath>Things/Building/InfestationSonicRepeller</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3.5,3.5)</drawSize>
+            <drawSize>(4,4)</drawSize>
             <shaderType>CutoutComplex</shaderType>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
@@ -22,6 +22,8 @@
             <Plasteel>50</Plasteel>
             <ComponentSpacer>5</ComponentSpacer>
         </costList>
+		<rotatable>false</rotatable>
+		<defaultPlacingRot>South</defaultPlacingRot>
         <altitudeLayer>Building</altitudeLayer>
         <neverMultiSelect>true</neverMultiSelect>
         <uiIconScale>1</uiIconScale>
