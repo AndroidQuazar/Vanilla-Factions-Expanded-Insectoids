@@ -95,7 +95,7 @@
   <ThingDef ParentName="ArtifactBase">
     <defName>VFEI_Artifacts_ArchotechEraser</defName>
     <label>archotech eraser</label>
-    <description>One-use artifact that utilises a vanometric core to erase everything in a radius of 5 from existence. Needs to be manually triggered.</description>
+    <description>One-use artifact that utilises a vanometric core to erase everything in a radius of 10 from existence. Needs to be manually triggered.</description>
     <graphicData>
       <texPath>Things/Item/Artifact/ArchotechEraser</texPath>
       <graphicClass>Graphic_Single</graphicClass>
