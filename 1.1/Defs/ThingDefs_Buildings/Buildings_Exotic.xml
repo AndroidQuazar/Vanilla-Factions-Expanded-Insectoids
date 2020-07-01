@@ -46,8 +46,8 @@
     <forceDebugSpawnable>true</forceDebugSpawnable>
     <building>
       <claimable>false</claimable>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
       <roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
     </building>
     <comps>
       <li Class="VFEI.CompProperties_SpawnerInsectOnDamaged">
@@ -100,8 +100,8 @@
     <forceDebugSpawnable>true</forceDebugSpawnable>
     <building>
       <claimable>false</claimable>
-      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
       <roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
     </building>
     <comps>
       <li Class="VFEI.CompProperties_SpawnerInsectOnDamaged">
@@ -155,7 +155,7 @@
     <forceDebugSpawnable>true</forceDebugSpawnable>
     <building>
       <claimable>false</claimable>
-      <alwaysDeconstructible>true</alwaysDeconstructible>
+      <alwaysDeconstructible>false</alwaysDeconstructible>
     </building>
     <comps>
       <li Class="VFEI.CompProperties_SpawnerInsectOnDamaged">

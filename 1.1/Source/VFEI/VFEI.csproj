@@ -138,6 +138,7 @@
     <Compile Include="Other\RepellerPlaceWorker.cs" />
     <Compile Include="Other\ScenPart_ArriveAtEdge.cs" />
     <Compile Include="Other\ScenPart_Settlement.cs" />
+    <Compile Include="Other\VFEI_Plant_Armillarix.cs" />
     <Compile Include="Other\VFEI_TunnelingNoHive.cs" />
     <Compile Include="Other\WorldTeleporter.cs" />
     <Compile Include="RaidArrivalModes\PawnArrivalModeWorker_GigalocustSwarm.cs" />

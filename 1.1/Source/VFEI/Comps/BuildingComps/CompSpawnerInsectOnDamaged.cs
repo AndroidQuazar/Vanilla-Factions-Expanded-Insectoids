@@ -45,7 +45,7 @@ namespace VFEI
                 float num = (float)this.parent.HitPoints - dinfo.Amount;
                 if ((num < (float)this.parent.MaxHitPoints * 0.98f && dinfo.Instigator != null && dinfo.Instigator.Faction != null) || num < (float)this.parent.MaxHitPoints * 0.9f)
                 {
-                    List<Thing> otherChunks = this.parent.Map.listerThings.AllThings.Where(thing => thing.def.defName == this.parent.def.defName).ToList();
+                    List<Thing> otherChunks = this.parent.Map.listerThings.AllThings.Where(thing => thing.def.defName == "VFEI_InfestedCrashedShipModule" || thing.def.defName == "VFEI_InfestedCrashedShipPart" || thing.def.defName == "VFEI_InfestedShipChunk").ToList();
                     foreach (Thing thing in otherChunks)
                     {
                         thing.TryGetComp<CompSpawnerInsectOnDamaged>().TrySpawnInsect();

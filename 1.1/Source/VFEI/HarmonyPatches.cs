@@ -12,6 +12,7 @@ using Verse;
 using UnityEngine;
 using Verse.AI;
 using Verse.Sound;
+using RimWorld.QuestGen;
 
 namespace VFEI
 {
@@ -27,15 +28,33 @@ namespace VFEI
             harmony.Patch(AccessTools.Method(typeof(CompGlower), "ReceiveCompSignal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ReceiveCompSignal_PostFix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(CompTransporter), "CompGetGizmosExtra", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "CompGetGizmosExtra_Fix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(BodyPartDef), "GetMaxHealth", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "BodyPartDef_GetMaxHealth_PostFix", null), null, null);
-            // harmony.Patch(AccessTools.Property(typeof(Pawn), "HealthScale").GetGetMethod(true), null, new HarmonyMethod(typeof(HarmonyPatches), "Pawn_GetHealthScalePostfix", null), null);
+            //harmony.Patch(AccessTools.Method(typeof(QuestNode_GetFaction), "TryFindFaction", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "QuestNode_GetFaction_TryFindFaction_PostFix", null), null, null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(Faction), "TryMakeInitialRelationsWith", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Faction_TryMakeInitialRelationsWith_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(CompGlower), "PostSpawnSetup", null, null), new HarmonyMethod(typeof(HarmonyPatches), "PostSpawnSetup_PreFix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(Command_LoadToTransporter), "ProcessInput", null, null), new HarmonyMethod(typeof(HarmonyPatches), "ProcessInput_PreFix", null), null, null, null);
+            harmony.Patch(AccessTools.Method(typeof(QuestNode_GetFaction), "IsGoodFaction", null, null), new HarmonyMethod(typeof(HarmonyPatches), "QuestNode_GetFaction_IsGoodFaction_Prefix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
         }
+
+        static bool QuestNode_GetFaction_IsGoodFaction_Prefix(Faction faction, Slate slate, ref bool __result)
+        {
+            if (faction?.def?.defName == "VFEI_Insect")
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        /*static void QuestNode_GetFaction_TryFindFaction_PostFix(out Faction faction, Slate slate, ref QuestNode_GetFaction __instance, ref bool __result)
+        {
+            __result = (from x in Find.FactionManager.GetFactions(true, false, true, TechLevel.Undefined)
+                    where Traverse.Create<QuestNode_GetFaction>(__instance).Method("IsGoodFaction", new object[] { x, slate }).GetValue<bool>()// && x.def.defName == "VFEI_Insect"
+                        select x).TryRandomElement(out faction);
+        }*/
 
         static void BodyPartDef_GetMaxHealth_PostFix(BodyPartDef __instance, ref float __result, Pawn pawn)
         {
@@ -103,16 +122,19 @@ namespace VFEI
 
         static void ReceiveCompSignal_PostFix(string signal, ref CompGlower __instance)
         {
-            Map map = __instance.parent.Map;
-            if (signal == "armillarixOn")
+            if (__instance != null && __instance.parent != null)
             {
-                map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
-                map.glowGrid.RegisterGlower(__instance);
-            }
-            else if (signal == "armillarixOff")
-            {
-                map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
-                map.glowGrid.DeRegisterGlower(__instance);
+                Map map = __instance?.parent?.Map;
+                if (signal == "armillarixOn")
+                {
+                    map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
+                    map.glowGrid.RegisterGlower(__instance);
+                }
+                else if (signal == "armillarixOff")
+                {
+                    map.mapDrawer.MapMeshDirty(__instance.parent.Position, MapMeshFlag.Things);
+                    map.glowGrid.DeRegisterGlower(__instance);
+                }
             }
         }
 

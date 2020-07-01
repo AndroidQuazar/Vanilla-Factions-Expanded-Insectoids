@@ -22,19 +22,16 @@ namespace VFEI.Comps
 			}
 		}
 
-		public override void CompTick()
+		public override void CompTickRare()
 		{
-			if (Find.TickManager.TicksGame % 500 == 0)
+			Plant p = this.parent as Plant;
+			if (p.LifeStage == PlantLifeStage.Mature)
 			{
-				Plant p = this.parent as Plant;
-				if (p.LifeStage == PlantLifeStage.Mature)
-				{
-					this.parent.BroadcastCompSignal("armillarixOn");
-				}
-				else
-				{
-					this.parent.BroadcastCompSignal("armillarixOff");
-				}
+				this.parent.BroadcastCompSignal("armillarixOn");
+			}
+			else
+			{
+				this.parent.BroadcastCompSignal("armillarixOff");
 			}
 		}
 	}
