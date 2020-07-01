@@ -7,7 +7,7 @@
         <description>A large ultratech device capable of emitting a sonic pulse every hour, repelling any insectoid movement underneath. Whilst it significantly removes the infestation risk, it enrages the insectoid empress and can lead to more powerful insectoid herds arriving at the colony.</description>
         <graphicData>
             <texPath>Things/Building/InfestationSonicRepeller</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
+            <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(4,4)</drawSize>
             <shaderType>CutoutComplex</shaderType>
             <damageData>

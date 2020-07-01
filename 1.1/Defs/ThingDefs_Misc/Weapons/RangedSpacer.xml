@@ -39,9 +39,6 @@
     <recipeMaker Inherit="False" />
     <tradeability>Sellable</tradeability>
     <comps>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
       <li Class="CompProperties_Art">
         <nameMaker>NamerArtWeaponMelee</nameMaker>
         <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
@@ -132,9 +129,6 @@
     <tradeability>Sellable</tradeability>
     <recipeMaker Inherit="False" />
     <comps>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
       <li Class="CompProperties_Art">
         <nameMaker>NamerArtWeaponMelee</nameMaker>
         <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
@@ -228,9 +222,6 @@
     </weaponTags>
     <recipeMaker Inherit="False" />
     <comps>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
       <li Class="CompProperties_Art">
         <nameMaker>NamerArtWeaponMelee</nameMaker>
         <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
@@ -319,9 +310,6 @@
     </weaponTags>
     <recipeMaker Inherit="False" />
     <comps>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
       <li Class="CompProperties_Art">
         <nameMaker>NamerArtWeaponMelee</nameMaker>
         <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
