@@ -24,40 +24,35 @@ namespace VFEI
             /* ========== Postfix ========== */
             harmony.Patch(AccessTools.Method(typeof(SettlementDefeatUtility), "IsDefeated", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "Defeated_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(ThoughtWorker_Dark), "CurrentStateInternal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ThoughtWorker_Dark_PostFix", null), null, null);
-            // harmony.Patch(AccessTools.Method(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "LovePartnerRelationGenerationChance_Postfix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(CompGlower), "ReceiveCompSignal", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "ReceiveCompSignal_PostFix", null), null, null);
             harmony.Patch(AccessTools.Method(typeof(CompTransporter), "CompGetGizmosExtra", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "CompGetGizmosExtra_Fix", null), null, null);
+            harmony.Patch(AccessTools.Method(typeof(BodyPartDef), "GetMaxHealth", null, null), null, new HarmonyMethod(typeof(HarmonyPatches), "BodyPartDef_GetMaxHealth_PostFix", null), null, null);
+            // harmony.Patch(AccessTools.Property(typeof(Pawn), "HealthScale").GetGetMethod(true), null, new HarmonyMethod(typeof(HarmonyPatches), "Pawn_GetHealthScalePostfix", null), null);
             /* ========== Prefix ========== */
             harmony.Patch(AccessTools.Method(typeof(IncidentWorker_Infestation), "TryExecuteWorker", null, null), new HarmonyMethod(typeof(HarmonyPatches), "IncidentWorker_Infestation_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(GenStep_Settlement), "ScatterAt", null, null), new HarmonyMethod(typeof(HarmonyPatches), "InsectoidSettlementGen_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(Faction), "TryMakeInitialRelationsWith", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Faction_TryMakeInitialRelationsWith_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(CompGlower), "PostSpawnSetup", null, null), new HarmonyMethod(typeof(HarmonyPatches), "PostSpawnSetup_PreFix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(Command_LoadToTransporter), "ProcessInput", null, null), new HarmonyMethod(typeof(HarmonyPatches), "ProcessInput_PreFix", null), null, null, null);
-            // harmony.Patch(AccessTools.Method(typeof(TransportPodsArrivalAction_LandInSpecificCell), "Arrived", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Arrived_Fix", null), null, null, null);
             Log.Message("VFEI - Harmony patches applied");
         }
 
-        static bool Arrived_Fix(List<ActiveDropPodInfo> pods, int tile, ref TransportPodsArrivalAction_LandInSpecificCell __instance, ref MapParent ___mapParent, ref IntVec3 ___cell)
+        static void BodyPartDef_GetMaxHealth_PostFix(BodyPartDef __instance, ref float __result, Pawn pawn)
         {
-            /*if (___mapParent.def.defName == "VFEI_TTraveling")
+            float num = 0f;
+            int hediffActingOnPartNum = 0;
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
             {
-                Log.Message("lalao");
-                Thing lookTarget = TransportPodsArrivalActionUtility.GetLookTarget(pods);
-                foreach (ActiveDropPodInfo podInfo in pods)
+                if (hediff?.Part?.def == __instance && HediffUtility.TryGetComp<Comps.VariableHealthComp.VFEI_HediffComp_HealthModifier>(hediff) != null)
                 {
-                    for (int i = podInfo.innerContainer.Count - 1; i >= 0; i--)
-                    {
-                        GenPlace.TryPlaceThing(podInfo.innerContainer[i], ___cell, ___mapParent.Map, ThingPlaceMode.Near, delegate (Thing thing, int count)
-                        {
-                            PawnUtility.RecoverFromUnwalkablePositionOrKill(thing.Position, thing.Map);
-                        }, null, podInfo.innerContainer[i].def.defaultPlacingRot);
-                    }
+                    num += HediffUtility.TryGetComp<Comps.VariableHealthComp.VFEI_HediffComp_HealthModifier>(hediff).Props.healthPointToAdd;
+                    hediffActingOnPartNum++;
                 }
-                // TransportPodsArrivalActionUtility.DropTravelingTransportPods(pods, this.cell, this.mapParent.Map);
-                Messages.Message("TeleportDone".Translate(), lookTarget, MessageTypeDefOf.TaskCompletion, true);
-                return false;
-            }*/
-            return true;
+            }
+            if(hediffActingOnPartNum > 0)
+            {
+                __result += num / hediffActingOnPartNum;
+            }
         }
 
         static void CompGetGizmosExtra_Fix(ref CompTransporter __instance, ref IEnumerable<Gizmo> __result)
@@ -143,14 +138,6 @@ namespace VFEI
                 return false;
             }
             return true;
-        }
-
-        static void LovePartnerRelationGenerationChance_Postfix(ref float __result)
-        {
-            if (Find.Storyteller.def.defName == "VFEI_Empress")
-            {
-                __result = 0f;
-            }
         }
 
         static bool IncidentWorker_Infestation_Prefix(IncidentParms parms, ref bool __result)

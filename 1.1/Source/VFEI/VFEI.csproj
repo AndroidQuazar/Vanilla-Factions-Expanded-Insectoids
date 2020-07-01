@@ -69,6 +69,9 @@
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />
     <Compile Include="Comps\CompProperties_Armillarix.cs" />
     <Compile Include="Comps\ItemComps\CompProperties_CustomTransporter.cs" />
+    <Compile Include="Comps\ItemComps\CompProperties_SoundLoop.cs" />
+    <Compile Include="Comps\VariableHealthComp\VFEI_HediffCompProperties_HealthModifier.cs" />
+    <Compile Include="Comps\VariableHealthComp\VFEI_HediffComp_HealthModifier.cs" />
     <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
     <Compile Include="Events\IncidentWorker_GiantInfestation.cs" />
     <Compile Include="GenStuff\NoPawns\SymbolResolver_EdgeDefenseNoPawn.cs" />

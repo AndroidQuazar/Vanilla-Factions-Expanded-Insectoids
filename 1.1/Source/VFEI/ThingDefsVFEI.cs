@@ -50,6 +50,7 @@ namespace VFEI
         public static HediffDef VFEI_PheromoneSecretor;
         public static HediffDef HeartAttack;
         public static HediffDef VFEI_TempDown;
+        public static HediffDef VFEI_SynapticCerebellum;
         // Skyfaller
         public static ThingDef VFEI_GigalocustIncoming;
         public static ThingDef VFEI_InsectMeteoriteIncoming;

@@ -96,10 +96,15 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>60</MaxHitPoints>
+          <MaxHitPoints>30</MaxHitPoints>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>30</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -161,10 +166,15 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>60</MaxHitPoints>
+          <MaxHitPoints>30</MaxHitPoints>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>30</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -226,11 +236,16 @@
       <li>
         <painOffset>0.00625</painOffset>
         <statOffsets>
-          <MaxHitPoints>16</MaxHitPoints>
+          <MaxHitPoints>6</MaxHitPoints>
           <MeleeDodgeChance>0.2</MeleeDodgeChance>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>6</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -292,11 +307,16 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>24</MaxHitPoints>
+          <MaxHitPoints>4</MaxHitPoints>
           <EatingSpeed>1.5</EatingSpeed>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>4</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -474,7 +494,7 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>24</MaxHitPoints>
+          <MaxHitPoints>4</MaxHitPoints>
         </statOffsets>
       </li>
     </stages>
@@ -491,6 +511,9 @@
             <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
           </li>
         </tools>
+      </li>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>4</healthPointToAdd>
       </li>
     </comps>
   </HediffDef>
@@ -554,7 +577,7 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>70</MaxHitPoints>
+          <MaxHitPoints>40</MaxHitPoints>
           <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
         </statOffsets>
       </li>
@@ -572,6 +595,9 @@
             <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
           </li>
         </tools>
+      </li>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>40</healthPointToAdd>
       </li>
     </comps>
   </HediffDef>
@@ -635,7 +661,6 @@
       <li>
         <painOffset>0.00675</painOffset>
         <statOffsets>
-          <MaxHitPoints>20</MaxHitPoints>
           <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
         </statOffsets>
       </li>
@@ -702,8 +727,7 @@
       <li>
         <painOffset>0.00675</painOffset>
         <statOffsets>
-          <MaxHitPoints>10</MaxHitPoints>
-          <Beauty>-1</Beauty>
+          <PawnBeauty>-1</PawnBeauty>
         </statOffsets>
       </li>
     </stages>
@@ -768,11 +792,16 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>25</MaxHitPoints>
+          <MaxHitPoints>-5</MaxHitPoints>
           <HungerRateMultiplier>-0.25</HungerRateMultiplier>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>-5</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">
@@ -884,7 +913,6 @@
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>30</MaxHitPoints>
           <SocialImpact>0.25</SocialImpact>
         </statOffsets>
       </li>
@@ -950,12 +978,15 @@
       <li>
         <painOffset>0.0675</painOffset>
         <statOffsets>
-          <MaxHitPoints>20</MaxHitPoints>
+          <MaxHitPoints>5</MaxHitPoints>
         </statOffsets>
       </li>
     </stages>
     <comps>
       <li Class="VFEI.Comps.PawnComps.Properties.CompProperties_NoBleedHearthAttack"/>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>5</healthPointToAdd>
+      </li>
     </comps>
   </HediffDef>
 
@@ -1010,17 +1041,23 @@
       <ThingDef>VFEI_RoyalGenome</ThingDef>
     </descriptionHyperlinks>
     <spawnThingOnRemoved>VFEI_SynapticCerebellum</spawnThingOnRemoved>
+    <addedPartProps Inherit="False" />
     <stages>
       <li>
         <painOffset>0.0125</painOffset>
         <statOffsets>
-          <MaxHitPoints>20</MaxHitPoints>
+          <MaxHitPoints>10</MaxHitPoints>
           <PsychicSensitivity>0.5</PsychicSensitivity>
           <TradePriceImprovement>-0.1</TradePriceImprovement>
           <ResearchSpeed>0.33</ResearchSpeed>
         </statOffsets>
       </li>
     </stages>
+    <comps>
+      <li Class="VFEI.Comps.VariableHealthComp.VFEI_HediffCompProperties_HealthModifier">
+        <healthPointToAdd>4</healthPointToAdd>
+      </li>
+    </comps>
   </HediffDef>
 
   <ThingDef ParentName="BodyPartInsectBase">

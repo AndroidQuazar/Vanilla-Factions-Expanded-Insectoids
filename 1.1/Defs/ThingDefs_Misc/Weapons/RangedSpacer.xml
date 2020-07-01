@@ -392,6 +392,7 @@
     <weaponTags Inherit="False">
       <li>UltratechMelee</li>
     </weaponTags>
+    <tickerType>Normal</tickerType>
     <costList>
       <Steel>30</Steel>
       <Plasteel>100</Plasteel>
@@ -403,6 +404,11 @@
     </statBases>
     <recipeMaker Inherit="False" />
     <equippedAngleOffset>50</equippedAngleOffset>
+    <!--<comps>
+      <li Class="VFEI.CompProperties_SoundLoop">
+        <soundToPlay>VFE_ChainsawLoop</soundToPlay>
+      </li>
+    </comps>-->
     <tools>
       <li>
         <label>plasma chain</label>
