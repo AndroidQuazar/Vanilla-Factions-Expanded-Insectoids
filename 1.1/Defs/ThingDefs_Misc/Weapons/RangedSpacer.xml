@@ -392,7 +392,6 @@
     <weaponTags Inherit="False">
       <li>UltratechMelee</li>
     </weaponTags>
-    <tickerType>Normal</tickerType>
     <costList>
       <Steel>30</Steel>
       <Plasteel>100</Plasteel>
