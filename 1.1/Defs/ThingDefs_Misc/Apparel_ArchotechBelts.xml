@@ -26,6 +26,7 @@
     </costList>
     <thingCategories Inherit="False">
       <li>Artifacts</li> <!-- Apparel -->
+	  <li>ApparelArmor</li>
     </thingCategories>
     <tradeTags Inherit="False">
       <li>Artifact</li> <!-- ExoticMisc -->

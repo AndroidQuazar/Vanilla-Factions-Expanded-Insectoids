@@ -23,7 +23,6 @@
             <ComponentSpacer>5</ComponentSpacer>
         </costList>
 		<rotatable>false</rotatable>
-		<defaultPlacingRot>South</defaultPlacingRot>
         <altitudeLayer>Building</altitudeLayer>
         <neverMultiSelect>true</neverMultiSelect>
         <uiIconScale>1</uiIconScale>
