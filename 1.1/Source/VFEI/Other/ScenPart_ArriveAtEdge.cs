@@ -55,7 +55,7 @@ namespace VFEI.Other
 			{
 				return;
 			}
-			this.location = CellFinder.RandomEdgeCell(map);
+			RCellFinder.TryFindRandomPawnEntryCell(out this.location, map, 1f, false, null);
 			List<List<Thing>> list = new List<List<Thing>>();
 			foreach (Pawn item in Find.GameInitData.startingAndOptionalPawns)
 			{

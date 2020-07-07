@@ -86,28 +86,13 @@ namespace VFEI
 
         static bool ProcessInput_PreFix(Event ev, ref Command_LoadToTransporter __instance, ref List<CompTransporter> ___transporters)
         {
-            if (___transporters == null)
+            if (__instance.transComp.parent.def.defName == "VFEI_Artifacts_ArchotechTeleporter")
             {
-                ___transporters = new List<CompTransporter>();
-            }
-            if (!___transporters.Contains(__instance.transComp))
-            {
-                ___transporters.Add(__instance.transComp);
-            }
-            for (int j = 0; j < ___transporters.Count; j++)
-            {
-                if (___transporters[j] != __instance.transComp && !__instance.transComp.Map.reachability.CanReach(__instance.transComp.parent.Position, ___transporters[j].parent, PathEndMode.Touch, TraverseParms.For(TraverseMode.PassDoors, Danger.Deadly, false)))
-                {
-                    Messages.Message("MessageTransporterUnreachable".Translate(), ___transporters[j].parent, MessageTypeDefOf.RejectInput, false);
-                    return false;
-                }
-            }
-            if (___transporters[0].parent.def.defName == "VFEI_Artifacts_ArchotechTeleporter")
-            {
+                if (___transporters == null) { ___transporters = new List<CompTransporter>(); }
+                ___transporters?.Add(__instance.transComp);
                 Find.WindowStack.Add(new Other.Dialog_LoadTeleporter(__instance.transComp.Map, ___transporters));
                 return false;
             }
-            ___transporters.Clear();
             return true;
         }
 
