@@ -30,13 +30,18 @@ namespace VFEI.Comps.HediffComps
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            if (Find.TickManager.TicksGame >= this.NextBeforeSpawn)
+            if (Find.TickManager.TicksGame == this.NextBeforeSpawn)
             {
                 this.NextBeforeSpawn += 60000;
                 Thing thing = ThingMaker.MakeThing(ThingDefOf.InsectJelly);
-                thing.stackCount = Rand.RangeInclusive(2, 8);
+                thing.stackCount = Rand.RangeInclusive(2, 5);
                 GenSpawn.Spawn(thing, this.Pawn.Position, this.Pawn.Map);
             } 
+        }
+
+        public override void CompExposeData()
+        {
+            Scribe_Values.Look<int>(ref this.NextBeforeSpawn, "NextBeforeSpawn", 0, false);
         }
     }
 }
