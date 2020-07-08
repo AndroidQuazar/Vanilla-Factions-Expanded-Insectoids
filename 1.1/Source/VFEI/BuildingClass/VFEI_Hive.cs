@@ -63,18 +63,9 @@ namespace VFEI.BuildingClass
 		public override void PostMake()
 		{
 			spawnablePawnKinds.Clear();
-			if (this.def.defName == "VFEI_SmallHive")
-			{
-				spawnablePawnKinds.Add(PawnKindDefOf.Megascarab);
-				spawnablePawnKinds.Add(PawnKindDefOf.Spelopede);
-				spawnablePawnKinds.Add(PawnKindDefOf.Megaspider);
-			}
-			else
-			{
-				spawnablePawnKinds.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
-				spawnablePawnKinds.Add(ThingDefsVFEI.VFEI_Insectoid_Megapede);
-				spawnablePawnKinds.Add(PawnKindDefOf.Megaspider);
-			}
+			spawnablePawnKinds.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
+			spawnablePawnKinds.Add(ThingDefsVFEI.VFEI_Insectoid_Megapede);
+			spawnablePawnKinds.Add(PawnKindDefOf.Megaspider);
 		}
 
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)
@@ -84,15 +75,6 @@ namespace VFEI.BuildingClass
 			{
 				this.SetFaction(Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First(), null);
 			}
-		}
-
-		public override void Tick()
-		{
-			base.Tick();
-			/*if (base.Spawned && !this.CompDormant.Awake && !base.Position.Fogged(base.Map))
-			{
-				this.CompDormant.WakeUp();
-			}*/
 		}
 
 		public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
