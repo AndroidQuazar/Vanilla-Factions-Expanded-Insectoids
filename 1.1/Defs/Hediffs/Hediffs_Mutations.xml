@@ -394,7 +394,7 @@
     </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryFlesh">
+  <RecipeDef ParentName="SurgeryInstallImplantBase"> <!-- SurgeryFlesh -->
     <defName>VFEI_InstallJellySac</defName>
     <label>install jelly sac</label>
     <description>Install jelly sac.</description>
@@ -1074,7 +1074,7 @@
     </thingSetMakerTags>
   </ThingDef>
 
-  <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+  <RecipeDef ParentName="SurgeryInstallImplantBase"> <!-- SurgeryInstallBodyPartArtificialBase -->
     <defName>VFEI_InstallSynapticCerebellum</defName>
     <label>install synaptic cerebellum</label>
     <description>Install synaptic cerebellum.</description>
