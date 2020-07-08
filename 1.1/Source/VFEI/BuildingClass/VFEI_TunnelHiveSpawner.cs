@@ -28,6 +28,7 @@ namespace VFEI.BuildingClass
 			Scribe_Values.Look<bool>(ref this.spawnHive, "spawnHive", true, false);
 			Scribe_Values.Look<float>(ref this.insectsPoints, "insectsPoints", 0f, false);
 			Scribe_Values.Look<bool>(ref this.spawnedByInfestationThingComp, "spawnedByInfestationThingComp", false, false);
+			Scribe_Collections.Look<ThingDef>(ref filthTypes, "filthTypes", LookMode.Def);
 		}
 
 		public override void PostMake()
@@ -140,7 +141,7 @@ namespace VFEI.BuildingClass
 						}
 						if (list.Any<Pawn>())
 						{
-							LordMaker.MakeNewLord(fac, new LordJob_AssaultColony(fac, true, false, false, false, true), map, list);
+							LordMaker.MakeNewLord(fac, new LordJob_DefendAndExpandHive(), map, list);
 						}
 					}
 				}

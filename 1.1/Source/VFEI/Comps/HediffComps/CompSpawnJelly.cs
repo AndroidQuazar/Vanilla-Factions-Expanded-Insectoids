@@ -36,7 +36,7 @@ namespace VFEI.Comps.HediffComps
                 Thing thing = ThingMaker.MakeThing(ThingDefOf.InsectJelly);
                 thing.stackCount = Rand.RangeInclusive(2, 5);
                 GenSpawn.Spawn(thing, this.Pawn.Position, this.Pawn.Map);
-            } 
+            }
         }
 
         public override void CompExposeData()
