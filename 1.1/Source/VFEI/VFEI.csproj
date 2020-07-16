@@ -146,6 +146,7 @@
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Meteorite.cs" />
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Tunneling.cs" />
     <Compile Include="RaidStrategyWorkers\RaidStrategyWorker_ImmediateAttackInsect.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="ThingDefsVFEI.cs" />
     <Compile Include="JobStuff\LordJob_InsectDefendChunk.cs" />
     <Compile Include="Other\Projectile_Psychic.cs" />

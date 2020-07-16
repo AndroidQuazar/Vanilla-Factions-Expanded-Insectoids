@@ -107,4 +107,9 @@
 	<TeleportDone>Teleportation succeeded.</TeleportDone>
 	<TeleportDoneCAdded>Teleportation succeeded, contents was added to caravan.</TeleportDoneCAdded>
 
+	<!-- Settings strings -->
+	<SName>Vanilla Factions Expanded - Insectoids</SName>
+	<PusleLabel>Repeller pusle effect:</PusleLabel>
+	<PusleTooltip>Enable or disable the pulse effect from the sonic infestation repeller.</PusleTooltip>
+
 </LanguageData>

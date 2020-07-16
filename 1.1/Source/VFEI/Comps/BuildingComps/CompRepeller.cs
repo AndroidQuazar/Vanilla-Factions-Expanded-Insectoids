@@ -36,7 +36,7 @@ namespace VFEI.Comps.BuildingComps
 
         public override void CompTickRare()
         {
-            if (Find.TickManager.TicksGame >= this.nextMote)
+            if (Find.TickManager.TicksGame >= this.nextMote && this.parent.TryGetComp<CompPowerTrader>().PowerOn && VFEI_ModSettings.pulseFromRepeller)
             {
                 MoteMaker.MakeStaticMote(this.parent.TrueCenter(), this.parent.Map, ThingDefOf.Mote_PsycastAreaEffect, 20);
                 this.nextMote += 2500;
