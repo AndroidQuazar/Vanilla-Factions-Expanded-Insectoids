@@ -36,7 +36,10 @@ namespace VFEI.PawnComps
 				IntVec3 pos = this.parent.Position;
 				Map map = this.parent.Map;
 
-				GenSpawn.Spawn(ThingDefsVFEI.VFEI_InsectoidLarvaeCocoon, pos, map);
+				Thing thing = ThingMaker.MakeThing(ThingDefsVFEI.VFEI_InsectoidLarvaeCocoon);
+				if(this.parent.Faction != null) thing.SetFaction(this.parent.Faction);
+
+				GenSpawn.Spawn(thing, pos, map);
 				for (int i = 0; i < 5; i++)
 				{
 					IntVec3 c;

@@ -52,21 +52,24 @@ namespace VFEI
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Megapede);
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Gigalocust);
 				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
-				pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Queen);
+				// pawnKindDefs.Add(ThingDefsVFEI.VFEI_Insectoid_Queen);
 
 				if (pawnKindDefs.Count > 0)
 				{
 					PawnKindDef pawnKind = pawnKindDefs.RandomElementByWeight(x => x.combatPower / x.race.BaseMarketValue);
-					List<Faction> factions = new List<Faction>();
-					FactionManager.GetInViewOrder(factions);
-					Faction fac = factions.Where((Faction f) => f.def.defName == "VFEI_Insect").RandomElement();
-					Pawn p = PawnGenerator.GeneratePawn(pawnKind, fac);
+					Pawn p = PawnGenerator.GeneratePawn(pawnKind, this.Faction);
+					p.ageTracker.AgeBiologicalTicks = 30000;
 					GenSpawn.Spawn(p, pos, map);
 					List<Pawn> pawns = new List<Pawn>();
 					pawns.Add(p);
-					if (map.ParentFaction == fac)
+					if (map.ParentFaction == this.Faction)
 					{
-						LordMaker.MakeNewLord(fac, new LordJob_DefendBase(fac, map.Center), map, pawns);
+						LordMaker.MakeNewLord(this.Faction, new LordJob_DefendBase(this.Faction, map.Center), map, pawns);
+					}
+					else
+					{
+						pawns.ForEach(p1 => p1.mindState.spawnedByInfestationThingComp = true);
+						LordMaker.MakeNewLord(this.Faction, new LordJob_DefendAndExpandHive(), map, pawns);
 					}
 				}
 				this.Destroy();
