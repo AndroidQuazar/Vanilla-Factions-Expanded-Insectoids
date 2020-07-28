@@ -9,7 +9,7 @@ namespace VFEI
     {
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested)
         {
-            if (pawn.health != null && pawn.health.hediffSet.HasImmunizableNotImmuneHediff() && pawn.health.immunity != null && pawn.health.immunity.GetImmunity(HediffDefOf.WoundInfection) != 1) {
+            if (pawn.health != null && pawn.health.hediffSet.HasImmunizableNotImmuneHediff() && pawn.health.hediffSet.HasHediff(HediffDefOf.WoundInfection) && pawn.health.immunity != null && pawn.health.immunity.GetImmunity(HediffDefOf.WoundInfection) != 1) {
                 ImmunityRecord cPawn = pawn.health.immunity.GetImmunityRecord(HediffDefOf.WoundInfection);
                 cPawn.immunity += (this.percent / 100) * ingested.stackCount;
             }

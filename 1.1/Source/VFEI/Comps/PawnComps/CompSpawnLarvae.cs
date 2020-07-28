@@ -7,6 +7,7 @@ using RimWorld;
 using Verse;
 using Verse.Sound;
 using UnityEngine;
+using Verse.AI.Group;
 
 namespace VFEI.PawnComps
 {
@@ -52,7 +53,16 @@ namespace VFEI.PawnComps
 						if (!vec3.InBounds(this.parent.Map) || !vec3.Walkable(this.parent.Map)) break;
 						Pawn p = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Larvae, this.parent.Faction);
 						GenSpawn.Spawn(p, vec3, this.parent.Map);
-
+						if (pa.mindState.spawnedByInfestationThingComp == true)
+                        {
+							p.mindState.spawnedByInfestationThingComp = true;
+							SpawnedPawnParams spp = new SpawnedPawnParams();
+							spp.aggressive = false;
+							spp.defSpot = vec3;
+							spp.defendRadius = 5;
+							Lord lord = LordMaker.MakeNewLord(this.parent.Faction, new LordJob_DefendAndExpandHive(spp), pa.Map, null);
+							lord.AddPawn(p);
+						}
 					}
 					FilthMaker.TryMakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.Filth_Slime, 1);
 					SoundDefOf.Hive_Spawn.PlayOneShot(new TargetInfo(this.parent));

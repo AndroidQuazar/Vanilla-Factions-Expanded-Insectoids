@@ -109,7 +109,7 @@
 
 	<!-- Settings strings -->
 	<SName>Vanilla Factions Expanded - Insectoids</SName>
-	<PusleLabel>Repeller pusle effect:</PusleLabel>
+	<PusleLabel>Repeller pulse effect:</PusleLabel>
 	<PusleTooltip>Enable or disable the pulse effect from the sonic infestation repeller.</PusleTooltip>
 
 </LanguageData>

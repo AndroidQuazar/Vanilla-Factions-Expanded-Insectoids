@@ -12,14 +12,7 @@ namespace VFEI.BuildingClass
 	[StaticConstructorOnStartup]
     class VFEI_TunnelHiveSpawner : ThingWithComps
     {
-		public static void ResetStaticData()
-		{
-			filthTypes.Clear();
-			filthTypes.Add(ThingDefOf.Filth_Dirt);
-			filthTypes.Add(ThingDefOf.Filth_Dirt);
-			filthTypes.Add(ThingDefOf.Filth_Dirt);
-			filthTypes.Add(ThingDefOf.Filth_RubbleRock);
-		}
+		private static List<PawnKindDef> spawnablePawnKinds = new List<PawnKindDef>();
 
 		public override void ExposeData()
 		{
@@ -28,15 +21,25 @@ namespace VFEI.BuildingClass
 			Scribe_Values.Look<bool>(ref this.spawnHive, "spawnHive", true, false);
 			Scribe_Values.Look<float>(ref this.insectsPoints, "insectsPoints", 0f, false);
 			Scribe_Values.Look<bool>(ref this.spawnedByInfestationThingComp, "spawnedByInfestationThingComp", false, false);
+			Scribe_Values.Look<Faction>(ref this.fac, "faction");
 			Scribe_Collections.Look<ThingDef>(ref filthTypes, "filthTypes", LookMode.Def);
+			Scribe_Collections.Look<PawnKindDef>(ref spawnablePawnKinds, "spawnablePawnKinds", LookMode.Def);
 		}
 
 		public override void PostMake()
 		{
+			filthTypes.Clear();
 			filthTypes.Add(ThingDefOf.Filth_Dirt);
 			filthTypes.Add(ThingDefOf.Filth_Dirt);
 			filthTypes.Add(ThingDefOf.Filth_Dirt);
 			filthTypes.Add(ThingDefOf.Filth_RubbleRock);
+
+			spawnablePawnKinds.Clear();
+			spawnablePawnKinds.Add(PawnKindDefOf.Megascarab);
+			spawnablePawnKinds.Add(PawnKindDefOf.Spelopede);
+			spawnablePawnKinds.Add(PawnKindDefOf.Megaspider);
+			spawnablePawnKinds.Add(ThingDefsVFEI.VFEI_Insectoid_RoyalMegaspider);
+			fac = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 			base.PostMake();
 		}
 
@@ -50,12 +53,12 @@ namespace VFEI.BuildingClass
 			this.CreateSustainer();
 		}
 
+		private Faction fac;
+
 		public override void Tick()
 		{
 			if (base.Spawned)
 			{
-				List<Pawn> list = new List<Pawn>();
-				Faction fac = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
 				this.sustainer.Maintain();
 				Vector3 vector = base.Position.ToVector3Shifted();
 				IntVec3 c;
@@ -105,19 +108,29 @@ namespace VFEI.BuildingClass
 									break;
 								}
 							}
-							Pawn pawn = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Queen, fac);
-							if (map.mapPawns.AllPawnsSpawned.Where(p => p.def.defName == "VFEI_Insectoid_Queen").Count() == 0)
+						}
+						if (map.mapPawns.AllPawnsSpawned.Where((p)=>p.kindDef.defName== "VFEI_Insectoid_Queen").Count() < 1)
+						{
+							List<Pawn> list = new List<Pawn>();
+							Pawn queen = PawnGenerator.GeneratePawn(ThingDefsVFEI.VFEI_Insectoid_Queen, fac);
+							GenSpawn.Spawn(queen, CellFinder.RandomClosewalkCellNear(position, map, 2, null), map, WipeMode.Vanish);
+							queen.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
+							list.Add(queen);
+							if (list.Any<Pawn>())
 							{
-								GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(position, map, 2, null), map, WipeMode.Vanish);
-								pawn.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
-								list.Add(pawn);
+								SpawnedPawnParams spp = new SpawnedPawnParams();
+								spp.aggressive = false;
+								spp.defSpot = position;
+								spp.defendRadius = 5;
+								LordMaker.MakeNewLord(fac, new LordJob_DefendAndExpandHive(spp), map, list);
 							}
 						}
 					}
 					if (this.insectsPoints > 0f)
 					{
-						this.insectsPoints = Mathf.Max(this.insectsPoints, Hive.spawnablePawnKinds.Min((PawnKindDef x) => x.combatPower));
+						this.insectsPoints = Mathf.Max(this.insectsPoints, spawnablePawnKinds.Min((PawnKindDef x) => x.combatPower));
 						float pointsLeft = this.insectsPoints;
+						List<Pawn> list = new List<Pawn>();
 						int num = 0;
 						while (pointsLeft > 0f)
 						{
@@ -127,13 +140,10 @@ namespace VFEI.BuildingClass
 								Log.Error("Too many iterations.", false);
 								break;
 							}
-							IEnumerable<PawnKindDef> spawnablePawnKinds = Hive.spawnablePawnKinds;
+							IEnumerable<PawnKindDef> spawnablePawnKinds = VFEI_TunnelHiveSpawner.spawnablePawnKinds;
 							PawnKindDef pawnKindDef;
-							if (!spawnablePawnKinds.Where(((PawnKindDef x) => x.combatPower <= pointsLeft)).TryRandomElement(out pawnKindDef))
-							{
-								break;
-							}
-							Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDef, fac);
+							if (!spawnablePawnKinds.Where((PawnKindDef x) => x.combatPower <= pointsLeft).TryRandomElement(out pawnKindDef)) break;
+							Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDef, Faction.OfInsects);
 							GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(position, map, 2, null), map, WipeMode.Vanish);
 							pawn.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
 							list.Add(pawn);
@@ -141,7 +151,7 @@ namespace VFEI.BuildingClass
 						}
 						if (list.Any<Pawn>())
 						{
-							LordMaker.MakeNewLord(fac, new LordJob_DefendAndExpandHive(), map, list);
+							LordMaker.MakeNewLord(fac, new LordJob_AssaultColony(fac, true, false, false, false, true), map, list);
 						}
 					}
 				}

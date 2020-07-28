@@ -69,7 +69,11 @@ namespace VFEI
 					else
 					{
 						pawns.ForEach(p1 => p1.mindState.spawnedByInfestationThingComp = true);
-						LordMaker.MakeNewLord(this.Faction, new LordJob_DefendAndExpandHive(), map, pawns);
+						SpawnedPawnParams spp = new SpawnedPawnParams();
+						spp.aggressive = false;
+						spp.defSpot = base.Position;
+						spp.defendRadius = 5;
+						LordMaker.MakeNewLord(this.Faction, new LordJob_DefendAndExpandHive(spp), map, pawns);
 					}
 				}
 				this.Destroy();

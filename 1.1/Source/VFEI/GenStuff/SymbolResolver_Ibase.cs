@@ -12,7 +12,7 @@ namespace VFEI.GenStuff
 		public override void Resolve(ResolveParams rp)
 		{
 			Map map = BaseGen.globalSettings.map;
-			Faction faction = Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect);
+			Faction faction = map.ParentFaction;
 			int num = 0;
 			if (rp.edgeDefenseWidth != null)
 			{

@@ -104,8 +104,6 @@ namespace VFEI
                         IntVec3 intVec3 = new IntVec3();
                         RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
                         GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(ThingDefsVFEI.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
-                        GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Megaspider, insectFaction)), intVec3, this.parent.Map);
-                        this.pointsLeft -= PawnKindDefOf.Megaspider.combatPower;
                         this.pointsLeft -= ThingDefsVFEI.VFEI_Insectoid_Larvae.combatPower;
                     }
                     while (this.pointsLeft > 0f)
@@ -127,14 +125,6 @@ namespace VFEI
                 if (Props.level == 2)
                 {
                     spawned = true;
-                    int count = Rand.RangeInclusive(1, 3);
-                    for (int i = 0; i < count; i++)
-                    {
-                        IntVec3 intVec3 = new IntVec3();
-                        RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                        GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(PawnKindDefOf.Megaspider, insectFaction)), intVec3, this.parent.Map);
-                        this.pointsLeft -= PawnKindDefOf.Megaspider.combatPower;
-                    }
                     int count2 = Rand.RangeInclusive(4, 8);
                     for (int i = 0; i < count2; i++)
                     {
@@ -163,14 +153,6 @@ namespace VFEI
                 if (Props.level == 3)
                 {
                     spawned = true;
-                    int count = Rand.RangeInclusive(0, 1);
-                    for (int i = 0; i < count; i++)
-                    {
-                        IntVec3 intVec3 = new IntVec3();
-                        RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                        GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(ThingDefsVFEI.VFEI_Insectoid_Gigalocust, insectFaction)), intVec3, this.parent.Map);
-                        this.pointsLeft -= ThingDefsVFEI.VFEI_Insectoid_Gigalocust.combatPower;
-                    }
                     int count2 = Rand.RangeInclusive(4, 8);
                     for (int i = 0; i < count2; i++)
                     {
@@ -179,12 +161,13 @@ namespace VFEI
                         GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(ThingDefsVFEI.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
                         this.pointsLeft -= ThingDefsVFEI.VFEI_Insectoid_Larvae.combatPower;
                     }
-                    int count3 = Rand.RangeInclusive(1, 4);
-                    if (count3 == 4)
+                    if (true)
                     {
                         IntVec3 intVec3 = new IntVec3();
                         RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                        GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(ThingDefsVFEI.VFEI_Insectoid_Queen, insectFaction)), intVec3, this.parent.Map);
+                        Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(ThingDefsVFEI.VFEI_Insectoid_Queen, insectFaction));
+                        GenSpawn.Spawn(pawn, intVec3, this.parent.Map);
+                        this.lord.AddPawn(pawn);
                         this.pointsLeft -= ThingDefsVFEI.VFEI_Insectoid_Queen.combatPower;
                     }
                     while (this.pointsLeft > 0f)
@@ -193,7 +176,7 @@ namespace VFEI
                         RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
                         PawnKindDef kind;
                         if (!(from def in DefDatabase<PawnKindDef>.AllDefs
-                              where (def.race.defName == "Megascarab" || def.race.defName == "Spelopede" || def.race.defName == "Megaspider" || def.race.defName == "VFEI_Insectoid_Megapede") && def.combatPower <= this.pointsLeft
+                              where (def.race.defName == "Megascarab" || def.race.defName == "Spelopede" || def.race.defName == "Megaspider" || def.race.defName == "VFEI_Insectoid_Megapede") || def.race.defName == "VFEI_Insectoid_Gigalocust" && def.combatPower <= this.pointsLeft
                               select def).TryRandomElement(out kind))
                         {
                             break;
@@ -209,11 +192,6 @@ namespace VFEI
             {
                 this.pointsLeft = 0f;
             }
-        }
-
-        private bool CanSpawnInsectAt(IntVec3 c)
-        {
-            return c.Walkable(this.parent.Map);
         }
 
         public bool spawned = false;

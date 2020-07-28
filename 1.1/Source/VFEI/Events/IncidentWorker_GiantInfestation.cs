@@ -16,7 +16,7 @@ namespace VFEI.Events
 		{
 			Map map = (Map)parms.target;
 			IntVec3 intVec;
-			return base.CanFireNowSub(parms) && HiveUtility.TotalSpawnedHivesCount(map) < 30 && TryFindCell(out intVec, map);
+			return base.CanFireNowSub(parms) && HiveUtility.TotalSpawnedHivesCount(map) < 30 && TryFindCell(out intVec, map) && map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_SonicInfestationRepeller")).ToList().Count == 0;
 		}
 
 		protected override bool TryExecuteWorker(IncidentParms parms)
@@ -28,22 +28,10 @@ namespace VFEI.Events
 			return true;
 		}
 
-		private static bool CheckRepeller(Map map, IntVec3 cell)
-		{
-			foreach (Building building in map.listerBuildings.AllBuildingsColonistOfDef(DefDatabase<ThingDef>.GetNamed("VFEI_SonicInfestationRepeller")).ToList())
-			{
-				if (IntVec3Utility.ManhattanDistanceFlat(cell, building.Position) < 50)
-				{
-					return false;
-				}
-			}
-			return true;
-		}
-
 		public static bool TryFindCell(out IntVec3 cell, Map map)
 		{
 			cell = CellFinderLoose.RandomCellWith(
-				(i) => !i.Fogged(map) && i.DistanceToEdge(map) < 25 && i.GetRoof(map) == RoofDefOf.RoofRockThick && i.Walkable(map) && i.GetTemperature(map) > -17f && CheckRepeller(map, i),
+				(i) => !i.Fogged(map) && i.DistanceToEdge(map) < 25 && i.GetRoof(map) == RoofDefOf.RoofRockThick && i.Walkable(map) && i.GetTemperature(map) > -17f,
 				map);
 			if (!cell.InBounds(map))
 			{
