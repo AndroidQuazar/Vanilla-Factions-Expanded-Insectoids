@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="Batteries"]/tags</xpath>
+    <xpath>/Defs/ResearchProjectDef[defName="Batteries"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Batteries"]/tags</xpath>
 
@@ -12,7 +12,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Batteries"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -20,9 +20,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="BiofuelRefining"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="BiofuelRefining"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="BiofuelRefining"]/tags</xpath>
 
@@ -33,7 +33,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="BiofuelRefining"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -41,9 +41,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="SolarPanels"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="SolarPanels"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="SolarPanels"]/tags</xpath>
 
@@ -54,7 +54,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="SolarPanels"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -62,9 +62,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="PackagedSurvivalMeal"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="PackagedSurvivalMeal"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="PackagedSurvivalMeal"]/tags</xpath>
 
@@ -75,7 +75,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="PackagedSurvivalMeal"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -83,9 +83,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="Machining"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="Machining"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Machining"]/tags</xpath>
 
@@ -96,7 +96,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Machining"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -104,9 +104,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="Gunsmithing"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="Gunsmithing"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Gunsmithing"]/tags</xpath>
 
@@ -117,7 +117,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="Gunsmithing"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -125,9 +125,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="BlowbackOperation"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="BlowbackOperation"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="BlowbackOperation"]/tags</xpath>
 
@@ -138,7 +138,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="BlowbackOperation"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -146,9 +146,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="GasOperation"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="GasOperation"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="GasOperation"]/tags</xpath>
 
@@ -159,7 +159,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="GasOperation"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -167,9 +167,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="GunTurrets"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="GunTurrets"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="GunTurrets"]/tags</xpath>
 
@@ -180,7 +180,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="GunTurrets"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -188,9 +188,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="TransportPod"]/tags</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="TransportPod"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="TransportPod"]/tags</xpath>
 
@@ -201,7 +201,7 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="TransportPod"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
@@ -209,9 +209,9 @@
       </value>
     </nomatch>
   </Operation>
-  
-    <Operation Class="PatchOperationConditional">
-	<xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]/tags</xpath>
+
+  <!-- <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]/tags</xpath>
     <match Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]/tags</xpath>
 
@@ -222,24 +222,56 @@
 
     <nomatch Class="PatchOperationAdd">
       <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]</xpath>
-      
+
       <value>
         <tags>
           <li>MercenaryStart</li>
         </tags>
       </value>
     </nomatch>
+  </Operation> -->
+
+  <!-- === CE removes the Heavy Turrets research project, this stops it from being injected into the mercenary start if CE is running === -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Combat Extended</li>
+    </mods>
+
+    <nomatch Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]/tags</xpath>
+          <match Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]/tags</xpath>
+
+            <value>
+              <li>MercenaryStart</li>
+            </value>
+          </match>
+
+          <nomatch Class="PatchOperationAdd">
+            <xpath>/Defs/ResearchProjectDef[defName="HeavyTurrets"]</xpath>
+
+            <value>
+              <tags>
+                <li>MercenaryStart</li>
+              </tags>
+            </value>
+          </nomatch>
+        </li>
+      </operations>
+    </nomatch>
   </Operation>
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
 </Patch>
