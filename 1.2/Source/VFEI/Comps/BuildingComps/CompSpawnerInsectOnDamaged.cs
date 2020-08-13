@@ -58,10 +58,7 @@ namespace VFEI
 
         public void Notify_BlueprintReplacedWithSolidThingNearby(Pawn by)
         {
-            if (by.Faction != Faction.OfInsects)
-            {
-                this.TrySpawnInsect();
-            }
+            this.TrySpawnInsect();
         }
 
         private void TrySpawnInsect()

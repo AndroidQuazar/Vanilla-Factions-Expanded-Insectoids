@@ -50,43 +50,41 @@ namespace VFEI
                 return stateGraph;
             }
 
-            LordToil_DefendPoint lordToil_DefendPoint = new LordToil_DefendPoint(this.defSpot, this.defendRadius); //DEFENSE TOIL
-
-            // Start by assault
-            LordToil_AssaultColony lordToil_AssaultColony1 = new LordToil_AssaultColony(false);
-            stateGraph.StartingToil = lordToil_AssaultColony1;
-            // Then defend
-            Transition transition1 = new Transition(lordToil_AssaultColony1, lordToil_DefendPoint, false, true);
-            transition1.AddTrigger(new Trigger_TicksPassed(800)); //After 800 ticks they go back defending
-            stateGraph.AddTransition(transition1, false);
-            stateGraph.AddToil(lordToil_DefendPoint);
+            LordToil_DefendPoint lordToil_DefendPoint = new LordToil_DefendPoint(this.defSpot, this.defendRadius, null);
+            stateGraph.StartingToil = lordToil_DefendPoint;
 
             LordToil_AssaultColony lordToil_AssaultColony = new LordToil_AssaultColony(false);
             stateGraph.AddToil(lordToil_AssaultColony);
+
             LordToil_AssaultColony lordToil_AssaultColony2 = new LordToil_AssaultColony(false);
             stateGraph.AddToil(lordToil_AssaultColony2);
-            Transition transition = new Transition(lordToil_DefendPoint, lordToil_AssaultColony2, false, true);
-            transition.AddSource(lordToil_AssaultColony);
+
+            Transition transition = new Transition(lordToil_DefendPoint, lordToil_AssaultColony, false, true);
+            transition.AddSource(lordToil_AssaultColony2);
             transition.AddTrigger(new Trigger_PawnCannotReachMapEdge());
             stateGraph.AddTransition(transition, false);
-            Transition transition2 = new Transition(lordToil_DefendPoint, lordToil_AssaultColony, false, true);
+
+            Transition transition2 = new Transition(lordToil_DefendPoint, lordToil_AssaultColony2, false, true);
             transition2.AddTrigger(new Trigger_PawnHarmed(0.5f, true, null));
             transition2.AddTrigger(new Trigger_PawnLostViolently(true));
             transition2.AddTrigger(new Trigger_Memo(CompSpawnerInsectOnDamaged.MemoDamaged));
             transition2.AddPostAction(new TransitionAction_EndAllJobs());
             stateGraph.AddTransition(transition2, false);
-            Transition transition3 = new Transition(lordToil_AssaultColony, lordToil_DefendPoint, false, true);
-            transition3.AddTrigger(new Trigger_TicksPassedWithoutHarmOrMemos(1380, new string[]
+
+            Transition transition3 = new Transition(lordToil_AssaultColony2, lordToil_DefendPoint, false, true);
+            transition3.AddTrigger(new Trigger_TicksPassedWithoutHarmOrMemos(1300, new string[]
             {
-                CompSpawnerInsectOnDamaged.MemoDamaged
+                    CompSpawnerInsectOnDamaged.MemoDamaged
             }));
             transition3.AddPostAction(new TransitionAction_EndAttackBuildingJobs());
             stateGraph.AddTransition(transition3, false);
-            Transition transition4 = new Transition(lordToil_DefendPoint, lordToil_AssaultColony2, false, true);
-            transition4.AddSource(lordToil_AssaultColony);
+
+            Transition transition4 = new Transition(lordToil_DefendPoint, lordToil_AssaultColony, false, true);
+            transition4.AddSource(lordToil_AssaultColony2);
             transition4.AddTrigger(new Trigger_ThingDamageTaken(this.chunk, 0.5f));
             transition4.AddTrigger(new Trigger_Memo(HediffGiver_Heat.MemoPawnBurnedByAir));
             stateGraph.AddTransition(transition4, false);
+
             return stateGraph;
         }
 
