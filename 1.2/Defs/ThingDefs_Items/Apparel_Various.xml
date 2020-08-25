@@ -142,6 +142,15 @@
 
   <ThingDef Name="VFEI_BaseShield" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
     <techLevel>Industrial</techLevel>
+	<thingClass>VFECore.Apparel_Shield</thingClass>
+	<apparel>
+		<bodyPartGroups>
+			<li>LeftHand</li>
+		</bodyPartGroups>
+		<layers>
+			<li>VFEC_OuterShell</li>
+		</layers>
+	</apparel>
     <thingCategories Inherit="False">
       <li>VFEC_Shields</li>
     </thingCategories>
