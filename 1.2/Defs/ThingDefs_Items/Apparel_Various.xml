@@ -147,6 +147,9 @@
 		<bodyPartGroups>
 			<li>LeftHand</li>
 		</bodyPartGroups>
+		<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
 		<layers>
 			<li>VFEC_OuterShell</li>
 		</layers>
