@@ -71,6 +71,9 @@
 				<effect>true</effect>
 				<effectFilth>Filth_BloodInsect</effectFilth>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				
+			</li>
 		</comps>
 		<race>
 			<intelligence>ToolUser</intelligence>
