@@ -47,7 +47,7 @@
 			</li>
 			<li Class="VFEI.CompProperties_FilthProducer">
 
-				<filthType>Filth_Slime</filthType> 
+				<filthType>VFEI_Filth_Slime</filthType> 
 				<rate>0.3</rate> 
 				<radius>1</radius> 
 				<ticksToCreateFilth>600</ticksToCreateFilth>
