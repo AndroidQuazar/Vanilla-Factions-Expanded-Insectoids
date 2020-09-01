@@ -62,6 +62,10 @@
 				<gender>Female</gender>
 
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				<factionToReturnTo>VFEI_Insect</factionToReturnTo>
+				
+			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
@@ -186,6 +190,10 @@
 				<gender>Male</gender>
 
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				<factionToReturnTo>VFEI_Insect</factionToReturnTo>
+				
+			</li>
 		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
@@ -304,6 +312,12 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<comps>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				<factionToReturnTo>VFEI_Insect</factionToReturnTo>
+				
+			</li>
+		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.35</baseHungerRate>
@@ -446,6 +460,12 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		<comps>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				<factionToReturnTo>VFEI_Insect</factionToReturnTo>
+				
+			</li>
+		</comps>
 		<race>
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.35</baseHungerRate>
@@ -545,6 +565,10 @@
 		<comps>
 			<li Class="VFEI.PawnComps.CompProperties_LarvaeToCocoon">
 				<ticksBeforeBecomingCocoon>30000</ticksBeforeBecomingCocoon>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_Untameable">
+				<factionToReturnTo>VFEI_Insect</factionToReturnTo>
+				
 			</li>
 		</comps>
 		<tools>

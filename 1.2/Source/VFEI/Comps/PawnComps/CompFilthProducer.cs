@@ -41,11 +41,11 @@ namespace VFEI
                             thing.Rotation = Rot4.North;
                             thing.Position = current;
                             thing.SpawnSetup(pawn.Map, false);
-                            //GenSpawn.Spawn(thing, current, pawn.Map);
+                           
                         }
 
                     }
-                    // FilthMaker.MakeFilth(this.parent.PositionHeld, this.parent.MapHeld, ThingDef.Named("GR_FilthMucus"), 1);
+                    
                     
                 }
                 gasProgress = 0;
