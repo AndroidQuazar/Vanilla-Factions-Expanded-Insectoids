@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -37,10 +37,22 @@ namespace VFEI
                     {
                         if (current.InBounds(pawn.Map) && rand.NextDouble() < Props.rate)
                         {
-                            Thing thing = ThingMaker.MakeThing(ThingDef.Named(Props.filthType), null);
-                            thing.Rotation = Rot4.North;
-                            thing.Position = current;
-                            thing.SpawnSetup(pawn.Map, false);
+                            int filthNumber = 0;
+                            List<Thing> list = this.parent.Map.thingGrid.ThingsListAt(current);
+                            for (int i = 0; i < list.Count; i++)
+                            {
+                                if ((list[i] is Filth) && list[i].def.defName == Props.filthType)
+                                {
+                                    filthNumber++;
+                                }
+                            }
+                            if (filthNumber<3) {
+                                Thing thing = ThingMaker.MakeThing(ThingDef.Named(Props.filthType), null);
+                                thing.Rotation = Rot4.North;
+                                thing.Position = current;
+                                thing.SpawnSetup(pawn.Map, false);
+                            }
+                            
                            
                         }
 

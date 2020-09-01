@@ -19,7 +19,6 @@
       <rainWashes>true</rainWashes>
       <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
       <canFilthAttach>true</canFilthAttach>
-	  <maxThickness>3</maxThickness>
       <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
     </filth>
   </ThingDef>
