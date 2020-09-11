@@ -22,8 +22,6 @@
       <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
       <SharpDamageMultiplier>1.0</SharpDamageMultiplier>
       <BluntDamageMultiplier>1.0</BluntDamageMultiplier>
-      <MeleeWeapon_CooldownMultiplier>0.6</MeleeWeapon_CooldownMultiplier>
-      <Beauty>0.5</Beauty>
     </statBases>
     <useHitPoints>false</useHitPoints>
     <thingCategories>
@@ -44,6 +42,8 @@
         <MaxHitPoints>2</MaxHitPoints>
         <Beauty>0</Beauty>
         <Flammability>0.1</Flammability>
+		<MeleeWeapon_CooldownMultiplier>0.6</MeleeWeapon_CooldownMultiplier>
+		<Beauty>0.5</Beauty>
       </statFactors>
     </stuffProps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>

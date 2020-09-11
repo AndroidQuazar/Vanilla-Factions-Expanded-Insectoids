@@ -146,6 +146,7 @@
 	<apparel>
 		<bodyPartGroups>
 			<li>LeftHand</li>
+			<li>Arms</li>
 		</bodyPartGroups>
 		<defaultOutfitTags>
 				<li>Soldier</li>
