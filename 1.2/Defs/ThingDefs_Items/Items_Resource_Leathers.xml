@@ -40,7 +40,6 @@
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
       <statFactors>
         <MaxHitPoints>2</MaxHitPoints>
-        <Beauty>0</Beauty>
         <Flammability>0.1</Flammability>
 		<MeleeWeapon_CooldownMultiplier>0.6</MeleeWeapon_CooldownMultiplier>
 		<Beauty>0.5</Beauty>
