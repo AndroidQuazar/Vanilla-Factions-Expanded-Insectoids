@@ -10,23 +10,22 @@
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <canSiege>false</canSiege>
     <canStageAttacks>true</canStageAttacks>
-    <leaderTitle>queen</leaderTitle>
-	<description>A result of a galaxy wide experiment gone wrong, this monstrous hive-mind has made this planet their home. Divided into castes, their society relies on the giant queen.\n\nThese insectoids are not interested in diplomacy. They will try to eliminate anything that they perceive to be a threat.</description>
+    <description>A result of a galaxy wide experiment gone wrong, this monstrous hive-mind has made this planet their home. Divided into castes, their society relies on the giant queen.\n\nThese insectoids are not interested in diplomacy. They will try to eliminate anything that they perceive to be a threat.</description>
     <factionIconPath>World/InsectoidFaction/Nest</factionIconPath>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
     <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
     <factionNameMaker>VFEI_NamerFactionInsect</factionNameMaker>
     <settlementNameMaker>VFEI_NamerSettlementInsectoid</settlementNameMaker>
     <techLevel>Animal</techLevel>
-    <raidCommonalityFromPointsCurve>
+    <raidLootValueFromPointsCurve>
       <points>
-        <li>(300,  0.5)</li>
-        <li>(700,  0.8)</li>
-        <li>(1400, 1.2)</li>
-        <li>(2800, 1.5)</li>
-        <li>(4000, 1.8)</li>
+        <li>(35,     15)</li>
+        <li>(100,   120)</li>
+        <li>(1000,  500)</li>
+        <li>(2000,  800)</li>
+        <li>(4000, 1000)</li>
       </points>
-    </raidCommonalityFromPointsCurve>
+    </raidLootValueFromPointsCurve>
     <humanlikeFaction>false</humanlikeFaction>
     <hidden>false</hidden>
     <autoFlee>false</autoFlee>

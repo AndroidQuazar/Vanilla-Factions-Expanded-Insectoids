@@ -34,26 +34,6 @@ namespace VFEI.Other
 				BaseGen.symbolStack.Push("settlementNoPawns", resolveParams, null);
 				BaseGen.Generate();
 
-				map.skyManager.ForceSetCurSkyGlow(1f);
-				map.powerNetManager.UpdatePowerNetsAndConnections_First();
-				this.UpdateDesiredPowerOutputForAllGenerators(map);
-				this.EnsureBatteriesConnectedAndMakeSense(map);
-				this.EnsurePowerUsersConnected(map);
-				this.EnsureGeneratorsConnectedAndMakeSense(map);
-				this.tmpThings.Clear();
-
-				IncidentParms incidentParms = new IncidentParms();
-				incidentParms.faction = Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect);
-				incidentParms.points = 1500;
-				incidentParms.target = map;
-
-				List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, incidentParms, false), true).ToList();
-				List<IntVec3> iv3 = rect.Cells.ToList().FindAll(x => x.Walkable(map) && !x.Roofed(map));
-				for (int i = 0; i < pawns.Count; i++)
-				{
-					GenSpawn.Spawn(pawns[i], iv3.RandomElement(), map);
-				}
-				LordMaker.MakeNewLord(incidentParms.faction, new LordJob_DefendBase(incidentParms.faction, rect.CenterCell), map, pawns);
 				bool stop = false;
 				List<ThingDef> potentialGenome = new List<ThingDef>();
 				potentialGenome.Add(ThingDefsVFEI.VFEI_DroneGenome);
@@ -85,6 +65,27 @@ namespace VFEI.Other
 						stop = true;
 					}
 				}
+
+				IncidentParms incidentParms = new IncidentParms();
+				incidentParms.faction = Find.FactionManager.FirstFactionOfDef(ThingDefsVFEI.VFEI_Insect);
+				incidentParms.points = 1500;
+				incidentParms.target = map;
+
+				List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, incidentParms, false), true).ToList();
+				List<IntVec3> iv3 = rect.Cells.ToList().FindAll(x => x.Walkable(map) && !x.Roofed(map));
+				for (int i = 0; i < pawns.Count; i++)
+				{
+					GenSpawn.Spawn(pawns[i], iv3.RandomElement(), map);
+				}
+				LordMaker.MakeNewLord(incidentParms.faction, new LordJob_DefendBase(incidentParms.faction, rect.CenterCell), map, pawns);
+
+				map.skyManager.ForceSetCurSkyGlow(1f);
+				map.powerNetManager.UpdatePowerNetsAndConnections_First();
+				this.UpdateDesiredPowerOutputForAllGenerators(map);
+				this.EnsureBatteriesConnectedAndMakeSense(map);
+				this.EnsurePowerUsersConnected(map);
+				this.EnsureGeneratorsConnectedAndMakeSense(map);
+				this.tmpThings.Clear();
 			}
 		}
 		private void UpdateDesiredPowerOutputForAllGenerators(Map map)

@@ -242,4 +242,24 @@ namespace VFEI
             }
         }
     }
+
+    [StaticConstructorOnStartup]
+    internal static class HarmonyInit
+    {
+        static HarmonyInit()
+        {
+            new Harmony("kikohi.vfe.insectoid").PatchAll();
+        }
+    }
+
+    [HarmonyPatch(typeof(Faction))]
+    class PatchIsMechanoid
+    {
+        [HarmonyPostfix]
+        [HarmonyPatch("ShouldHaveLeader", MethodType.Getter)]
+        static void PostFix(ref Faction __instance, ref bool __result)
+        {
+            if (__instance.def.defName == "VFEI_Insect") __result = false;
+        }
+    }
 }
