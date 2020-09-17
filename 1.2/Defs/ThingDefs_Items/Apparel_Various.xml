@@ -143,7 +143,10 @@
   <ThingDef Name="VFEI_BaseShield" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
     <techLevel>Industrial</techLevel>
 	<thingClass>VFECore.Apparel_Shield</thingClass>
-	<apparel>
+		<apparel>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<careIfDamaged>false</careIfDamaged>
+			<wearPerDay>0</wearPerDay>
 		<bodyPartGroups>
 			<li>LeftHand</li>
 			<li>Arms</li>
