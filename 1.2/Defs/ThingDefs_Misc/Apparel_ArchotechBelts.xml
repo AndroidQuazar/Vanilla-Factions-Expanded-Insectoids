@@ -7,6 +7,7 @@
     <label>archotech shield belt</label>
     <description>A single-person psychic shield device made by a superior AI, that covers the user with an impenetrable shield bubble. It will attempt to stop any rapidly-moving projectile or energy attack. It does nothing against melee attacks or shots from point-blank range. This advanced version has a larger capacity, but lacks any recharge mechanism. The incomparable shield strength makes it a valuable good for any type of soldier.</description>
     <thingClass>VFEI.ArchotechShieldBelt</thingClass>
+    <techLevel>Archotech</techLevel>
     <graphicData>
       <texPath>Things/Item/Artifact/ArchotechShieldBelt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
