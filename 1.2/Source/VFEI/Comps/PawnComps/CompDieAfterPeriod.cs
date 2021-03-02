@@ -26,7 +26,7 @@ namespace VFEI
             {
                 Pawn pawn = this.parent as Pawn;
 
-                if (pawn != null)
+                if (pawn != null && pawn.Map !=null)
                 {
                     
                     if (Props.effect)

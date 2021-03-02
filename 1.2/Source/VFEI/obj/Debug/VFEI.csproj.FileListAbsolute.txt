@@ -6,3 +6,7 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Vanilla-Factions-Exp
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.csprojAssemblyReference.cache
+C:\SteamLibrary\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Assemblies\VFEI.dll
+C:\SteamLibrary\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.csprojAssemblyReference.cache
+C:\SteamLibrary\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.csproj.CoreCompileInputs.cache
+C:\SteamLibrary\steamapps\common\RimWorld\Mods\Vanilla-Factions-Expanded-Insectoids\1.2\Source\VFEI\obj\Debug\VFEI.dll
