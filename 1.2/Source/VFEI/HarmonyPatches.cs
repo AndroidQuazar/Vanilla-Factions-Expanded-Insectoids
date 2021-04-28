@@ -35,8 +35,8 @@ namespace VFEI
             harmony.Patch(AccessTools.Method(typeof(Faction), "TryMakeInitialRelationsWith", null, null), new HarmonyMethod(typeof(HarmonyPatches), "Faction_TryMakeInitialRelationsWith_Prefix", null), null, null, null);
             harmony.Patch(AccessTools.Method(typeof(CompGlower), "PostSpawnSetup", null, null), new HarmonyMethod(typeof(HarmonyPatches), "PostSpawnSetup_PreFix", null), null, null, null);
             // harmony.Patch(AccessTools.Method(typeof(Command_LoadToTransporter), "ProcessInput", null, null), new HarmonyMethod(typeof(HarmonyPatches), "ProcessInput_PreFix", null), null, null, null);
-            harmony.Patch(AccessTools.Method(typeof(QuestNode_GetFaction), "IsGoodFaction", null, null), new HarmonyMethod(typeof(HarmonyPatches), "QuestNode_GetFaction_IsGoodFaction_Prefix", null), null, null, null);
-            Log.Message("VFEI - Harmony patches applied");
+            // harmony.Patch(AccessTools.Method(typeof(QuestNode_GetFaction), "IsGoodFaction", null, null), new HarmonyMethod(typeof(HarmonyPatches), "QuestNode_GetFaction_IsGoodFaction_Prefix", null), null, null, null);
+            // Log.Message("VFEI - Harmony patches applied");
         }
 
         static bool QuestNode_GetFaction_IsGoodFaction_Prefix(Faction faction, Slate slate, ref bool __result)
