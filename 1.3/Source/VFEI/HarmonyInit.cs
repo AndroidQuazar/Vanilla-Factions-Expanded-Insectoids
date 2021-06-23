@@ -206,7 +206,7 @@ namespace VFEI
             [HarmonyPrefix]
             private static bool Prefix(Faction other, Faction __instance, ref List<FactionRelation> ___relations)
             {
-                if ((other == Faction.OfInsects && __instance.def.defName == "VFEI_Insect") || (other.def.defName == "VFEI_Insect" && __instance == Faction.OfInsects))
+                if ((other.def == FactionDefOf.Insect && __instance.def.defName == "VFEI_Insect") || (other.def.defName == "VFEI_Insect" && __instance.def == FactionDefOf.Insect))
                 {
                     ___relations.RemoveAll(r => r.other == other);
 

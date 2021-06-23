@@ -36,8 +36,8 @@
       </li>
     </tools>
     <race>
-      <thinkTreeMain>VFEI_AnimalHarvester</thinkTreeMain>
-      <thinkTreeConstant>VFEI_AnimalHarvesterConstant</thinkTreeConstant>
+      <thinkTreeMain>VEF_AnimalHarvester</thinkTreeMain>
+      <thinkTreeConstant>VEF_AnimalHarvesterConstant</thinkTreeConstant>
       <body>BeetleLike</body>
       <baseHungerRate>1</baseHungerRate>
       <baseBodySize>1.25</baseBodySize>

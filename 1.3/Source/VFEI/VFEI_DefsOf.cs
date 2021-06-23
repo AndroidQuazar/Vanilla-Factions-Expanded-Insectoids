@@ -53,7 +53,6 @@ namespace VFEI
         public static HediffDef VFEI_SynapticCerebellum;
 
         public static JobDef InsectFlee;
-        public static JobDef VFEI_IngestWeird;
 
         public static ThingDef VFEI_GigalocustIncoming;
         public static ThingDef VFEI_InsectMeteoriteIncoming;

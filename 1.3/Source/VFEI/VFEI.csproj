@@ -103,8 +103,6 @@
     <Compile Include="HarmonyInit.cs" />
     <Compile Include="Heddifs\Hediff_JellyWithdraw.cs" />
     <Compile Include="Other\IngestionOutcomeDoer_Immunity.cs" />
-    <Compile Include="JobStuff\JobDriver_IngestWeird.cs" />
-    <Compile Include="JobStuff\JobGiver_GetWeirdFood.cs" />
     <Compile Include="JobStuff\JobGiver_Harvest.cs" />
     <Compile Include="JobStuff\JobDriver_InsectFlee.cs" />
     <Compile Include="JobStuff\JobGiver_Mine.cs" />

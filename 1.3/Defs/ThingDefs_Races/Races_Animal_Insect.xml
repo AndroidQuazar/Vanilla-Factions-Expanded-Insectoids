@@ -54,11 +54,11 @@
         <ticksBetweenSpawn>30000</ticksBetweenSpawn>
         <numberToSpawn>2</numberToSpawn>
       </li>
-      <li Class="VFEI.PawnComps.CompProperties_ThoughtEffecter">
+      <li Class="AnimalBehaviours.CompProperties_ThoughtEffecter">
         <radius>3</radius>
         <thoughtDef>VFEI_SeenInsectoidQueen</thoughtDef>
       </li>
-      <li Class="VFEI.PawnComps.CompProperties_Feminism">
+      <li Class="AnimalBehaviours.CompProperties_FixedGender">
         <gender>Female</gender>
 
       </li>
@@ -186,7 +186,7 @@
       </li>
     </tools>
     <comps>
-      <li Class="VFEI.PawnComps.CompProperties_Feminism">
+      <li Class="AnimalBehaviours.CompProperties_FixedGender">
         <gender>Male</gender>
 
       </li>
