@@ -15,11 +15,6 @@ namespace VFEI
 
         public override void GenerateFresh(string seed)
         {
-            this.ReGenerateFSHilliness();
-        }
-
-        private void ReGenerateFSHilliness()
-        {
             foreach (WorldObject item in Find.World.worldObjects.AllWorldObjects)
             {
                 if (item.Faction.def.defName == "VFEI_Insect" && Find.WorldGrid[item.Tile].hilliness != Hilliness.Mountainous)

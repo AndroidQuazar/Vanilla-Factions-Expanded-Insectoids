@@ -206,15 +206,19 @@ namespace VFEI
             [HarmonyPrefix]
             private static bool Prefix(Faction other, Faction __instance, ref List<FactionRelation> ___relations)
             {
-                if ((other.def.defName == "Insect" && __instance.def.defName == "VFEI_Insect") || (other.def.defName == "VFEI_Insect" && __instance.def.defName == "Insect"))
+                if ((other == Faction.OfInsects && __instance.def.defName == "VFEI_Insect") || (other.def.defName == "VFEI_Insect" && __instance == Faction.OfInsects))
                 {
+                    ___relations.RemoveAll(r => r.other == other);
+
                     FactionRelation factionRelation = new FactionRelation
                     {
                         other = other,
+                        baseGoodwill = 100,
                         kind = FactionRelationKind.Ally
                     };
                     ___relations.Add(factionRelation);
                     other.TryMakeInitialRelationsWith(__instance);
+                    Log.Message($"Affecting relation of {__instance.NameColored} with {other.NameColored}");
                     return false;
                 }
                 return true;

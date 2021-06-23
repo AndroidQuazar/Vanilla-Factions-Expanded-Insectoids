@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
 	<!-- ============================================================ -->
-
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_VatGrownMegascarab</defName>
 		<label>Vat-grown megascarab</label>
@@ -14,7 +12,6 @@
 			<ComfyTemperatureMin>0</ComfyTemperatureMin>
 			<MarketValue>100</MarketValue>
 			<LeatherAmount>0</LeatherAmount>
-
 		</statBases>
 		<tools>
 			<li>
@@ -37,11 +34,8 @@
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
 				<chanceFactor>0.1</chanceFactor>
 			</li>
-
 		</tools>
-
 		<race>
-
 			<body>BeetleLike</body>
 			<baseBodySize>0.18</baseBodySize>
 			<baseHungerRate>0.10</baseHungerRate>
@@ -49,11 +43,9 @@
 			<hasGenders>false</hasGenders>
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-
 			<wildness>0.65</wildness>
 			<manhunterOnDamageChance>1.0</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0.02</manhunterOnTameFailChance>
-			
 			<lifeExpectancy>5</lifeExpectancy>
 			<lifeStageAges>
 				<li>
@@ -78,17 +70,15 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
-			
 			<li>AnimalInsect</li>
 		</tradeTags>
 		<butcherProducts>
 			<VFEI_Chitin>5</VFEI_Chitin>
 		</butcherProducts>
 	</ThingDef>
-
 	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>VFEI_VatGrownMegascarab</defName>
-		<label>Vat-grown megascarab</label>		
+		<label>Vat-grown megascarab</label>
 		<race>VFEI_VatGrownMegascarab</race>
 		<combatPower>35</combatPower>
 		<ecoSystemWeight>0.2</ecoSystemWeight>
@@ -98,7 +88,6 @@
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegascarab/VFEI_VatGrownMegascarab</texPath>
 					<drawSize>1.2</drawSize>
-
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/VatGrown/VFEI_VatGrownMegascarab/VFEI_Dessicated_VatGrownMegascarab</texPath>
@@ -131,5 +120,4 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
-
 </Defs>

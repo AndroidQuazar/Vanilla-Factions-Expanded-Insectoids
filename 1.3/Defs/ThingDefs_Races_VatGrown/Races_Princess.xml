@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-
 	<ThingDef ParentName="BaseInsect">
 		<defName>VFEI_VatGrownPrincess</defName>
 		<label>Vat-grown princess</label>
@@ -36,10 +34,8 @@
 			</li>
 		</tools>
 		<comps>
-
-			<li Class="VFEI.PawnComps.CompProperties_Feminism">
+			<li Class="AnimalBehaviours.CompProperties_FixedGender">
 				<gender>Female</gender>
-
 			</li>
 			<li Class="CompProperties_Milkable">
 				<milkDef>InsectJelly</milkDef>
@@ -56,15 +52,12 @@
 			</li>
 		</comps>
 		<race>
-
 			<body>BeetleLikeWithClaw</body>
 			<baseHungerRate>0.70</baseHungerRate>
 			<baseBodySize>3.6</baseBodySize>
 			<baseHealthScale>4</baseHealthScale>
-			
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
-
 			<wildness>0.85</wildness>
 			<lifeExpectancy>3</lifeExpectancy>
 			<lifeStageAges>
@@ -90,7 +83,6 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
-
 			<li>AnimalInsect</li>
 		</tradeTags>
 		<butcherProducts>
@@ -142,6 +134,5 @@
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
-
 	</PawnKindDef>
 </Defs>
