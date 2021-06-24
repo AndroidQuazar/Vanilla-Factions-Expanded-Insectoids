@@ -87,16 +87,6 @@ namespace VFEI
             }
         }
 
-        [HarmonyPatch(typeof(Faction), "ShouldHaveLeader", MethodType.Getter)]
-        internal class ShouldHaveLeader_Postfix
-        {
-            [HarmonyPostfix]
-            private static void PostFix(ref Faction __instance, ref bool __result)
-            {
-                if (__instance.def.defName == "VFEI_Insect") __result = false;
-            }
-        }
-
         [HarmonyPatch(typeof(FoodUtility), "ThoughtsFromIngesting", MethodType.Normal)]
         internal class ThoughtsFromIngesting_Postfix
         {
@@ -107,6 +97,16 @@ namespace VFEI
                 {
                     __result.Clear();
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(Faction), "HasGoodwill", MethodType.Getter)]
+        internal class HasGoodwill_Postfix
+        {
+            [HarmonyPostfix]
+            private static void PostFix(ref Faction __instance, ref bool __result)
+            {
+                if (__instance.def.defName == "VFEI_Insect") __result = false;
             }
         }
 
