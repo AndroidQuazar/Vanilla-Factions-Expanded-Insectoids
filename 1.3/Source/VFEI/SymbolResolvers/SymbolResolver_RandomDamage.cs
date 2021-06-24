@@ -1,7 +1,7 @@
 ﻿using RimWorld.BaseGen;
 using Verse;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_RandomDamage : SymbolResolver
     {

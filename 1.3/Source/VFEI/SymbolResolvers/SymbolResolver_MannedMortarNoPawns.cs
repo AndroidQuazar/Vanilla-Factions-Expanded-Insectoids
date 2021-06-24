@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_MannedMortarNoPawns : SymbolResolver
     {

@@ -3,7 +3,7 @@ using RimWorld.BaseGen;
 using System.Collections.Generic;
 using Verse;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_OutdoorLightingIbase : SymbolResolver
     {

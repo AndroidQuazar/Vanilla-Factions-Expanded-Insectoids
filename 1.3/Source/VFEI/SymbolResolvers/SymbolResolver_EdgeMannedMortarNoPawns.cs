@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_EdgeMannedMortarNoPawns : SymbolResolver
     {

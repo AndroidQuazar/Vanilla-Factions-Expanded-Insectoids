@@ -3,7 +3,7 @@ using RimWorld.BaseGen;
 using Verse;
 using Verse.AI.Group;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_Ibase : SymbolResolver
     {

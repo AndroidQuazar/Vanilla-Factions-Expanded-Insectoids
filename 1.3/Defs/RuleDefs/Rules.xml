@@ -5,7 +5,7 @@
     <defName>InsectoidBase</defName>
     <symbol>insectoidBase</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_Ibase" />
+      <li Class="VFEI.SymbolResolver_Ibase" />
     </resolvers>
   </RuleDef>
 
@@ -13,7 +13,7 @@
     <defName>InsectoidBaseLightning</defName>
     <symbol>insectoidBaseLightning</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_OutdoorLightingIbase" />
+      <li Class="VFEI.SymbolResolver_OutdoorLightingIbase" />
     </resolvers>
   </RuleDef>
 
@@ -21,7 +21,7 @@
     <defName>InsectoidBaseRCorpse</defName>
     <symbol>insectoidBaseRCorpse</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_RandomCorpse" />
+      <li Class="VFEI.SymbolResolver_RandomCorpse" />
     </resolvers>
   </RuleDef>
 
@@ -29,7 +29,7 @@
     <defName>InsectoidBaseRDamage</defName>
     <symbol>insectoidBaseRDamage</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_RandomDamage" />
+      <li Class="VFEI.SymbolResolver_RandomDamage" />
     </resolvers>
   </RuleDef>
 
@@ -37,7 +37,7 @@
     <defName>InsectoidRandHives</defName>
     <symbol>insectoidRandHives</symbol>
     <resolvers>
-      <li Class="VFEI.GenStuff.SymbolResolver_RandomHives" />
+      <li Class="VFEI.SymbolResolver_RandomHives" />
     </resolvers>
   </RuleDef>
 
@@ -46,7 +46,7 @@
 		<defName>VFEI_SettlementNoPawns</defName>
 		<symbol>settlementNoPawns</symbol>
 		<resolvers>
-			<li Class="VFEI.GenStuff.SymbolResolver_SettlementNoPawns">
+			<li Class="VFEI.SymbolResolver_SettlementNoPawns">
 				<minRectSize>(12, 12)</minRectSize>
 			</li>
 		</resolvers>
@@ -56,7 +56,7 @@
 		<defName>VFEI_EdgeMannedMortarNoPawns</defName>
 		<symbol>edgeMannedMortarNoPawns</symbol>
 		<resolvers>
-			<li Class="VFEI.GenStuff.SymbolResolver_EdgeMannedMortarNoPawns">
+			<li Class="VFEI.SymbolResolver_EdgeMannedMortarNoPawns">
 				<minRectSize>(3, 3)</minRectSize>
 			</li>
 		</resolvers>
@@ -66,7 +66,7 @@
 		<defName>VFEI_MannedMortarNoPawns</defName>
 		<symbol>mannedMortarNoPawns</symbol>
 		<resolvers>
-			<li Class="VFEI.GenStuff.SymbolResolver_MannedMortarNoPawns">
+			<li Class="VFEI.SymbolResolver_MannedMortarNoPawns">
 				<minRectSize>(3, 3)</minRectSize>
 			</li>
 		</resolvers>
@@ -76,7 +76,7 @@
 		<defName>VFEI_EdgeDefenseNoPawns</defName>
 		<symbol>edgeDefenseNoPawns</symbol>
 		<resolvers>
-			<li Class="VFEI.GenStuff.SymbolResolver_EdgeDefenseNoPawn">
+			<li Class="VFEI.SymbolResolver_EdgeDefenseNoPawn">
 				<minRectSize>(2, 2)</minRectSize>
 			</li>
 		</resolvers>

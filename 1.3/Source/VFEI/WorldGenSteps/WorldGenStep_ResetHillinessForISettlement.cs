@@ -5,13 +5,7 @@ namespace VFEI
 {
     internal class WorldGenStep_ResetHillinessForISettlement : WorldGenStep
     {
-        public override int SeedPart
-        {
-            get
-            {
-                return 507014749;
-            }
-        }
+        public override int SeedPart => 507014749;
 
         public override void GenerateFresh(string seed)
         {

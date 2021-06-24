@@ -3,13 +3,12 @@ using RimWorld.BaseGen;
 using UnityEngine;
 using Verse;
 
-namespace VFEI.GenStuff
+namespace VFEI
 {
     internal class SymbolResolver_EdgeDefenseNoPawn : SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {
-            Map map = BaseGen.globalSettings.map;
             Faction faction = rp.faction ?? Find.FactionManager.RandomEnemyFaction(false, false, true, TechLevel.Undefined);
             int width;
             if (rp.edgeDefenseWidth != null)
