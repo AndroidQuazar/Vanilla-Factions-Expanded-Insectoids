@@ -32,7 +32,6 @@ namespace VFEI
 
         public override void Tick()
         {
-			base.Tick();
 			if (shouldRecharge)
 			{
 				this.energy = this.EnergyMax;
