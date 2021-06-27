@@ -142,22 +142,22 @@
 
   <ThingDef Name="VFEI_BaseShield" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="True">
     <techLevel>Industrial</techLevel>
-	<thingClass>VFECore.Apparel_Shield</thingClass>
-		<apparel>
-			<careIfWornByCorpse>false</careIfWornByCorpse>
-			<careIfDamaged>false</careIfDamaged>
-			<wearPerDay>0</wearPerDay>
-		<bodyPartGroups>
-			<li>LeftHand</li>
-			<li>Arms</li>
-		</bodyPartGroups>
-		<defaultOutfitTags>
-				<li>Soldier</li>
-			</defaultOutfitTags>
-		<layers>
-			<li>VFEC_OuterShell</li>
-		</layers>
-	</apparel>
+    <thingClass>VFECore.Apparel_Shield</thingClass>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>LeftHand</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <layers>
+        <li>VFEC_OuterShell</li>
+      </layers>
+    </apparel>
     <thingCategories Inherit="False">
       <li>VFEC_Shields</li>
     </thingCategories>
@@ -244,6 +244,9 @@
             <offset>(0.1, 0, 0.2)</offset>
           </west>
         </offHandHoldOffset>
+      </li>
+      <li>
+        <compClass>CompColorable</compClass>
       </li>
     </comps>
   </ThingDef>

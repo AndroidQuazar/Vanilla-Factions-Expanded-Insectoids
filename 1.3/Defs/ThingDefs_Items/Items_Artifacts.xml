@@ -112,7 +112,7 @@
       <MaxHitPoints>80</MaxHitPoints>
     </statBases>
     <drawGUIOverlay>false</drawGUIOverlay>
-    <specialDisplayRadius>5</specialDisplayRadius>    <!-- range indicator, weapon of mass destruction -->
+    <specialDisplayRadius>5</specialDisplayRadius>
     <thingCategories Inherit="False">
       <li>Artifacts</li>
     </thingCategories>
