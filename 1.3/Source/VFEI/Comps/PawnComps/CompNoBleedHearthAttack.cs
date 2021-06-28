@@ -39,7 +39,7 @@ namespace VFEI.Comps.PawnComps
                         {
                             BodyPartDefOf.Heart
                         };
-                        HediffGiverUtility.TryApply(this.Pawn, VFEI_DefsOf.HeartAttack, bodyPartDefs, true);
+                        HediffGiverUtility.TryApply(this.Pawn, VFEIDefOf.HeartAttack, bodyPartDefs, true);
 					}
 				}
 			}

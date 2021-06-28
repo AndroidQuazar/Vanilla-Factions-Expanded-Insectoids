@@ -13,15 +13,15 @@ namespace VFEI.BuildingClass
     {
         private Faction faction;
         private List<ThingDef> filthTypes = new List<ThingDef>();
-        private int secondarySpawnTick;
+        private int secondarySpawnTickVFE;
         private List<PawnKindDef> spawnablePawnKinds = new List<PawnKindDef>();
         private Sustainer sustainer;
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref this.secondarySpawnTick, "secondarySpawnTick", 0);
-            Scribe_Values.Look(ref this.faction, "factiontion");
+            Scribe_Values.Look(ref this.secondarySpawnTickVFE, "secondarySpawnTickVFE", 0);
+            Scribe_References.Look(ref this.faction, "faction");
             Scribe_Collections.Look(ref spawnablePawnKinds, "spawnablePawnKinds", LookMode.Def);
             Scribe_Collections.Look(ref filthTypes, "filthTypes", LookMode.Def);
         }
@@ -38,9 +38,9 @@ namespace VFEI.BuildingClass
             spawnablePawnKinds.Add(PawnKindDefOf.Megascarab);
             spawnablePawnKinds.Add(PawnKindDefOf.Spelopede);
             spawnablePawnKinds.Add(PawnKindDefOf.Megaspider);
-            spawnablePawnKinds.Add(VFEI_DefsOf.VFEI_Insectoid_RoyalMegaspider);
+            spawnablePawnKinds.Add(VFEIDefOf.VFEI_Insectoid_RoyalMegaspider);
 
-            faction = Find.FactionManager.FirstFactionOfDef(VFEI_DefsOf.VFEI_Insect);
+            faction = Find.FactionManager.FirstFactionOfDef(VFEIDefOf.VFEI_Insect);
             base.PostMake();
         }
 
@@ -49,7 +49,7 @@ namespace VFEI.BuildingClass
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                this.secondarySpawnTick = Find.TickManager.TicksGame + new FloatRange(26f, 30f).RandomInRange.SecondsToTicks();
+                this.secondarySpawnTickVFE = Find.TickManager.TicksGame + new FloatRange(26f, 30f).RandomInRange.SecondsToTicks();
             }
             // Create sustainer
             LongEventHandler.ExecuteWhenFinished(delegate
@@ -78,39 +78,46 @@ namespace VFEI.BuildingClass
                     }, base.Map, Rand.Range(1.5f, 3f), new Color(1f, 1f, 1f, 2.5f));
                 }
 
-                if (this.secondarySpawnTick <= Find.TickManager.TicksGame)
+                if (this.secondarySpawnTickVFE <= Find.TickManager.TicksGame)
                 {
+                    Hive hive;
                     this.sustainer.End();
-                    this.Destroy(DestroyMode.Vanish);
 
                     List<Pawn> toSpawn = new List<Pawn>();
+                    List<Pawn> queens = new List<Pawn>();
 
-                    if (this.spawnHive)
+                    if (Rand.Bool)
                     {
-                        if (Rand.Bool)
-                        {
-                            Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Hive, null), base.Position, base.Map);
-                            hive.SetFaction(faction);
-                            hive.questTags = this.questTags;
-                            hive.GetComps<CompSpawner>().ToList().Find(s => s.PropsSpawner.thingToSpawn == ThingDefOf.InsectJelly).TryDoSpawn();
-                        }
-                        else
-                        {
-                            Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(VFEI_DefsOf.VFEI_LargeHive, null), base.Position, base.Map);
-                            hive.SetFaction(faction, null);
-                            hive.questTags = this.questTags;
-                            hive.GetComps<CompSpawner>().ToList().Find(s => s.PropsSpawner.thingToSpawn == VFEI_DefsOf.VFEI_RoyalInsectJelly).TryDoSpawn();
+                        hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.Hive, null), base.Position, base.Map);
+                        hive.SetFaction(faction);
+                        hive.questTags = this.questTags;
+                        hive.GetComps<CompSpawner>().ToList().Find(s => s.PropsSpawner.thingToSpawn == ThingDefOf.InsectJelly).TryDoSpawn();
+                    }
+                    else
+                    {
+                        hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(VFEIDefOf.VFEI_LargeHive, null), base.Position, base.Map);
+                        hive.SetFaction(faction, null);
+                        hive.questTags = this.questTags;
+                        hive.GetComps<CompSpawner>().ToList().Find(s => s.PropsSpawner.thingToSpawn == VFEIDefOf.VFEI_RoyalInsectJelly).TryDoSpawn();
 
-                            // Spawn queen
-                            if (base.Map.mapPawns.AllPawnsSpawned.Where((p) => p.kindDef == VFEI_DefsOf.VFEI_Insectoid_Queen).Count() == 0)
+                        // Spawn queen
+                        if (base.Map.mapPawns.AllPawnsSpawned.Where((p) => p.kindDef == VFEIDefOf.VFEI_Insectoid_Queen).Count() == 0)
+                        {
+                            Pawn queen = PawnGenerator.GeneratePawn(VFEIDefOf.VFEI_Insectoid_Queen, faction);
+                            GenSpawn.Spawn(queen, CellFinder.RandomClosewalkCellNear(base.Position, base.Map, 4), base.Map);
+                            queen.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
+                            this.insectsPoints -= queen.kindDef.combatPower;
+
+                            queens.Add(queen);
+                            SpawnedPawnParams spawnedPawnParams = new SpawnedPawnParams
                             {
-                                Pawn queen = PawnGenerator.GeneratePawn(VFEI_DefsOf.VFEI_Insectoid_Queen, faction);
-                                GenSpawn.Spawn(queen, CellFinder.RandomClosewalkCellNear(base.Position, base.Map, 4), base.Map);
-                                queen.mindState.spawnedByInfestationThingComp = this.spawnedByInfestationThingComp;
-                                this.insectsPoints -= queen.kindDef.combatPower;
+                                aggressive = false,
+                                defendRadius = 2,
+                                defSpot = base.Position,
+                                spawnerThing = hive
+                            };
 
-                                toSpawn.Add(queen);
-                            }
+                            LordMaker.MakeNewLord(faction, new LordJob_DefendAndExpandHive(spawnedPawnParams), base.Map, queens);
                         }
                     }
 
@@ -133,8 +140,10 @@ namespace VFEI.BuildingClass
 
                     if (toSpawn.Any())
                     {
-                        LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction, true, false, false, false, true, false, false), base.Map, toSpawn);
+                        LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction), base.Map, toSpawn);
                     }
+
+                    this.Destroy();
                 }
             }
         }

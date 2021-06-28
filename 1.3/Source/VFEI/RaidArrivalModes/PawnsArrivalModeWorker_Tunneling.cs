@@ -9,7 +9,7 @@ namespace VFEI.RaidArrivalModes
         public static void InsectTunnel(IncidentParms parms, List<Pawn> pawns)
         {
             Map map = (Map)parms.target;
-            GenSpawn.Spawn(VFEI_DefsOf.VFEI_Mote, parms.spawnCenter, map);
+            GenSpawn.Spawn(VFEIDefOf.VFEI_Mote, parms.spawnCenter, map);
             foreach (Pawn pawn in pawns)
             {
                 GenSpawn.Spawn(pawn, parms.spawnCenter, map);

@@ -22,8 +22,8 @@ namespace VFEI.Other
 				Pawn pawn = hitThing as Pawn;
 				if (pawn != null && pawn.BodySize <= 1f)
 				{
-					var hediffOnPawn = pawn.health?.hediffSet?.GetFirstHediffOfDef(VFEI_DefsOf.VFEI_TempDown);
-					if (hediffOnPawn == null) pawn.health.AddHediff(VFEI_DefsOf.VFEI_TempDown);
+					var hediffOnPawn = pawn.health?.hediffSet?.GetFirstHediffOfDef(VFEIDefOf.VFEI_TempDown);
+					if (hediffOnPawn == null) pawn.health.AddHediff(VFEIDefOf.VFEI_TempDown);
 				}
 				if (pawn != null && pawn.stances != null && pawn.BodySize <= this.def.projectile.StoppingPower + 0.001f)
 				{

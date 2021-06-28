@@ -65,7 +65,7 @@ namespace VFEI.Comps.ItemComps
         {
             isImplant = false;
             bodyPartRecord = MedicalRecipesUtility.GetFixedPartsToApplyOn(recipeDef, this.Pawn).RandomElement();
-            if (recipeDef.addsHediff.addedPartProps == null || recipeDef.addsHediff == VFEI_DefsOf.VFEI_SynapticCerebellum) // IsImplant?
+            if (recipeDef.addsHediff.addedPartProps == null || recipeDef.addsHediff == VFEIDefOf.VFEI_SynapticCerebellum) // IsImplant?
             {
                 if (!this.Pawn.health.hediffSet.HasHediff(recipeDef.addsHediff)) // If don't already have it
                 {

@@ -12,14 +12,14 @@ namespace VFEI.Events
         {
             IntVec3 loc;
             TryFindCell(out loc, map);
-            Thing thing = GenSpawn.Spawn(ThingMaker.MakeThing(VFEI_DefsOf.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
+            Thing thing = GenSpawn.Spawn(ThingMaker.MakeThing(VFEIDefOf.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
             QuestUtility.AddQuestTag(thing, questTag);
             for (int i = 0; i < hiveCount - 1; i++)
             {
-                loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, VFEI_DefsOf.VFEI_LargeHive, ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), ignoreRoofedRequirement, true);
+                loc = CompSpawnerHives.FindChildHiveLocation(thing.Position, map, VFEIDefOf.VFEI_LargeHive, ThingDefOf.Hive.GetCompProperties<CompProperties_SpawnerHives>(), ignoreRoofedRequirement, true);
                 if (loc.IsValid)
                 {
-                    thing = GenSpawn.Spawn(ThingMaker.MakeThing(VFEI_DefsOf.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
+                    thing = GenSpawn.Spawn(ThingMaker.MakeThing(VFEIDefOf.VFEI_TunnelHiveSpawner, null), loc, map, WipeMode.FullRefund);
                     QuestUtility.AddQuestTag(thing, questTag);
                 }
             }

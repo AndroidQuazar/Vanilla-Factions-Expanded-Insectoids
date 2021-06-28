@@ -123,7 +123,7 @@
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Tunneling.cs" />
     <Compile Include="RaidStrategyWorkers\RaidStrategyWorker_ImmediateAttackInsect.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="VFEI_DefsOf.cs" />
+    <Compile Include="VFEIDefOf.cs" />
     <Compile Include="JobStuff\LordJob_InsectDefendChunk.cs" />
     <Compile Include="Other\Projectile_Psychic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

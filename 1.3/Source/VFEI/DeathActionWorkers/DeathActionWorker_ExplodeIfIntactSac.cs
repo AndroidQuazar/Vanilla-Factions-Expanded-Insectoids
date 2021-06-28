@@ -25,7 +25,7 @@ namespace VFEI
         public override void PawnDied(Corpse corpse)
         {
             BodyPartRecord bodyPartRecord = (from x in corpse.InnerPawn.health.hediffSet.GetNotMissingParts()
-                                             where x.def == VFEI_DefsOf.VFEI_ExplosiveSac
+                                             where x.def == VFEIDefOf.VFEI_ExplosiveSac
                                              select x).FirstOrDefault();
             if (bodyPartRecord != null)
             {

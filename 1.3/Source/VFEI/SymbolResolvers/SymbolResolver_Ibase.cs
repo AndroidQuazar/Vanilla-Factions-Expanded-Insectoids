@@ -44,7 +44,7 @@ namespace VFEI
             BaseGen.symbolStack.Push("pawnGroup", resolveParams, null);
             BaseGen.symbolStack.Push("insectoidBaseLightning", rp, null);
 
-            PawnGenerationRequest value = new PawnGenerationRequest(VFEI_DefsOf.VFEI_Insectoid_Queen, faction);
+            PawnGenerationRequest value = new PawnGenerationRequest(VFEIDefOf.VFEI_Insectoid_Queen, faction);
             ResolveParams resolveParams7 = rp;
             resolveParams7.faction = faction;
             resolveParams7.singlePawnGenerationRequest = new PawnGenerationRequest?(value);

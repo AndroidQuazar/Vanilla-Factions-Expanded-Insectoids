@@ -40,9 +40,9 @@ namespace VFEI
                     PawnKindDefOf.Megascarab,
                     PawnKindDefOf.Spelopede,
                     PawnKindDefOf.Megaspider,
-                    VFEI_DefsOf.VFEI_Insectoid_Megapede,
-                    VFEI_DefsOf.VFEI_Insectoid_Gigalocust,
-                    VFEI_DefsOf.VFEI_Insectoid_RoyalMegaspider
+                    VFEIDefOf.VFEI_Insectoid_Megapede,
+                    VFEIDefOf.VFEI_Insectoid_Gigalocust,
+                    VFEIDefOf.VFEI_Insectoid_RoyalMegaspider
                 };
 
                 if (pawnKindDefs.Count > 0)

@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="BuildingBase">
     <defName>VFEI_Mote</defName>
-    <label>mote</label>
-    <description>Don't mind me, i'm useless for you</description>
+    <label>tunnel</label>
+    <description>A tunnel</description>
     <thingClass>VFEI.VFEI_TunnelingNoHive</thingClass>
     <graphicData>
       <texPath>Things/Buildings_Dummy</texPath>

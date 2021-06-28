@@ -25,15 +25,15 @@ namespace VFEI.RaidArrivalModes
 
                 if (point - 100 > 0 && Rand.Bool)
                 {
-                    Thing thingR = ThingMaker.MakeThing(VFEI_DefsOf.VFEI_BurrowRoyal);
+                    Thing thingR = ThingMaker.MakeThing(VFEIDefOf.VFEI_BurrowRoyal);
                     thingR.SetFaction(faction);
                     GenSpawn.Spawn(thingR, intvr, map);
-                    pawns.Add(PawnGenerator.GeneratePawn(VFEI_DefsOf.VFEI_Insectoid_Gigalocust, faction));
+                    pawns.Add(PawnGenerator.GeneratePawn(VFEIDefOf.VFEI_Insectoid_Gigalocust, faction));
                     point -= 100;
                 }
                 else if (point - 75 > 0 && Rand.Bool)
                 {
-                    Thing thingM = ThingMaker.MakeThing(VFEI_DefsOf.VFEI_BurrowMedium);
+                    Thing thingM = ThingMaker.MakeThing(VFEIDefOf.VFEI_BurrowMedium);
                     thingM.SetFaction(faction);
                     GenSpawn.Spawn(thingM, intvr, map);
                     pawns.Add(PawnGenerator.GeneratePawn(PawnKindDefOf.Megaspider, faction));
@@ -41,7 +41,7 @@ namespace VFEI.RaidArrivalModes
                 }
                 else if (point - 25 > 0)
                 {
-                    Thing thingS = ThingMaker.MakeThing(VFEI_DefsOf.VFEI_BurrowSmall);
+                    Thing thingS = ThingMaker.MakeThing(VFEIDefOf.VFEI_BurrowSmall);
                     thingS.SetFaction(faction);
                     GenSpawn.Spawn(thingS, intvr, map);
                     pawns.Add(PawnGenerator.GeneratePawn(PawnKindDefOf.Megascarab, faction));

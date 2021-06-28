@@ -30,11 +30,11 @@ namespace VFEI
                     }
                     else
                     {
-                        Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(VFEI_DefsOf.VFEI_LargeHive, null), randomCell, map, WipeMode.Vanish);
+                        Hive hive = (Hive)GenSpawn.Spawn(ThingMaker.MakeThing(VFEIDefOf.VFEI_LargeHive, null), randomCell, map, WipeMode.Vanish);
                         hive.SetFaction(fac, null);
                         foreach (CompSpawner compSpawner in hive.GetComps<CompSpawner>())
                         {
-                            if (compSpawner.PropsSpawner.thingToSpawn == VFEI_DefsOf.VFEI_RoyalInsectJelly)
+                            if (compSpawner.PropsSpawner.thingToSpawn == VFEIDefOf.VFEI_RoyalInsectJelly)
                             {
                                 compSpawner.TryDoSpawn();
                                 break;

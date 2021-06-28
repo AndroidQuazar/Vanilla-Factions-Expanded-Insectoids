@@ -34,7 +34,7 @@ namespace VFEI.RaidArrivalModes
                     }
                     else break;
                 }
-                SkyfallerMaker.SpawnSkyfaller(VFEI_DefsOf.VFEI_InsectMeteoriteIncoming, pawnsM, intVec3, map);
+                SkyfallerMaker.SpawnSkyfaller(VFEIDefOf.VFEI_InsectMeteoriteIncoming, pawnsM, intVec3, map);
             }
             parms.spawnCenter = intVec3;
         }

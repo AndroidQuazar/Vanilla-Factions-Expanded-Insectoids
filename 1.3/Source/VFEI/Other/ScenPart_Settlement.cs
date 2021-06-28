@@ -56,14 +56,14 @@ namespace VFEI.Other
 
                 bool stop = false;
                 List<ThingDef> potentialGenome = new List<ThingDef>();
-                potentialGenome.Add(VFEI_DefsOf.VFEI_DroneGenome);
-                potentialGenome.Add(VFEI_DefsOf.VFEI_RoyalGenome);
-                potentialGenome.Add(VFEI_DefsOf.VFEI_WarriorGenome);
+                potentialGenome.Add(VFEIDefOf.VFEI_DroneGenome);
+                potentialGenome.Add(VFEIDefOf.VFEI_RoyalGenome);
+                potentialGenome.Add(VFEIDefOf.VFEI_WarriorGenome);
                 foreach (IntVec3 i in rect.ExpandedBy(5))
                 {
                     foreach (var item in i.GetThingList(map))
                     {
-                        if (item.Faction != null) item.SetFaction(Find.FactionManager.FirstFactionOfDef(VFEI_DefsOf.VFEI_Insect));
+                        if (item.Faction != null) item.SetFaction(Find.FactionManager.FirstFactionOfDef(VFEIDefOf.VFEI_Insect));
                     }
                     if (i.Fogged(map) && (i.GetThingList(map).Any((t) => t.Faction != null) || i.Walkable(map))) map.fogGrid.Unfog(i);
                     if (!stop && i.Roofed(map) && i.GetRoom(map) is Room room && room != null && room.CellCount > 20 && GenAdj.CellsAdjacent8Way(new TargetInfo(i, map)).ToList().FindAll(l => l.Walkable(map)).Count == 8)
@@ -81,13 +81,13 @@ namespace VFEI.Other
                             GenSpawn.Spawn(potentialGenome.RandomElement(), room.Cells.RandomElement(), map);
                         }
                         if (!room.ContainsThing(ThingDefOf.StandingLamp)) GenSpawn.Spawn(ThingDefOf.StandingLamp, room.Cells.RandomElement(), map);
-                        GenSpawn.Spawn(VFEI_DefsOf.VFEI_BioengineeringIncubator, i, map);
+                        GenSpawn.Spawn(VFEIDefOf.VFEI_BioengineeringIncubator, i, map);
                         stop = true;
                     }
                 }
 
                 IncidentParms incidentParms = new IncidentParms();
-                incidentParms.faction = Find.FactionManager.FirstFactionOfDef(VFEI_DefsOf.VFEI_Insect);
+                incidentParms.faction = Find.FactionManager.FirstFactionOfDef(VFEIDefOf.VFEI_Insect);
                 incidentParms.points = 1500;
                 incidentParms.target = map;
 

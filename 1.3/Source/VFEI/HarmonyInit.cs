@@ -5,7 +5,10 @@ using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
 using Verse;
+using Verse.AI;
 
 namespace VFEI
 {
@@ -15,6 +18,14 @@ namespace VFEI
         static HarmonyInit()
         {
             new Harmony("kikohi.vfe.insectoid").PatchAll();
+        }
+
+        public static Hive TryFindLargeHive(Pawn pawn, IntVec3 intVec3)
+        {
+            Hive thing = (Hive)pawn.Map.thingGrid.ThingAt(intVec3, VFEIDefOf.VFEI_LargeHive);
+            if (thing != null)
+                return thing;
+            else return (Hive)pawn.Map.thingGrid.ThingAt(intVec3, ThingDefOf.Hive);
         }
 
         [HarmonyPatch(typeof(BodyPartDef), "GetMaxHealth", MethodType.Normal)]
@@ -30,6 +41,58 @@ namespace VFEI
                         __result += HediffUtility.TryGetComp<Comps.VariableHealthComp.VFEI_HediffComp_HealthModifier>(hediff).Props.healthPointToAdd;
                     }
                 }
+            }
+        }
+        
+        [HarmonyPatch(typeof(LordToil_HiveRelated), "FindClosestHive", MethodType.Normal)]
+        internal class FindClosestHive_Postfix
+        {
+            [HarmonyPostfix]
+            private static void PostFix(LordToil_HiveRelated __instance, ref Hive __result, Pawn pawn)
+            {
+                if (pawn.Faction.def == VFEIDefOf.VFEI_Insect)
+                {
+                    Hive hive = (Hive)GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForDef(VFEIDefOf.VFEI_LargeHive), PathEndMode.Touch, 
+                                                                        TraverseParms.For(pawn), 10f, (Thing x) => x.Faction == pawn.Faction, null, 0, 30);
+                    if (hive != null)
+                    {
+                        __result = hive;
+                    }
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(JobGiver_MaintainHives), "TryGiveJob", MethodType.Normal)]
+        public class TryGiveJob_Patch
+        {
+            [HarmonyTranspiler]
+            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                var found = false;
+                var codes = new List<CodeInstruction>(instructions);
+
+                OpCode last = codes[0].opcode;
+
+                for (int i = 0; i < codes.Count; i++)
+                {
+                    if (!found && last == OpCodes.Castclass && codes[i].opcode == OpCodes.Stloc_3)
+                    {
+                        yield return codes[i];
+                        yield return new CodeInstruction(OpCodes.Ldarg_1, null);
+                        yield return new CodeInstruction(OpCodes.Ldloc_2, null);
+                        yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(HarmonyInit), "TryFindLargeHive", null, null));
+                        yield return new CodeInstruction(OpCodes.Stloc_3, null);
+                        found = true;
+                    }
+                    else
+                    {
+                        yield return codes[i];
+                    }
+                    last = codes[i].opcode;
+                }
+                if (!found)
+                    Log.Error("Cannot find OpCodes.Castclass && OpCodes.Stloc_3 in JobGiver_MaintainHives.TryGiveJob");
+                yield break;
             }
         }
 
@@ -80,7 +143,7 @@ namespace VFEI
             [HarmonyPostfix]
             private static void PostFix(Pawn p, ref ThoughtState __result)
             {
-                if (p.Awake() && p.needs.mood.recentMemory.TicksSinceLastLight > 240 && p.health.hediffSet.HasHediff(VFEI_DefsOf.VFEI_Antenna))
+                if (p.Awake() && p.needs.mood.recentMemory.TicksSinceLastLight > 240 && p.health.hediffSet.HasHediff(VFEIDefOf.VFEI_Antenna))
                 {
                     __result = ThoughtState.Inactive;
                 }
@@ -93,7 +156,7 @@ namespace VFEI
             [HarmonyPostfix]
             private static void PostFix(Pawn ingester, ref List<FoodUtility.ThoughtFromIngesting> __result)
             {
-                if (ingester.health.hediffSet.HasHediff(VFEI_DefsOf.VFEI_VenomGland))
+                if (ingester.health.hediffSet.HasHediff(VFEIDefOf.VFEI_VenomGland))
                 {
                     __result.Clear();
                 }
@@ -137,7 +200,7 @@ namespace VFEI
                     {
                         IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
                         incidentParms.faction = Find.FactionManager.AllFactionsVisible.Where((f) => f.def.defName == "VFEI_Insect").First();
-                        incidentParms.raidStrategy = VFEI_DefsOf.VFEI_ImmediateAttackInsect;
+                        incidentParms.raidStrategy = VFEIDefOf.VFEI_ImmediateAttackInsect;
                         incidentParms.points = (float)1.5 * incidentParms.points;
                         Find.Storyteller.incidentQueue.Add(IncidentDefOf.RaidEnemy, Find.TickManager.TicksGame, incidentParms);
                     }

@@ -70,7 +70,7 @@ namespace VFEI
         {
             pointsLeft = Mathf.Max(StorytellerUtility.DefaultSiteThreatPointsNow() * 0.9f, 300f) * Props.level;
 
-            Faction insectFaction = Find.FactionManager.FirstFactionOfDef(VFEI_DefsOf.VFEI_Insect);
+            Faction insectFaction = Find.FactionManager.FirstFactionOfDef(VFEIDefOf.VFEI_Insect);
             if (insectFaction != null)
             {
                 if (this.lord == null)
@@ -98,8 +98,8 @@ namespace VFEI
                         {
                             IntVec3 intVec3 = new IntVec3();
                             RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEI_DefsOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
-                            this.pointsLeft -= VFEI_DefsOf.VFEI_Insectoid_Larvae.combatPower;
+                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEIDefOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
+                            this.pointsLeft -= VFEIDefOf.VFEI_Insectoid_Larvae.combatPower;
                         }
                         while (this.pointsLeft > 0f)
                         {
@@ -125,8 +125,8 @@ namespace VFEI
                         {
                             IntVec3 intVec3 = new IntVec3();
                             RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEI_DefsOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
-                            this.pointsLeft -= VFEI_DefsOf.VFEI_Insectoid_Larvae.combatPower;
+                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEIDefOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
+                            this.pointsLeft -= VFEIDefOf.VFEI_Insectoid_Larvae.combatPower;
                         }
                         while (this.pointsLeft > 0f)
                         {
@@ -152,17 +152,17 @@ namespace VFEI
                         {
                             IntVec3 intVec3 = new IntVec3();
                             RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEI_DefsOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
-                            this.pointsLeft -= VFEI_DefsOf.VFEI_Insectoid_Larvae.combatPower;
+                            GenSpawn.Spawn(PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEIDefOf.VFEI_Insectoid_Larvae, insectFaction)), intVec3, this.parent.Map);
+                            this.pointsLeft -= VFEIDefOf.VFEI_Insectoid_Larvae.combatPower;
                         }
                         if (true)
                         {
                             IntVec3 intVec3 = new IntVec3();
                             RCellFinder.TryFindRandomCellNearWith(this.parent.Position, (p) => p.Walkable(this.parent.Map) == true, this.parent.Map, out intVec3, 2);
-                            Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEI_DefsOf.VFEI_Insectoid_Queen, insectFaction));
+                            Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(VFEIDefOf.VFEI_Insectoid_Queen, insectFaction));
                             GenSpawn.Spawn(pawn, intVec3, this.parent.Map);
                             this.lord.AddPawn(pawn);
-                            this.pointsLeft -= VFEI_DefsOf.VFEI_Insectoid_Queen.combatPower;
+                            this.pointsLeft -= VFEIDefOf.VFEI_Insectoid_Queen.combatPower;
                         }
                         while (this.pointsLeft > 0f)
                         {

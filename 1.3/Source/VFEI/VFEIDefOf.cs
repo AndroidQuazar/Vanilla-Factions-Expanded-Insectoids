@@ -4,7 +4,7 @@ using Verse;
 namespace VFEI
 {
     [DefOf]
-    public static class VFEI_DefsOf
+    public static class VFEIDefOf
     {
         public static ThingDef VFEI_InfestedShipChunk;
         public static ThingDef VFEI_InfestedShipChunkIncoming;

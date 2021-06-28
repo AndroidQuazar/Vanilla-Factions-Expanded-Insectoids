@@ -17,7 +17,7 @@ namespace VFEI
 
         protected void SpawnChunk(IntVec3 pos, Map map)
         {
-            SkyfallerMaker.SpawnSkyfaller(VFEI_DefsOf.VFEI_InfestedShipPartIncoming, VFEI_DefsOf.VFEI_InfestedCrashedShipPart, pos, map);
+            SkyfallerMaker.SpawnSkyfaller(VFEIDefOf.VFEI_InfestedShipPartIncoming, VFEIDefOf.VFEI_InfestedCrashedShipPart, pos, map);
         }
 
         protected void SpawnShipChunks(IntVec3 firstChunkPos, Map map, int count)
@@ -55,7 +55,7 @@ namespace VFEI
 
         protected bool TryFindShipChunkDropCell(IntVec3 nearLoc, Map map, int maxDist, out IntVec3 pos)
         {
-            ThingDef infestedShipPartIncoming = VFEI_DefsOf.VFEI_InfestedShipPartIncoming;
+            ThingDef infestedShipPartIncoming = VFEIDefOf.VFEI_InfestedShipPartIncoming;
             return CellFinderLoose.TryFindSkyfallerCell(infestedShipPartIncoming, map, out pos, 40, nearLoc, maxDist, true, false, false, false, true, false, null);
         }
     }

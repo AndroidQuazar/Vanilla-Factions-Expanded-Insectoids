@@ -14,7 +14,7 @@ namespace VFEI.Events
         {
             PlayerKnowledgeDatabase.SetKnowledge(ConceptDefOf.ShieldBelts, 1f);
             IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, (Map)parms.target);
-            incidentParms.faction = Find.FactionManager.FirstFactionOfDef(VFEI_DefsOf.VFEI_Insect);
+            incidentParms.faction = Find.FactionManager.FirstFactionOfDef(VFEIDefOf.VFEI_Insect);
             incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
             incidentParms.raidArrivalMode = PawnsArrivalModeDefOf.EdgeWalkIn;
             incidentParms.points *= 10;

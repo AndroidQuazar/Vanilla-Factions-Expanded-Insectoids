@@ -22,7 +22,7 @@ namespace VFEI
             {
                 IntVec3 intVec3 = new IntVec3();
                 CellFinder.TryFindRandomPawnExitCell(pawn, out intVec3);
-                pawn.jobs.StartJob(new Verse.AI.Job(VFEI_DefsOf.InsectFlee, new LocalTargetInfo(intVec3)), Verse.AI.JobCondition.Succeeded);
+                pawn.jobs.StartJob(new Verse.AI.Job(VFEIDefOf.InsectFlee, new LocalTargetInfo(intVec3)), Verse.AI.JobCondition.Succeeded);
             }
         }
     }

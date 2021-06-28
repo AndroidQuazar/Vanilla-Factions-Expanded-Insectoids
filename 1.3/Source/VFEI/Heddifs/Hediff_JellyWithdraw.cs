@@ -38,7 +38,7 @@ namespace VFEI
                     int flag2 = Rand.RangeInclusive(0, 2);
                     if (flag2 == 1)
                     {
-                        FilthMaker.TryMakeFilth(c, map, VFEI_DefsOf.Filth_BloodInsect);
+                        FilthMaker.TryMakeFilth(c, map, VFEIDefOf.Filth_BloodInsect);
                     }
                     else
                     {

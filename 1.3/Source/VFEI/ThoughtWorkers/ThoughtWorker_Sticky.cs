@@ -7,7 +7,7 @@ namespace VFEI.ThoughtWorkers
     {
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
-            if (p.health.hediffSet.HasHediff(VFEI_DefsOf.VFEI_PheromoneSecretor))
+            if (p.health.hediffSet.HasHediff(VFEIDefOf.VFEI_PheromoneSecretor))
             {
                 return true;
             }

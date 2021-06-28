@@ -10,12 +10,12 @@ namespace VFEI.RaidArrivalModes
         {
             pawns.Clear();
             Map map = (Map)parms.target;
-            int n = (int)parms.points / (int)VFEI_DefsOf.VFEI_Insectoid_Gigalocust.combatPower;
+            int n = (int)parms.points / (int)VFEIDefOf.VFEI_Insectoid_Gigalocust.combatPower;
             for (int i = 0; i < n; i++)
             {
                 RCellFinder.TryFindRandomCellNearWith(parms.spawnCenter, (c) => c.Walkable(map) && !c.Roofed(map), map, out IntVec3 intVec3, 4, 20);
-                Pawn pawn = PawnGenerator.GeneratePawn(VFEI_DefsOf.VFEI_Insectoid_Gigalocust, parms.faction);
-                SkyfallerMaker.SpawnSkyfaller(VFEI_DefsOf.VFEI_GigalocustIncoming, pawn, intVec3, map);
+                Pawn pawn = PawnGenerator.GeneratePawn(VFEIDefOf.VFEI_Insectoid_Gigalocust, parms.faction);
+                SkyfallerMaker.SpawnSkyfaller(VFEIDefOf.VFEI_GigalocustIncoming, pawn, intVec3, map);
                 pawns.Add(pawn);
             }
         }
@@ -25,7 +25,7 @@ namespace VFEI.RaidArrivalModes
             Map map = (Map)parms.target;
             if (!parms.spawnCenter.IsValid)
             {
-                parms.spawnCenter = CellFinderLoose.RandomCellWith((i) => i.Walkable(map) == true, map);
+                parms.spawnCenter = CellFinderLoose.RandomCellWith((i) => i.Walkable(map) == true && !i.Roofed(map), map);
             }
             parms.spawnRotation = Rot4.Random;
             return true;
