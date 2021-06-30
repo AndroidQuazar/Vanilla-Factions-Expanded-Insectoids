@@ -123,6 +123,9 @@
     <Compile Include="RaidArrivalModes\PawnsArrivalModeWorker_Tunneling.cs" />
     <Compile Include="RaidStrategyWorkers\RaidStrategyWorker_ImmediateAttackInsect.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Teleporter\Command_LoadTeleporter.cs" />
+    <Compile Include="Teleporter\CompProperties_Teleporter.cs" />
+    <Compile Include="Teleporter\Dialog_LoadTeleporter.cs" />
     <Compile Include="VFEIDefOf.cs" />
     <Compile Include="JobStuff\LordJob_InsectDefendChunk.cs" />
     <Compile Include="Other\Projectile_Psychic.cs" />

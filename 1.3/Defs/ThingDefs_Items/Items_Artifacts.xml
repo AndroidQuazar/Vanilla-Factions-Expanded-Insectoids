@@ -135,7 +135,7 @@
   <ThingDef ParentName="ArtifactBase">
     <defName>VFEI_Artifacts_ArchotechTeleporter</defName>
     <label>archotech teleporter</label>
-    <description>One-use artifact which allows to transport up to 500 kg of mass from one place to any other place on the planet. Can't be used to give gift or raid other faction.</description>
+    <description>One-use artifact which allows to transport up to 500 kg of mass from one place to any other place on the planet.</description>
     <thingClass>ThingWithComps</thingClass>
     <graphicData>
       <texPath>Things/Item/Artifact/ArchotechTeleporter</texPath>
@@ -155,7 +155,10 @@
     <thingSetMakerTags>
       <li>RewardSpecial</li>
     </thingSetMakerTags>
-    <tickerType>Normal</tickerType>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="VFEI.CompProperties_Teleporter" />
+    </comps>
   </ThingDef>
 
 </Defs>

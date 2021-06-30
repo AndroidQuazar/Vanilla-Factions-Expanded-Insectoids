@@ -103,9 +103,23 @@
 	<TeleportDestInvalid>Teleport destination is invalid.</TeleportDestInvalid>
 	<TeleportDestTooFar>Teleport destination is too far!</TeleportDestTooFar>
 	<TeleportWillDestroy>Teleporting to this destination will result in the loss of contents.</TeleportWillDestroy>
-	<TeleportDestroyed>Since there were no colonists teleported, the teleportation has failed and contents is lost.</TeleportDestroyed>
 	<TeleportDone>Teleportation succeeded.</TeleportDone>
-	<TeleportDoneCAdded>Teleportation succeeded, contents was added to caravan.</TeleportDoneCAdded>
+
+	<TeleportToSiteCenter>{0}: Teleport at center</TeleportToSiteCenter>
+	<TeleportToSiteEdge>{0}: Teleport at edge</TeleportToSiteEdge>
+
+	<TeleportDoneCaravan>Caravan created</TeleportDoneCaravan>
+	<TeleportAddToCaravan>Teleport content to {0}</TeleportAddToCaravan>
+	<TeleportDoneCAdded>Teleportation succeeded, contents was added to {0}</TeleportDoneCAdded>
+	
+	<TeleportAndGift>Give gift to {0} ({1}).</TeleportAndGift>
+
+	<TeleportAndTarget>Zoom in and choose teleporting spot</TeleportAndTarget>
+
+	<TeleportAndAttackCenter>Attack {0}: Teleport at center</TeleportAndAttackCenter>
+	<TeleportAndAttackEgde>Attack {0}: Teleport at edge</TeleportAndAttackEgde>
+
+	<TeleportDestroyed>The teleportation has failed and contents is lost</TeleportDestroyed>
 
 	<!-- Settings strings -->
 	<SName>Vanilla Factions Expanded - Insectoids</SName>
