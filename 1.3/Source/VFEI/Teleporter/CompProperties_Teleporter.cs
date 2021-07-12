@@ -15,7 +15,7 @@ namespace VFEI
     internal class CompTeleporter : ThingComp, IThingHolder
     {
         public ThingOwner innerContainer;
-        private static readonly Texture2D LoadCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/LoadTransporter");
+        private static readonly Texture2D LoadCommandTex = ContentFinder<Texture2D>.Get("UI/ArchotechTeleporterGizmo");
 
         public CompTeleporter() => this.innerContainer = new ThingOwner<Thing>(this);
 
