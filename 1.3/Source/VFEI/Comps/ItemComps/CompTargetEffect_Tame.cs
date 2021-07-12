@@ -17,7 +17,7 @@ namespace VFEI
                 }
                 if (this.RandomNumber(1, 10) == 1)
                 {
-                    pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, true, false, null, false);
+                    pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
 
                     string text;
                     text = "LetterArtifactTameFail".Translate(pawn).CapitalizeFirst();

@@ -68,6 +68,10 @@
     <Compile Include="Comps\BuildingComps\CompRepeller.cs" />
     <Compile Include="Comps\CompProperties_Armillarix.cs" />
     <Compile Include="Comps\ItemComps\CompProperties_SoundLoop.cs" />
+    <Compile Include="Comps\ItemComps\CompTargetEffect_EraseInRadius.cs" />
+    <Compile Include="Comps\ItemComps\Verb_CastHumanEffect.cs" />
+    <Compile Include="Comps\ItemComps\Verb_CastAnimalEffect.cs" />
+    <Compile Include="Comps\ItemComps\Verb_DoEffect.cs" />
     <Compile Include="Comps\VariableHealthComp\VFEI_HediffCompProperties_HealthModifier.cs" />
     <Compile Include="Comps\VariableHealthComp\VFEI_HediffComp_HealthModifier.cs" />
     <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
@@ -84,10 +88,7 @@
     <Compile Include="Comps\HediffComps\CompProperties\CompProperties_SpawnJelly.cs" />
     <Compile Include="Comps\HediffComps\CompRandomHediffGiver.cs" />
     <Compile Include="Comps\HediffComps\CompSpawnJelly.cs" />
-    <Compile Include="Comps\ItemComps\Properties\CompProperties_TargetableHumanOnly.cs" />
-    <Compile Include="Comps\ItemComps\CompTargetable_ThingInRadius.cs" />
     <Compile Include="Comps\ItemComps\CompTargetEffect_Recruit.cs" />
-    <Compile Include="Comps\ItemComps\Properties\CompProperties_TargetableAnimalOnly.cs" />
     <Compile Include="Comps\ItemComps\CompTargetEffect_Tame.cs" />
     <Compile Include="Comps\BuildingComps\CompProperties_SpawnerInsectOnDamaged.cs" />
     <Compile Include="Comps\BuildingComps\CompSpawnerInsectOnDamaged.cs" />
