@@ -6,12 +6,28 @@
     <description>A result of a galaxy wide experiment gone wrong, this monstrous hive-mind has made this planet their home. Divided into castes, their society relies on the giant queen.\n\nThese insectoids are not interested in diplomacy. They will try to eliminate anything that they perceive to be a threat.</description>
     <pawnSingular>insect</pawnSingular>
     <pawnsPlural>insects</pawnsPlural>
+    <listOrderPriority>20</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canSiege>false</canSiege>
+    <canStageAttacks>true</canStageAttacks>
     <factionIconPath>World/InsectoidFaction/Nest</factionIconPath>
+    <factionNameMaker>VFEI_NamerFactionInsect</factionNameMaker>
+    <settlementNameMaker>VFEI_NamerSettlementInsectoid</settlementNameMaker>
     <colorSpectrum>
       <li>(0.58, 0.47, 0.35)</li>
       <li>(0.75, 0.40, 0.40)</li>
     </colorSpectrum>
+    <permanentEnemy>true</permanentEnemy>
+    <techLevel>Animal</techLevel>
+    <humanlikeFaction>false</humanlikeFaction>
+    <hidden>false</hidden>
+    <autoFlee>false</autoFlee>
+    <canUseAvoidGrid>false</canUseAvoidGrid>
+    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+    <earliestRaidDays>20</earliestRaidDays>
+    <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
     <raidCommonalityFromPointsCurve>
       <points>
         <li>(300,  0)</li>
@@ -21,25 +37,6 @@
         <li>(4000, 2.6)</li>
       </points>
     </raidCommonalityFromPointsCurve>
-    <humanlikeFaction>false</humanlikeFaction>
-    <hidden>false</hidden>
-    <autoFlee>false</autoFlee>
-    <canUseAvoidGrid>false</canUseAvoidGrid>
-    <techLevel>Animal</techLevel>
-    <permanentEnemy>true</permanentEnemy>
-    <hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
-    <canSiege>false</canSiege>
-    <canStageAttacks>true</canStageAttacks>
-    <raidLootValueFromPointsCurve>
-      <points>
-        <li>(35,     15)</li>
-        <li>(100,   120)</li>
-        <li>(1000,  500)</li>
-        <li>(2000,  800)</li>
-        <li>(4000, 1000)</li>
-      </points>
-    </raidLootValueFromPointsCurve>
-    <earliestRaidDays>20</earliestRaidDays>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(400,200)</li>
@@ -74,11 +71,8 @@
       </li>
     </pawnGroupMakers>
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-    <allowedArrivalTemperatureRange>0~45</allowedArrivalTemperatureRange>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <configurationListOrderPriority>91</configurationListOrderPriority>
-    <factionNameMaker>VFEI_NamerFactionInsect</factionNameMaker>
-    <settlementNameMaker>VFEI_NamerSettlementInsectoid</settlementNameMaker>
     <modExtensions>
       <li Class="VFECore.ExcludeFromQuestsExtension" />
     </modExtensions>
