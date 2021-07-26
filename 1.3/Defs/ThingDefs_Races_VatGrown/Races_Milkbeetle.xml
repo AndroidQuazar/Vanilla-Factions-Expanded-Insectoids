@@ -3,7 +3,7 @@
   <ThingDef ParentName="BaseInsect">
     <defName>VFEI_VatGrownMilkbeetle</defName>
     <label>Vat-grown milkbeetle</label>
-    <description>A large bio-engineered livestock, milkbeetles produce thick insectoid milk in a large sac on its back. Whilst it is moderately armoured, the chitin plates can be safely removed as they quickly grow back. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased.</description>
+    <description>A large bio-engineered livestock, milkbeetles produce thick insectoid milk in a large sac on its back. Whilst it is moderately armoured, the chitin plates can be safely removed as they quickly grow back. A vat-grown creature, it is unable to reproduce, and its lifespan is significantly decreased. The Milkbeetle is considered a farm animal and needs to be penned.</description>
     <statBases>
       <MoveSpeed>1.8</MoveSpeed>
       <ComfyTemperatureMin>-10</ComfyTemperatureMin>
@@ -53,6 +53,8 @@
       <baseHealthScale>2</baseHealthScale>
       <foodType>OmnivoreAnimal, AnimalProduct</foodType>
       <hasGenders>false</hasGenders>
+	  <trainability>None</trainability>
+	  <roamMtbDays>5</roamMtbDays>
       <useMeatFrom>Megaspider</useMeatFrom>
       <wildness>0.55</wildness>
       <lifeExpectancy>3</lifeExpectancy>

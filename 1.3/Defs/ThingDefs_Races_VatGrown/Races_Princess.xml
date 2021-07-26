@@ -59,6 +59,7 @@
 			<useMeatFrom>Megaspider</useMeatFrom>
 			<foodType>OmnivoreAnimal, AnimalProduct</foodType>
 			<wildness>0.85</wildness>
+			<trainability>Intermediate</trainability>
 			<lifeExpectancy>3</lifeExpectancy>
 			<lifeStageAges>
 				<li>
