@@ -75,6 +75,11 @@
     <configurationListOrderPriority>91</configurationListOrderPriority>
     <modExtensions>
       <li Class="VFECore.ExcludeFromQuestsExtension" />
+      <!-- <li Class="VFECore.FactionDefExtension">
+        <allowedStrategies>
+          <li>VFEI_ImmediateAttackInsect</li>
+        </allowedStrategies>
+      </li> -->
     </modExtensions>
   </FactionDef>
 </Defs>
