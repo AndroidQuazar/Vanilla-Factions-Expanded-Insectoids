@@ -14,11 +14,11 @@ namespace VFEI
         public override void Tick()
         {
             base.Tick();
-            if (this.pawn.Faction != Faction.OfPlayer)
+            if ((pawn.RaceProps != null && pawn.RaceProps.Humanlike) || pawn.Faction != Faction.OfPlayer)
             {
-                this.Need.CurLevel = 1;
+                Need.CurLevel = 1;
             }
-            else if (this.Need?.CurCategory == DrugDesireCategory.Withdrawal)
+            else if (Need?.CurCategory != null && Need.CurCategory == DrugDesireCategory.Withdrawal)
             {
                 IntVec3 colonistLoc = this.pawn.Position;
                 Name colonistName = this.pawn.Name;
