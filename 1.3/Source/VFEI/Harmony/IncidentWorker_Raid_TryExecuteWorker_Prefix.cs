@@ -46,7 +46,7 @@ namespace VFEI
                 string label = parms.raidStrategy.letterLabelEnemy + ": " + parms.faction.Name;
                 string desc = string.Format(parms.raidArrivalMode.textEnemy, parms.faction.def.pawnsPlural, parms.faction.Name.ApplyTag(parms.faction)).CapitalizeFirst() + "\n\n" + parms.raidStrategy.arrivalTextEnemy;
 
-                Find.LetterStack.ReceiveLetter(label, desc, LetterDefOf.ThreatBig);
+                Find.LetterStack.ReceiveLetter(label, desc, LetterDefOf.ThreatBig, targetInfoList);
                 parms.raidStrategy.Worker.MakeLords(parms, pawns);
 
                 __result = true;
