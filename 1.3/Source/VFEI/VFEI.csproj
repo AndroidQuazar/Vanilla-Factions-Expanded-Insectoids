@@ -60,6 +60,18 @@
     <Compile Include="Comps\VariableHealthComp\VFEI_HediffComp_HealthModifier.cs" />
     <Compile Include="Events\IncidentWorker_FirstRaid.cs" />
     <Compile Include="Events\IncidentWorker_GiantInfestation.cs" />
+    <Compile Include="Harmony\BodyPartDef_GetMaxHealth_Postfix.cs" />
+    <Compile Include="Harmony\GenStep_Settlement_ScatterAt_Prefix.cs" />
+    <Compile Include="Harmony\IncidentWorker_Raid_TryExecuteWorker_Prefix.cs" />
+    <Compile Include="Harmony\LordToil_HiveRelated_FindClosestHive_Postfix.cs" />
+    <Compile Include="Harmony\Faction_HasGoodwill_Postfix.cs" />
+    <Compile Include="Harmony\CompGlower_PostSpawnSetup_Prefix.cs" />
+    <Compile Include="Harmony\CompGlower_ReceiveCompSignal_Postfix.cs" />
+    <Compile Include="Harmony\IncidentWorker_Infestation_TryExecuteWorker_Prefix.cs" />
+    <Compile Include="Harmony\JobGiver_MaintainHives_TryGiveJob_Patch.cs" />
+    <Compile Include="Harmony\FoodUtility_ThoughtsFromIngesting_Postfix.cs" />
+    <Compile Include="Harmony\SettlementDefeatUtility_IsDefeated_Postfix.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Dark_CurrentStateInternal_Postfix.cs" />
     <Compile Include="SymbolResolvers\SymbolResolver_EdgeDefenseNoPawn.cs" />
     <Compile Include="SymbolResolvers\SymbolResolver_SettlementNoPawns.cs" />
     <Compile Include="SymbolResolvers\SymbolResolver_MannedMortarNoPawns.cs" />
@@ -85,7 +97,7 @@
     <Compile Include="Events\IncidentWorker_InfestedPartDropSmall.cs" />
     <Compile Include="SymbolResolvers\SymbolResolver_Ibase.cs" />
     <Compile Include="SymbolResolvers\SymbolResolver_OutdoorLightingIbase.cs" />
-    <Compile Include="HarmonyInit.cs" />
+    <Compile Include="Harmony\HarmonyInit.cs" />
     <Compile Include="Heddifs\Hediff_JellyWithdraw.cs" />
     <Compile Include="Other\IngestionOutcomeDoer_Immunity.cs" />
     <Compile Include="JobStuff\JobGiver_Harvest.cs" />
@@ -128,5 +140,6 @@
       <Version>2.2.0</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
