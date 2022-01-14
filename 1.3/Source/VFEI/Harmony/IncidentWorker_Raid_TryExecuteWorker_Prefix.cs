@@ -43,6 +43,9 @@ namespace VFEI
                         targetInfoList.Add(pawn);
                 }
 
+                if (parms.raidArrivalMode.defName == "VFEI_GigalocustSwarm")
+                    targetInfoList = new List<TargetInfo> { new TargetInfo(parms.spawnCenter, map) };
+
                 string label = parms.raidStrategy.letterLabelEnemy + ": " + parms.faction.Name;
                 string desc = string.Format(parms.raidArrivalMode.textEnemy, parms.faction.def.pawnsPlural, parms.faction.Name.ApplyTag(parms.faction)).CapitalizeFirst() + "\n\n" + parms.raidStrategy.arrivalTextEnemy;
 
