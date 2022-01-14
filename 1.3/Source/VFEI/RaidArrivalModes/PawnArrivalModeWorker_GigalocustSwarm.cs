@@ -8,7 +8,7 @@ namespace VFEI.RaidArrivalModes
     {
         public override void Arrive(List<Pawn> pawns, IncidentParms parms)
         {
-            pawns.ForEach(p => p.Discard());
+            pawns.Clear();
             Map map = (Map)parms.target;
             int n = (int)parms.points / (int)VFEIDefOf.VFEI_Insectoid_Gigalocust.combatPower;
             for (int i = 0; i < n; i++)
