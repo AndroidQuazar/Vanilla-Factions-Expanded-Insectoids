@@ -11,15 +11,8 @@ namespace VFEI.RaidArrivalModes
         {
             Map map = (Map)parms.target;
             int numberOfMeteor = Rand.RangeInclusive(2, (int)parms.points / 500);
-            int pawnsPerMeteor = (int)pawns.Count / numberOfMeteor;
-            foreach (Pawn item in pawns)
-            {
-                if (item.GetLord() != null)
-                {
-                    item.GetLord().Cleanup();
-                }
-            }
-            LordMaker.MakeNewLord(parms.faction, new LordJob_AssaultColony(parms.faction, false, false, false, false, false), map, pawns);
+            int pawnsPerMeteor = pawns.Count / numberOfMeteor;
+            Lord lord = LordMaker.MakeNewLord(parms.faction, new LordJob_AssaultColony(parms.faction, false, false, false, false, false), map);
             IntVec3 intVec3 = new IntVec3();
             for (int n = 0; n < numberOfMeteor; n++)
             {
@@ -30,6 +23,7 @@ namespace VFEI.RaidArrivalModes
                     if (pawns[0] != null)
                     {
                         pawnsM.Add(pawns[0]);
+                        lord.AddPawn(pawns[0]);
                         pawns.RemoveAt(0);
                     }
                     else break;
