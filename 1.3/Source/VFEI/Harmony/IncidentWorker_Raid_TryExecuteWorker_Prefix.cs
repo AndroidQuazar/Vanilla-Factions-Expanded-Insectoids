@@ -15,7 +15,7 @@ namespace VFEI
         [HarmonyPrefix]
         private static bool Prefix(IncidentParms parms, ref IncidentWorker_Raid __instance, ref bool __result)
         {
-            if (parms.faction.def.defName == "VFEI_Insect")
+            if (parms.faction != null && parms.faction.def.defName == "VFEI_Insect")
             {
                 Map map = (Map)parms.target;
                 if (!__instance.TryGenerateRaidInfo(parms, out List<Pawn> pawns))
